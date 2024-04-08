@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>  
+    <div class="slider">
+
+
+        <div class="list">
+
+            <div class="item">
+                
+                <img src = "{{url_for('static', filename='images/1.jpg')}}" />
+
+
+                <div class="content">
+                    <div class="title">TOKYO</div>
+                    <div class="type">JAPAN</div>
+                    <div class="description">CITY DESCRIPTION HERE</div>
+                    <div class="button">
+                        <button>SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src = "{{url_for('static', filename='images/2.jpg')}}" />
+
+
+                <div class="content">
+                    <div class="title">LONDON</div>
+                    <div class="type">UK</div>
+                    <div class="description">CITY DESCRIPTION HERE</div>
+                    <div class="button">
+                        <button>SEE MORE</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src = "{{url_for('static', filename='images/3.jpg')}}" />
+
+
+                <div class="content">
+                    <div class="title">ROME</div>
+                    <div class="type">ITALY</div>
+                    <div class="description">CITY DESCRIPTION HERE</div>
+                    
+                </div>
+            </div>
+
+            <div class="item">
+                <img src = "{{url_for('static', filename='images/4.jpg')}}" />
+
+                <div class="content">
+                    <div class="title">ROME</div>
+                    <div class="type">ITALY</div>
+                    <div class="description">CITY DESCRIPTION HERE</div>
+                    
+                </div>
+            </div>
+
+            <div class="item">
+                <img src = "{{url_for('static', filename='images/5.jpg')}}" />
+                
+
+                <div class="content">
+                    <div class="title">TERNI</div>
+                    <div class="type">ITALY</div>
+                    <div class="description">CITY DESCRIPTION HERE</div>
+                    
+                </div>
+            </div>
+
+            <div class="item">
+                <img src = "{{url_for('static', filename='images/6.jpg')}}" />
+                
+
+                <div class="content">
+                    <div class="title">TERNI</div>
+                    <div class="type">ITALY</div>
+                    <div class="description">CITY DESCRIPTION HERE</div>
+                    
+                </div>
+            </div>
+
+            <div class="item">
+                <img src = "{{url_for('static', filename='images/7.jpg')}}" />
+                
+
+                <div class="content">
+                    <div class="title">NON RICORDO</div>
+                    <div class="type">SOMEWHERE</div>
+                    <div class="description">CITY DESCRIPTION HERE</div>
+                    
+                </div>
+            </div>
+
+            <div class="item">
+                <img src = "{{url_for('static', filename='images/8.jpg')}}" />
+                
+
+                <div class="content">
+                    <div class="title">SAN FRANCISCO</div>
+                    <div class="type">USA</div>
+                    <div class="description">CITY DESCRIPTION HERE</div>
+
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="thumbnail">
+
+            <div class="item">
+                <img src = "{{url_for('static', filename='1.jpg')}}" />
+                
+            </div>
+            <div class="item">
+                <img src = "{{url_for('static', filename='2.jpg')}}" />
+                
+            </div>
+            <div class="item">
+                <img src = "{{url_for('static', filename='3.jpg')}}" />
+                
+            </div>
+            <div class="item">
+                <img src = "{{url_for('static', filename='4.jpg')}}" />
+                
+            </div>
+            <div class="item">
+                <img src = "{{url_for('static', filename='5.jpg')}}" />
+                
+            </div>
+            <div class="item">
+                <img src = "{{url_for('static', filename='6.jpg')}}" />
+            
+            </div>
+            <div class="item">
+                <img src = "{{url_for('static', filename='7.jpg')}}" />
+                
+            </div>
+            <div class="item">
+                <img src = "{{url_for('static', filename='8.jpg')}}" />
+                
+            </div>
+
+        </div>
+    
+        <div class="nextPrevArrows">
+            
+            <button class="prev"> < </button>
+            <button class="next"> > </button>
+        </div>
+    </div>
+    <script type = "text/javascript" src = "{{url_for('static', filename='animation.js')}}"></script>
+</body>
+</html>

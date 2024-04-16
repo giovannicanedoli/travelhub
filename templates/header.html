@@ -1,0 +1,28 @@
+{% block contenttop%}
+
+{% endblock %}
+<header>
+<div class="header">
+<nav>
+<ul>
+    <li><a href="/" class="link"><button class="pulsante" type="button">HOME</button></a></li>
+    <!--<% if user_signed_in? %>-->
+    <li><a href="/login" class="link"><button class="pulsante" type="button">SIGN IN</button></a></li>
+    <li><a href="/register" class="link"><button class="pulsante" type="button">SIGN UP</button></a></li>
+    <li><a href="#" class="link"><button class="pulsante" type="button">ABOUT US</button></a></li>
+
+        
+    <!--<% else %>
+        <li><%= link_to 'SIGN IN', new_user_session_path, class:"pulsante", type:"button"  %></li>
+        <li><%= link_to 'SIGN UP', new_user_registration_path, class:"pulsante", type:"button" %></li>
+    <% end %>-->
+    
+
+</ul>
+</nav>
+</div>
+</header>
+
+{% block contentdown%}
+
+{% endblock %}

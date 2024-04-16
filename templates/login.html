@@ -1,3 +1,6 @@
+{% extends 'header.html' %}
+{% block contenttop %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,38 +8,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='login.css')}}">
-    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='header.css')}}">
+    <title>TravelHub - Sign in</title>
 </head>
-<body>
-    <!--aggiungo la riga che indica il form-->
+<body class="intero">
+{% endblock %}
+    {% block contentdown %}
+
     <form method="post">
     <div class="login-box">
+        
         <div class="login-header">
-            <header>Login</header>
+            
+            <header>Sign in</header>
+            
         </div>
+
         <div class="input-box">
-            <input type="text" class="input-field" placeholder="Email" autocomplete="off" required>
+            <input type="text" name = "username_input" class="input-field" placeholder="Email" autocomplete="email" required>
         </div>
+
         <div class="input-box">
-            <input type="password" class="input-field" placeholder="Password" autocomplete="off" required>
+            <input type="password" name = "password_input" class="input-field" placeholder="Password" autocomplete="new-password" required>
         </div>
-        <div class="forgot">
-            <section>
-                <input type="checkbox" id="check">
-                <label for="check">Remember me</label>
-            </section>
-            <section>
-                <a href="#">Forgot password</a>
-            </section>
+
+        <div class="small">
+            <!--A che cazzo serve <section>??-->
+            <a href="/forget" class="forget">Forgot yout password?</a>
         </div>
+        
         <div class="input-submit">
             <button class="submit-btn" id="submit"></button>
-            <label for="submit">Sign In</label>
+            <label for="submit">Sign in</label>
         </div>
         <div class="sign-up-link">
-            <p>Don't have account? <a href="#">Sign Up</a></p>
+            <p>Don't have account? <a href="/register">Sign up</a></p>
         </div>
+
+        <!--CODICE NUOVO-->
+
+        {% if something_failed %}
+        <div class = "failure">
+            {% if user_not_found %}
+            <h1>User not found, you have to <a href="/register">Sign up</a></h1>
+            {% else %}
+            <h1>You entered either a wrong username or a wrong password. Try again!</h1>
+            {% endif %}
+        </div>
+        {% endif %}
+        
+        
     </div>
     </form>
 </body>
 </html>
+{% endblock %}

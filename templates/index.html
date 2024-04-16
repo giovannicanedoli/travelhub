@@ -1,12 +1,18 @@
+{% extends 'header.html' %}
+{% block contenttop %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Slider</title>
+    <title>TravelHub - Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='header.css')}}">
 </head>
 <body>  
+    {% endblock %}
+    {% block contentdown %}
     <div class="slider">
 
 
@@ -101,7 +107,7 @@
             </div>
 
             <div class="item">
-                <img src = "{{url_for('static', filename='images/8.jpg')}}" />
+                <img src = "static/images/8.jpg" />
                 
 
                 <div class="content">
@@ -117,35 +123,35 @@
         <div class="thumbnail">
 
             <div class="item">
-                <img src = "{{url_for('static', filename='1.jpg')}}" />
+                <img src = "static/images/1.jpg" />
                 
             </div>
             <div class="item">
-                <img src = "{{url_for('static', filename='2.jpg')}}" />
+                <img src = "static/images/2.jpg" />
                 
             </div>
             <div class="item">
-                <img src = "{{url_for('static', filename='3.jpg')}}" />
+                <img src = "static/images/3.jpg" />
                 
             </div>
             <div class="item">
-                <img src = "{{url_for('static', filename='4.jpg')}}" />
+                <img src = "static/images/4.jpg" />
                 
             </div>
             <div class="item">
-                <img src = "{{url_for('static', filename='5.jpg')}}" />
+                <img src = "static/images/5.jpg" />
                 
             </div>
             <div class="item">
-                <img src = "{{url_for('static', filename='6.jpg')}}" />
+                <img src = "static/images/6.jpg" />
             
             </div>
             <div class="item">
-                <img src = "{{url_for('static', filename='7.jpg')}}" />
+                <img src = "static/images/7.jpg" />
                 
             </div>
             <div class="item">
-                <img src = "{{url_for('static', filename='8.jpg')}}" />
+                <img src = "static/images/8.jpg" />
                 
             </div>
 
@@ -160,3 +166,4 @@
     <script type = "text/javascript" src = "{{url_for('static', filename='animation.js')}}"></script>
 </body>
 </html>
+{% endblock %}

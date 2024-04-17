@@ -85,7 +85,6 @@ def register():
         username = request.form.get('username_input')
         password = request.form.get("password_input1")
         password_verify = request.form.get("password_input1")
-        username = request.form.get("username_input")
     
         password_ok = verify_password(password_verify)
 
@@ -140,9 +139,33 @@ def login():
 def renderize():
     return render_template("index.html")
 
-@app.route('/forget')
+
+@app.route('/forget', methods = ["GET", "POST"])
 def forgotpasswd():
-    return render_template('forgot.html')
+    if request.method == "POST":
+        username = request.form.get('username_input')
+        password = request.form.get("password_input1")
+        password_verify = request.form.get("password_input1")
+
+        password_ok = verify_password(password_verify)
+
+        user = Users.query.filter_by(username = username).first()
+        if not user:
+            #user is not present in db
+            return render_template("forgot.html", user_alive = False, password_match = True
+                                   , password_quality = True)
+        if password == password_verify and password_ok:
+            user.password = password_verify
+            db.session.commit()
+            return redirect(url_for("login"))
+        elif password != password_verify:
+            return render_template("forgot.html", user_alive = True, password_match = False, password_quality = True)
+        else:
+            return render_template("forgot.html", user_alive = True, password_match = True, password_quality = False)
+        
+    else:
+        return render_template("forgot.html")
+
 
 @app.route('/<something>')
 def goto(something):

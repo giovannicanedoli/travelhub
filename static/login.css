@@ -5,18 +5,20 @@
     font-family: 'Poppins',sans-serif;
 }
 
+::placeholder{
+    font-weight: 500;
+    color: #222;
+}
 
+body{
+    background: url('/static/images/background-login.jpg') no-repeat;
+    background-size: cover;
+}
 
 .intero{
     background-color: #CCCCCC;
 }
 
-
-body{
-    background: url('/static/images/background-login.jpg') no-repeat;
-    background-size: cover;
-    /*filter: blur(90px);*/
-}
 
 .password_block{
     background: #efff14;
@@ -48,7 +50,7 @@ body{
     height: 480px;
     padding: 30px;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 90px; /*spostato qui*/
     background-color: white;
     border-radius: 20%;
 
@@ -78,12 +80,6 @@ body{
     transition: .3s;
 }
 
-
-::placeholder{
-    font-weight: 500;
-    color: #222;
-}
-
 .small{
     position: relative;
     top:12px;
@@ -103,12 +99,7 @@ body{
     color: #0000007a;
 }
 
-section{
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-    color: #555;
-}
+
 
 #check{
     margin-right: 10px;
@@ -121,6 +112,14 @@ section{
 
 .forget:hover{
     text-decoration: none;
+}
+
+/*non so a cosa cazzo servono */
+section{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
 }
 
 section a{
@@ -165,7 +164,6 @@ section a{
 }
 
 
-/* da mettere per forza??? */
 .sign-up-link a:hover{
     text-decoration: none;
     color: #0000007a;

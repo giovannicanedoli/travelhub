@@ -1,18 +1,26 @@
 from flask import Flask,render_template, url_for, redirect, request, session
 from flask_sqlalchemy import SQLAlchemy
-
-
-
+from flask_mail import Mail, Message
 from flask_login import LoginManager, UserMixin, login_user, logout_user
 from datetime import timedelta
-
-
 from utils import *
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
+
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///dbfrom flask_mail import Mail, Message.sqlite"
 app.config["SECRET_KEY"] = "HOMEWORK LTW"
+#altra roba
+app.config['MAIL_SERVER'] = 'smtp.office365.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USERNAME'] = USERNAME
+app.config['MAIL_PASSWORD'] = PASSWORD
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
+
+mail = Mail(app)
+
 app.permanent_session_lifetime = timedelta(minutes=5)
+
 
 db = SQLAlchemy()
 
@@ -143,6 +151,34 @@ def renderize():
 @app.route('/forget', methods = ["GET", "POST"])
 def forgotpasswd():
     if request.method == "POST":
+        
+        username = request.form.get('username_input')
+
+        user = Users.query.filter_by(username = username).first()
+        if not user:
+            #user is not present in db
+            return render_template("forgot.html", user_alive = False, email_sent = False)
+
+        #bisogna aggiungere questo token e metterlo nella route
+        #ogni route diventerebbe del tipo /forget/<token>/confirm
+        #per ora lo lascio commentato
+        #token = generate_reset_token()
+        
+        msg = Message('Reset Password', sender = USERNAME, recipients=[user.username])
+
+        msg.body = f'Click on this link to reset the password: https://www.travelhub{url_for("confirm_forget")}.it'
+        mail.send(msg)
+
+        return render_template("forgot.html", user_alive = True, email_sent = True)
+    
+    else:
+        return render_template("forgot.html")
+    
+
+@app.route('/forget/confirm', methods = ["GET", "POST"])
+def confirm_forget():
+    if request.method == "POST":
+        
         username = request.form.get('username_input')
         password = request.form.get("password_input1")
         password_verify = request.form.get("password_input1")
@@ -152,19 +188,20 @@ def forgotpasswd():
         user = Users.query.filter_by(username = username).first()
         if not user:
             #user is not present in db
-            return render_template("forgot.html", user_alive = False, password_match = True
-                                   , password_quality = True)
+            return render_template("forgot.html", user_alive = False, password_match = True, password_quality = True, email_sent = False)
         if password == password_verify and password_ok:
+
             user.password = password_verify
             db.session.commit()
             return redirect(url_for("login"))
+            
         elif password != password_verify:
-            return render_template("forgot.html", user_alive = True, password_match = False, password_quality = True)
+            return render_template("forgot.html", user_alive = True, password_match = False, password_quality = True, email_sent = False)
         else:
-            return render_template("forgot.html", user_alive = True, password_match = True, password_quality = False)
+            return render_template("forgot.html", user_alive = True, password_match = True, password_quality = False, email_sent = False)
         
     else:
-        return render_template("forgot.html")
+        return render_template("confirm_forgot.html")
 
 
 @app.route('/<something>')

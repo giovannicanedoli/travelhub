@@ -27,19 +27,41 @@
             <div class="input-box">
                 <input type="text" name = "username_input" class="input-field" placeholder="Email" autocomplete="email" required>
             </div>
+            
+            
+            <div class="input-box">
+                <input type="password" name = "password_input1" id = "password_input1" class="input-field" placeholder="New Password" autocomplete="new-password" required>
+            </div>
+
+            <div class="input-box">
+                <input type="password" name = "password_input2" class="input-field" placeholder="Type Again" autocomplete="new-password" required>
+            </div>
 
             <div class="input-submit">
                 <button class="submit-btn" id="submit"></button>
-                <label for="submit">Send email ✈️</label>
+                <label for="submit">Reset email</label>
             </div>
-
-            <!--QUI TOCCA AGGIUSTARE IL CSS-->
+           
+            </form>
 
             {% if user_alive == False %}
                 <div class = "password_block">
                     <h1>User is not logged in, you have to first log in to change password!</h1>
                 </div>
             {% endif %}
+
+            {% if password_match == False %}
+                <div class = "password_block">
+                    <h1>Passwords don't match!</h1>
+                </div>
+            {% endif %}
+
+            {% if password_quality == False %}
+                <div class = "password_block">
+                    <h1>Password is too simple!</h1>
+                </div>
+            {% endif %}
+            
 
             {% if email_sent == True %}
                 <div class = "password_block">

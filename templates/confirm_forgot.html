@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='login.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='header.css')}}">
-    <title>TravelHub - Sign up</title>
+    <title>TravelHub - Forgot</title>
 
 </head>
 <body class="intero">
@@ -20,7 +20,7 @@
     <div class="login-box">
 
         <div class="login-header">
-            <header>Forgot password recovery</header>
+            <header>Password recovery</header>
         </div>
 
         <form action = "POST">
@@ -45,20 +45,20 @@
             </form>
 
             {% if user_alive == False %}
-                <div class = "password_block">
-                    <h1>User is not logged in, you have to first log in to change password!</h1>
+                <div class = "failure">
+                    <p>User is not logged in, you have to first log in to change password!</p>
                 </div>
             {% endif %}
 
             {% if password_match == False %}
-                <div class = "password_block">
-                    <h1>Passwords don't match!</h1>
+                <div class = "failure">
+                    <p>Passwords don't match!</p>
                 </div>
             {% endif %}
 
             {% if password_quality == False %}
-                <div class = "password_block">
-                    <h1>Password is too simple!</h1>
+                <div class = "failure">
+                    <p>Password is too simple!</p>
                 </div>
             {% endif %}
             

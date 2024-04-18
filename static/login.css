@@ -101,7 +101,7 @@ body {
 
 .login-header{
     text-align: center;
-    margin: 20px 0 40px 0;
+    margin: 0 0 10% 0;
 }
 
 .login-header header{
@@ -111,11 +111,12 @@ body {
 }
 
 .input-box .input-field{
+    align-items: center;
     width: 90%;
-    height: 60px;
+    height: 60px; /*CAMBIAREEEE-------------------------------------*/
     font-size: 17px;
-    padding: 0 25px;
-    margin-bottom: 15px;
+    padding: 0 5%;
+    margin-bottom: 5%;
     border-radius: 30px;
     border: none;
     outline: none;
@@ -125,11 +126,11 @@ body {
 
 .small{
     position: relative;
-    top:12px;
-    left: 135px;
+    margin-top: 2%;
+    margin: 5% auto; 
     display: flex;
     justify-content: space-between;
-    margin-bottom: 40px;
+    margin-bottom:  5%;
 }
 
 .small a{
@@ -141,14 +142,6 @@ body {
 .small a:hover{
     text-decoration: none;
     color: #0000007a;
-}
-
-
-
-
-#check{
-    margin-right: 10px;
-    color:#efff14
 }
 
 .forget{
@@ -177,7 +170,7 @@ section a{
 
 .submit-btn{
     width: 100%;
-    height: 60px;
+    height: 250%;/*CAMBIAREEEE-------------------------------------*/
     background: #efff14;
     border: none;
     border-radius: 30px;
@@ -188,7 +181,7 @@ section a{
 .input-submit label{
     font-weight: 600;
     position: absolute;
-    top: 45%;
+    top: 120%;
     left: 50%;
     color: #000;
     -webkit-transform: translate(-50%, -50%);
@@ -201,7 +194,7 @@ section a{
 .sign-up-link{
     text-align: center;
     font-size: 15px;
-    margin-top: 20px;
+    margin-top: 10%;
 }
 
 .sign-up-link a{

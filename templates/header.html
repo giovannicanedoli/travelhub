@@ -8,10 +8,9 @@
     <li><a href="/" class="link"><button class="pulsante" type="button">HOME</button></a></li>
     <!--<% if user_signed_in? %>-->
     {% if session %}
-        <li><a href="#" class="link"><button class="pulsante" type="button">LOG OUT</button></a></li>
+        <li><a href="/logout" class="link"><button id = "logout" class="pulsante" type="button">LOG OUT</button></a></li>
         <li><a href="#" class="link"><button class="pulsante" type="button">LIKE HISTORY</button></a></li>
         <li><a href="/login" class="link"><button class="pulsante" type="button">SIGN IN</button></a></li><!--TEMPORANEO-->
-
 
     {% else %}
         <li><a href="/login" class="link"><button class="pulsante" type="button">SIGN IN</button></a></li>

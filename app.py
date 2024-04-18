@@ -208,12 +208,14 @@ def confirm_forget(token):
 def goto(something):
     return redirect(url_for('main_route'))
 
-'''
+
 @app.route("/logout")
 def logout():
     logout_user()
-    return redirect(url_for("home"))
-'''
+    session.clear()
+
+    return redirect(url_for("main_route"))
+
 
 if __name__ == '__main__':
     app.run(debug=True)

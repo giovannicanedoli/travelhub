@@ -42,15 +42,16 @@
 
         
         {% if user_alive == True %}
-            <div class = "password_block">
-                <h1>User already present in database!</h1>
+            <div class = "password_block faile">
+                <p>User already present in database!</p>
             </div>
         {% endif %}
 
         {% if password_ok == False %}
-            <div class = "password_block">
-                <h1>Password is too simple!</h1>
+            <div class = "password_block failure">
+                <p>Password is too simple!</p>
             </div>
+            <br>
         {% endif %}
 
     </div>

@@ -71,11 +71,9 @@ class Like(db.Model):
 
 db.init_app(app)
 
-
 with app.app_context():
     db.create_all()
 
-# Creates a user loader callback that returns the user object given an id
 @login_manager.user_loader
 def loader_user(user_id):
     return Users.query.get(user_id)
@@ -162,12 +160,14 @@ def forgotpasswd():
         #bisogna aggiungere questo token e metterlo nella route
         #ogni route diventerebbe del tipo /forget/<token>/confirm
         #per ora lo lascio commentato
-        #token = generate_reset_token()
+        
+        token = generate_reset_token()
         
         msg = Message('Reset Password', sender = USERNAME, recipients=[user.username])
 
-        msg.body = f'Click on this link to reset the password: https://www.travelhub{url_for("confirm_forget")}.it'
-        mail.send(msg)
+        #se nella pagina di confirm_forget metti il token giusto allora vai avanti altrimenti ba
+        msg.body = f'Click on this link to reset the password: https://www.travelhub{url_for("confirm_forget", token = token, _external = True)}.it'
+        mail.send(msg)        
 
         return render_template("forgot.html", user_alive = True, email_sent = True)
     
@@ -175,8 +175,8 @@ def forgotpasswd():
         return render_template("forgot.html")
     
 
-@app.route('/forget/confirm', methods = ["GET", "POST"])
-def confirm_forget():
+@app.route('/forget/<token>/confirm', methods = ["GET", "POST"])
+def confirm_forget(token):
     if request.method == "POST":
         
         username = request.form.get('username_input')

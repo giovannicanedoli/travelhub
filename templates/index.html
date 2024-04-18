@@ -7,6 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TravelHub - Home</title>
+<!--
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+-->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='header.css')}}">
 </head>
@@ -22,17 +26,13 @@
                 
                 <img src = "{{url_for('static', filename='images/1.jpg')}}" />
 
-
                 <div class="content">
                     <div class="title">TOKYO</div>
                     <div class="type">JAPAN</div>
                     <div class="description">CITY DESCRIPTION HERE</div>
-                    <div class="button">
-                        <button>SEE MORE</button>
-                    </div>
                 </div>
             </div>
-
+                
             <div class="item">
                 <img src = "{{url_for('static', filename='images/2.jpg')}}" />
 
@@ -41,9 +41,7 @@
                     <div class="title">LONDON</div>
                     <div class="type">UK</div>
                     <div class="description">CITY DESCRIPTION HERE</div>
-                    <div class="button">
-                        <button>SEE MORE</button>
-                    </div>
+
                 </div>
             </div>
 
@@ -117,7 +115,6 @@
 
                 </div>
             </div>
-
         </div>
         
         <div class="thumbnail">

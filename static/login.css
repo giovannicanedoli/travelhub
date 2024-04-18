@@ -5,18 +5,47 @@
     font-family: 'Poppins',sans-serif;
 }
 
-::placeholder{
-    font-weight: 500;
-    color: #222;
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
-body{
-    background: url('/static/images/background-login.jpg') no-repeat;
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('/static/images/cloud.jpg');
     background-size: cover;
+    filter: blur(10px);
+    z-index: -1;
 }
 
-.intero{
-    background-color: #CCCCCC;
+
+
+/*plane animation*/
+
+
+#plane {
+    z-index: 0;
+    position: absolute;
+    top: -200px;
+    left: -210px;
+    height: 100%;
+    width: 100%;
+    background-image: url('/static/images/plane.png');
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    
+}
+
+@keyframes planeAnim {
+  0%   {left:-100px; top: 600px; width: 100px; height: 60px; transform: rotate(15deg);}
+  25% {transform: rotate(0deg)}
+  100% {left: 1700px; top: -100px;; width: 600px; height: 400px; transform: rotate(40deg);}
 }
 
 
@@ -35,26 +64,42 @@ body{
 
 .failure{
     background: #efff14;
-    border-radius: 20px;
-    font-size: 10px;
+    border-radius: 30px;
+    font-size: 17px;
     text-align: center;
     border: none;
     outline: none;
+    color: #000;
+    font-weight: 500;
 }
 
+.failure a{
+    color: #000;
+    font-weight: 600;
+}
+
+
+.failure a:hover{
+    text-decoration: none;
+    color: #0000007a;
+}
 .login-box{
+    z-index: 1;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 440px;
-    height: 480px;
-    padding: 30px;
-    margin: auto;
-    margin-top: 90px; /*spostato qui*/
-    background-color: white;
+    width: 30%;
+    height: 60%;
+    padding: 2.5%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffffa9;
     border-radius: 20%;
 
 }
+
 
 .login-header{
     text-align: center;
@@ -76,7 +121,7 @@ body{
     border-radius: 30px;
     border: none;
     outline: none;
-    box-shadow: 0px 5px 10px 1px rgba(0,0,0, 0.05);
+    box-shadow: 0px 5px 10px 1px #0000003c;
     transition: .3s;
 }
 
@@ -90,14 +135,16 @@ body{
 }
 
 .small a{
-    color: black;
-    font-weight: 600;
+    color: #000;
+    font-weight: 500;
 }
+
 
 .small a:hover{
     text-decoration: none;
     color: #0000007a;
 }
+
 
 
 
@@ -141,6 +188,7 @@ section a{
 }
 
 .input-submit label{
+    font-weight: 600;
     position: absolute;
     top: 45%;
     left: 50%;
@@ -172,7 +220,9 @@ section a{
 .submit-btn:hover{
     background: #efff146f;
     transform: scale(1.05,1);
+    
 }
+
 
 .input-field:hover{
     transform: scale(1.05,1);

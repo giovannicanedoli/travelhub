@@ -15,14 +15,15 @@
 <body class="intero">
     {% endblock %}
     {% block contentdown %}
-
+    <div class="background"></div>
+    <div id="plane"></div>
     <form method="post">
     <div class="login-box">
         <div class="login-header">
             <header>Sign up</header>
         </div>
         <div class="input-box">
-            <input type="text" name = "username_input" class="input-field" placeholder="Email" autocomplete="email" required>
+            <input type="text" name = "username_input" class="input-field" placeholder="Email" autocomplete="email"  onclick="myFunction()" required>
         </div>
         <div class="input-box">
             <input type="password" name = "password_input1" id = "password_input1" class="input-field" placeholder="Password" autocomplete="new-password" required>
@@ -54,6 +55,7 @@
 
     </div>
     </form>
+<script type = "text/javascript" src = "{{url_for('static', filename='plane.js')}}"></script>
 </body>
 </html>
 {% endblock %}

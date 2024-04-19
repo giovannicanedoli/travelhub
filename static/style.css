@@ -1,10 +1,20 @@
 .foto {
     display: block;
-    max-width: 50%;
+    max-width: 60%;
     border-radius: 10%;
     max-height: 50%;
     z-index: 0;
+    animation: widener linear both;
+    animation-timeline: view();
+    background-clip: text;  /*FORSE INUTILE*/
+    -webkit-background-clip: text;  /*FORSE INUTILE*/
 }
+
+@keyframes widener {
+    0% {max-width: 20%; border-radius: 1%;}
+    50% {max-width: 60%; border-radius: 10%;}
+}
+
 
 .cuore {
     width: 1%;
@@ -27,8 +37,7 @@ body {
 .images{
     z-index: 0;
     display: flex;
-    position: relative;
-    justify-content:center  ;
+    justify-content: center;
     align-items: center;
     margin-bottom: 5%;
     animation: scroll linear both;

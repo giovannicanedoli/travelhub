@@ -56,7 +56,7 @@ class Cities(db.Model):
         self.photo = photo
 
     def __repr__(self):
-        return f'<nome {self.nome}, paese {self.paese}>, like {self.like}'
+        return f'{self.photo}'
 
 class Like(db.Model):
     __tablename__ = 'likes'
@@ -82,7 +82,9 @@ def loader_user(user_id):
     
 @app.route("/")
 def main_route():
-    return render_template("index.html")
+    photo=Cities.query.all()
+    city=Cities.query.all()
+    return render_template("index.html", photo=photo, city=city)
 
 
 @app.route('/register', methods=["GET", "POST"])

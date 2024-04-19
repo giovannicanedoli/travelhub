@@ -207,86 +207,39 @@ section a{
 
 /*-------------------------------MEDIA QUERIES----------------------------------------------*/
 
-/* .login-box{
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 25%;
-    height: 55%;
-    padding: 2.5%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffffa9;
-    border-radius: 20%;
-} */
-
-@media (min-width: 300px) {
+@media (max-width:700px){
     .login-box{
-        width: 70%;
-        height: 45%;
-    }
-}
-
-@media (min-width: 350px) {
-    .login-box{
-        width: 60%;
-    }
-}
-
-/* sm */
-/* @media (min-width: 550px) {
-    .login-box{
-        width: 80%;
-    }
-} */
-
-@media (min-width: 400px){
-    .login-box{
-        width: 60%;
-    }
-}
-
-@media (min-width: 450px){
-    .login-box{
-        width: 60%;
+        height: 90%;
+        width: 50%;
     }
 }
 
 
-/* md */
-@media (min-width: 600px) {
+@media (max-width:800px){
     .login-box{
-        width: 60%;
-    }   
-}
-
-@media (min-width: 700px){
-    .login-box{
-        width: 70%;
         height: 50%;
+        width: 50%;
     }
 }
 
-@media (min-width: 997px){
+@media (max-width:1000px){
     .login-box{
-        width: 70%;
+        height: 60%;
+        width: 50%;
     }
 }
 
-/* lg */
-@media (min-width: 1024px) {
 
+@media (max-width:1300px){
+    .login-box{
+        height: 60%;
+        width: 40%;
+    }
 }
 
-/* xl */
-@media (min-width: 1280px) {
-    
-}
-
-/* 2xl */
-@media (min-width: 1536px) {
-    
+@media (max-width: 1500px){
+    .login-box{
+        height: 60%;
+        width: 40%;
+    }
 }

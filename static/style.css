@@ -1,8 +1,17 @@
-img {
+.foto {
     display: block;
     max-width: 50%;
     border-radius: 10%;
     max-height: 50%;
+    z-index: 0;
+}
+
+.cuore{
+    visibility: hidden;
+    z-index: 1;
+    
+    top: 0;
+    left: 0;
 }
 
 body {
@@ -11,7 +20,7 @@ body {
 
 .images{
     display: flex;
-    justify-content:center  ;
+    justify-content:center;
     align-items: center;
     margin-bottom: 5%;
 }

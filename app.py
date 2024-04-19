@@ -7,7 +7,7 @@ from utils import *
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///dbfrom flask_mail import Mail, Message.sqlite"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 app.config["SECRET_KEY"] = "HOMEWORK LTW"
 #altra roba
 app.config['MAIL_SERVER'] = 'smtp.office365.com'
@@ -47,6 +47,7 @@ class Cities(db.Model):
     nome = db.Column(db.String(250), nullable = False)
     paese = db.Column(db.String(250), nullable = False)
     photo = db.Column(db.String(250), nullable = False)
+    description = db.Column(db.String(250), nullable = False)
 
     def __init__(self,like = 0, nome = None, paese = None, photo = None):
         self.like = like
@@ -157,16 +158,12 @@ def forgotpasswd():
             #user is not present in db
             return render_template("forgot.html", user_alive = False, email_sent = False)
 
-        #bisogna aggiungere questo token e metterlo nella route
-        #ogni route diventerebbe del tipo /forget/<token>/confirm
-        #per ora lo lascio commentato
-        
         token = generate_reset_token()
         
         msg = Message('Reset Password', sender = USERNAME, recipients=[user.username])
 
         #se nella pagina di confirm_forget metti il token giusto allora vai avanti altrimenti ba
-        msg.body = f'Click on this link to reset the password: https://www.travelhub{url_for("confirm_forget", token = token, _external = True)}.it'
+        msg.body = f'Click on this link to reset the password: {url_for("confirm_forget", token = token, _external = True)}'
         mail.send(msg)        
 
         return render_template("forgot.html", user_alive = True, email_sent = True)

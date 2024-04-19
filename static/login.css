@@ -26,8 +26,8 @@ body {
 #plane {
     z-index: 0;
     position: absolute;
-    top: -200px;
-    left: -210px;
+    top: -200%;
+    left: -210%;
     height: 100%;
     width: 100%;
     background-image: url('/static/images/plane.png');
@@ -39,24 +39,19 @@ body {
 }
 
 @keyframes planeAnim {
-  0%   {left:-100px; top: 600px; width: 100px; height: 60px; transform: rotate(15deg);}
-  25% {transform: rotate(0deg)}
-  100% {left: 1700px; top: -100px;; width: 600px; height: 400px; transform: rotate(40deg);}
+  0%   {left:-18%; top: -100%; width: 100px; height: 60px; transform: rotate(15deg);filter: blur(1px);}   /*per il motion blur*/
+  25% {transform: rotate(0deg);}
+  100% {left: 150%; top: 80%; width: 600px; height: 400px; transform: rotate(40deg); filter: blur(0px);}
 }
-
 
 .password_block{
     background: #efff14;
     border-radius: 20px;
     text-align: center;
     font-size: 10px;
-
-    /*width: 10px;*/
-
     border: none;
     outline: none;
 }
-
 
 .failure{
     background: #efff14;
@@ -74,18 +69,18 @@ body {
     font-weight: 600;
 }
 
-
 .failure a:hover{
     text-decoration: none;
     color: #0000007a;
 }
+
 .login-box{
     z-index: 1;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 30%;
-    height: 60%;
+    width: 25%;
+    height: 55%;
     padding: 2.5%;
     position: absolute;
     top: 50%;
@@ -93,7 +88,6 @@ body {
     transform: translate(-50%, -50%);
     background-color: #ffffffa9;
     border-radius: 20%;
-
 }
 
 
@@ -124,8 +118,8 @@ body {
 
 .small{
     position: relative;
-    margin-top: 2%;
-    margin: 5% auto; 
+    margin-top: 0% ;
+    margin: 0% auto; 
     display: flex;
     justify-content: space-between;
     margin-bottom:  5%;

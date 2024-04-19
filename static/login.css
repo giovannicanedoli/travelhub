@@ -203,10 +203,96 @@ section a{
 .submit-btn:hover{
     background: #efff146f;
     transform: scale(1.05,1);
-    
+
 }
 
 
 .input-field:hover{
     transform: scale(1.05,1);
+}
+
+/*-------------------------------MEDIA QUERIES----------------------------------------------*/
+
+/* .login-box{
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 25%;
+    height: 55%;
+    padding: 2.5%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffffa9;
+    border-radius: 20%;
+} */
+
+@media (min-width: 300px) {
+    .login-box{
+        width: 70%;
+        height: 45%;
+    }
+}
+
+@media (min-width: 350px) {
+    .login-box{
+        width: 60%;
+    }
+}
+
+/* sm */
+/* @media (min-width: 550px) {
+    .login-box{
+        width: 80%;
+    }
+} */
+
+@media (min-width: 400px){
+    .login-box{
+        width: 60%;
+    }
+}
+
+@media (min-width: 450px){
+    .login-box{
+        width: 60%;
+    }
+}
+
+
+/* md */
+@media (min-width: 600px) {
+    .login-box{
+        width: 60%;
+    }   
+}
+
+@media (min-width: 700px){
+    .login-box{
+        width: 70%;
+        height: 50%;
+    }
+}
+
+@media (min-width: 997px){
+    .login-box{
+        width: 70%;
+    }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+
+}
+
+/* xl */
+@media (min-width: 1280px) {
+    
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+    
 }

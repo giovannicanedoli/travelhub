@@ -56,7 +56,7 @@ class Cities(db.Model):
         self.photo = photo
 
     def __repr__(self):
-        return f'<nome {self.nome}, paese {self.paese}>, like {self.like}'
+        return f'{self.photo}'
 
 class Like(db.Model):
     __tablename__ = 'likes'

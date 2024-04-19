@@ -1,27 +1,27 @@
 {% block contenttop%}
 
 {% endblock %}
+<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
 <header>
-<div class="header">
-<nav>
-<ul class="ul">
-    <li><a href="/" class="link"><button class="pulsante" type="button">HOME</button></a></li>
 
-    {% if session %}
-        <li><a href="/logout" class="link"><button id = "logout" class="pulsante" type="button">LOG OUT</button></a></li>
-        <li><a href="#" class="link"><button class="pulsante" type="button">LIKE HISTORY</button></a></li>
+    <div class="menu"><a href="/" class="link"><button class="pulsante" type="button">HOME</button></a></div>
 
-    {% else %}
-        <li><a href="/login" class="link"><button class="pulsante" type="button">SIGN IN</button></a></li>
-        <li><a href="/register" class="link"><button class="pulsante" type="button">SIGN UP</button></a></li>
-        <li><a href="#" class="link"><button class="pulsante" type="button">ABOUT US</button></a></li>
-    {% endif %}
-     
+{% if session %}
+    <div class="menu"><a href="/logout" class="link"><button id = "logout" class="pulsante" type="button">LOG OUT</button></a></div>
+    <div class="menu"><a href="#" class="link"><button class="pulsante" type="button">LIKE HISTORY</button></a></div>
+    <div class="menu"><a href="#" class="link"><button class="pulsante" type="button">FAVORITE</button></a></div>
+
+{% else %}
+    <div class="menu"><a href="/login" class="link"><button class="pulsante" type="button">SIGN IN</button></a></div>
+    <div class="menu"><a href="/register" class="link"><button class="pulsante" type="button">SIGN UP</button></a></div>
+{% endif %}
+    <div class="menu"><a href="#" class="link"><button class="pulsante" type="button">ABOUT US</button></a></div>
+
+    
  
 
-</ul>
-</nav>
-</div>
+
 </header>
 
 {% block contentdown%}

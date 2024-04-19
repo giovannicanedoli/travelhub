@@ -6,23 +6,41 @@
     z-index: 0;
 }
 
-.cuore{
+.cuore {
+    width: 1%;
+}
+
+.png{
     visibility: hidden;
     z-index: 1;
-    
-    top: 0;
-    left: 0;
+    top: 50%;
+    margin-left: -2500%;  /*REGOLARE PER CENTRARE IL CUORE*/
+    opacity: 0.8;
+
 }
 
 body {
     background-color: #676767;
 }
 
+
 .images{
+    z-index: 0;
     display: flex;
-    justify-content:center;
+    position: relative;
+    justify-content:center  ;
     align-items: center;
     margin-bottom: 5%;
+    animation: scroll linear both;
+    animation-timeline: view();
+    background-clip: text;  /*FORSE INUTILE*/
+    -webkit-background-clip: text;  /*FORSE INUTILE*/
+
+}
+
+@keyframes scroll {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
 }
 
 .pulsantiera {

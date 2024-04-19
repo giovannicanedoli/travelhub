@@ -10,7 +10,7 @@
     
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='header.css')}}">
-    
+
 </head>
 <body>  
     {% endblock %}
@@ -19,7 +19,9 @@
         <div class="images">
             
             <img id = "foto{{ loop.index }}" src="{{ image }}" class = "foto"> <!--ASSEGNO UN ID VARIABILE-->
-            <img id = "cuore{{ loop.index }}" class = "cuore" src = "static/images/heart.png" width="300" height="300">
+            <div class="cuore">
+                <img id = "cuore{{ loop.index }}" class = "png" src = "static/images/heart.png" width="300" height="300" >
+            </div>
             
 
             <div class="pulsantiera">

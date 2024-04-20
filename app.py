@@ -1,4 +1,4 @@
-from flask import Flask,render_template, url_for, redirect, request, session
+from flask import Flask,render_template, url_for, redirect, request, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
 from flask_login import LoginManager, UserMixin, login_user, logout_user
@@ -56,7 +56,7 @@ class Cities(db.Model):
         self.photo = photo
 
     def __repr__(self):
-        return f'{self.photo}'
+        return f'<City {self.nome} in {self.paese}, likes: {self.like_messi}, photo: {self.photo}>'
 
 class Like(db.Model):
     __tablename__ = 'likes'
@@ -79,12 +79,11 @@ with app.app_context():
 def loader_user(user_id):
     return Users.query.get(user_id)
 
-    
+
 @app.route("/")
 def main_route():
-    photo=Cities.query.all()
-    city=Cities.query.all()
-    return render_template("index.html", photo=photo, city=city)
+    cities=Cities.query.all()
+    return render_template("index.html", cities=cities)
 
 
 @app.route('/register', methods=["GET", "POST"])
@@ -127,9 +126,8 @@ def login():
         password_verify = request.form.get("password_input")
         user = Users.query.filter_by(username = username).first()
         
-        #qui eventualmente otp
         if user and user.password == password_verify:
-            login_user(user)                #AttributeError: 'Users' object has no attribute 'is_active'    non so in realtà a che serva sta funzione
+            login_user(user)                
             return redirect(url_for("main_route"))
         
         elif not user:
@@ -143,11 +141,6 @@ def login():
     
     else:
         return render_template("login.html", something_failed = False)
-
-@app.route("/home")
-def renderize():
-    return render_template("index.html")
-
 
 @app.route('/forget', methods = ["GET", "POST"])
 def forgotpasswd():
@@ -214,6 +207,21 @@ def logout():
     session.clear()
 
     return redirect(url_for("main_route"))
+
+
+@app.route('/update_data', methods = ["POST"])
+def updata_db_data(methods = ["POST", "GET"]):
+    city_id = request.form.get('cityid')
+    city_name = request.form.get('cityname')
+    city_description = request.form.get('citydescription')
+
+    # Now you can use the extracted data
+    # For example, let's just print them
+    print(f'City ID: {city_id}, City Name: {city_name}, City Description: {city_description}')
+
+    # You can return a response to the AJAX call
+    response = {'status': 'success', 'message': 'Data received successfully'}
+    return jsonify(response)
 
 
 if __name__ == '__main__':

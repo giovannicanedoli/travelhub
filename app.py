@@ -107,8 +107,10 @@ def register():
             db.session.commit()
 
             session.permanent = True
+            
             session['username'] = username
             session['password'] = password
+            session['id'] = user.id
 
             return redirect(url_for("main_route"))
         else:
@@ -136,7 +138,7 @@ def login():
         else:
             return render_template("login.html", something_failed = True, user_not_found = False)
         
-    elif 'username' in session and 'password' in session:
+    elif 'username' in session and 'password' in session and 'id' in session:
         return redirect(url_for("main_route"))
     
     else:
@@ -210,17 +212,47 @@ def logout():
 
 
 @app.route('/update_data', methods = ["POST"])
-def updata_db_data():
-    city_id = request.form.get('cityid')
+def update_db_data():
+
+     # print(f'City ID: {city_id}')
+
+    # # You can return a response to the AJAX call
+    # response = {'status': 'success', 'message': 'Data received successfully'}
+    # return jsonify(response)
+
+    form_sent = request.form
+    #print(form_sent)
+
+    if 'username' in session and 'password' in session and 'id' in session:
+
+        city_id = form_sent.getlist('primarykey')[0]
+        city = Cities.query.filter_by(id = city_id).first()
+        
+        
+        if not city:
+            raise Exception('id not found, nso che cazzo è successo')
+        
+        city.like_messi += 1
+        
+
+        user_id = session.get('id')
+
+        like = Like()
+        like.users_id = user_id
+        like.cities_id = city_id
+        db.session.add(like)
+        db.session.commit()
+
+
+        print("ao è andato tutto bene")
+        a = {'code' : 200}
+
+    else:
+        print('utente non loggato!')
+        a = {'code' : 400}
     
 
-    # Now you can use the extracted data
-    # For example, let's just print them
-    print(f'City ID: {city_id}')
-
-    # You can return a response to the AJAX call
-    response = {'status': 'success', 'message': 'Data received successfully'}
-    return jsonify(response)
+    return jsonify(a)
 
 
 if __name__ == '__main__':

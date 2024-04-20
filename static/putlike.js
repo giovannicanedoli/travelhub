@@ -1,54 +1,40 @@
-// function showHeart(cuore, cityname, citydescription) {
-//     var heart = document.getElementById(cuore);
+/*
+javascript manda una richiesta al server
+
+il server verifica se l'utente è loggato e se la primary key esiste
+
+se l'utente è loggato allora si può mandare un valora a js che provvede a 
+ "mettere" il like e dopo a levarlo passata na certa
+
+se l'utente non è loggato allora non si manda un altro valora a js che 
+provvede a mostrare un altro messaggio di errore
     
-//     heart.style.visibility = "visible";
-    
-//     // setTimeout(function() {
-//     //     heart.style.visibility = "hidden";
-//     // }, 300);
+PD
 
-//     $.ajax({
-//         //qui devo mandare altri dati, utente e città a cui o messo
-//         // mi piace con relativi dati annessi
-
-//         url: "update_data",
-//         type: "POST",
-
-//         data: {
-//             cityid:cityid,
-//             cityname:cityname,
-//             citydescription:citydescription
-//         },
-        
-//         success: function(resp){
-//             $('div#response').append(resp.data);
-//         }
-//     });
-
-// }
+*/
 
 $(document).ready(function() {
 
     $('.like.pulsante').click(function() {
-        //alert("btn prssed!" + $(this).val());
-        var param = $(this).val(); 
+        var pkey = $(this).val(); 
         
-        var heart = document.getElementById('cuore' + param);
+        var heart = document.getElementById('cuore' + pkey);
         heart.style.visibility = "visible";
         
         $.ajax({
-            url: 'update_data/',
+            url: "/update_data",
             type: 'POST',
             data: {
-                cityid: param, //mando la primary al server
-            }, // Data to send in the request.
+                'primarykey': pkey, //mando la primary al server
+            }, 
 
-            dataType: 'json', // The type of data you're expecting back from the server.
-            success: function(data) { // Function to call if the request succeeds.
-                console.log(data);
-                alert("ao ho ricevuto");
+            dataType: 'json',
+            success: function(data) { 
+                heart.style.visibility = "hidden";
             },
-            error: function(jqXHR, textStatus, errorThrown) { // Function to call if the request fails.
+
+            error: function(jqXHR, textStatus, errorThrown) { 
+
                 console.error('Error: ' + textStatus, errorThrown);
             }
         });

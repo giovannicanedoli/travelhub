@@ -1,1 +1,2 @@
 volendo puoi cambiare password ad un'altra email
+bug con la primary key di users, come passo a session la primary key generata dal db?

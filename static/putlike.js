@@ -8,9 +8,6 @@ se l'utente è loggato allora si può mandare un valora a js che provvede a
 
 se l'utente non è loggato allora non si manda un altro valora a js che 
 provvede a mostrare un altro messaggio di errore
-    
-PD
-
 */
 
 $(document).ready(function() {
@@ -19,18 +16,27 @@ $(document).ready(function() {
         var pkey = $(this).val(); 
         
         var heart = document.getElementById('cuore' + pkey);
-        heart.style.visibility = "visible";
         
         $.ajax({
-            url: "/update_data",
+            url: "/leavealike",
             type: 'POST',
             data: {
                 'primarykey': pkey, //mando la primary al server
             }, 
 
             dataType: 'json',
-            success: function(data) { 
-                heart.style.visibility = "hidden";
+            success: function(data) {
+                var code = data.code;
+                if(code === '200'){
+                    heart.style.visibility = "visible";
+                    
+                    setTimeout(function(){
+                        heart.style.visibility = "hidden";
+                    },300);
+                }else{
+                    console.log("ENSOMMA..."); //mostrare qui a schermo qualcosa che indica che deve loggarsi
+                }
+
             },
 
             error: function(jqXHR, textStatus, errorThrown) { 
@@ -39,4 +45,39 @@ $(document).ready(function() {
             }
         });
     });
+
+    $('.like.pulsante2').click(function() {
+        var pkey = $(this).val(); 
+        
+        var heart = document.getElementById('cuore' + pkey);
+        
+        $.ajax({
+            url: "/savephoto",
+            type: 'POST',
+            data: {
+                'primarykey': pkey, //mando la primary al server
+            }, 
+
+            dataType: 'json',
+            success: function(data) {
+                var code = data.code;
+                if(code === '200'){
+                    heart.style.visibility = "visible";
+                    
+                    setTimeout(function(){
+                        heart.style.visibility = "hidden";
+                    },300);
+                }else{
+                    console.log("ENSOMMA..."); //mostrare qui a schermo qualcosa che indica che deve loggarsi
+                }
+                
+            },
+
+            error: function(jqXHR, textStatus, errorThrown) { 
+
+                console.error('Error: ' + textStatus, errorThrown);
+            }
+        });
+    });
+
 });

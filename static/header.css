@@ -66,3 +66,9 @@ header {
     color:#444;
 }
 
+.pulsante2:hover{
+    background: #efff146f;
+    border-radius: 15px;
+    text-decoration: none;
+    color:#444;
+}

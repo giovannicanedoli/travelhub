@@ -5,6 +5,8 @@ from flask_login import LoginManager, UserMixin, login_user, logout_user
 from datetime import timedelta
 from utils import *
 
+import sys
+
 app = Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
@@ -20,7 +22,6 @@ app.config['MAIL_USE_SSL'] = False
 mail = Mail(app)
 
 app.permanent_session_lifetime = timedelta(minutes=5)
-
 
 db = SQLAlchemy()
 
@@ -64,7 +65,7 @@ class Like(db.Model):
     users_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     cities_id = db.Column(db.Integer, db.ForeignKey('cities.id'))
 
-    #uselist = False -> un record è associato ad un record delle classi sopra
+    #uselist = False -> un record è associato ad un record delle classi sopra, da mettere???
 
     users_like = db.relationship("Users", backref=db.backref("users_like", uselist=False))
     cities_like = db.relationship("Cities", backref=db.backref("cities_like", uselist=False))
@@ -78,7 +79,6 @@ class Saves(db.Model):
     users_save = db.relationship("Users", backref=db.backref("users_save", uselist=False))
     cities_save = db.relationship("Cities", backref=db.backref("cities_save", uselist=False))
 
-
 db.init_app(app)
 
 with app.app_context():
@@ -88,12 +88,10 @@ with app.app_context():
 def loader_user(user_id):
     return Users.query.get(user_id)
 
-
 @app.route("/")
 def main_route():
     cities=Cities.query.all()
     return render_template("index.html", cities=cities)
-
 
 @app.route('/register', methods=["GET", "POST"])
 def register():
@@ -268,7 +266,8 @@ def save_photo():
         city = Cities.query.filter_by(id = city_id).first()
         
         if not city:
-            raise Exception('id not found, nso che cazzo è successo')        
+            raise Exception('id not found, nso che cazzo è successo')
+            sys.exit(-1)        
 
         user_id = session.get('id')
 

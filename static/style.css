@@ -29,6 +29,14 @@
 
 }
 
+.bookmark{
+    visibility: hidden;
+    z-index: 1;
+    top: 50%;
+    margin-left: -2500%;  /*REGOLARE PER CENTRARE IL CUORE*/
+    opacity: 0.8;
+}
+
 body {
     background-color: #676767;
 }

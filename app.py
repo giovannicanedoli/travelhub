@@ -210,14 +210,13 @@ def logout():
 
 
 @app.route('/update_data', methods = ["POST"])
-def updata_db_data(methods = ["POST", "GET"]):
+def updata_db_data():
     city_id = request.form.get('cityid')
-    city_name = request.form.get('cityname')
-    city_description = request.form.get('citydescription')
+    
 
     # Now you can use the extracted data
     # For example, let's just print them
-    print(f'City ID: {city_id}, City Name: {city_name}, City Description: {city_description}')
+    print(f'City ID: {city_id}')
 
     # You can return a response to the AJAX call
     response = {'status': 'success', 'message': 'Data received successfully'}

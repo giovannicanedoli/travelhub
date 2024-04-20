@@ -93,7 +93,7 @@ def register():
 
         username = request.form.get('username_input')
         password = request.form.get("password_input1")
-        password_verify = request.form.get("password_input1")
+        password_verify = request.form.get("password_input2")
     
         password_ok = verify_password(password_verify)
 
@@ -113,7 +113,7 @@ def register():
 
             return redirect(url_for("main_route"))
         else:
-            return render_template("signup.html", password_ok=password_ok)
+            return render_template("signup.html", password_ok=password_ok, password=password, password_verify=password_verify)
     elif 'username' in session and 'password' in session:
         return redirect(url_for("main_route"))
     else:
@@ -214,6 +214,10 @@ def logout():
     session.clear()
 
     return redirect(url_for("main_route"))
+
+@app.route("/like")
+def like():
+    return render_template("like.html")
 
 
 if __name__ == '__main__':

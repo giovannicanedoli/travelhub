@@ -20,15 +20,17 @@
     {% for city in cities %}
         <div class="images">
             
-            <img id = "foto{{ city.id }}" src="{{ city.photo }}" class = "foto"> <!--ASSEGNO UN ID VARIABILE-->
+            <img id = "foto{{ city.id }}" src="{{ city.photo }}" class = "foto" data-value = '{{ city.id }}'> <!--ASSEGNO UN ID VARIABILE-->
             <div class="cuore">
                 <img id = "cuore{{ city.id }}" class = "png" src = "static/images/heart.png" width="300" height="300" >
+                <img id = "segnalibro{{ city.id }}" class = "bookmark" src = "static/images/bookmark.png" width="300" height="300" >
+
             </div>
             
 
             <div class="pulsantiera">
                 <button id = "likebtn" class="like pulsante" value = '{{ city.id }}'>❤</button>
-                <button class="like pulsante">+</button>
+                <button id = "savebtn" class="like pulsante2" value = '{{ city.id }}'>+</button>
             </div>
 
         </div>

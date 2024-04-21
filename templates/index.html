@@ -10,28 +10,30 @@
     
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='header.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
 <body>  
     {% endblock %}
     {% block contentdown %}
-    {% for image in photo %}
+    
+    {% for city in cities %}
         <div class="images">
             
-            <img id = "foto{{ loop.index }}" src="{{ image }}" class = "foto"> <!--ASSEGNO UN ID VARIABILE-->
+            <img id = "foto{{ city.id }}" src="{{ city.photo }}" class = "foto"> <!--ASSEGNO UN ID VARIABILE-->
             <div class="cuore">
-                <img id = "cuore{{ loop.index }}" class = "png" src = "static/images/heart.png" width="300" height="300" >
+                <img id = "cuore{{ city.id }}" class = "png" src = "static/images/heart.png" width="300" height="300" >
             </div>
             
 
             <div class="pulsantiera">
-                <button id = "likebtn" class="like pulsante" onclick="showHeart('cuore{{ loop.index }}')">❤</button>
+                <button id = "likebtn" class="like pulsante" value = '{{ city.id }}'>❤</button>
                 <button class="like pulsante">+</button>
             </div>
-            
+
         </div>
     {% endfor %}
-    <script src = "{{ url_for('static', filename='putlike.js') }}"></script>"
+    <script src = "{{ url_for('static', filename='putlike.js') }}"></script>
 </body>
 
 </html>

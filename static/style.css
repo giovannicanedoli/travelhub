@@ -30,7 +30,12 @@
 }
 
 body {
-    background-color: #676767;
+    background-image: url(https://cdn.mos.cms.futurecdn.net/oB6gwMbLBDyS35SVrUnTRb.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
 }
 
 

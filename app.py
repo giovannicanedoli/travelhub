@@ -1,9 +1,11 @@
-from flask import Flask,render_template, url_for, redirect, request, session
+from flask import Flask,render_template, url_for, redirect, request, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_mail import Mail, Message
 from flask_login import LoginManager, UserMixin, login_user, logout_user
 from datetime import timedelta
 from utils import *
+
+import sys
 
 app = Flask(__name__)
 
@@ -20,7 +22,6 @@ app.config['MAIL_USE_SSL'] = False
 mail = Mail(app)
 
 app.permanent_session_lifetime = timedelta(minutes=5)
-
 
 db = SQLAlchemy()
 
@@ -56,7 +57,7 @@ class Cities(db.Model):
         self.photo = photo
 
     def __repr__(self):
-        return f'{self.photo}'
+        return f'<City {self.nome} in {self.paese}, likes: {self.like_messi}, photo: {self.photo}>'
 
 class Like(db.Model):
     __tablename__ = 'likes'
@@ -64,11 +65,19 @@ class Like(db.Model):
     users_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     cities_id = db.Column(db.Integer, db.ForeignKey('cities.id'))
 
-    #uselist = False -> un record è associato ad un record delle classi sopra
+    #uselist = False -> un record è associato ad un record delle classi sopra, da mettere???
 
-    users = db.relationship("Users", backref=db.backref("users", uselist=False))
-    cities = db.relationship("Cities", backref=db.backref("cities", uselist=False))
+    users_like = db.relationship("Users", backref=db.backref("users_like", uselist=False))
+    cities_like = db.relationship("Cities", backref=db.backref("cities_like", uselist=False))
 
+class Saves(db.Model):
+    __tablename__ = 'saves'
+    id = db.Column(db.Integer, primary_key=True)   
+    users_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    cities_id = db.Column(db.Integer, db.ForeignKey('cities.id'))
+
+    users_save = db.relationship("Users", backref=db.backref("users_save", uselist=False))
+    cities_save = db.relationship("Cities", backref=db.backref("cities_save", uselist=False))
 
 db.init_app(app)
 
@@ -79,13 +88,10 @@ with app.app_context():
 def loader_user(user_id):
     return Users.query.get(user_id)
 
-    
 @app.route("/")
 def main_route():
-    photo=Cities.query.all()
-    city=Cities.query.all()
-    return render_template("index.html", photo=photo, city=city)
-
+    cities=Cities.query.all()
+    return render_template("index.html", cities=cities)
 
 @app.route('/register', methods=["GET", "POST"])
 def register():
@@ -93,7 +99,7 @@ def register():
 
         username = request.form.get('username_input')
         password = request.form.get("password_input1")
-        password_verify = request.form.get("password_input1")
+        password_verify = request.form.get("password_input2")
     
         password_ok = verify_password(password_verify)
 
@@ -108,12 +114,14 @@ def register():
             db.session.commit()
 
             session.permanent = True
+            
             session['username'] = username
             session['password'] = password
+            session['id'] = user.id
 
             return redirect(url_for("main_route"))
         else:
-            return render_template("signup.html", password_ok=password_ok)
+            return render_template("signup.html", password_ok=password_ok, password=password, password_verify=password_verify)
     elif 'username' in session and 'password' in session:
         return redirect(url_for("main_route"))
     else:
@@ -127,9 +135,12 @@ def login():
         password_verify = request.form.get("password_input")
         user = Users.query.filter_by(username = username).first()
         
-        #qui eventualmente otp
         if user and user.password == password_verify:
-            login_user(user)                #AttributeError: 'Users' object has no attribute 'is_active'    non so in realtà a che serva sta funzione
+            login_user(user)           
+            session['username'] = username
+            session['password'] = password_verify
+            session['id'] = user.id
+
             return redirect(url_for("main_route"))
         
         elif not user:
@@ -138,16 +149,11 @@ def login():
         else:
             return render_template("login.html", something_failed = True, user_not_found = False)
         
-    elif 'username' in session and 'password' in session:
+    elif 'username' in session and 'password' in session and 'id' in session:
         return redirect(url_for("main_route"))
     
     else:
         return render_template("login.html", something_failed = False)
-
-@app.route("/home")
-def renderize():
-    return render_template("index.html")
-
 
 @app.route('/forget', methods = ["GET", "POST"])
 def forgotpasswd():
@@ -214,6 +220,80 @@ def logout():
     session.clear()
 
     return redirect(url_for("main_route"))
+
+@app.route("/like")
+def like():
+    return render_template("like.html")
+
+
+@app.route('/leavealike', methods = ["POST"])
+def leave_like():
+    form_sent = request.form
+    #print(form_sent)
+
+    if 'username' in session and 'password' in session and 'id' in session:
+
+        city_id = form_sent.getlist('primarykey')[0]
+        city = Cities.query.filter_by(id = city_id).first()
+        
+        
+        if not city:
+            raise Exception('id not found, nso che cazzo è successo')
+        
+        city.like_messi += 1
+        
+
+        user_id = session.get('id')
+
+        like = Like()
+        like.users_id = user_id
+        like.cities_id = city_id
+        db.session.add(like)
+        db.session.commit()
+
+
+        print("ao è andato tutto bene")
+        status_code = {'code' : '200'}
+
+    else:
+        print('utente non loggato!')
+        status_code = {'code' : '400'}
+    
+
+    return jsonify(status_code)
+
+
+@app.route('/savephoto', methods = ["POST"])
+def save_photo():
+
+    form_sent = request.form
+    
+    if 'username' in session and 'password' in session and 'id' in session:
+
+        city_id = form_sent.getlist('primarykey')[0]
+        city = Cities.query.filter_by(id = city_id).first()
+        
+        if not city:
+            raise Exception('id not found, nso che cazzo è successo')
+            sys.exit(-1)        
+
+        user_id = session.get('id')
+
+        save = Saves()
+        save.users_id = user_id
+        save.cities_id = city_id
+        db.session.add(save)
+        db.session.commit()
+
+
+        print("ao è andato tutto bene")
+        status_code = {'code' : '200'}
+
+    else:
+        print('utente non loggato!')
+        status_code = {'code' : '400'}
+    
+    return jsonify(status_code)
 
 
 if __name__ == '__main__':

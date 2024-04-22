@@ -6,8 +6,7 @@ c = conn.cursor()
 #per eseguire comandi sql
 #c.execute("SELECT * FROM STOCAZZO")
 
-c.execute("SELECT * FROM cities")
-'''
+#c.execute("SELECT * FROM cities")
 
 c.execute("INSERT INTO cities (like_messi, nome, paese, photo, description) VALUES (0, 'Roma', 'Italia', 'https://images.pexels.com/photos/19132522/pexels-photo-19132522/free-photo-of-italia-edifici-arquitectura-viatjar.jpeg?auto=compress&cs=tinysrgb&w=600', 'Roma');")
 c.execute("INSERT INTO cities (like_messi, nome, paese, photo, description) VALUES (0, 'Venezia', 'Italia', 'https://images.pexels.com/photos/2748019/pexels-photo-2748019.jpeg?auto=compress&cs=tinysrgb&w=600', 'Venezia');")
@@ -30,7 +29,7 @@ c.execute("INSERT INTO cities (like_messi, nome, paese, photo, description) VALU
 c.execute("INSERT INTO cities (like_messi, nome, paese, photo, description) VALUES (0, 'Atene', 'Grecia', 'https://images.pexels.com/photos/3224227/pexels-photo-3224227.jpeg', 'Atene');")
 c.execute("INSERT INTO cities (like_messi, nome, paese, photo, description) VALUES (0, 'Santorini', 'Grecia', 'https://lp-cms-production.imgix.net/2021-05/shutterstockRF_1563449509.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850&q=35&dpr=3', 'Santorini');")
 c.execute("INSERT INTO cities (like_messi, nome, paese, photo, description) VALUES (0, 'Mykonos', 'Grecia', 'https://lp-cms-production.imgix.net/2021-08/shutterstockRF_1541944991.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850&q=20&dpr=5', 'Mykonos');")
-'''
+
 
 '''
 COLOSSEO https://images.pexels.com/photos/19132522/pexels-photo-19132522/free-photo-of-italia-edifici-arquitectura-viatjar.jpeg?auto=compress&cs=tinysrgb&w=600

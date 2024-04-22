@@ -1,8 +1,9 @@
+
 .foto {
     display: block;
     max-width: 60%;
     border-radius: 10%;
-    max-height: 50%;
+    max-height: 700px;  /*QUA O MEDIAQUERY PER ADATTARE OPPURE SI LASCIA COSI PERO PROVARE SE VA BENE SUI VARI DISPOSITIVI - per esempio sul fisso mio sarebbe meglio piu grande*/
     z-index: 0;
     animation: widener linear both;
     animation-timeline: view();
@@ -24,13 +25,26 @@
     visibility: hidden;
     z-index: 1;
     top: 50%;
-    margin-left: -2500%;  /*REGOLARE PER CENTRARE IL CUORE*/
+    margin-left: -2000%;  /*REGOLARE PER CENTRARE IL CUORE - anche questo va adattato in qualche modo alle varie foto*/
     opacity: 0.8;
 
 }
 
+.bookmark{
+    visibility: hidden;
+    z-index: 1;
+    top: 50%;
+    margin-left: -2500%;  /*REGOLARE PER CENTRARE IL CUORE*/
+    opacity: 0.8;
+}
+
 body {
-    background-color: #676767;
+    background-image: url(https://cdn.mos.cms.futurecdn.net/oB6gwMbLBDyS35SVrUnTRb.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
 }
 
 

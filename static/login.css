@@ -1,4 +1,5 @@
 
+
 body {
     overflow-x: hidden;
     overflow-y: hidden;
@@ -33,8 +34,8 @@ body {
 }
 
 @keyframes planeAnim {
-  0%   {left:-18%; top: -100%; width: 100px; height: 60px; transform: rotate(15deg);filter: blur(1px);}   /*per il motion blur*/
-  25% {transform: rotate(0deg);}
+  0%   {left:-18%; top: -100%; width: 100px; height: 60px; transform: rotate(-5deg);filter: blur(1px);}   /*per il motion blur - madeiaquery per farlo partire non troppo lontano*/
+  25% {transform: rotate(20deg);}
   100% {left: 150%; top: 80%; width: 600px; height: 400px; transform: rotate(40deg); filter: blur(0px);}
 }
 
@@ -209,7 +210,7 @@ section a{
 
 @media (max-width:700px){
     .login-box{
-        height: 90%;
+        height: 40%;
         width: 50%;
     }
 }

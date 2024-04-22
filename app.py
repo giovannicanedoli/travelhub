@@ -167,6 +167,7 @@ def forgotpasswd():
             return render_template("forgot.html", user_alive = False, email_sent = False)
 
         token = generate_reset_token()
+        token += USERNAME
         
         msg = Message('Reset Password', sender = USERNAME, recipients=[user.username])
 
@@ -183,7 +184,8 @@ def forgotpasswd():
 @app.route('/forget/<token>/confirm', methods = ["GET", "POST"])
 def confirm_forget(token):
     if request.method == "POST":
-        
+        email = token[:31]
+        print(email)
         username = request.form.get('username_input')
         password = request.form.get("password_input1")
         password_verify = request.form.get("password_input1")

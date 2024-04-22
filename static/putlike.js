@@ -18,7 +18,7 @@ $(document).ready(function() {
                 if(code === '200'){
                     
                     heart.style.visibility = "visible";
-                    
+                    //ANIMAZIONE
                     setTimeout(function(){
                         heart.style.visibility = "hidden";
                     },300);
@@ -52,7 +52,7 @@ $(document).ready(function() {
                 var code = data.code;
                 if(code === '200'){
                     bookmark.style.visibility = "visible";
-                    
+                    //ANIMAZIONE
                     setTimeout(function(){
                         bookmark.style.visibility = "hidden";
                     },300);

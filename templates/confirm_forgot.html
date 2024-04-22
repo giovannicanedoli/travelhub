@@ -65,10 +65,15 @@
 
             {% if email_sent == True %}
                 <div class = "password_block">
-                    <h1>Email sent successfully!</h1>
+                    <p>Email sent successfully!</p>
                 </div>
             {% endif %}
             
+            {% if username_error == True %}
+                <div class = "password_block">
+                    <p>Email is wrong!</p>
+                </div>
+            {% endif %}
 
         </div>
     </form>

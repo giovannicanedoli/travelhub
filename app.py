@@ -45,6 +45,7 @@ class Cities(db.Model):
     __tablename__ = 'cities'
     id = db.Column(db.Integer, primary_key=True)    
     like_messi = db.Column(db.Integer)    
+    save_messi = db.Column(db.Integer)
     nome = db.Column(db.String(250), nullable = False)
     paese = db.Column(db.String(250), nullable = False)
     photo = db.Column(db.String(250), nullable = False)
@@ -167,7 +168,7 @@ def forgotpasswd():
             return render_template("forgot.html", user_alive = False, email_sent = False)
 
         token = generate_reset_token()
-        token += USERNAME
+        token += username
         
         msg = Message('Reset Password', sender = USERNAME, recipients=[user.username])
 
@@ -180,11 +181,11 @@ def forgotpasswd():
     else:
         return render_template("forgot.html")
     
-
+#questa funzione deve essere riscritta
 @app.route('/forget/<token>/confirm', methods = ["GET", "POST"])
 def confirm_forget(token):
     if request.method == "POST":
-        email = token[:31]
+        email = token[43:]
         print(email)
         username = request.form.get('username_input')
         password = request.form.get("password_input1")
@@ -192,6 +193,9 @@ def confirm_forget(token):
 
         password_ok = verify_password(password_verify)
 
+        if username != email:
+            return render_template("forgot.html", bad_user = False, user_alive = True, password_match = False, password_quality = False, email_sent = False)
+        
         user = Users.query.filter_by(username = username).first()
         if not user:
             #user is not present in db
@@ -209,7 +213,11 @@ def confirm_forget(token):
         
     else:
         return render_template("confirm_forgot.html")
+    
 
+@app.route('/aboutus')
+def aboutus():
+    return render_template('aboutus.html')
 
 @app.route('/<something>')
 def goto(something):
@@ -280,6 +288,7 @@ def save_photo():
             sys.exit(-1)        
 
         user_id = session.get('id')
+        city.save_messi += 1
 
         save = Saves()
         save.users_id = user_id

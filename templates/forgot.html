@@ -53,6 +53,11 @@
                 </div>
             {% endif %}
             
+            {% if bad_user == True %}
+                <div class = "failure">
+                    <p>You have to enter the password who we sent the email to!</p>
+                </div>
+            {% endif %}
 
         </div>
     </form>

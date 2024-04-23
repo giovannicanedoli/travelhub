@@ -32,12 +32,37 @@
             <div class="pulsantiera">
                 <button id = "likebtn" class="like pulsante" value = '{{ city.id }}'>❤</button>
                 <button id = "savebtn" class="like pulsante2" value = '{{ city.id }}'>+</button>
+                <button id = "showdesc{{ city.id }}" class = "like pulsante3" onclick="desc()">=</button>
+                <div class = "descrizione" id = "descrizione{{ city.id }}"><p>{{ city.description }}</p></div>
+                <script>
+                    document.getElementById("showdesc{{ city.id }}").addEventListener("click", function() {
+                        var e = document.getElementById("descrizione{{ city.id }}");
+                        if (e.style.display === "none") {
+                            e.style.display = "block";
+                        } else {
+                            e.style.display = "none";
+                        }
+                    });
+                    </script>
+                    
             </div>
 
         </div>
     {% endfor %}
     <script src = "{{ url_for('static', filename='putlike.js') }}"></script>
+
+   
 </body>
+
+<!--<script>
+        const pulsanti=document.querySelectorAll('like pulsante3');
+        pulsanti.forEach(function(pulsante) {
+            pulsante.addEventListener("click", function() {
+            pulsante.closest('descrizione').display = "block";
+        });
+        })
+        </script>-->
+
 
 </html>
 {% endblock %}

@@ -21,7 +21,7 @@ app.config['MAIL_USE_SSL'] = False
 
 mail = Mail(app)
 
-app.permanent_session_lifetime = timedelta(minutes=5)
+app.permanent_session_lifetime = timedelta(minutes=25)   #temporaneoo
 
 db = SQLAlchemy()
 

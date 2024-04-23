@@ -1,3 +1,17 @@
+const newspaperSpinning = [
+    { transform: "rotate(0) scale(1) opacity(0)"  },
+    { transform: "rotate(360deg) scale(1)" },
+    { transform: "rotate(360deg) opacity(1)" },
+    { transform: 'translateY(0px)' },
+    { transform: 'translateY(-300px)' },
+  ];
+const newspaperTiming = {
+    duration: 2000,
+    iterations: 1,
+  };
+
+
+
 $(document).ready(function() {
 
     $('.like.pulsante').click(function() {
@@ -18,10 +32,12 @@ $(document).ready(function() {
                 if(code === '200'){
                     
                     heart.style.visibility = "visible";
-                    //ANIMAZIONE
+                    heart.animate(newspaperSpinning, newspaperTiming);
                     setTimeout(function(){
                         heart.style.visibility = "hidden";
-                    },300);
+                    },2000);
+
+                    
                 }else{
                     console.log("ENSOMMA..."); //mostrare qui a schermo qualcosa che indica che deve loggarsi
                 }

@@ -46,16 +46,15 @@
             <div class = "failure">
                 <p>User already present in database!</p>
             </div>
-        {% endif %}
 
-        {% if password_verify != password %}
+        {% elif password_verify != password %}
             <div class = "failure">
                 <p>Passwords are different!</p>
             </div>
             <br>
-        {% endif %}
+        
 
-        {% if password_ok == False %}
+        {% elif password_ok == False %}
             <div class = "failure">
                 <p>Password is too simple!</p>
             </div>

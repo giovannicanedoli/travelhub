@@ -9,66 +9,42 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
-    margin: 2% 15%; /*con il secondo numero decido quanto avvicinare o allontanare i vari bottoni*/
+    margin: 2% 0%; /*con il secondo numero decido quanto avvicinare o allontanare i vari bottoni*/
 }
-
-/*
-.menu {
-    
-}*/
-
-
 
 
 .link {
     color: #444;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 20px;
+
 }
 .link:hover{
     color: #000;
 }
 
 
-.pulsante {
+.pulsante, .pulsante2, .pulsante3, .pulsante4{
     background-color: #efff14f1;
     border-radius: 20px;
     transition-duration: 0.4s;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    font-size: 20px;
+    font-size: clamp(10px ,30px, 20px);
     padding: 10px 15px;
     float: left;
     font-weight: bold ;
     border: none;
     color:#000;
     text-decoration: none;
+    min-width: 70px;
 }
 
-.pulsante2 {
-    background-color: #efff14f1;
-    border-radius: 8px;
-    transition-duration: 0.4s;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    font-size: 20px;
-    padding: 10px 15px;
-    float: left;
-    font-weight: bold ;
-    border: none;
-    color:#000;
-    text-decoration: none;
-}
 
-.pulsante:hover{
+.pulsante:hover, .pulsante2:hover, .pulsante3:hover, .pulsante4:hover{
     background: #efff146f;
     border-radius: 15px;
     text-decoration: none;
     color:#444;
 }
 
-.pulsante2:hover{
-    background: #efff146f;
-    border-radius: 15px;
-    text-decoration: none;
-    color:#444;
-}
+

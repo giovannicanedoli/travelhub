@@ -103,7 +103,7 @@ $(document).ready(function() {
                 var code = data.code;
                 if(code === '200'){
                     heart.style.visibility = "visible";
-                    
+                    heart.animate(newspaperSpinning, newspaperTiming);
                     setTimeout(function(){
                         heart.style.visibility = "hidden";
                     },300);

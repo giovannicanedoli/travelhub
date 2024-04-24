@@ -92,8 +92,26 @@ def loader_user(user_id):
 @app.route("/")
 def main_route():
     cities=Cities.query.all()
-    return render_template("index.html", cities=cities)
+    liked=[]
+    if 'username' in session and 'password' in session and 'id' in session:
+        user_id = session['id']
+        liked_cities = db.session.query(Cities.photo).join(Like, Cities.id == Like.cities_id).filter(Like.users_id == user_id).all()
+        liked_photos = [city.photo for city in liked_cities]
+ 
+        saved_cities = db.session.query(Cities.photo).join(Saves, Cities.id == Saves.cities_id).filter(Saves.users_id == user_id).all()
+        saved_photos = [city.photo for city in saved_cities]
+    else:
+        liked_photos = []
+        saved_photos = []
+    random.shuffle(cities)  #to randomize img shown in index.html
 
+    return render_template("index.html", cities=cities, liked=liked_photos, saved=saved_photos)
+
+
+# @app.route("/") vecchia senza like grafici che si  mantengono nell'utente
+# def main_route():
+#     cities=Cities.query.all()
+#     return render_template("index.html", cities=cities)
 @app.route('/register', methods=["GET", "POST"])
 def register():
     if request.method == "POST":

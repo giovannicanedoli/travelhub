@@ -251,7 +251,22 @@ def logout():
 
 @app.route("/like")
 def like():
-    return render_template("like.html")
+    stmt = db.session.query(
+    Users.username,
+    Cities.paese,
+    Cities.photo,
+    func.count('*')
+    ).select_from(Like)\
+    .join(Users, Like.users_id == Users.id)\
+    .join(Cities, Like.cities_id == Cities.id)\
+    .group_by(Users.username, Cities.paese)\
+    .all()
+    print(stmt)
+    print("------------------------------------")
+    copy = stmt[3:]
+    print(copy)
+    return render_template("like.html", img1 = stmt[0][2],img2 = stmt[1][2], img3 = stmt[2][2], copy = copy, paese=stmt[0][1]) #come prendo qua la città della foto?
+
 
 
 @app.route('/leavealike', methods = ["POST"])

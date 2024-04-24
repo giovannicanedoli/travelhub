@@ -5,7 +5,7 @@ from flask_mail import Mail, Message
 from flask_login import LoginManager, UserMixin, login_user, logout_user
 from datetime import timedelta
 from utils import *
-
+import random
 import sys
 
 app = Flask(__name__)
@@ -105,6 +105,8 @@ def main_route():
     else:
         liked_photos = []
         saved_photos = []
+    random.shuffle(cities)  #to randomize img shown in index.html
+
     return render_template("index.html", cities=cities, liked=liked_photos, saved=saved_photos)
 
 
@@ -112,7 +114,6 @@ def main_route():
 # def main_route():
 #     cities=Cities.query.all()
 #     return render_template("index.html", cities=cities)
-
 @app.route('/register', methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -262,10 +263,26 @@ def like():
     .join(Cities, Like.cities_id == Cities.id)\
     .group_by(Users.username, Cities.paese)\
     .all()
-    # print(stmt)
-
+    print(stmt)
+    print("------------------------------------")
     copy = stmt[3:]
-    return render_template("like.html", img1 = stmt[0][2],img2 = stmt[1][2],img3 = stmt[2][2], copy = copy)       #img3 = stmt[2][2],
+    print(copy)
+    return render_template("like.html", img1 = stmt[0][2],img2 = stmt[1][2], img3 = stmt[2][2], copy = copy, paese=stmt[0][1]) #come prendo qua la città della foto?
+
+@app.route("/favorite")
+def favorite():
+    saved_ph = []
+    if 'username' in session and 'password' in session and 'id' in session:
+        user_id = session['id']
+    
+        saved_cities = db.session.query(Cities.nome, Cities.photo)\
+                            .join(Saves, Cities.id == Saves.cities_id)\
+                            .filter(Saves.users_id == user_id)\
+                            .all()
+        saved_ph = [(city.nome, city.photo) for city in saved_cities]
+
+    return render_template("favorite.html", saved_ph=saved_ph)
+
 
 
 @app.route('/leavealike', methods = ["POST"])

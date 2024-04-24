@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='like.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='header.css')}}">
-    <title>TravelHub - Like History</title>
+    <title>TravelHub - Favorite</title>
 </head>
 <body class="intero">
 
@@ -20,32 +20,17 @@
         window.location.replace("/login"); //se non sei loggato e in qualche modo arrivi qua ti reindirizzo al login
       </script>
     {% else %}
-        <!-- BUG, SE NON HO MESSO LIKE A NIENTE DEVO MOSTRARE ALTRO! -->
-
-        <div class = "sup">
-                
-                <p class="h">The city you liked the most is...<strong>{{ paese }}!</strong></p>
-                <img id = "top" src = "{{ img1 }}" width="600" height="600">
-            <!--<div class = "center">-->
-                <p class="h2">complete the podium...</p>
-        </div>
-        <div class = "scorrimento">
-            <img class="minor" src = "{{ img2 }}" width="600" height="600">
-            <img class="minor" src = "{{ img3 }}" width="600" height="600">
-        </div>
-            <!--</div>-->
-            
-            <p class="h3">For You:</p>
-            <!-- QUI È DA FARE UN'ALTRA QUERY, AL MOMENTO NON CI SONO DATI A SUFFICIENZA
-            VEDERE SOLO LA GRIGLIA!
-            link fonte: https://www.youtube.com/watch?v=lhpNRDGzInw
-            -->
-            <div class = "foru">
-                {% for photo in copy %}
-                    <img src="{{ photo[2] }}" width="600" height="600">
-                {% endfor %}
-                
+    <p class="h">Your saved photos...so you won’t forget them!</p>
+    <div class = "foru">
+        
+        {% for tupla in saved_ph %}
+            <div>
+                <img src="{{ tupla[1] }}" width="600" height="600">
+                <p>{{ tupla[0] }}</p>
             </div>
+        {% endfor %}
+        
+    </div>
 
 
 

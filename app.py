@@ -267,6 +267,20 @@ def like():
     print(copy)
     return render_template("like.html", img1 = stmt[0][2],img2 = stmt[1][2], img3 = stmt[2][2], copy = copy, paese=stmt[0][1]) #come prendo qua la città della foto?
 
+@app.route("/favorite")
+def favorite():
+    saved_ph = []
+    if 'username' in session and 'password' in session and 'id' in session:
+        user_id = session['id']
+    
+        saved_cities = db.session.query(Cities.nome, Cities.photo)\
+                            .join(Saves, Cities.id == Saves.cities_id)\
+                            .filter(Saves.users_id == user_id)\
+                            .all()
+        saved_ph = [(city.nome, city.photo) for city in saved_cities]
+
+    return render_template("favorite.html", saved_ph=saved_ph)
+
 
 
 @app.route('/leavealike', methods = ["POST"])

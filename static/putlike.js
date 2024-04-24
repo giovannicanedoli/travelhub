@@ -1,11 +1,11 @@
-const newspaperSpinning = [
+const animKeyframe = [
     { transform: "rotate(0) scale(1) opacity(0)"  },
     { transform: "rotate(360deg) scale(1)" },
     { transform: "rotate(360deg) opacity(1)" },
     { transform: 'translateY(0px)' },
     { transform: 'translateY(-300px)' },
   ];
-const newspaperTiming = {
+const animTiming = {
     duration: 2000,
     iterations: 1,
   };
@@ -18,7 +18,7 @@ $(document).ready(function() {
         var pkey = $(this).val(); 
         
         var heart = document.getElementById('cuore' + pkey);
-        
+        var but = document.getElementById('likebtn' + pkey);
         $.ajax({
             url: "/leavealike",
             type: 'POST',
@@ -31,14 +31,23 @@ $(document).ready(function() {
                 var code = data.code;
                 if(code === '200'){
                     
-                    heart.style.visibility = "visible";
-                    heart.animate(newspaperSpinning, newspaperTiming);
+                    //heart.style.visibility = "visible";
+                    //heart.animate(animKeyframe, animTiming);
+                    
+                    but.style.backgroundColor = "red";
+                    but.style.fontSize = "clamp(20px ,40px, 40px)";
                     setTimeout(function(){
                         heart.style.visibility = "hidden";
                     },2000);
 
-                    
-                }else{
+                }
+                else if (code === '201') {
+                    but.style.backgroundColor = "#efff14";
+                    but.style.fontSize = "clamp(10px ,30px, 20px)";
+
+
+                }
+                else{
                     console.log("ENSOMMA..."); //mostrare qui a schermo qualcosa che indica che deve loggarsi
                 }
 
@@ -55,6 +64,7 @@ $(document).ready(function() {
         var pkey = $(this).val(); 
         
         var bookmark = document.getElementById('segnalibro' + pkey);
+        var sav = document.getElementById('savebtn' + pkey);
         
         $.ajax({
             url: "/savephoto",
@@ -67,12 +77,23 @@ $(document).ready(function() {
             success: function(data) {
                 var code = data.code;
                 if(code === '200'){
-                    bookmark.style.visibility = "visible";
+                    //bookmark.style.visibility = "visible";
+                    sav.style.backgroundColor = "black";
+                    sav.style.color = "white";
+                    sav.style.fontSize = "clamp(20px ,40px, 40px)";
+
                     //ANIMAZIONE
                     setTimeout(function(){
                         bookmark.style.visibility = "hidden";
                     },300);
-                }else{
+                }
+                else if (code === '202') {
+                    sav.style.backgroundColor = "#efff14";
+                    sav.style.color = "black";
+                    sav.style.fontSize = "clamp(10px ,30px, 20px)";
+
+                }
+                else{
                     console.log("ENSOMMA..."); //mostrare qui a schermo qualcosa che indica che deve loggarsi
                 }
                 
@@ -90,6 +111,7 @@ $(document).ready(function() {
         //alert(pkey);
 
         var heart = document.getElementById('cuore' + pkey);
+        var but = document.getElementById('likebtn' + pkey);
         
         $.ajax({
             url: "/leavealike",
@@ -102,12 +124,26 @@ $(document).ready(function() {
             success: function(data) {
                 var code = data.code;
                 if(code === '200'){
-                    heart.style.visibility = "visible";
+                    // heart.style.visibility = "visible";
+                    heart.animate(animKeyframe, animTiming);
+
                     
+                    but.style.backgroundColor = "red";
+                    but.style.fontSize = "clamp(20px ,40px, 40px)";
+
+
                     setTimeout(function(){
                         heart.style.visibility = "hidden";
-                    },300);
-                }else{
+                    },2000);
+
+                }
+                else if (code === '201') {
+                    but.style.backgroundColor = "#efff14";
+                    but.style.fontSize = "clamp(10px ,30px, 20px)";
+
+                }
+                else
+                {
                     console.log("ENSOMMA..."); //mostrare qui a schermo qualcosa che indica che deve loggarsi
                 }
 
@@ -121,3 +157,18 @@ $(document).ready(function() {
     });
 
 });
+
+//pulsante on top
+function onTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scorri verso l'inizio della pagina con animazione
+}
+
+// Mostra il pulsante quando l'utente scorre la pagina oltre una certa soglia
+window.onscroll = function() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("top").style.display = "block";
+    } else {
+        document.getElementById("top").style.display = "none";
+    }
+};
+

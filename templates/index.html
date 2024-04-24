@@ -30,17 +30,33 @@
             
 
             <div class="pulsantiera">
-                <button id = "likebtn" class="like pulsante" value = '{{ city.id }}'>❤</button>
-                <button id = "savebtn" class="like pulsante2" value = '{{ city.id }}'>+</button>
-                <button id = "showdesc{{ city.id }}" class = "like pulsante3" onclick="desc()">=</button>
+                {% if not session %}
+                    <a href="/login" class="link"><button id = "likebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>❤</button></a>
+                    <a href="/login" class="link"><button id = "savebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>+</button></a>
+                {% else %}
+                    {% if city.photo in liked %}
+                        <button id = "likebtn{{ city.id }}" class="like pulsante" value = '{{ city.id }}' style="background-color: red; font-size: clamp(20px ,40px, 40px);" >❤</button>
+                    {% else %}
+                        <button id = "likebtn{{ city.id }}" class="like pulsante" value = '{{ city.id }}'>❤</button>
+                    {% endif %}
+                    {% if city.photo in saved %}
+                        <button id = "savebtn{{ city.id }}" class="like pulsante2" value = '{{ city.id }}' style="background-color: black; color: white; font-size: clamp(20px ,40px, 40px);" >+</button>
+                    {% else %}
+                        <button id = "savebtn{{ city.id }}" class="like pulsante2" value = '{{ city.id }}'>+</button>
+                    {% endif %}
+                {% endif %}
+                <button id = "showdesc{{ city.id }}" class = "like pulsante3">=</button>
                 <div class = "descrizione" id = "descrizione{{ city.id }}"><p>{{ city.description }}</p></div>
                 <script>
                     document.getElementById("showdesc{{ city.id }}").addEventListener("click", function() {
                         var e = document.getElementById("descrizione{{ city.id }}");
+                        var im = document.getElementById('foto{{ city.id }}');
                         if (e.style.display === "none") {
                             e.style.display = "block";
+                        //    im.style.filter = "blur(10px)";
                         } else {
                             e.style.display = "none";
+                            /*im.style.filter = "blur(0px)";*/
                         }
                     });
                     </script>
@@ -50,6 +66,7 @@
         </div>
     {% endfor %}
     <script src = "{{ url_for('static', filename='putlike.js') }}"></script>
+    <button id="top" class="pulsante4" onclick="onTop()">🔝</button>
 
    
 </body>

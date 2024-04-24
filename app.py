@@ -1,10 +1,11 @@
 from flask import Flask,render_template, url_for, redirect, request, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import func
 from flask_mail import Mail, Message
 from flask_login import LoginManager, UserMixin, login_user, logout_user
 from datetime import timedelta
 from utils import *
-
+import random
 import sys
 
 app = Flask(__name__)
@@ -63,9 +64,8 @@ class Cities(db.Model):
 
 class Like(db.Model):
     __tablename__ = 'likes'
-    id = db.Column(db.Integer, primary_key=True)   
-    users_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    cities_id = db.Column(db.Integer, db.ForeignKey('cities.id'))
+    users_id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key = True)
+    cities_id = db.Column(db.Integer, db.ForeignKey('cities.id'), primary_key = True)
 
     #uselist = False -> un record è associato ad un record delle classi sopra, da mettere???
 
@@ -74,9 +74,8 @@ class Like(db.Model):
 
 class Saves(db.Model):
     __tablename__ = 'saves'
-    id = db.Column(db.Integer, primary_key=True)   
-    users_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    cities_id = db.Column(db.Integer, db.ForeignKey('cities.id'))
+    users_id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key = True)
+    cities_id = db.Column(db.Integer, db.ForeignKey('cities.id'), primary_key = True)
 
     users_save = db.relationship("Users", backref=db.backref("users_save", uselist=False))
     cities_save = db.relationship("Cities", backref=db.backref("cities_save", uselist=False))
@@ -93,7 +92,26 @@ def loader_user(user_id):
 @app.route("/")
 def main_route():
     cities=Cities.query.all()
-    return render_template("index.html", cities=cities)
+    liked=[]
+    if 'username' in session and 'password' in session and 'id' in session:
+        user_id = session['id']
+        liked_cities = db.session.query(Cities.photo).join(Like, Cities.id == Like.cities_id).filter(Like.users_id == user_id).all()
+        liked_photos = [city.photo for city in liked_cities]
+ 
+        saved_cities = db.session.query(Cities.photo).join(Saves, Cities.id == Saves.cities_id).filter(Saves.users_id == user_id).all()
+        saved_photos = [city.photo for city in saved_cities]
+    else:
+        liked_photos = []
+        saved_photos = []
+    random.shuffle(cities)  #to randomize img shown in index.html
+
+    return render_template("index.html", cities=cities, liked=liked_photos, saved=saved_photos)
+
+
+# @app.route("/") vecchia senza like grafici che si  mantengono nell'utente
+# def main_route():
+#     cities=Cities.query.all()
+#     return render_template("index.html", cities=cities)
 
 @app.route('/register', methods=["GET", "POST"])
 def register():
@@ -234,7 +252,20 @@ def logout():
 
 @app.route("/like")
 def like():
-    return render_template("like.html")
+    stmt = db.session.query(
+    Users.username,
+    Cities.paese,
+    Cities.photo,
+    func.count('*')
+    ).select_from(Like)\
+    .join(Users, Like.users_id == Users.id)\
+    .join(Cities, Like.cities_id == Cities.id)\
+    .group_by(Users.username, Cities.paese)\
+    .all()
+    print(stmt)
+
+    copy = stmt[3:]
+    return render_template("like.html", img1 = stmt[0][2],img2 = stmt[1][2], img3 = stmt[2][2], copy = copy)       
 
 
 @app.route('/leavealike', methods = ["POST"])
@@ -251,20 +282,29 @@ def leave_like():
         if not city:
             raise Exception('id not found, nso che cazzo è successo')
         
-        city.like_messi += 1
-        
-
         user_id = session.get('id')
+        
+        like = Like.query.filter_by(users_id = user_id, cities_id = city_id).first()
+        if like:
+            city.like_messi -= 1
+            db.session.delete(like)
+            db.session.commit()
+            print("ao rimuovo il like")
+            status_code = {"code" : "201"}
+        
+        else:
 
-        like = Like()
-        like.users_id = user_id
-        like.cities_id = city_id
-        db.session.add(like)
-        db.session.commit()
+            city.like_messi += 1
+
+            like = Like()
+            like.users_id = user_id
+            like.cities_id = city_id
+            db.session.add(like)
+            db.session.commit()
 
 
-        print("ao è andato tutto bene")
-        status_code = {'code' : '200'}
+            print("ao metto il like")
+            status_code = {'code' : '200'}
 
     else:
         print('utente non loggato!')
@@ -289,17 +329,26 @@ def save_photo():
             sys.exit(-1)        
 
         user_id = session.get('id')
-        city.save_messi += 1
 
-        save = Saves()
-        save.users_id = user_id
-        save.cities_id = city_id
-        db.session.add(save)
-        db.session.commit()
+        save = Saves.query.filter_by(users_id = user_id, cities_id = city_id).first()
+        if save:
+            city.save_messi -= 1
+            db.session.delete(save)
+            db.session.commit()
+            print("ao rimuovo il save")
+            status_code = {"code" : "202"}
+        else:
+            city.save_messi += 1
+
+            save = Saves()
+            save.users_id = user_id
+            save.cities_id = city_id
+            db.session.add(save)
+            db.session.commit()
 
 
-        print("ao è andato tutto bene")
-        status_code = {'code' : '200'}
+            print("ao metto il save")
+            status_code = {'code' : '200'}
 
     else:
         print('utente non loggato!')

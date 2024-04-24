@@ -24,36 +24,32 @@
 
         <div class = "sup">
                 
-                <p>We would suggest you to visit...<strong>{{ paese }}</strong></p>
+                <p class="h">We would suggest you to visit...<strong>{{ paese }}!</strong></p>
                 <img id = "top" src = "{{ img1 }}" width="600" height="600">
-            <div class = "center">
+            <!--<div class = "center">-->
                 <p>you may also like:</p>
-
-                <div class = "scorrimento">
-                    <img src = "{{ img2 }}" width="600" height="600">
-                    <img src = "{{ img3 }}" width="600" height="600">
-                </div>
-            </div>
+        </div>
+        <div class = "scorrimento">
+            <img class="minor" src = "{{ img2 }}" width="600" height="600">
+            <img class="minor" src = "{{ img3 }}" width="600" height="600">
+        </div>
+            <!--</div>-->
             
-            <p>For You</p>
+            <p>For You:</p>
             <!-- QUI È DA FARE UN'ALTRA QUERY, AL MOMENTO NON CI SONO DATI A SUFFICIENZA
             VEDERE SOLO LA GRIGLIA!
             link fonte: https://www.youtube.com/watch?v=lhpNRDGzInw
             -->
-            <div class = "For U"> <!--qua credo intendevi Foru-->
-                {% for photos in copy|batch(10) %}
-                    <div class = "item">
-                        {% for photo in photos %}
-                        <img src="{{ photo[2] }}" width="600" height="600">
-                        {% endfor %}
-                    </div>                
+            <div class = "foru">
+                {% for photo in copy %}
+                    <img src="{{ photo[2] }}" width="600" height="600">
                 {% endfor %}
                 
             </div>
 
 
 
-        </div>
+
 
     {% endif %}
 </body>

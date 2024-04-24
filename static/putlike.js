@@ -163,7 +163,6 @@ function onTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' }); // Scorri verso l'inizio della pagina con animazione
 }
 
-// Mostra il pulsante quando l'utente scorre la pagina oltre una certa soglia
 window.onscroll = function() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         document.getElementById("top").style.display = "block";

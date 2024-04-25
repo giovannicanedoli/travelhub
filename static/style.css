@@ -1,7 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 
+
+html, body {
+    width: 100%;
+    height:100%;
+  }
+  
+  body {
+      overflow-x: hidden;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); /*cambiare i colori. In like.css lascio quella vecchia per confronto*/
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+  }
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+
+
+
 .foto {
+    box-shadow: 0 8px 16px 0 #00000033, 0 6px 20px 0 #00000030;
     display: block;
     max-width: 60%;
     border-radius: 10%;
@@ -11,6 +43,12 @@
     animation-timeline: view();
     background-clip: text;  /*FORSE INUTILE*/
     -webkit-background-clip: text;  /*FORSE INUTILE*/
+    transition-duration: 0.4s;
+
+}
+
+.foto:hover {
+    scale: 1.03;
 }
 
 @keyframes widener {
@@ -40,15 +78,7 @@
     opacity: 0.8;
 }
 
-body {
-    background-color: #929292;
-    /* background-image: url(https://cdn.mos.cms.futurecdn.net/oB6gwMbLBDyS35SVrUnTRb.gif); */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
 
-}
 
 
 .images{
@@ -75,7 +105,9 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    margin-left: -5%;
+    margin-left: -3%;
+    transition-duration: 0.3s;
+
 }
 
 .descrizione {
@@ -99,7 +131,8 @@ body {
     color: #ffffff;    
     z-index: 10;
     font-size: 150%;
-
+    margin-left: -300%;
+    max-width: 80%;
 }
 
 #top {
@@ -112,3 +145,4 @@ body {
     font-size: 150%;
     font-weight: bolder;
 }
+

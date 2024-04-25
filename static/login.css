@@ -197,8 +197,7 @@ section a{
 
 .submit-btn:hover{
     background: #efff146f;
-    transform: scale(1.05,1);
-
+    /* transform: scale(1.05,1); */
 }
 
 

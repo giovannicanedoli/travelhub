@@ -2,6 +2,16 @@
 
 body {
     background-color: #929292;
+    overflow-x: hidden;
+    animation: colori ease-in-out 8s infinite;
+}
+
+@keyframes colori {
+    0% {background-color: #545454;}
+    25% {background-color: #444444;}
+    50% {background-color: #303030;}
+    75% {background-color: #1e1f1e;}
+    100% {background-color: #545454;}
 }
 
 .sup{
@@ -15,13 +25,22 @@ body {
 img {
     border-radius: 10%;
     object-fit: cover; /*per le proporzioni delle foto*/
+    transition-duration: 0.3s;
+    box-shadow: 0 8px 16px 0 #00000033, 0 6px 20px 0 #00000030;
+
 }
+
+img:hover{
+    scale: 1.1;
+}
+
 
 p {
     font-size: clamp(10px ,30px, 20px);
     font-family: 'Poppins',sans-serif;
     display: flex;
     justify-content: center;
+    color: aliceblue;
 }
 
 .h {
@@ -55,7 +74,6 @@ p {
     justify-content: center; 
     align-items: center;
     scale: 0.8;
-
 }
 
 .minor {
@@ -67,7 +85,7 @@ p {
 .foru {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px; 
+    gap: 2%; 
     justify-content: center;
     border-top: 50%;
   }
@@ -88,3 +106,4 @@ p {
     font-size: 150%;
     font-weight: bolder;
 }
+

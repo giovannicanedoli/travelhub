@@ -47,17 +47,19 @@ class Cities(db.Model):
     id = db.Column(db.Integer, primary_key=True)    
     like_messi = db.Column(db.Integer)    
     save_messi = db.Column(db.Integer)
-    nome = db.Column(db.String(250), nullable = False)
-    paese = db.Column(db.String(250), nullable = False)
-    photo = db.Column(db.String(250), nullable = False)
+    nome = db.Column(db.String(20), nullable = False)
+    paese = db.Column(db.String(20), nullable = False)
+    photo = db.Column(db.String(100), nullable = False)
     description = db.Column(db.String(250), nullable = False)
+    iata = db.Column(db.String(5), nullable = False)
 
-    def __init__(self,like = 0, save = 0, nome = None, paese = None, photo = None):
+    def __init__(self,like = 0, save = 0, nome = None, paese = None, photo = None, iata = None):
         self.like = like
         self.save = save
         self.nome = nome
         self.paese = paese
         self.photo = photo
+        self.iata = iata
 
     def __repr__(self):
         return f'<City {self.nome} in {self.paese}, likes: {self.like_messi}, saves: {self.save_messi} photo: {self.photo}>'

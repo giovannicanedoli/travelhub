@@ -1,16 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
+img{
+    width: 50%;
+    height: 50%;
+}
 
 .foto {
     display: block;
     max-width: 60%;
+    max-height: 700px;
+
     border-radius: 10%;
-    max-height: 700px;  /*QUA O MEDIAQUERY PER ADATTARE OPPURE SI LASCIA COSI PERO PROVARE SE VA BENE SUI VARI DISPOSITIVI - per esempio sul fisso mio sarebbe meglio piu grande*/
-    z-index: 0;
-    animation: widener linear both;
+    /*QUA O MEDIAQUERY PER ADATTARE OPPURE SI LASCIA COSI PERO PROVARE SE VA BENE SUI VARI DISPOSITIVI - per esempio sul fisso mio sarebbe meglio piu grande*/
+    animation: widener linear both; 
+    
     animation-timeline: view();
-    background-clip: text;  /*FORSE INUTILE*/
-    -webkit-background-clip: text;  /*FORSE INUTILE*/
+    background-clip: text;
+    -webkit-background-clip: text;
+    z-index: 3;
 }
 
 @keyframes widener {
@@ -20,7 +27,7 @@
 
 
 .cuore {
-    width: 1%;
+    width: 50%;
 }
 
 .png{

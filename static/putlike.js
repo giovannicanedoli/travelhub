@@ -31,8 +31,8 @@ $(document).ready(function() {
                 var code = data.code;
                 if(code === '200'){
                     
-                    //heart.style.visibility = "visible";
-                    //heart.animate(animKeyframe, animTiming);
+                    heart.style.visibility = "visible";
+                    heart.animate(animKeyframe, animTiming);
                     
                     but.style.backgroundColor = "red";
                     but.style.fontSize = "clamp(20px ,40px, 40px)";
@@ -77,7 +77,7 @@ $(document).ready(function() {
             success: function(data) {
                 var code = data.code;
                 if(code === '200'){
-                    //bookmark.style.visibility = "visible";
+                    bookmark.style.visibility = "visible";
                     sav.style.backgroundColor = "black";
                     sav.style.color = "white";
                     sav.style.fontSize = "clamp(20px ,40px, 40px)";
@@ -124,7 +124,7 @@ $(document).ready(function() {
             success: function(data) {
                 var code = data.code;
                 if(code === '200'){
-                    // heart.style.visibility = "visible";
+                    heart.style.visibility = "visible";
                     heart.animate(animKeyframe, animTiming);
 
                     

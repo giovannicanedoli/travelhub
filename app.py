@@ -51,15 +51,13 @@ class Cities(db.Model):
     paese = db.Column(db.String(20), nullable = False)
     photo = db.Column(db.String(100), nullable = False)
     description = db.Column(db.String(250), nullable = False)
-    iata = db.Column(db.String(5), nullable = False)
 
-    def __init__(self,like = 0, save = 0, nome = None, paese = None, photo = None, iata = None):
+    def __init__(self,like = 0, save = 0, nome = None, paese = None, photo = None):
         self.like = like
         self.save = save
         self.nome = nome
         self.paese = paese
         self.photo = photo
-        self.iata = iata
 
     def __repr__(self):
         return f'<City {self.nome} in {self.paese}, likes: {self.like_messi}, saves: {self.save_messi} photo: {self.photo}>'

@@ -31,7 +31,7 @@ img {
 }
 
 img:hover{
-    scale: 1.1;
+    scale: 1.07;
 }
 
 
@@ -88,6 +88,9 @@ p {
     gap: 2%; 
     justify-content: center;
     border-top: 50%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
   }
   
 .foru img {

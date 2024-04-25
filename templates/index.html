@@ -22,11 +22,7 @@
         <div class="images">
             
             <img id = "foto{{ city.id }}" src="{{ city.photo }}" class = "foto" data-value = '{{ city.id }}'> <!--ASSEGNO UN ID VARIABILE-->
-            <!-- <div class="cuore"> -->
-                <!-- <img id = "cuore{{ city.id }}" class = "png" src = "static/images/heart.png" width="300" height="300" >
-                <img id = "segnalibro{{ city.id }}" class = "bookmark" src = "static/images/bookmark.png" width="300" height="300" > -->
-
-            <!-- </div> -->
+            
             
 
             <div class="pulsantiera">
@@ -45,21 +41,20 @@
                         <button id = "savebtn{{ city.id }}" class="like pulsante2" value = '{{ city.id }}'>+</button>
                     {% endif %}
                 {% endif %}
-                <button id = "showdesc{{ city.id }}" class = "like pulsante3">=</button>
+                <!--<button id = "showdesc{{ city.id }}" class = "like pulsante3">=</button>-->
                 <div class = "descrizione" id = "descrizione{{ city.id }}"><p>{{ city.description }}</p></div>
-                <script>
-                    document.getElementById("showdesc{{ city.id }}").addEventListener("click", function() {
+            <!--    <script>
+                    document.getElementById("foto{{ city.id }}").addEventListener("mouseenter", function() {
                         var e = document.getElementById("descrizione{{ city.id }}");
-                        var im = document.getElementById('foto{{ city.id }}');
-                        if (e.style.display === "none") {
-                            e.style.display = "block";
-                        //    im.style.filter = "blur(10px)";
-                        } else {
-                            e.style.display = "none";
-                            /*im.style.filter = "blur(0px)";*/
-                        }
+                        e.style.display = "block";
                     });
-                    </script>
+
+                    document.getElementById("foto{{ city.id }}").addEventListener("mouseleave", function() {
+                        var e = document.getElementById("descrizione{{ city.id }}");
+                        e.style.display = "none";
+                    });
+
+                    </script>-->
                     
             </div>
 

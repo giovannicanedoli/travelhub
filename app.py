@@ -51,6 +51,7 @@ class Cities(db.Model):
     paese = db.Column(db.String(20), nullable = False)
     photo = db.Column(db.String(100), nullable = False)
     description = db.Column(db.String(250), nullable = False)
+    iata = db.Column(db.String(5), nullable = True)
 
     def __init__(self,like = 0, save = 0, nome = None, paese = None, photo = None):
         self.like = like
@@ -251,22 +252,36 @@ def logout():
 
 @app.route("/like")
 def like():
-    stmt = db.session.query(
-    Users.username,
-    Cities.paese,
-    Cities.photo,
-    func.count('*')
-    ).select_from(Like)\
-    .join(Users, Like.users_id == Users.id)\
-    .join(Cities, Like.cities_id == Cities.id)\
-    .group_by(Users.username, Cities.paese)\
-    .all()
-    print(stmt)
-    print("------------------------------------")
-    copy = stmt[3:]
-    print(copy)
-    return render_template("like.html", img1 = stmt[0][2],img2 = stmt[1][2], img3 = stmt[2][2], copy = copy, paese=stmt[0][1]) #come prendo qua la città della foto?
+    city_photo_list=[]
+    if 'username' in session and 'password' in session and 'id' in session:
 
+        liked_cities = db.session.query(Cities.nome, Cities.photo, func.count(Like.users_id).label('total_likes')) \
+                        .join(Like, Cities.id == Like.cities_id) \
+                        .filter(Like.users_id == session['id']) \
+                        .group_by(Cities.nome) \
+                        .all()
+
+        # Costruisci un dizionario dove la chiave è il nome della città e il valore è un elenco di tuple (photo, total_likes)
+        cities_dict = {}
+        for city in liked_cities:
+            if city.nome not in cities_dict:
+                cities_dict[city.nome] = []
+            cities_dict[city.nome].append((city.photo, city.total_likes))
+
+        # Seleziona casualmente una foto per ogni città se ce ne sono più di una
+        for city_photos in cities_dict.values():
+            if len(city_photos) > 1:
+                chosen_photo = random.choice(city_photos)
+                city_photos.clear()
+                city_photos.append(chosen_photo)
+
+        # Ordina le città in base al numero di like
+        sorted_cities = sorted(cities_dict.items(), key=lambda x: x[1][0][1], reverse=True)
+
+        # Costruisci la lista di tuple (nome città, URL foto)
+        city_photo_list = [(city[0], city[1][0][0]) for city in sorted_cities]
+    size=len(city_photo_list)
+    return render_template("like.html", city_photo_list=city_photo_list, size=size)
 @app.route("/favorite")
 def favorite():
     saved_ph = []

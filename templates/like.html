@@ -21,36 +21,35 @@
       </script>
     {% else %}
         <!-- BUG, SE NON HO MESSO LIKE A NIENTE DEVO MOSTRARE ALTRO! -->
-
-        <div class = "sup">
-                
-                <p class="h">The city you liked the most is...<strong>{{ paese }}!</strong></p>
-                <img id = "top" src = "{{ img1 }}" width="600" height="600">
-            <!--<div class = "center">-->
-                <p class="h2">complete the podium...</p>
-        </div>
-        <div class = "scorrimento">
-            <img class="minor" src = "{{ img2 }}" width="600" height="600">
-            <img class="minor" src = "{{ img3 }}" width="600" height="600">
-        </div>
-            <!--</div>-->
-            
-            <p class="h3">For You:</p>
-            <!-- QUI È DA FARE UN'ALTRA QUERY, AL MOMENTO NON CI SONO DATI A SUFFICIENZA
-            VEDERE SOLO LA GRIGLIA!
-            link fonte: https://www.youtube.com/watch?v=lhpNRDGzInw
-            -->
-            <div class = "foru">
-                {% for photo in copy %}
-                    <img src="{{ photo[2] }}" width="600" height="600">
-                {% endfor %}
-                
+        {% if city_photo_list==[] or size<3 %}
+            <p class="h">Not enough photo liked yet!</p>
+        {% else %}
+            <div class = "sup">
+                    <p class="h">The city you liked the most is...<strong>{{ city_photo_list[0][0] }}!</strong></p>
+                    <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600">
+                    <p class="h2">complete the podium...</p>
             </div>
+            <div class = "scorrimento">
+                <img class="minor" src = "{{ city_photo_list[1][1] }}" width="600" height="600">
+                <img class="minor" src = "{{ city_photo_list[2][1] }}" width="600" height="600">
+            </div>
+            {% if city_photo_list[3:]!=[] %} 
+                <p class="h3">For You:</p>
+                <!-- QUI È DA FARE UN'ALTRA QUERY, AL MOMENTO NON CI SONO DATI A SUFFICIENZA
+                VEDERE SOLO LA GRIGLIA!
+                link fonte: https://www.youtube.com/watch?v=lhpNRDGzInw
+                -->
+                <div class = "foru">
+                    {% for photo in city_photo_list[3:] %}
+                        <img src="{{ photo[1] }}" width="600" height="600">
+                    {% endfor %}
+                    
+                </div>
+            {% endif %}
 
 
 
-
-
+        {% endif %}
     {% endif %}
     <button id="top2" class="pulsante4" onclick="onTop()">⬆</button>
     <script>

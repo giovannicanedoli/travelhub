@@ -20,44 +20,48 @@
     
     {% for city in cities %}
         <div class="images">
-            
-            <img id = "foto{{ city.id }}" src="{{ city.photo }}" class = "foto" data-value = '{{ city.id }}'> <!--ASSEGNO UN ID VARIABILE-->
-            
+            <div class = "topcontainer">
+                <div class = "container">
+                    <img id = "foto{{ city.id }}" src="{{ city.photo }}" class = "foto" data-value = '{{ city.id }}'> <!--ASSEGNO UN ID VARIABILE-->
+                    <div class="overlay-text">{{ city.nome }}</div>
+                </div>
             
 
-            <div class="pulsantiera">
-                {% if not session %}
-                    <a href="/login" class="link"><button id = "likebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>❤</button></a>
-                    <a href="/login" class="link"><button id = "savebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>+</button></a>
-                {% else %}
-                    {% if city.photo in liked %}
-                        <button id = "likebtn{{ city.id }}" class="like pulsante" value = '{{ city.id }}' style="background-color: red; font-size: clamp(20px ,40px, 40px);" >❤</button>
+                <div class="pulsantiera">
+                    {% if not session %}
+                        <a href="/login" class="link"><button id = "likebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>❤</button></a>
+                        <a href="/login" class="link"><button id = "savebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>+</button></a>
                     {% else %}
-                        <button id = "likebtn{{ city.id }}" class="like pulsante" value = '{{ city.id }}'>❤</button>
+                        {% if city.photo in liked %}
+                            <button id = "likebtn{{ city.id }}" class="like pulsante" value = '{{ city.id }}' style="background-color: red; font-size: clamp(20px ,40px, 40px);" >❤</button>
+                        {% else %}
+                            <button id = "likebtn{{ city.id }}" class="like pulsante" value = '{{ city.id }}'>❤</button>
+                        {% endif %}
+                        {% if city.photo in saved %}
+                            <button id = "savebtn{{ city.id }}" class="like pulsante2" value = '{{ city.id }}' style="background-color: black; color: white; font-size: clamp(20px ,40px, 40px);" >+</button>
+                        {% else %}
+                            <button id = "savebtn{{ city.id }}" class="like pulsante2" value = '{{ city.id }}'>+</button>
+                        {% endif %}
                     {% endif %}
-                    {% if city.photo in saved %}
-                        <button id = "savebtn{{ city.id }}" class="like pulsante2" value = '{{ city.id }}' style="background-color: black; color: white; font-size: clamp(20px ,40px, 40px);" >+</button>
-                    {% else %}
-                        <button id = "savebtn{{ city.id }}" class="like pulsante2" value = '{{ city.id }}'>+</button>
-                    {% endif %}
-                {% endif %}
-                <!--<button id = "showdesc{{ city.id }}" class = "like pulsante3">=</button>
-                <div class = "descrizione" id = "descrizione{{ city.id }}"><p>{{ city.description }}</p></div>
-                <script>
-                    document.getElementById("foto{{ city.id }}").addEventListener("mouseenter", function() {
-                        var e = document.getElementById("descrizione{{ city.id }}");
-                        e.style.display = "block";
-                    });
+                    <!-- <button class = "bottone"></button>
+                    <button class = "bottone"></button> -->
+                    <!--<button id = "showdesc{{ city.id }}" class = "like pulsante3">=</button>
+                    <div class = "descrizione" id = "descrizione{{ city.id }}"><p>{{ city.description }}</p></div>
+                    <script>
+                        document.getElementById("foto{{ city.id }}").addEventListener("mouseenter", function() {
+                            var e = document.getElementById("descrizione{{ city.id }}");
+                            e.style.display = "block";
+                        });
 
-                    document.getElementById("foto{{ city.id }}").addEventListener("mouseleave", function() {
-                        var e = document.getElementById("descrizione{{ city.id }}");
-                        e.style.display = "none";
-                    });
+                        document.getElementById("foto{{ city.id }}").addEventListener("mouseleave", function() {
+                            var e = document.getElementById("descrizione{{ city.id }}");
+                            e.style.display = "none";
+                        });
 
-                    </script>-->
-                    
+                        </script>-->
+                        
+                </div>
             </div>
-
         </div>
     {% endfor %}
     <script src = "{{ url_for('static', filename='putlike.js') }}"></script>

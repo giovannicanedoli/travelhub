@@ -31,8 +31,8 @@ $(document).ready(function() {
                 var code = data.code;
                 if(code === '200'){
                     
-                    heart.style.visibility = "visible";
-                    heart.animate(animKeyframe, animTiming);
+                    // heart.style.visibility = "visible";
+                    // heart.animate(animKeyframe, animTiming);
                     
                     but.style.backgroundColor = "red";
                     but.style.fontSize = "clamp(20px ,40px, 40px)";
@@ -63,7 +63,7 @@ $(document).ready(function() {
     $('.like.pulsante2').click(function() {
         var pkey = $(this).val(); 
         
-        var bookmark = document.getElementById('segnalibro' + pkey);
+        // var bookmark = document.getElementById('segnalibro' + pkey);
         var sav = document.getElementById('savebtn' + pkey);
         
         $.ajax({
@@ -77,7 +77,7 @@ $(document).ready(function() {
             success: function(data) {
                 var code = data.code;
                 if(code === '200'){
-                    bookmark.style.visibility = "visible";
+                    // bookmark.style.visibility = "visible";
                     sav.style.backgroundColor = "black";
                     sav.style.color = "white";
                     sav.style.fontSize = "clamp(20px ,40px, 40px)";
@@ -108,7 +108,6 @@ $(document).ready(function() {
 
     $(".foto").dblclick(function(){
         var pkey = $(this).data('value'); 
-        //alert(pkey);
 
         var heart = document.getElementById('cuore' + pkey);
         var but = document.getElementById('likebtn' + pkey);
@@ -124,10 +123,9 @@ $(document).ready(function() {
             success: function(data) {
                 var code = data.code;
                 if(code === '200'){
-                    heart.style.visibility = "visible";
-                    heart.animate(animKeyframe, animTiming);
-
-                    
+                    // heart.style.visibility = "visible";
+                    // heart.animate(animKeyframe, animTiming);
+ 
                     but.style.backgroundColor = "red";
                     but.style.fontSize = "clamp(20px ,40px, 40px)";
 

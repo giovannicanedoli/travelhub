@@ -51,7 +51,7 @@ class Cities(db.Model):
     paese = db.Column(db.String(20), nullable = False)
     photo = db.Column(db.String(100), nullable = False)
     description = db.Column(db.String(250), nullable = False)
-    iata = db.Column(db.String(5), nullable = False)
+    iata = db.Column(db.String(5), nullable = True)
 
     def __init__(self,like = 0, save = 0, nome = None, paese = None, photo = None, iata = None):
         self.like = like

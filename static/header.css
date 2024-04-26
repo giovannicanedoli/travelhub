@@ -9,7 +9,7 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-end;
-    margin: 2% 0%; /*con il secondo numero decido quanto avvicinare o allontanare i vari bottoni*/
+    margin: 2% 0% 3%; /*con il secondo numero decido quanto avvicinare o allontanare i vari bottoni*/
 }
 
 

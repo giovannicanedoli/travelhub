@@ -84,7 +84,7 @@ img{
 }
 
 .container:hover .overlay-text {
-    animation: showContent .3s .7s linear 1 forwards; 
+    animation: showContent .3s .2s linear 1 forwards; 
     
 }
 

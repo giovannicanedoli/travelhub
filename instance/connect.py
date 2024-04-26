@@ -88,7 +88,7 @@ c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, descr
 c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Santorini', 'Grecia', 'https://lp-cms-production.imgix.net/2021-05/shutterstockRF_1563449509.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850&q=35&dpr=3', 'Santorini, con i suoi incantevoli tramonti, i suoi villaggi bianchi e blu e le sue spiagge vulcaniche, è una delle isole più belle della Grecia.', 'JTR');")
 
 # Per Mykonos, Grecia (Aeroporto di Mykonos - JMK)
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Mykonos', 'Grecia', 'https://lp-cms-production.imgix.net/2021-05/0d787c5e1f6f4c9e7269c39e52752fd1-mykonos.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850&q=35&dpr=3', 'Mykonos, famosa per le sue spiagge di sabbia dorata, la sua vita notturna e il suo caratteristico labirinto di stradine, è una delle isole più alla moda della Grecia.', 'JMK');")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Mykonos', 'Grecia', 'https://lp-cms-production.imgix.net/2021-08/shutterstockRF_1541944991.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850&q=20&dpr=5', 'Mykonos, famosa per le sue spiagge di sabbia dorata, la sua vita notturna e il suo caratteristico labirinto di stradine, è una delle isole più alla moda della Grecia.', 'JMK');")
 
 
 

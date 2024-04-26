@@ -1,2 +1,2 @@
-volendo puoi cambiare password ad un'altra email - risolto
-bug con la primary key di users, come passo a session la primary key generata dal db?
+il box giallo di errore è generato male (su firefox) se non hai un utente
+IDEA: mostrare un box giallo se provi a mettere like senza loggarti al login

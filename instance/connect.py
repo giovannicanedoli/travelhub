@@ -141,4 +141,3 @@ MYKONOS https://lp-cms-production.imgix.net/2021-08/shutterstockRF_1541944991.jp
 
 
 conn.commit()
-

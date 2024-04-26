@@ -1,2 +1,8 @@
-volendo puoi cambiare password ad un'altra email - risolto
-bug con la primary key di users, come passo a session la primary key generata dal db?
+SE FACCIO L'HOVER SUL BOX DI TESTO SI LEVA IL BLUR SULL'IMMAGINE
+
+SE MI SCADE LA SESSIONE IL FRONTEND MI MOSTRA COME SE SONO LOGGATO!!!
+
+
+
+il box giallo di errore è generato male (su firefox) se non hai un utente
+IDEA: mostrare un box giallo se provi a mettere like senza loggarti al login

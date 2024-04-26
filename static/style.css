@@ -36,10 +36,6 @@ img{
     transition-duration: 0.4s;
 }
 
-.foto:hover {
-    scale: 1.03;
-    filter: blur(1.5px);
-}
 
 @keyframes widener {
     0% {max-width: 20%; border-radius: 5%;}
@@ -76,43 +72,62 @@ img{
   } 
   si bugga (non so perché)
   */
-*/
 
 .cuore {
     width: 50%;
 }
 
 
+.container:hover{
+    /* scale: 1.03; */
+    transform: scale(1.03);
+}
 
 .container:hover .overlay-text {
-    opacity: 1; /* Quando si passa sopra l'immagine, rendi il testo visibile */
+    animation: showContent .3s .7s linear 1 forwards; 
+    
+}
+
+.overlay-text:hover{
+    filter: blur(1.5px);
+
+}
+
+@keyframes showContent{
+    to{
+        transform: translateY(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
 }
 
 .overlay-text {
     font-family: 'Poppins',sans-serif;
     font-size: 250%;
     font-weight: 500;
-    opacity: 0; /* Imposta l'opacità del testo a 0 per nasconderlo inizialmente */
-    transition: opacity .5s ease; /* Aggiungi un effetto di transizione all'opacità */
-    text-align: center; /* Centra il testo orizzontalmente */
-    background-color: rgba(0, 0, 0, 0.5); /* Aggiungi uno sfondo semitrasparente per migliorare la leggibilità */
-    color: white; /* Imposta il colore del testo */
-    position: absolute; /* Posiziona il testo in modo assoluto rispetto all'elemento padre */
-    top: 50%; /* Posiziona il testo al centro rispetto all'alto dell'elemento padre */
-    left: 50%; /* Posiziona il testo al centro rispetto alla sinistra dell'elemento padre */
-    transform: translate(-50%, -50%); /* Per centrare il testo */
-    z-index: 1; /* Assicura che il testo sia sovrapposto all'immagine */
-    padding: 2%; /* Aggiungi spazio interno al riquadro del testo */
-    border-radius: 40%; /* Aggiungi bordi stondati */
-    backdrop-filter: blur(1px); 
+    opacity: 0;
+    transition: opacity .5s ease;   /* Aggiungi un effetto di transizione all'opacità*/
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: absolute;
+    top: 45%; 
+    left: 45%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding: 1.5;
+    border-radius: 20%;
     box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.5); 
+    transform: translateY(50px);
+    filter: blur(20px);
 }
-
+ 
 
 .container{
     position: relative;
     width: 50%;
     height: 50%;
+    transition: transform 0.5s;
 }
 
 .topcontainer{

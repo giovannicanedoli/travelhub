@@ -102,8 +102,8 @@ img{
     left: 50%; /* Posiziona il testo al centro rispetto alla sinistra dell'elemento padre */
     transform: translate(-50%, -50%); /* Per centrare il testo */
     z-index: 1; /* Assicura che il testo sia sovrapposto all'immagine */
-    padding: 5px; /* Aggiungi spazio interno al riquadro del testo */
-    border-radius: 20px; /* Aggiungi bordi stondati */
+    padding: 2%; /* Aggiungi spazio interno al riquadro del testo */
+    border-radius: 40%; /* Aggiungi bordi stondati */
     backdrop-filter: blur(1px); 
     box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.5); 
 }

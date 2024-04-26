@@ -309,7 +309,7 @@ def leave_like():
         city_id = form_sent.getlist('primarykey')[0]
         city = Cities.query.filter_by(id = city_id).first()
         
-        
+        #debug
         if not city:
             raise Exception('id not found, nso che cazzo è successo')
         
@@ -355,6 +355,7 @@ def save_photo():
         city_id = form_sent.getlist('primarykey')[0]
         city = Cities.query.filter_by(id = city_id).first()
         
+        #debug
         if not city:
             raise Exception('id not found, nso che cazzo è successo')
             sys.exit(-1)        

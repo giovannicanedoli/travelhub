@@ -21,19 +21,40 @@
       </script>
     {% else %}
         
+        <!-- come si fa a mettere solo una volta i per te? -->
         {% if size == 0 %}
             <!-- QUA SE PUÒ METTE QUALCHE IMMAGINE, TIPO UN EMOJI TRISTE O QUALCHE FAC-SIMILE -->
             <p class="h">Not enough photo liked yet!</p>
-            <!-- For You goes here -->
+            
+            <!-- For you -->
+            {% if for_u_list != [] %} 
+                <p class="h3">For You:</p>
+                <div class = "foru">
+                    {% for photo in for_u_list %}
+                        <img src="{{ photo[1] }}" width="600" height="600">
+                    {% endfor %}
+                    
+                </div>
+            {% endif %}
 
         {% elif  size == 1 %} <!-- SE HO UN SOLO ELEMENTO RENDERIZZO SOLO QUELLO -->
             <div class = "sup">
                 <p class="h">The city you liked the most is...<strong>{{ city_photo_list[0][0] }}!</strong></p>
                 <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600">
-                <!-- <p class="h2">complete the podium...</p> NON CI DEVE ESSERE (HO SOLO UN'IMMAGINE)-->
                 <p class = "h2">put more like to see a podium of photos here!</p>
             </div>
+
             <!--for u-->
+            {% if for_u_list != [] %} 
+                <p class="h3">For You:</p>
+                <div class = "foru">
+                    {% for photo in for_u_list %}
+                        <img src="{{ photo[1] }}" width="600" height="600">
+                    {% endfor %}
+                    
+                </div>
+            {% endif %}
+
         {% elif size == 2 %}    <!-- SE HO DUE ELEMENTI RENDERIZZO SOLO QUELLI, DEVO FARE QUESTE CLASSI! -->
             <div class = "container">
                 
@@ -49,7 +70,17 @@
                     <p class = "h2">put more like to complete the podium!</p>
                 </div>
             </div>
+
             <!--For You-->
+            {% if for_u_list != [] %} 
+                <p class="h3">For You:</p>
+                <div class = "foru">
+                    {% for photo in for_u_list %}
+                        <img src="{{ photo[1] }}" width="600" height="600">
+                    {% endfor %}
+                </div>
+            {% endif %}
+
         {% else %}
             <div class = "sup">
                     <p class="h">The city you liked the most is...<strong>{{ city_photo_list[0][0] }}!</strong></p>
@@ -65,16 +96,10 @@
             </div>
 
             <!-- For You -->
-            {% if city_photo_list[3:]!=[] %} 
+            {% if for_u_list != [] %} 
                 <p class="h3">For You:</p>
-
-                <!-- QUI È DA FARE UN'ALTRA QUERY, AL MOMENTO NON CI SONO DATI A SUFFICIENZA
-                VEDERE SOLO LA GRIGLIA!
-                link fonte: https://www.youtube.com/watch?v=lhpNRDGzInw
-                -->
-
                 <div class = "foru">
-                    {% for photo in city_photo_list[3:] %}
+                    {% for photo in for_u_list %}
                         <img src="{{ photo[1] }}" width="600" height="600">
                     {% endfor %}
                     

@@ -307,7 +307,7 @@ def like():
 
         size = len(liked_cities)
 
-    return render_template("like.html", city_photo_list=liked_cities, size=size)
+    return render_template("like.html", city_photo_list=liked_cities, for_u_list = foru, size=size)
 
 @app.route("/favorite")
 def favorite():

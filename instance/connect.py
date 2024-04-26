@@ -31,84 +31,78 @@ c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, descr
 c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Mykonos', 'Grecia', 'https://lp-cms-production.imgix.net/2021-08/shutterstockRF_1541944991.jpg?auto=format&fit=crop&sharp=10&vib=20&ixlib=react-8.6.4&w=850&q=20&dpr=5', 'Mykonos, con le sue spiagge di sabbia dorata, i suoi famosi mulini a vento e la sua vivace vita notturna, è una delle isole più glamour della Grecia.', 'a');")
 '''
 
-# Inserimento dei dati per Roma - Colosseo
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Roma', 'Italia', 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1996&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Il Colosseo è un''icona della Roma antica e una delle sette meraviglie del mondo.', 'FCO')")
 
-# Inserimento dei dati per Roma - Fontana di Trevi
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Rome', 'Italia', 'https://images.unsplash.com/photo-1525874684015-58379d421a52?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'La Fontana di Trevi è una delle fontane più famose del mondo, nota per la sua bellezza e la tradizione di lanciare una moneta per garantirsi il ritorno a Rome.', 'FCO')")
+# Inserimento dei dati per Roma
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Rome', 'Italy', 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1996&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Rome is the capital city of Italy and is known for its rich history, art, and architecture.', 'FCO')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Rome', 'Italy', 'https://images.unsplash.com/photo-1525874684015-58379d421a52?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Explore the iconic Colosseum and ancient ruins in Rome.', 'FCO')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Rome', 'Italy', 'https://images.unsplash.com/photo-1531572753322-ad063cecc140?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Visit the stunning Trevi Fountain and make a wish.', 'FCO')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Rome', 'Italy', 'https://images.unsplash.com/photo-1678970388666-e50b8006ab51?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Discover the beauty of Vatican City and St. Peter''s Basilica.', 'FCO')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Rome', 'Italy', 'https://static.nexilia.it/wearegaylyplanet/2023/02/Roma-insolita-e-segreta-curiosita%CC%80-da-vedere-a-Roma_2.jpg', 'Explore the hidden gems and secret spots of Rome.', 'FCO')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Rome', 'Italy', 'https://www.vistanet.it/roma/wp-content/uploads/sites/4/2021/04/02-fontana-di-venere-villa-borghese.jpg', 'Admire the beauty of Villa Borghese and its famous fountains.', 'FCO')")
 
-# Inserimento dei dati per Rome - Piazza San Pietro
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Rome', 'Italia', 'https://images.unsplash.com/photo-1531572753322-ad063cecc140?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Piazza San Pietro è il centro della Città del Vaticano e uno dei luoghi più importanti per i fedeli cattolici.', 'FCO')")
+# Inserimento dei dati per Parigi
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Paris', 'France', 'https://images.unsplash.com/photo-1439393161192-32360eb753f1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Paris is the capital city of France, known for its iconic landmarks, fashion, and cuisine.', 'CDG')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Paris', 'France', 'https://images.unsplash.com/photo-1587648415693-4a5362b2ce41?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Take a stroll along the Seine River and enjoy the romantic atmosphere of Paris.', 'CDG')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Paris', 'France', 'https://images.unsplash.com/photo-1565457211452-16f8e7062a0a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Visit the magnificent Palace of Versailles and its beautiful gardens.', 'CDG')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Paris', 'France', 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Versailles-FacadeJardin.jpg/640px-Versailles-FacadeJardin.jpg', 'Explore the grandeur of the Palace of Versailles and its opulent architecture.', 'CDG')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Paris', 'France', 'https://media.parisladefense.com/RegPKzCcJLzYhGXwwmNoWzx0nqY=/672x670/articles/developpement-territorial/2024-02/skyline-paris-la-defense-c-anne-claude-barbier.jpg', 'Admire the modern skyline of La Defense in Paris.', 'CDG')")
 
-# Inserimento dei dati per Paris - Torre Eiffel
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Paris', 'Francia', 'https://images.unsplash.com/photo-1439393161192-32360eb753f1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'La Torre Eiffel è uno dei simboli più iconici al mondo e offre una vista spettacolare sulla città di Paris.', 'CDG')")
+# Inserimento dei dati per Madrid
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Madrid', 'Spain', 'https://images.unsplash.com/photo-1570698473651-b2de99bae12f?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Madrid is the capital city of Spain, known for its vibrant culture, art, and nightlife.', 'MAD')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Madrid', 'Spain', 'https://images.unsplash.com/photo-1578305698944-874fa44d04c9?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Experience the lively atmosphere of Plaza Mayor in Madrid.', 'MAD')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Madrid', 'Spain', 'https://images.unsplash.com/photo-1585164917550-6f73d03dc019?q=80&w=2126&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Discover the art and history of the Prado Museum in Madrid.', 'MAD')")
 
-# Inserimento dei dati per Paris - Louvre
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Paris', 'Francia', 'https://images.unsplash.com/photo-1587648415693-4a5362b2ce41?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Il Louvre è il più grande museo d''arte e di storia del mondo, con opere famose come la Gioconda di Leonardo da Vinci.', 'CDG')")
+# Inserimento dei dati per Barcellona
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Barcelona', 'Spain', 'https://images.unsplash.com/photo-1593368858664-a7fe556ab936?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Barcelona is known for its unique architecture, vibrant street life, and beautiful beaches.', 'BCN')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Barcelona', 'Spain', 'https://hips.hearstapps.com/gioit.h-cdn.co/assets/17/41/980x980/square-1507700367-sagradafamilia.jpg?resize=1200:*', 'Admire the stunning architecture of the Sagrada Familia in Barcelona.', 'BCN')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Barcelona', 'Spain', 'https://images.unsplash.com/photo-1568232094870-03e2b312ae4b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Explore the colorful streets of the Gothic Quarter in Barcelona.', 'BCN')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Barcelona', 'Spain', 'https://www.sognandobarcellona.com/wp-content/uploads/2019/03/spiagge-barcellona.jpg', 'Relax on the beautiful beaches of Barcelona.', 'BCN')")
 
-# Inserimento dei dati per Madrid - Puerta del Sol
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Madrid', 'Spagna', 'https://images.unsplash.com/photo-1570698473651-b2de99bae12f?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Puerta del Sol è una delle piazze più vivaci di Madrid, circondata da negozi, ristoranti e monumenti.', 'MAD')")
+# Inserimento dei dati per Bankok
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Bangkok', 'Thailand', 'https://www.happyviaggithailandia.com/app/public/upload/THAILANDIA/bangkok/033.jpg', 'Bangkok is the capital city of Thailand, known for its vibrant street life, temples, and markets.', 'BKK')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Bangkok', 'Thailand', 'https://images.placesonline.com/photos/424011407170352_Bangkok_531675985.jpg', 'Experience the bustling energy of Bangkok''s Chinatown.', 'BKK')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Bangkok', 'Thailand', 'https://a.cdn-hotels.com/gdcs/production175/d369/48b05094-140a-4b33-a120-6147689c1a65.jpg?impolicy=fcrop&w=800&h=533&q=medium', 'Visit the famous floating markets of Bangkok.', 'BKK')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Bangkok', 'Thailand', 'https://media.cntraveler.com/photos/5b9802317009626e21e1e171/16:9/w_2560,c_limit/Chinatown_Bangkok_GettyImages-546022091.jpg', 'Explore the vibrant street food scene in Bangkok.', 'BKK')")
 
-# Inserimento dei dati per Madrid - Parco del Retiro
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Madrid', 'Spagna', 'https://images.unsplash.com/photo-1578305698944-874fa44d04c9?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Il Parco del Retiro è un''oasi verde nel cuore di Madrid, perfetta per una passeggiata o una pausa rilassante.', 'MAD')")
+# Inserimento dei dati per Terni
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Terni', 'Italy', 'https://st3.idealista.it/news/archivie/styles/fullwidth_xl/public/2023-08/images/1280px-terni_cascate_delle_marmore_02_-_copia.jpg?VersionId=IWU5LV0ifRnGApBTr9klRzsZOFj6ZZbc&itok=A0554KAu', 'Terni is a city in central Italy known for the stunning Marmore Waterfalls.', 'PEG')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Terni', 'Italy', 'https://d5rzfs5ck83rq.cloudfront.net/_processed_/1/d/csm_foto_Terni_titolo_929bf688fb.jpg', 'Discover the beauty of Stifone and the Nera River Gorges near Terni.', 'PEG')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Terni', 'Italy', 'https://images.placesonline.com/photos/stifone_432797291-min-jpeg_226335_1624968220.jpg?quality=80&w=637', 'Enjoy the picturesque views of Piediluco Lake and the medieval Rocca Albornoziana.', 'PEG')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Terni', 'Italy', 'https://www.turismonarni.it/wp-content/uploads/2022/05/stifone-e-le-gole-del-nera-vista-aerea.jpg', 'Explore the charming town of Terni and its surrounding natural beauty.', 'PEG')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Terni', 'Italy', 'https://www.laportadellavalnerina.com/wp-content/uploads/2020/03/piediluco-e-rocca.jpg', 'Discover the historic village of Piediluco and its ancient fortress.', 'PEG')")
 
-# Inserimento dei dati per Barcelona - Parco Güell
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Barcelona', 'Spagna', 'https://images.unsplash.com/photo-1593368858664-a7fe556ab936?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Il Parco Güell è un capolavoro di Gaudí e offre una vista spettacolare sulla città di Barcelona.', 'BCN')")
+# Inserimento dei dati per Santorini
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Santorini', 'Greece', 'https://www.hachettebookgroup.com/wp-content/uploads/2020/03/Santorini.png?w=1024', 'Santorini is a Greek island known for its stunning sunsets and white-washed buildings.', 'JTR')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Santorini', 'Greece', 'https://static2-viaggi.corriereobjects.it/wp-content/uploads/2022/08/iStock-166471469-1080x720.jpg?v=1659884245', 'Explore the picturesque villages and beautiful beaches of Santorini.', 'JTR')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Santorini', 'Greece', 'https://transform.nws.ai/https%3A//cdn.thenewsroom.io/platform/story_media/1288797882/1036361536_oPBFLkx/w_1200,c_limit/', 'Experience the charm and beauty of Santorini''s traditional architecture.', 'JTR')")
 
-# Inserimento dei dati per Barcelona - Sagrada Familia
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Barcelona', 'Spagna', 'https://hips.hearstapps.com/gioit.h-cdn.co/assets/17/41/980x980/square-1507700367-sagradafamilia.jpg?resize=1200:*', 'La Sagrada Familia è una delle opere più famose e iconiche di Gaudí, ancora in fase di costruzione.', 'BCN')")
+# Inserimento dei dati per New York
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'New York', 'USA', 'https://media.tacdn.com/media/attractions-splice-spp-674x446/07/bd/6f/17.jpg', 'New York City is known for its iconic skyline, Broadway shows, and diverse culture.', 'JFK')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'New York', 'USA', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/New_york_times_square-terabass.jpg/1200px-New_york_times_square-terabass.jpg', 'Experience the energy of Times Square in the heart of New York City.', 'JFK')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'New York', 'USA', 'https://mywowo.net/media/images/cache/new_york_central_park_02_parte_sett_centrale_jpg_1200_630_cover_85.jpg', 'Relax and unwind in the natural beauty of Central Park in New York City.', 'JFK')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'New York', 'USA', 'https://imgcap.capturetheatlas.com/wp-content/uploads/2022/01/little-island-free-things-nyc.jpg', 'Visit Little Island, a unique park and cultural space on the Hudson River.', 'JFK')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'New York', 'USA', 'https://assets3.thrillist.com/v1/image/2680204/1200x630/flatten;crop_down;webp=auto;jpeg_quality=70', 'Discover hidden gems and off-the-beaten-path attractions in New York City.', 'JFK')")
 
-# Inserimento dei dati per Barcelona - La Pedrera
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Barcelona', 'Spagna', 'https://images.unsplash.com/photo-1568232094870-03e2b312ae4b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'La Pedrera è un altro capolavoro architettonico di Gaudí, con un design unico e innovativo.', 'BCN')")
+# Inserimento dei dati per Los Angeles
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Los Angeles', 'USA', 'https://photos.zillowstatic.com/fp/84717aaf43b722f1e1e083c6b8e5f455-cc_ft_960.jpg', 'Los Angeles is known for its entertainment industry, beaches, and vibrant culture.', 'LAX')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Los Angeles', 'USA', 'https://www.multimediatravel.com/wp-content/uploads/sites/47/2021/12/tour-los-angeles-2022-dall-italia.jpg', 'Take a tour of Los Angeles and visit iconic landmarks like the Hollywood Sign.', 'LAX')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Los Angeles', 'USA', 'https://images.musement.com/cover/0001/43/los-angeles_header-42380.jpeg', 'Experience the vibrant energy of Downtown Los Angeles.', 'LAX')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Los Angeles', 'USA', 'https://live.staticflickr.com/65535/50997927805_b8b2182c82_b.jpg', 'Enjoy the sunshine and surf at the beaches of Los Angeles.', 'LAX')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Los Angeles', 'USA', 'https://i.pinimg.com/originals/f9/cc/4f/f9cc4f445fbaa2af81bf63f8a7a9562e.jpg', 'Discover the diverse neighborhoods and cultural attractions of Los Angeles.', 'LAX')")
 
-# Inserimento dei dati per Bangkok
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Bangkok', 'Thailand', 'https://www.happyviaggithailandia.com/app/public/upload/THAILANDIA/bangkok/033.jpg', 'Bangkok is the capital and most populous city of Thailand. It is known for its vibrant street life and cultural landmarks.', 'BKK')")
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Bangkok', 'Thailand', 'https://images.placesonline.com/photos/424011407170352_Bangkok_531675985.jpg', 'Bangkok is the capital and most populous city of Thailand. It is known for its vibrant street life and cultural landmarks.', 'BKK')")
+# Inserimento dei dati per Londra
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'London', 'UK', 'https://www.lastrolabio.it/wp-content/uploads/2021/09/visitare-londra.jpg', 'London is the capital city of England, known for its historic landmarks, museums, and theater scene.', 'LHR')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'London', 'UK', 'https://mediaim.expedia.com/destination/1/9c375cff1e843ffe6c8b0f3c1d00a65e.jpg', 'Explore the iconic landmarks of London, such as the Tower Bridge and Big Ben.', 'LHR')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'London', 'UK', 'https://londonita.com/wp-content/uploads/2020/02/itineraio-city-di-Londra-min.jpg', 'Discover the historic charm of Covent Garden in London.', 'LHR')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'London', 'UK', 'https://thelondonlocal.com/wp-content/uploads/2022/07/cheap-non-touristy-things-to-do-in-london-colorful-london-neals-yard-1024x682.jpg', 'Find hidden gems like Neal''s Yard in London''s vibrant neighborhoods.', 'LHR')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'London', 'UK', 'https://a.cdn-hotels.com/gdcs/production0/d347/dc69d900-985f-432f-934c-6cbf968cb19d.jpg', 'Experience the cultural diversity of London and its world-class museums.', 'LHR')")
 
-# Inserimento dei dati per Terni - Cascate delle Marmore
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Terni', 'Italy', 'https://st3.idealista.it/news/archivie/styles/fullwidth_xl/public/2023-08/images/1280px-terni_cascate_delle_marmore_02_-_copia.jpg?VersionId=IWU5LV0ifRnGApBTr9klRzsZOFj6ZZbc&itok=A0554KAu', 'Terni is a city in the southern portion of the region of Umbria in central Italy.', 'QSR')")
+# Inserimento dei dati per Copenaghen
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Copenhagen', 'Denmark', 'https://scontent.ccdn.cloud/image/vivitravels-it/b9e4a4e0-c183-42df-a42a-72be17c20735/maxw-960.jpg', 'Copenhagen is the capital city of Denmark, known for its historic charm, green spaces, and cycling culture.', 'CPH')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Copenhagen', 'Denmark', 'https://www.helpviaggi.com/wp-content/uploads/2017/08/copenaghen-1.jpg', 'Explore the colorful streets and canals of Nyhavn in Copenhagen.', 'CPH')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Copenhagen', 'Denmark', 'https://eurasian.travel/wp-content/uploads/2018/05/Copenhagen_02-1721511_1920-1-1024x740.jpg', 'Visit the iconic Little Mermaid statue and picturesque harbor in Copenhagen.', 'CPH')")
+c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Copenhagen', 'Denmark', 'https://images.placesonline.com/photos/christiania_1343258141_148910_1658227287.jpg?quality=80&w=700', 'Experience the unique atmosphere of Freetown Christiania in Copenhagen.', 'CPH')")
 
-# Inserimento dei dati per Terni - Piediluco e Rocca
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Terni', 'Italy', 'https://www.laportadellavalnerina.com/wp-content/uploads/2020/03/piediluco-e-rocca.jpg', 'Terni is also known for the picturesque Lake Piediluco and its historic Rocca Albornoziana.', 'QSR')")
-
-# Inserimento dei dati per Terni - Altro esempio per Terni
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Terni', 'Italy', 'https://d5rzfs5ck83rq.cloudfront.net/_processed_/1/d/csm_foto_Terni_titolo_929bf688fb.jpg', 'Terni is a city with rich industrial history and beautiful natural surroundings.', 'QSR')")
-
-# Inserimento dei dati per Santorini - Esempio 1
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Santorini', 'Greece', 'https://www.hachettebookgroup.com/wp-content/uploads/2020/03/Santorini.png?w=1024', 'Santorini is a volcanic island in the Cyclades group of the Greek islands.', 'JTR')")
-
-# Inserimento dei dati per Santorini - Esempio 2
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Santorini', 'Greece', 'https://static2-viaggi.corriereobjects.it/wp-content/uploads/2022/08/iStock-166471469-1080x720.jpg?v=1659884245', 'Santorini is famous for its stunning sunsets and beautiful white-washed buildings overlooking the Aegean Sea.', 'JTR')")
-
-# Inserimento dei dati per New York - Esempio 1
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'New York', 'United States', 'https://media.tacdn.com/media/attractions-splice-spp-674x446/07/bd/6f/17.jpg', 'New York City is known for its iconic skyline, Broadway shows, and diverse cultural attractions.', 'JFK')")
-
-# Inserimento dei dati per New York - Esempio 2
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'New York', 'United States', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/New_york_times_square-terabass.jpg/1200px-New_york_times_square-terabass.jpg', 'Times Square is a major commercial and entertainment hub in New York City.', 'JFK')")
-
-# Inserimento dei dati per New York - Esempio 3
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'New York', 'United States', 'https://mywowo.net/media/images/cache/new_york_central_park_02_parte_sett_centrale_jpg_1200_630_cover_85.jpg', 'Central Park is an urban park in New York City, offering a peaceful escape from the hustle and bustle of the city.', 'JFK')")
-
-# Inserimento dei dati per Los Angeles - Esempio 1
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Los Angeles', 'United States', 'https://photos.zillowstatic.com/fp/84717aaf43b722f1e1e083c6b8e5f455-cc_ft_960.jpg', 'Los Angeles is known for its entertainment industry, beautiful beaches, and diverse neighborhoods.', 'LAX')")
-
-# Inserimento dei dati per Los Angeles - Esempio 2
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Los Angeles', 'United States', 'https://www.multimediatravel.com/wp-content/uploads/sites/47/2021/12/tour-los-angeles-2022-dall-italia.jpg', 'Explore the famous Hollywood sign and Walk of Fame in Los Angeles.', 'LAX')")
-
-# Inserimento dei dati per London - Esempio 1
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'London', 'United Kingdom', 'https://www.lastrolabio.it/wp-content/uploads/2021/09/visitare-londra.jpg', 'London is the capital city of England, known for its rich history, iconic landmarks, and vibrant cultural scene.', 'LHR')")
-
-# Inserimento dei dati per London - Esempio 2
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'London', 'United Kingdom', 'https://mediaim.expedia.com/destination/1/9c375cff1e843ffe6c8b0f3c1d00a65e.jpg', 'Visit the Tower of London and Buckingham Palace in London.', 'LHR')")
-
-# Inserimento dei dati per London - Esempio 3
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'London', 'United Kingdom', 'https://londonita.com/wp-content/uploads/2020/02/itineraio-city-di-Londra-min.jpg', 'Explore the vibrant markets and historic landmarks of London.', 'LHR')")
-
-# Inserimento dei dati per Copenhagen - Esempio 1
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Copenhagen', 'Denmark', 'https://scontent.ccdn.cloud/image/vivitravels-it/b9e4a4e0-c183-42df-a42a-72be17c20735/maxw-960.jpg', 'Copenhagen is the capital city of Denmark, known for its picturesque canals and colorful buildings.', 'CPH')")
-
-# Inserimento dei dati per Copenhagen - Esempio 2
-c.execute("INSERT INTO cities (like_messi, save_messi, nome, paese, photo, description, iata) VALUES (0, 0, 'Copenhagen', 'Denmark', 'https://www.helpviaggi.com/wp-content/uploads/2017/08/copenaghen-1.jpg', 'Visit the iconic Little Mermaid statue and Nyhavn waterfront in Copenhagen.', 'CPH')")
 
 
 

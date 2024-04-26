@@ -1,6 +1,6 @@
 from flask import Flask,render_template, url_for, redirect, request, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import func
+from sqlalchemy import func, desc
 from flask_mail import Mail, Message
 from flask_login import LoginManager, UserMixin, login_user, logout_user
 from datetime import timedelta
@@ -64,6 +64,7 @@ class Cities(db.Model):
     def __repr__(self):
         return f'<City {self.nome} in {self.paese}, likes: {self.like_messi}, saves: {self.save_messi} photo: {self.photo}> iata: {self.iata}'
 
+#devo selezionare qual è la città con più like tra le città a cui ha messo like user.id
 class Like(db.Model):
     __tablename__ = 'likes'
     users_id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key = True)
@@ -147,7 +148,6 @@ def register():
         return redirect(url_for("main_route"))
     else:
         return render_template("signup.html")
-
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -255,8 +255,15 @@ def logout():
 def like():
     city_photo_list=[]
     if 'username' in session and 'password' in session and 'id' in session:
+        '''
+        SELECT c.nome, c.photo, count(*) as totale_like
+        FROM cities c, likes l
+        WHERE c.id = l.cities_id and l.users_id = 5
+        GROUP BY c.nome
+        ORDER BY totale_like;
+        '''
 
-        liked_cities = db.session.query(Cities.nome, Cities.photo, func.count(Like.users_id).label('total_likes')) \
+        '''liked_cities = db.session.query(Cities.nome, Cities.photo, func.count(Like.users_id).label('total_likes'))\
                         .join(Like, Cities.id == Like.cities_id) \
                         .filter(Like.users_id == session['id']) \
                         .group_by(Cities.nome) \
@@ -281,8 +288,27 @@ def like():
 
         # Costruisci la lista di tuple (nome città, URL foto)
         city_photo_list = [(city[0], city[1][0][0]) for city in sorted_cities]
-    size=len(city_photo_list)
-    return render_template("like.html", city_photo_list=city_photo_list, size=size)
+    size=len(city_photo_list)'''
+        liked_cities = db.session.query(Cities.nome, Cities.photo, func.count('*').label('total_likes')) \
+                         .join(Like, Cities.id == Like.cities_id) \
+                         .filter(Like.users_id == session['id']) \
+                         .group_by(Cities.nome) \
+                         .order_by(desc('total_likes'))\
+                         .all()
+
+
+        #questa query mi serve per i per te
+        foru = db.session.query(Cities.nome, Cities.photo, Cities.like_messi).group_by(Cities.like_messi).all()
+        foru = foru[::-1]
+        
+        print(liked_cities, end = "\n\n\n")
+        for t in liked_cities:
+            print(t)
+
+        size = len(liked_cities)
+
+    return render_template("like.html", city_photo_list=liked_cities, size=size)
+
 @app.route("/favorite")
 def favorite():
     saved_ph = []

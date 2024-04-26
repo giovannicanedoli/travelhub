@@ -20,25 +20,59 @@
         window.location.replace("/login"); //se non sei loggato e in qualche modo arrivi qua ti reindirizzo al login
       </script>
     {% else %}
-        <!-- BUG, SE NON HO MESSO LIKE A NIENTE DEVO MOSTRARE ALTRO! -->
-        {% if city_photo_list==[] or size<3 %}
+        
+        {% if size == 0 %}
+            <!-- QUA SE PUÒ METTE QUALCHE IMMAGINE, TIPO UN EMOJI TRISTE O QUALCHE FAC-SIMILE -->
             <p class="h">Not enough photo liked yet!</p>
+            <!-- For You goes here -->
+
+        {% elif  size == 1 %} <!-- SE HO UN SOLO ELEMENTO RENDERIZZO SOLO QUELLO -->
+            <div class = "sup">
+                <p class="h">The city you liked the most is...<strong>{{ city_photo_list[0][0] }}!</strong></p>
+                <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600">
+                <!-- <p class="h2">complete the podium...</p> NON CI DEVE ESSERE (HO SOLO UN'IMMAGINE)-->
+                <p class = "h2">put more like to see a podium of photos here!</p>
+            </div>
+            <!--for u-->
+        {% elif size == 2 %}    <!-- SE HO DUE ELEMENTI RENDERIZZO SOLO QUELLI, DEVO FARE QUESTE CLASSI! -->
+            <div class = "container">
+                
+                <div class = "first">
+                    <p class="h2">The city you liked the most is...<strong>{{ city_photo_list[0][0] }}!</strong></p>
+                    <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600">
+                    <p class="h2">second image in podium is...<strong>{{ city_photo_list[1][0] }}!</strong></p>
+                </div>
+
+                <!-- QUESTA QUI PIÙ PICCOLA?? -->
+                <div class = "second">
+                    <img id = "top" src = "{{ city_photo_list[1][1] }}" width="600" height="600">
+                    <p class = "h2">put more like to complete the podium!</p>
+                </div>
+            </div>
+            <!--For You-->
         {% else %}
             <div class = "sup">
                     <p class="h">The city you liked the most is...<strong>{{ city_photo_list[0][0] }}!</strong></p>
                     <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600">
-                    <p class="h2">complete the podium...</p>
+                    <p class="h2">Damn! You really appreciated also these others cities!</p>
             </div>
+
             <div class = "scorrimento">
+                <p class="h"><strong>{{ city_photo_list[1][0] }}!</strong></p>
                 <img class="minor" src = "{{ city_photo_list[1][1] }}" width="600" height="600">
+                <p class="h"><strong>{{ city_photo_list[2][0] }}!</strong></p>
                 <img class="minor" src = "{{ city_photo_list[2][1] }}" width="600" height="600">
             </div>
+
+            <!-- For You -->
             {% if city_photo_list[3:]!=[] %} 
                 <p class="h3">For You:</p>
+
                 <!-- QUI È DA FARE UN'ALTRA QUERY, AL MOMENTO NON CI SONO DATI A SUFFICIENZA
                 VEDERE SOLO LA GRIGLIA!
                 link fonte: https://www.youtube.com/watch?v=lhpNRDGzInw
                 -->
+
                 <div class = "foru">
                     {% for photo in city_photo_list[3:] %}
                         <img src="{{ photo[1] }}" width="600" height="600">

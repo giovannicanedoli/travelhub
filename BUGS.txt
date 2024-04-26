@@ -1,7 +1,8 @@
+
 SE MI SCADE LA SESSIONE IL FRONTEND MI MOSTRA COME SE SONO LOGGATO!!!
 
 il box giallo di errore è generato male (su firefox) se non hai un utente
-IDEA: mostrare un box giallo se provi a mettere like senza loggarti al login
+
 
 
 

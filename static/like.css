@@ -23,6 +23,9 @@ body {
 }
 
 img {
+    width: 60%;
+    /* height: 80%; */
+    object-fit: cover;
     border-radius: 10%;
     object-fit: cover; /*per le proporzioni delle foto*/
     transition-duration: 0.3s;
@@ -50,7 +53,7 @@ img:hover{
 
 
 p {
-    font-size: clamp(10px ,30px, 20px);
+
     font-family: 'Poppins',sans-serif;
     display: flex;
     justify-content: center;
@@ -58,21 +61,22 @@ p {
 }
 
 .h {
-    font-size: clamp(20px ,35px, 40px);
+    font-size: clamp(1.8rem, 2.3vw, 3.3rem); 
     margin-bottom: 3%;
 }
 
 .h2 {
-    font-size: clamp(20px ,28px, 35px);
+    font-size: clamp(1.4rem, 2vw, 3.3rem); 
 }
 
 .h3 {
-    font-size: clamp(20px ,22px, 35px);
+    font-size: clamp(1rem, 1.8vw, 3rem); 
 }
 
 #top{
     max-width: 100%; 
     height: auto; 
+    max-height: 60vh;
 }
 
 .center{
@@ -90,22 +94,26 @@ p {
     scale: 0.8;
 }
 
+.scorrimento img {
+    max-width: 100%; /* media query per adattere ancora meglio immagini podio 2 e 3 */
+    height: auto; 
+}
+
 .minor {
     max-height: 500px;
     height: auto; 
-    margin: 0 10%; 
+    margin: 0 2%; 
 }
 
 .foru {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2%; 
+    gap: 1% 3%; /*gap tra righe-gap tra colonne*/
     justify-content: center;
-    border-top: 50%;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-bottom: 2%; 
-  }
+}
   
 .foru img {
     width: 100%;
@@ -140,8 +148,28 @@ p {
     right: 0;
     margin: auto;
     text-align: center; /* Opzionale: centra il testo all'interno della div */
+    /* padding: 5%; */
+}
+
+.bored img {
+    width: 40%; /* Imposta la larghezza al 50% della larghezza del contenitore genitore */
+    height: auto; /* Imposta l'altezza automaticamente in base alla proporzione */
+    max-width: 100%; 
+    border-radius: 5%;
 }
 
 .bored img:hover {
     scale: 1;
+}
+
+@media (max-width: 1000px) {
+    .foru {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1% 10%; 
+        justify-content: center;
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-bottom: 2%; 
+    }
 }

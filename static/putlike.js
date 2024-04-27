@@ -35,7 +35,7 @@ $(document).ready(function() {
                     // heart.animate(animKeyframe, animTiming);
                     
                     but.style.backgroundColor = "red";
-                    but.style.fontSize = "clamp(20px ,40px, 40px)";
+                    but.style.fontSize = "clamp(1.2rem ,2.8vw, 3.5rem)";
                     setTimeout(function(){
                         heart.style.visibility = "hidden";
                     },2000);
@@ -43,7 +43,7 @@ $(document).ready(function() {
                 }
                 else if (code === '201') {
                     but.style.backgroundColor = "#efff14";
-                    but.style.fontSize = "clamp(10px ,30px, 20px)";
+                    but.style.fontSize = "clamp(1rem, 1.3vw, 2rem)";
 
 
                 }
@@ -80,7 +80,7 @@ $(document).ready(function() {
                     // bookmark.style.visibility = "visible";
                     sav.style.backgroundColor = "black";
                     sav.style.color = "white";
-                    sav.style.fontSize = "clamp(20px ,40px, 40px)";
+                    sav.style.fontSize = "clamp(1.2rem ,2.8vw, 3.5rem)";
 
                     //ANIMAZIONE
                     setTimeout(function(){
@@ -90,7 +90,7 @@ $(document).ready(function() {
                 else if (code === '202') {
                     sav.style.backgroundColor = "#efff14";
                     sav.style.color = "black";
-                    sav.style.fontSize = "clamp(10px ,30px, 20px)";
+                    sav.style.fontSize = "clamp(1rem, 1.3vw, 2rem)";
 
                 }
                 else{
@@ -127,7 +127,7 @@ $(document).ready(function() {
                     // heart.animate(animKeyframe, animTiming);
  
                     but.style.backgroundColor = "red";
-                    but.style.fontSize = "clamp(20px ,40px, 40px)";
+                    but.style.fontSize = "clamp(1.2rem ,2.8vw, 3.5rem)";
 
 
                     setTimeout(function(){
@@ -137,7 +137,7 @@ $(document).ready(function() {
                 }
                 else if (code === '201') {
                     but.style.backgroundColor = "#efff14";
-                    but.style.fontSize = "clamp(10px ,30px, 20px)";
+                    but.style.fontSize = "clamp(1rem, 1.3vw, 2rem)";
 
                 }
                 else

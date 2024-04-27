@@ -25,7 +25,7 @@ img{
 }
 
 .foto{
-    box-shadow: 0 8px 16px 0 #0000001e, 0 6px 20px 0 #00000030;
+    box-shadow: 0 8px 16px 0 #0000001c, 0 6px 20px 0 #00000021;
     border-radius: 10%;
     /*QUA O MEDIAQUERY PER ADATTARE OPPURE SI LASCIA COSI PERO PROVARE SE VA BENE SUI VARI DISPOSITIVI - per esempio sul fisso mio sarebbe meglio piu grande*/
     /* animation: widener linear both;  */
@@ -35,6 +35,7 @@ img{
     z-index: 3;
     transition-duration: 0.4s;
 }
+
 
 @keyframes widener {
     0% {max-width: 20%; border-radius: 5%;}
@@ -77,12 +78,12 @@ img{
 .container:hover{
     /* scale: 1.03; */
     transform: scale(1.03);
-    
 }
 
 .container:hover .foto {
     box-shadow: 0 8px 16px 0 #00000065, 0 6px 20px 0 #0000007c;
 }
+
 
 .container:hover .overlay-text {
     animation: showContent .3s .2s linear 1 forwards; 
@@ -104,18 +105,15 @@ img{
 
 .overlay-text {
     font-family: 'Poppins',sans-serif;
-    font-size: 250%;
+    font-size: clamp(0.5rem, 5vw, 4rem);
     font-weight: 500;
     opacity: 0;
     transition: opacity .5s ease;   /* Aggiungi un effetto di transizione all'opacità*/
-    text-align: center;
+
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     position: absolute;
-    top: 45%; 
-    left: 45%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+    z-index: 3;
     padding: 1.5;
     border-radius: 20%;
     box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.5); 
@@ -125,10 +123,14 @@ img{
  
 
 .container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     position: relative;
     width: 50%;
     height: 50%;
     transition: transform 0.5s;
+    align-items: center;
 }
 
 .topcontainer{

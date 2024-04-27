@@ -36,7 +36,7 @@ img:hover{
 
 
 p {
-    font-size: clamp(10px ,30px, 20px);
+
     font-family: 'Poppins',sans-serif;
     display: flex;
     justify-content: center;
@@ -44,16 +44,16 @@ p {
 }
 
 .h {
-    font-size: clamp(20px ,35px, 40px);
+    font-size: clamp(1.8rem, 2.3vw, 3.3rem); 
     margin-bottom: 3%;
 }
 
 .h2 {
-    font-size: clamp(20px ,28px, 35px);
+    font-size: clamp(1.4rem, 2vw, 3.3rem); 
 }
 
 .h3 {
-    font-size: clamp(20px ,22px, 35px);
+    font-size: clamp(1rem, 1.8vw, 3rem); 
 }
 
 #top{
@@ -76,6 +76,11 @@ p {
     scale: 0.8;
 }
 
+.scorrimento img {
+    max-width: 100%; /* media query per adattere ancora meglio immagini podio 2 e 3 */
+    height: auto; 
+}
+
 .minor {
     max-height: 500px;
     height: auto; 
@@ -85,7 +90,7 @@ p {
 .foru {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2%; 
+    gap: 3%; 
     justify-content: center;
     border-top: 50%;
     margin-left: 2%;
@@ -126,6 +131,12 @@ p {
     right: 0;
     margin: auto;
     text-align: center; /* Opzionale: centra il testo all'interno della div */
+    padding: 5%;
+}
+
+.bored img {
+    max-width: 100%; 
+    height: auto;
 }
 
 .bored img:hover {

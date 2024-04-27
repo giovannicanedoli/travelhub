@@ -322,6 +322,7 @@ def favorite():
                             .all()
         saved_ph = [(city.nome, city.photo) for city in saved_cities]
     e=random.randint(1, 4)
+    random.shuffle(saved_ph)
     return render_template("favorite.html", saved_ph=saved_ph, e=e)
 
 

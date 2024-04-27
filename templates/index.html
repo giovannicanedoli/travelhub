@@ -33,12 +33,12 @@
                         <a href="/login" class="link"><button id = "savebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>+</button></a>
                     {% else %}
                         {% if city.photo in liked %}
-                            <button id = "likebtn{{ city.id }}" class="like pulsante" value = '{{ city.id }}' style="background-color: red; font-size: clamp(20px ,40px, 40px);" >❤</button>
+                            <button id = "likebtn{{ city.id }}" class="like pulsante" value = '{{ city.id }}' style="background-color: red; font-size: clamp(1.2rem ,2.8vw, 3.5rem);" >❤</button>
                         {% else %}
                             <button id = "likebtn{{ city.id }}" class="like pulsante" value = '{{ city.id }}'>❤</button>
                         {% endif %}
                         {% if city.photo in saved %}
-                            <button id = "savebtn{{ city.id }}" class="like pulsante2" value = '{{ city.id }}' style="background-color: black; color: white; font-size: clamp(20px ,40px, 40px);" >+</button>
+                            <button id = "savebtn{{ city.id }}" class="like pulsante2" value = '{{ city.id }}' style="background-color: black; color: white; font-size: clamp(1.2rem ,2.8vw, 3.5rem);" >+</button>
                         {% else %}
                             <button id = "savebtn{{ city.id }}" class="like pulsante2" value = '{{ city.id }}'>+</button>
                         {% endif %}
@@ -64,6 +64,8 @@
     <script src = "{{ url_for('static', filename='putlike.js') }}"></script>
     <button id="top" class="pulsante4" onclick="onTop()">⬆</button>
 
+   <br>
+   <br>
    <br>
    <br>
    <br>

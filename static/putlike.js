@@ -43,7 +43,7 @@ $(document).ready(function() {
                 }
                 else if (code === '201') {
                     but.style.backgroundColor = "#efff14";
-                    but.style.fontSize = "clamp(0.7rem, 1.3vw, 2rem)";
+                    but.style.fontSize = "clamp(1rem, 1.3vw, 2rem)";
 
 
                 }
@@ -90,7 +90,7 @@ $(document).ready(function() {
                 else if (code === '202') {
                     sav.style.backgroundColor = "#efff14";
                     sav.style.color = "black";
-                    sav.style.fontSize = "clamp(0.7rem, 1.3vw, 2rem)";
+                    sav.style.fontSize = "clamp(1rem, 1.3vw, 2rem)";
 
                 }
                 else{
@@ -137,7 +137,7 @@ $(document).ready(function() {
                 }
                 else if (code === '201') {
                     but.style.backgroundColor = "#efff14";
-                    but.style.fontSize = "clamp(0.7rem, 1.3vw, 2rem)";
+                    but.style.fontSize = "clamp(1rem, 1.3vw, 2rem)";
 
                 }
                 else

@@ -103,7 +103,7 @@ img{
 
 .overlay-text {
     font-family: 'Poppins',sans-serif;
-    font-size: 250%;
+    font-size: clamp(0.5rem, 5vw, 4rem);;
     font-weight: 500;
     opacity: 0;
     transition: opacity .5s ease;   /* Aggiungi un effetto di transizione all'opacità*/

@@ -25,7 +25,7 @@ img{
 }
 
 .foto{
-    box-shadow: 0 8px 16px 0 #00000033, 0 6px 20px 0 #00000030;
+    box-shadow: 0 8px 16px 0 #0000001e, 0 6px 20px 0 #00000030;
     border-radius: 10%;
     /*QUA O MEDIAQUERY PER ADATTARE OPPURE SI LASCIA COSI PERO PROVARE SE VA BENE SUI VARI DISPOSITIVI - per esempio sul fisso mio sarebbe meglio piu grande*/
     /* animation: widener linear both;  */
@@ -35,7 +35,6 @@ img{
     z-index: 3;
     transition-duration: 0.4s;
 }
-
 
 @keyframes widener {
     0% {max-width: 20%; border-radius: 5%;}
@@ -73,14 +72,16 @@ img{
   si bugga (non so perché)
   */
 
-.cuore {
-    width: 50%;
-}
 
 
 .container:hover{
     /* scale: 1.03; */
     transform: scale(1.03);
+    
+}
+
+.container:hover .foto {
+    box-shadow: 0 8px 16px 0 #00000065, 0 6px 20px 0 #0000007c;
 }
 
 .container:hover .overlay-text {

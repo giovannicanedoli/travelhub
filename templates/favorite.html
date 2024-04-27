@@ -21,7 +21,20 @@
       </script>
     {% else %}
         {% if saved_ph==[] %}
-            <p class="h">No photo saved yet!</p>
+            <p class="h">So sad, you didn't save any photo!</p>
+            <div class="bored"> 
+                {% if e==1 %}
+                    <img src="https://i.imgflip.com/8o7lsm.jpg">
+                {% elif e==2 %}
+                    <img src="https://i.imgflip.com/8o7lyz.jpg">
+                {% elif e==3 %}
+                    <img src="https://i.imgflip.com/8o7m6t.jpg">
+                {% elif e==4 %}
+                    <img src="https://i.imgflip.com/8o7mbe.jpg">
+                {% endif %}
+            </div>
+
+
         {% else %}
             <p class="h">Your saved photos...so you won’t forget them!</p>
             <div class = "foru">

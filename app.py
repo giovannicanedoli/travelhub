@@ -253,7 +253,8 @@ def logout():
 
 @app.route("/like")
 def like():
-    city_photo_list=[]
+    liked_cities=[]
+    foru=[]
     if 'username' in session and 'password' in session and 'id' in session:
         '''
         SELECT c.nome, c.photo, count(*) as totale_like
@@ -305,7 +306,7 @@ def like():
         for t in liked_cities:
             print(t)
 
-        size = len(liked_cities)
+    size = len(liked_cities)
 
     return render_template("like.html", city_photo_list=liked_cities, for_u_list = foru, size=size)
 
@@ -320,8 +321,8 @@ def favorite():
                             .filter(Saves.users_id == user_id)\
                             .all()
         saved_ph = [(city.nome, city.photo) for city in saved_cities]
-
-    return render_template("favorite.html", saved_ph=saved_ph)
+    e=random.randint(1, 4)
+    return render_template("favorite.html", saved_ph=saved_ph, e=e)
 
 
 

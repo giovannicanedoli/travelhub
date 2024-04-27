@@ -8,7 +8,7 @@ Roma: 		https://images.unsplash.com/photo-1552832230-c0197dd311b5?q=80&w=1996&au
 Parigi: 	https://images.unsplash.com/photo-1439393161192-32360eb753f1?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 	 	https://images.unsplash.com/photo-1587648415693-4a5362b2ce41?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 	 	https://images.unsplash.com/photo-1565457211452-16f8e7062a0a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-		https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Versailles-FacadeJardin.jpg/640px-Versailles-FacadeJardin.jpg
+		https://th.bing.com/th/id/R.ea12a8b6fa5af894cc908f8d9af9cb55?rik=wF%2f%2fQRjtnRMliA&riu=http%3a%2f%2fmonumentsdefrance.com%2fcontent%2fchateau-de-versailles.jpg&ehk=RuQMER3hB9eLLZOQ1ZOiJdHi1utsnZKoDMGNtcqEayI%3d&risl=&pid=ImgRaw&r=0
 		https://media.parisladefense.com/RegPKzCcJLzYhGXwwmNoWzx0nqY=/672x670/articles/developpement-territorial/2024-02/skyline-paris-la-defense-c-anne-claude-barbier.jpg
 
 Madrid:	  	https://images.unsplash.com/photo-1570698473651-b2de99bae12f?q=80&w=1936&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
@@ -57,3 +57,8 @@ Copenaghen:	https://scontent.ccdn.cloud/image/vivitravels-it/b9e4a4e0-c183-42df-
 		https://www.helpviaggi.com/wp-content/uploads/2017/08/copenaghen-1.jpg
 		https://eurasian.travel/wp-content/uploads/2018/05/Copenhagen_02-1721511_1920-1-1024x740.jpg
 		https://images.placesonline.com/photos/christiania_1343258141_148910_1658227287.jpg?quality=80&w=700
+
+Oslo:		https://image.jimcdn.com/app/cms/image/transf/dimension=1920x1024:format=jpg/path/sd05c52ea747ad2d6/image/i4ce6b5559a479a4f/version/1666287559/oslo-city-center-norvegia.jpg
+		https://static2-viaggi.corriereobjects.it/wp-content/uploads/2015/06/oslo-wikipedia-1080x719.jpg?v=1572448800
+		https://moveo.telepass.com/wp-content/uploads/2023/10/oslo-munch-museum.jpeg
+		https://miro.medium.com/v2/resize:fit:1400/0*uzryjySGRMRPuCTh

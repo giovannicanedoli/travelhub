@@ -24,7 +24,7 @@
         <!-- come si fa a mettere solo una volta i per te? -->
         {% if size == 0 %}
             <!-- QUA SE PUÒ METTE QUALCHE IMMAGINE, TIPO UN EMOJI TRISTE O QUALCHE FAC-SIMILE -->
-            <p class="h">Not enough photo liked yet!</p>
+            <p class="h">Lame...not enough photo liked yet!</p>
             
             <!-- For you -->
             {% if for_u_list != [] %} 
@@ -41,7 +41,7 @@
             <div class = "sup">
                 <p class="h">The city you liked the most is...<strong>{{ city_photo_list[0][0] }}!</strong></p>
                 <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600">
-                <p class = "h2">put more like to see a podium of photos here!</p>
+                <p class = "h2">put more likes to see a podium of photos here!</p>
             </div>
 
             <!--for u-->
@@ -85,13 +85,13 @@
             <div class = "sup">
                     <p class="h">The city you liked the most is...<strong>{{ city_photo_list[0][0] }}!</strong></p>
                     <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600">
-                    <p class="h2">Damn! You really appreciated also these others cities!</p>
+                    <p class="h2">Damn! You really appreciated also {{ city_photo_list[1][0] }} and {{ city_photo_list[2][0] }}!</p>
             </div>
 
             <div class = "scorrimento">
-                <p class="h"><strong>{{ city_photo_list[1][0] }}!</strong></p>
+            <!--    <p class="h"><strong>{{ city_photo_list[1][0] }}!</strong></p>-->
                 <img class="minor" src = "{{ city_photo_list[1][1] }}" width="600" height="600">
-                <p class="h"><strong>{{ city_photo_list[2][0] }}!</strong></p>
+              <!--  <p class="h"><strong>{{ city_photo_list[2][0] }}!</strong></p>-->
                 <img class="minor" src = "{{ city_photo_list[2][1] }}" width="600" height="600">
             </div>
 

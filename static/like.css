@@ -117,3 +117,17 @@ p {
     text-align: center;
     align-items: center;
 }
+
+.bored {
+    position: absolute;
+    top: 30%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center; /* Opzionale: centra il testo all'interno della div */
+}
+
+.bored img:hover {
+    scale: 1;
+}

@@ -298,8 +298,8 @@ def like():
 
 
         #questa query mi serve per i per te
-        foru = db.session.query(Cities.nome, Cities.photo, Cities.like_messi).group_by(Cities.like_messi).all()
-        foru = foru[::-1]
+        foru = db.session.query(Cities.nome, Cities.photo, Cities.like_messi).order_by(Cities.like_messi).all()
+        foru = foru[:5:-1]
         
         print(liked_cities, end = "\n\n\n")
         for t in liked_cities:
@@ -323,7 +323,6 @@ def favorite():
     e=random.randint(1, 4)
     random.shuffle(saved_ph)
     return render_template("favorite.html", saved_ph=saved_ph, e=e)
-
 
 
 @app.route('/leavealike', methods = ["POST"])

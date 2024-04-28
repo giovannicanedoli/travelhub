@@ -7,8 +7,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{{url_for('static', filename='like.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='header.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='slider.css')}}">
+
     <title>TravelHub - Like History</title>
 </head>
 <body class="intero">
@@ -25,17 +28,27 @@
         {% if size == 0 %}
             <!-- QUA SE PUÒ METTE QUALCHE IMMAGINE, TIPO UN EMOJI TRISTE O QUALCHE FAC-SIMILE -->
             <p class="h">Lame...not enough photo liked yet!</p>
-            
-            <!-- For you -->
-            {% if for_u_list != [] %} 
-                <p class="h3">For You:</p>
-                <div class = "foru">
-                    {% for photo in for_u_list %}
-                        <img src="{{ photo[1] }}" width="600" height="600">
-                    {% endfor %}
-                    
-                </div>
-            {% endif %}
+                
+                <!-- FOR YOU SECTION -->
+
+                <p>For You</p>
+                {% if for_u_list != [] %} 
+
+                    <div class="swiper swiperImg">
+                    <div class="swiper-wrapper">
+                        {% for photo in for_u_list %}
+                            <div class="foru2 swiper-slide">    <!--nuova classe foru presennte in slider.css-->
+                                <img src="{{ photo[1] }}">
+                            </div>
+                        {% endfor %}
+                        
+                        
+                    </div>
+                    </div>
+              
+                {% endif %}
+
+                <!-- Swiper JS -->
 
         {% elif  size == 1 %} <!-- SE HO UN SOLO ELEMENTO RENDERIZZO SOLO QUELLO -->
             <div class = "sup">
@@ -44,7 +57,7 @@
                 <p class = "h2">put more likes to see a podium of photos here!</p>
             </div>
 
-            <!--for u-->
+            <!-- for u
             {% if for_u_list != [] %} 
                 <p class="h3">For You:</p>
                 <div class = "foru">
@@ -53,7 +66,24 @@
                     {% endfor %}
                     
                 </div>
-            {% endif %}
+            {% endif %} -->
+
+            <p>For You</p>
+                {% if for_u_list != [] %} 
+
+                    <div class="swiper swiperImg">
+                    <div class="swiper-wrapper">
+                        {% for photo in for_u_list %}
+                            <div class="foru2 swiper-slide">    <!--nuova classe foru presennte in slider.css-->
+                                <img src="{{ photo[1] }}">
+                            </div>
+                        {% endfor %}
+                        
+                        
+                    </div>
+                    </div>
+              
+                {% endif %}
 
         {% elif size == 2 %}    <!-- SE HO DUE ELEMENTI RENDERIZZO SOLO QUELLI, DEVO FARE QUESTE CLASSI! -->
             <div class = "container">
@@ -71,7 +101,7 @@
                 </div>
             </div>
 
-            <!--For You-->
+            <!-- For You
             {% if for_u_list != [] %} 
                 <p class="h3">For You:</p>
                 <div class = "foru">
@@ -79,7 +109,26 @@
                         <img src="{{ photo[1] }}" width="600" height="600">
                     {% endfor %}
                 </div>
-            {% endif %}
+            {% endif %} -->
+
+                <p>For You</p>
+                {% if for_u_list != [] %} 
+
+                    <div class="swiper swiperImg">
+                    <div class="swiper-wrapper">
+                        {% for photo in for_u_list %}
+                            <div class="foru2 swiper-slide">    <!--nuova classe foru presennte in slider.css-->
+                                <img src="{{ photo[1] }}">
+                            </div>
+                        {% endfor %}
+                        
+                        
+                    </div>
+                    </div>
+              
+                {% endif %}
+
+
 
         {% else %}
             <div class = "sup">
@@ -95,7 +144,7 @@
                 <img class="minor" src = "{{ city_photo_list[2][1] }}" width="600" height="600">
             </div>
 
-            <!-- For You -->
+            <!-- For You
             {% if for_u_list != [] %} 
                 <p class="h3">For You:</p>
                 <div class = "foru">
@@ -104,8 +153,24 @@
                     {% endfor %}
                     
                 </div>
-            {% endif %}
+            {% endif %} -->
 
+            <p>For You</p>
+                {% if for_u_list != [] %} 
+
+                    <div class="swiper swiperImg">
+                    <div class="swiper-wrapper">
+                        {% for photo in for_u_list %}
+                            <div class="foru2 swiper-slide">    <!--nuova classe foru presennte in slider.css-->
+                                <img src="{{ photo[1] }}">
+                            </div>
+                        {% endfor %}
+                        
+                        
+                    </div>
+                    </div>
+              
+                {% endif %}
 
 
         {% endif %}
@@ -124,6 +189,9 @@
             }
         };
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type = "text/javascript" src = "{{url_for('static', filename='swiperimg.js')}}"></script>
+
 </body>
 </html>
 {% endblock %}

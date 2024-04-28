@@ -209,7 +209,7 @@ def confirm_forget(token):
         print(email)
         username = request.form.get('username_input')
         password = request.form.get("password_input1")
-        password_verify = request.form.get("password_input1")
+        password_verify = request.form.get("password_input2")
 
         password_ok = verify_password(password_verify)
 
@@ -228,7 +228,7 @@ def confirm_forget(token):
             
         elif password != password_verify:
             return render_template("forgot.html", user_alive = True, password_match = False, password_quality = True, email_sent = False)
-        else:
+        elif not password_ok:
             return render_template("forgot.html", user_alive = True, password_match = True, password_quality = False, email_sent = False)
         
     else:

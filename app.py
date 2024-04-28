@@ -1,4 +1,4 @@
-from flask import Flask,render_template, url_for, redirect, request, session, jsonify
+from flask import Flask,render_template, url_for, redirect, request, session, jsonify, flash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func, desc
 from flask_mail import Mail, Message
@@ -207,29 +207,28 @@ def confirm_forget(token):
     if request.method == "POST":
         email = token[43:]
         print(email)
-        username = request.form.get('username_input')
         password = request.form.get("password_input1")
         password_verify = request.form.get("password_input2")
 
         password_ok = verify_password(password_verify)
 
-        if username != email:
-            return render_template("forgot.html", bad_user = False, user_alive = True, password_match = False, password_quality = False, email_sent = False)
-        
-        user = Users.query.filter_by(username = username).first()
+        user = Users.query.filter_by(username = email).first()
         if not user:
-            #user is not present in db
             return render_template("forgot.html", user_alive = False, password_match = True, password_quality = True, email_sent = False)
         if password == password_verify and password_ok:
 
             user.password = password_verify
             db.session.commit()
+
+            #qui mi rimanda alla pagina principale, una pagina intermedia che mi mostra che è andato tutto bene?
             return redirect(url_for("login"))
+        
+        elif not password_ok:
+            return render_template("confirm_forgot.html", password_quality = False)
             
         elif password != password_verify:
-            return render_template("forgot.html", user_alive = True, password_match = False, password_quality = True, email_sent = False)
-        elif not password_ok:
-            return render_template("forgot.html", user_alive = True, password_match = True, password_quality = False, email_sent = False)
+            return render_template("confirm_forgot.html", password_match = False)
+
         
     else:
         return render_template("confirm_forgot.html")

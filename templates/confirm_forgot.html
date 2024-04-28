@@ -24,9 +24,9 @@
         </div>
 
         <form action = "POST">
-            <div class="input-box">
+            <!-- <div class="input-box">
                 <input type="text" name = "username_input" class="input-field" placeholder="Email" autocomplete="email" required>
-            </div>
+            </div> -->
             
             
             <div class="input-box">
@@ -37,6 +37,8 @@
                 <input type="password" name = "password_input2" id = "password_input2" class="input-field" placeholder="Type Again" autocomplete="new-password" required>
             </div>
 
+            <br>
+
             <div class="input-submit">
                 <button class="submit-btn" id="submit">Reset email</button>
                 <!--<label for="submit">Reset email</label>-->
@@ -45,36 +47,25 @@
            <br>
             </form>
 
-            {% if user_alive == False %}
-                <div class = "failure">
-                    <p>User is not logged in, you have to first log in to change password!</p>
-                </div>
-            {% endif %}
-
             {% if password_match == False %}
                 <div class = "failure">
+                    <!-- SI BUGGA QUI -->
                     <p>Passwords don't match!</p>
                 </div>
             {% endif %}
 
             {% if password_quality == False %}
                 <div class = "failure">
+                    <!-- SI BUGGA QUI -->
                     <p>Password is too simple!</p>
                 </div>
             {% endif %}
             
-
-            {% if email_sent == True %}
-                <div class = "password_block">
-                    <p>Email sent successfully!</p>
-                </div>
-            {% endif %}
-            
-            {% if username_error == True %}
+            <!-- {% if username_error == True %}
                 <div class = "password_block">
                     <p>Email is wrong!</p>
                 </div>
-            {% endif %}
+            {% endif %} -->
 
         </div>
     </form>

@@ -27,9 +27,12 @@ img{
 .foto{
     box-shadow: 0 8px 16px 0 #0000001c, 0 6px 20px 0 #00000021;
     border-radius: 10%;
+
     /*QUA O MEDIAQUERY PER ADATTARE OPPURE SI LASCIA COSI PERO PROVARE SE VA BENE SUI VARI DISPOSITIVI - per esempio sul fisso mio sarebbe meglio piu grande*/
+    
     /* animation: widener linear both;  */
     /* animation-timeline: view(); */
+
     background-clip: text;
     -webkit-background-clip: text;
     z-index: 3;
@@ -152,7 +155,7 @@ img{
 }
 
 @keyframes scroll {
-    0% {opacity: 0; width: 30%;}
+    0% {opacity: 0; width: 0%;}
     50% {opacity: 1; width: 100%;}
 }
 

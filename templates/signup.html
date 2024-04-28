@@ -37,17 +37,20 @@
             <button class="submit-btn" id="submit">Sign up</button>
   
         </div>
-        <div class="sign-up-link">
-            <p>Already have an account? <a href="/login">Sign in</a></p>
-        </div>
+        
 
         
         {% if user_alive == True %}
+        <br>
+        <br>
             <div class = "failure">
-                <p>User already present in database!</p>
+                <p>User already present in database! <a href="/login">Sign in</a></p>
             </div>
 
         {% elif password_verify != password %}
+            <div class="sign-up-link">
+                <p>Already have an account? <a href="/login">Sign in</a></p>
+            </div>
             <div class = "failure">
                 <p>Passwords are different!</p>
             </div>
@@ -55,10 +58,16 @@
         
 
         {% elif password_ok == False %}
+            <br>
+            <br>
             <div class = "failure">
                 <p>Password is too simple!</p>
             </div>
             <br>
+        {% else %}
+            <div class="sign-up-link">
+                <p>Already have an account? <a href="/login">Sign in</a></p>
+            </div>
         {% endif %}
         
 

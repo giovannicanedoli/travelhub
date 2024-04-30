@@ -9,7 +9,6 @@
         <title>TravelHub - AboutUs</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='aboutus.css')}}">
         <link rel="stylesheet" href="{{ url_for('static', filename='header.css')}}">
-        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='login.css')}}"> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>TravelHub - About Us</title>
 
@@ -33,7 +32,7 @@
 
         <div class = "secondaria">
             <p>Follow us on</p>
-            <div class = "show_social_networks">
+            <div class = "icon">
                 <a href="#" class="fa fa-facebook"></a>
                 <a href="#" class="fa fa-youtube"></a>
                 <a href="#" class="fa fa-instagram"></a>
@@ -51,18 +50,31 @@
         </div>
     </div> 
     -->
-    <div class  = "inferiore">
-                
-        <p>Who we are?
-            Pietro e Giovanni created TravelHub as a project for LTW class at Sapienza University, with professor Marconi as theacher
+    <div class="main">   
+        <p>Welcome to TravelHub, your ultimate destination for exploring breathtaking tourist spots around the globe! Founded by a team of passionate travelers and tech enthusiasts, TravelHub aims to revolutionize the way you plan and experience your next adventure.
+
+            Led by Professor Marconi, a distinguished figure in the field of web technologies, and developed as part of the LTW (Web Technologies Laboratory) course at Sapienza University, TravelHub embodies innovation, creativity, and a deep understanding of the modern traveler's needs.
+            
+            At TravelHub, we believe in the power of technology to connect people with their dream destinations. Whether you're seeking inspiration for your next getaway or looking to curate a personalized gallery of your favorite travel memories, our platform offers a seamless and intuitive experience.
+            
+            Join our vibrant community of fellow explorers, share your travel stories, discover hidden gems, and contribute to our ever-growing collection of stunning photographs from every corner of the globe.
+            
+            Embark on a journey of discovery with TravelHub, where every click brings you one step closer to your next unforgettable adventure.
         </p>
-        <p>Pietro Bartolocci 1994302</p>
-        <p>Giovanni Canedoli 1991710</p>
-        <p>Professor Lorenzo Marconi</p>
-        <p>TravelHub</p>
-        <p>Linguaggi e tecnologie web</p>
-        <p>Università di Roma "La Pazienza"</p>
     </div>
+    <footer class="footer">
+        <dl>
+            <dt>Made by</dt>
+            <address><a href="mailto:travelhub@outlook.it">TravelHub's Team 📧</a></address>
+        </dl>
+        <div class="icon">
+                <a href="https://www.instagram.com/pietrob__/" target="_blank"><img class="ig-icon" src="/static/images/insta.png"></a>
+                <a href="https://www.instagram.com/giovanniicanedoli/" target="_blank"><img class="ig-icon" src="/static/images/insta.png"></a>
+            </div>
+        
+
+        <small>©2024 All rights are reserved.</small>
+      </footer>
 </body>
 </html>
 {% endblock %}

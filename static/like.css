@@ -73,6 +73,10 @@ p {
     font-size: clamp(1rem, 1.8vw, 3rem); 
 }
 
+.foru2 img.tall {
+    max-height: 550px; 
+}
+
 #top{
     max-width: 100%; 
     height: auto; 

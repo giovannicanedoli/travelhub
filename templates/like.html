@@ -31,7 +31,7 @@
                 
                 <!-- FOR YOU SECTION -->
 
-                <p>For You</p>
+                <p class="h3">For You</p>
                 {% if for_u_list != [] %} 
 
                     <div class="swiper swiperImg">
@@ -68,7 +68,7 @@
                 </div>
             {% endif %} -->
 
-            <p>For You</p>
+            <p class="h3">For You</p>
                 {% if for_u_list != [] %} 
 
                     <div class="swiper swiperImg">
@@ -111,7 +111,7 @@
                 </div>
             {% endif %} -->
 
-                <p>For You</p>
+                <p class="h3">For You</p>
                 {% if for_u_list != [] %} 
 
                     <div class="swiper swiperImg">
@@ -155,7 +155,7 @@
                 </div>
             {% endif %} -->
 
-            <p>For You</p>
+            <p class="h3">For You</p>
                 {% if for_u_list != [] %} 
 
                     <div class="swiper swiperImg">
@@ -191,6 +191,16 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type = "text/javascript" src = "{{url_for('static', filename='swiperimg.js')}}"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+          const immagini = document.querySelectorAll('.foru2 img');
+          immagini.forEach((img) => {
+            if (img.clientHeight > 600) {
+              img.classList.add('tall');
+            }
+          });
+        });
+    </script>
 
 </body>
 </html>

@@ -51,9 +51,18 @@ img:hover{
     scale: 1.07;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover p {
+    color: #efff1450;
+    font-size: smaller;
+    /* font-size: clamp(0.7rem, 1vw, 1.5rem);; */
+}
 
 p {
-
+    transition: .3s;
     font-family: 'Poppins',sans-serif;
     display: flex;
     justify-content: center;
@@ -70,6 +79,7 @@ p {
 }
 
 .h3 {
+    padding: 10%;
     font-size: clamp(1rem, 1.8vw, 3rem); 
 }
 
@@ -151,13 +161,12 @@ p {
     left: 0;
     right: 0;
     margin: auto;
-    text-align: center; /* Opzionale: centra il testo all'interno della div */
-    /* padding: 5%; */
+    text-align: center;
 }
 
 .bored img {
-    width: 40%; /* Imposta la larghezza al 50% della larghezza del contenitore genitore */
-    height: auto; /* Imposta l'altezza automaticamente in base alla proporzione */
+    width: 40%;
+    height: auto;
     max-width: 100%; 
     border-radius: 5%;
 }

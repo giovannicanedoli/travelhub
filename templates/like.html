@@ -26,8 +26,8 @@
         
         <!-- come si fa a mettere solo una volta i per te? -->
         {% if size == 0 %}
-            <!-- QUA SE PUÒ METTE QUALCHE IMMAGINE, TIPO UN EMOJI TRISTE O QUALCHE FAC-SIMILE -->
-            
+
+            <!-- QUA CE SE PUÒ METTE UN LOGO!! -->            
             
             <p class="h">Lame...not enough photo liked yet!</p>
                 
@@ -48,7 +48,49 @@
                     </div>
                 </div>
             
-            {% endif %}
+            <form action = "#" method = "POST">
+                <div class = "form-secondario">
+                    <header>Find your next flight!</header>
+                    <div class = "form_cities_stuff">
+                        <label for="departure_city">Departure city</label><br>
+                        <input type="text" id="departure_city" name="departure_city" required><br><br>
+                    </div>
+
+                    <div class = "form_cities_stuff">
+                        <label for="arrival_city">Arrival city</label><br>
+                        <input type="text" id="arrival_city" name="arrival_city" required><br><br>
+                    </div>
+
+                    <div class = "form_cities_stuff">
+                        <label for="date_of_leaving">Date of leaving (YYYY-MM-DD)</label><br>
+                        <!-- pattern="\d{4}-\d{2}-\d{2}" -->
+                        <input type="text" id="date_of_leaving" name="date_of_leaving" required ><br><br>
+                    </div>
+
+                    <div class="input-submit">
+                        <input type="submit" value="Invia">
+                    <!--  <label for="submit" >Sign in</label>-->
+                    </div>
+
+                    {% if api_data %}
+                        <textarea area rows="10" cols="50">
+                            {{ debugstuff[0] }}
+                        </textarea>
+                    {% endif %}
+
+
+                </div>
+            </form>
+
+
+
+            <br><br><br><br><br><br>
+            
+
+        {% endif %}
+
+
+
 
 
 
@@ -76,15 +118,15 @@
                 {% if for_u_list != [] %} 
 
                     <div class="swiper swiperImg">
-                    <div class="swiper-wrapper">
-                        {% for photo in for_u_list %}
-                            <div class="foru2 swiper-slide">    <!--nuova classe foru presennte in slider.css-->
-                                <img src="{{ photo[1] }}">
-                            </div>
-                        {% endfor %}
-                        
-                        
-                    </div>
+                        <div class="swiper-wrapper">
+                            {% for photo in for_u_list %}
+                                <div class="foru2 swiper-slide">    <!--nuova classe foru presennte in slider.css-->
+                                    <img src="{{ photo[1] }}">
+                                </div>
+                            {% endfor %}
+                            
+                            
+                        </div>
                     </div>
               
                 {% endif %}

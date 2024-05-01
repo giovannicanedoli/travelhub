@@ -250,37 +250,53 @@ def logout():
 
     return redirect(url_for("main_route"))
 
-@app.route("/like", methods = ["LIKE", "POST"])
+@app.route("/like", methods = ["GET", "POST"])
 def like():
+    liked_cities=[]
+    foru=[]
+    if 'username' in session and 'password' in session and 'id' in session:
+        liked_cities = db.session.query(Cities.nome, Cities.photo, func.count('*').label('total_likes')) \
+                        .join(Like, Cities.id == Like.cities_id) \
+                        .filter(Like.users_id == session['id']) \
+                        .group_by(Cities.nome) \
+                        .order_by(desc('total_likes'))\
+                        .all()
+
+
+        #questa query mi serve per i per te
+        foru = db.session.query(Cities.nome, Cities.photo, Cities.like_messi).order_by(Cities.like_messi).all()
+        foru = foru[:5:-1]
+        
+        print(liked_cities, end = "\n\n\n")
+        for t in liked_cities:
+            print(t)
+
+    size = len(liked_cities)
+    
+    
     if request.method == "POST":
+        departure_city = request.form['departure_city']
+        arrival_city = request.form['arrival_city']
+        date_of_leaving = request.form['date_of_leaving']
+        
+        #for the api
+        departure_city.upper()
+        arrival_city.upper()
+
+        #debug
+        print("Departure city:", departure_city)
+        print("Arrival city:", arrival_city)
+        print("Date of leaving:", date_of_leaving)
+
         data = MakeReq.sup()
-        if str(data).startswith('2'):
+        if data[0] == 200:
             #api result
-            pass
+            print(data[0], data[1])
+            return render_template("like.html", city_photo_list=liked_cities, for_u_list = foru, size=size, api_data = True, debugstuff = data[1])
         else:
-            #api result is not ok
-            pass
+            return render_template("like.html", city_photo_list=liked_cities, for_u_list = foru, size=size, api_data = False)
+        
     else:
-        liked_cities=[]
-        foru=[]
-        if 'username' in session and 'password' in session and 'id' in session:
-            liked_cities = db.session.query(Cities.nome, Cities.photo, func.count('*').label('total_likes')) \
-                            .join(Like, Cities.id == Like.cities_id) \
-                            .filter(Like.users_id == session['id']) \
-                            .group_by(Cities.nome) \
-                            .order_by(desc('total_likes'))\
-                            .all()
-
-
-            #questa query mi serve per i per te
-            foru = db.session.query(Cities.nome, Cities.photo, Cities.like_messi).order_by(Cities.like_messi).all()
-            foru = foru[:5:-1]
-            
-            print(liked_cities, end = "\n\n\n")
-            for t in liked_cities:
-                print(t)
-
-        size = len(liked_cities)
 
         return render_template("like.html", city_photo_list=liked_cities, for_u_list = foru, size=size)
 

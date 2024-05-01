@@ -175,6 +175,21 @@ p {
     scale: 1;
 }
 
+.form-secondario{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: red;
+    /* height: 40%; */
+    /* width: 40%; */
+    left:45%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+
+
 @media (max-width: 1000px) {
     .foru {
         display: grid;

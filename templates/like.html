@@ -27,14 +27,16 @@
         <!-- come si fa a mettere solo una volta i per te? -->
         {% if size == 0 %}
             <!-- QUA SE PUÒ METTE QUALCHE IMMAGINE, TIPO UN EMOJI TRISTE O QUALCHE FAC-SIMILE -->
+            
+            
             <p class="h">Lame...not enough photo liked yet!</p>
                 
                 <!-- FOR YOU SECTION -->
 
-                <p class="h3">For You</p>
-                {% if for_u_list != [] %} 
+            <p class="h3">For You</p>
+            {% if for_u_list != [] %} 
 
-                    <div class="swiper swiperImg">
+                <div class="swiper swiperImg">
                     <div class="swiper-wrapper">
                         {% for photo in for_u_list %}
                             <div class="foru2 swiper-slide">    <!--nuova classe foru presennte in slider.css-->
@@ -44,11 +46,13 @@
                         
                         
                     </div>
-                    </div>
-              
-                {% endif %}
+                </div>
+            
+            {% endif %}
 
-                <!-- Swiper JS -->
+
+
+                
 
         {% elif  size == 1 %} <!-- SE HO UN SOLO ELEMENTO RENDERIZZO SOLO QUELLO -->
             <div class = "sup">

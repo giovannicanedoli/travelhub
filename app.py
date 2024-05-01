@@ -250,64 +250,39 @@ def logout():
 
     return redirect(url_for("main_route"))
 
-@app.route("/like")
+@app.route("/like", methods = ["LIKE", "POST"])
 def like():
-    liked_cities=[]
-    foru=[]
-    if 'username' in session and 'password' in session and 'id' in session:
-        '''
-        SELECT c.nome, c.photo, count(*) as totale_like
-        FROM cities c, likes l
-        WHERE c.id = l.cities_id and l.users_id = 5
-        GROUP BY c.nome
-        ORDER BY totale_like;
-        '''
-
-        '''liked_cities = db.session.query(Cities.nome, Cities.photo, func.count(Like.users_id).label('total_likes'))\
-                        .join(Like, Cities.id == Like.cities_id) \
-                        .filter(Like.users_id == session['id']) \
-                        .group_by(Cities.nome) \
-                        .all()
-
-        # Costruisci un dizionario dove la chiave è il nome della città e il valore è un elenco di tuple (photo, total_likes)
-        cities_dict = {}
-        for city in liked_cities:
-            if city.nome not in cities_dict:
-                cities_dict[city.nome] = []
-            cities_dict[city.nome].append((city.photo, city.total_likes))
-
-        # Seleziona casualmente una foto per ogni città se ce ne sono più di una
-        for city_photos in cities_dict.values():
-            if len(city_photos) > 1:
-                chosen_photo = random.choice(city_photos)
-                city_photos.clear()
-                city_photos.append(chosen_photo)
-
-        # Ordina le città in base al numero di like
-        sorted_cities = sorted(cities_dict.items(), key=lambda x: x[1][0][1], reverse=True)
-
-        # Costruisci la lista di tuple (nome città, URL foto)
-        city_photo_list = [(city[0], city[1][0][0]) for city in sorted_cities]
-    size=len(city_photo_list)'''
-        liked_cities = db.session.query(Cities.nome, Cities.photo, func.count('*').label('total_likes')) \
-                         .join(Like, Cities.id == Like.cities_id) \
-                         .filter(Like.users_id == session['id']) \
-                         .group_by(Cities.nome) \
-                         .order_by(desc('total_likes'))\
-                         .all()
+    if request.method == "POST":
+        data = MakeReq.sup()
+        if str(data).startswith('2'):
+            #api result
+            pass
+        else:
+            #api result is not ok
+            pass
+    else:
+        liked_cities=[]
+        foru=[]
+        if 'username' in session and 'password' in session and 'id' in session:
+            liked_cities = db.session.query(Cities.nome, Cities.photo, func.count('*').label('total_likes')) \
+                            .join(Like, Cities.id == Like.cities_id) \
+                            .filter(Like.users_id == session['id']) \
+                            .group_by(Cities.nome) \
+                            .order_by(desc('total_likes'))\
+                            .all()
 
 
-        #questa query mi serve per i per te
-        foru = db.session.query(Cities.nome, Cities.photo, Cities.like_messi).order_by(Cities.like_messi).all()
-        foru = foru[:5:-1]
-        
-        print(liked_cities, end = "\n\n\n")
-        for t in liked_cities:
-            print(t)
+            #questa query mi serve per i per te
+            foru = db.session.query(Cities.nome, Cities.photo, Cities.like_messi).order_by(Cities.like_messi).all()
+            foru = foru[:5:-1]
+            
+            print(liked_cities, end = "\n\n\n")
+            for t in liked_cities:
+                print(t)
 
-    size = len(liked_cities)
+        size = len(liked_cities)
 
-    return render_template("like.html", city_photo_list=liked_cities, for_u_list = foru, size=size)
+        return render_template("like.html", city_photo_list=liked_cities, for_u_list = foru, size=size)
 
 @app.route("/favorite")
 def favorite():

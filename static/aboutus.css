@@ -47,8 +47,8 @@ p {
     bottom: 0; 
     width: 100%;
     height: 80px;
-    background-color: red;
-    color: white;
+    background-color: #efff147d;
+    color: rgb(0, 0, 0);
 }
 
 dl {

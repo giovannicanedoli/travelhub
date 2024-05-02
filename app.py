@@ -252,6 +252,8 @@ def logout():
 
 @app.route("/like", methods = ["GET", "POST"])
 def like():
+
+    #query per i like
     liked_cities=[]
     foru=[]
     if 'username' in session and 'password' in session and 'id' in session:
@@ -273,7 +275,7 @@ def like():
 
     size = len(liked_cities)
     
-    
+    #roba per la post
     if request.method == "POST":
         departure_city = request.form['departure_city']
         arrival_city = request.form['arrival_city']

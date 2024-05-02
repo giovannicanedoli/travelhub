@@ -29,8 +29,9 @@
 
                 <div class="pulsantiera">
                     {% if not session %}
-                        <a href="/login" class="link"><button id = "likebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>❤</button></a>
-                        <a href="/login" class="link"><button id = "savebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>+</button></a>
+                        <a href="/login"><button id = "likebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>❤</button></a>
+                        <a href="/login"><button id = "savebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>+</button></a>
+                        
                     {% else %}
                         {% if city.photo in liked %}
                             <button id = "likebtn{{ city.id }}" class="like pulsante" value = '{{ city.id }}' style="background-color: red; font-size: clamp(1.2rem ,2.8vw, 3.5rem);" >❤</button>
@@ -48,6 +49,20 @@
         </div>
     {% endfor %}
     <script src = "{{ url_for('static', filename='putlike.js') }}"></script>
+
+    <!-- <script>
+        // Seleziona tutti gli elementi con la classe ".like" e ".pulsante4"
+        var buttons = document.getElementsByClassName("like pulsante4");
+    
+        // Itera su ogni elemento e aggiungi un gestore di eventi
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", function() {
+                window.location.href = "/login?show_data=true";
+            });
+        }
+    </script> -->
+    
+
     <button id="top" class="pulsante4" onclick="onTop()">⬆</button>
 
    <br>

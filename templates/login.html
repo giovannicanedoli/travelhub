@@ -51,6 +51,10 @@
             {% else %}
              <p>You entered either a wrong username or a wrong password. Try again!</p>
             {% endif %}
+
+        {% if show_data %}
+        <p>something_failed</p>
+        {% endif %}
         </div>
         <br>
         {% else %}

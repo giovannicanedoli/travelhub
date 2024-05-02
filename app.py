@@ -289,7 +289,7 @@ def like():
         # Costruisci la lista di tuple (nome città, URL foto)
         city_photo_list = [(city[0], city[1][0][0]) for city in sorted_cities]
     size=len(city_photo_list)'''
-        liked_cities = db.session.query(Cities.nome, Cities.photo, func.count('*').label('total_likes')) \
+        liked_cities = db.session.query(Cities.nome, Cities.photo, Cities.iata, func.count('*').label('total_likes')) \
                          .join(Like, Cities.id == Like.cities_id) \
                          .filter(Like.users_id == session['id']) \
                          .group_by(Cities.nome) \

@@ -98,7 +98,7 @@
 
         {% elif  size == 1 %} <!-- SE HO UN SOLO ELEMENTO RENDERIZZO SOLO QUELLO -->
             <div class = "sup">
-                <p class="h">The city you liked the most is...<strong>{{ city_photo_list[0][0] }}!</strong></p>
+                <p class="h">The city you liked the most is...{{ city_photo_list[0][0] }}!</p>
                 <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600">
                 <p class = "h2">put more likes to see a podium of photos here!</p>
             </div>
@@ -135,9 +135,9 @@
             <div class = "container">
                 
                 <div class = "first">
-                    <p class="h2">The city you liked the most is...<strong>{{ city_photo_list[0][0] }}!</strong></p>
+                    <p class="h2">The city you liked the most is...{{ city_photo_list[0][0] }}!></p>
                     <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600">
-                    <p class="h2">second image in podium is...<strong>{{ city_photo_list[1][0] }}!</strong></p>
+                    <p class="h2">second image in podium is...{{ city_photo_list[1][0] }}!</p>
                 </div>
 
                 <!-- QUESTA QUI PIÙ PICCOLA?? -->
@@ -179,6 +179,7 @@
         {% else %}
             <div class = "sup">
                     <p class="h">The city you liked the most is...{{ city_photo_list[0][0] }}!</p>
+                    <a href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/" target="_blank">Book here your plane✈</a>
                     <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600">
                     <p class="h2">Damn! You really appreciated also {{ city_photo_list[1][0] }} and {{ city_photo_list[2][0] }}!</p>
             </div>

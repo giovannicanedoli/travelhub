@@ -47,13 +47,15 @@ class Feedback(db.Model):
     id = db.Column(db.Integer, primary_key=True)    
     name = db.Column(db.String(50), nullable = False)
     text = db.Column(db.String(1000), nullable = False)
+    stars = db.Column(db.String(1), nullable = True)   
 
-    def __init__(self, name = None,text = None):
+    def __init__(self, name = None, text = None, stars = None):
         self.name = name
         self.text = text
+        self.stars = stars
 
     def __repr__(self):
-        return f'<User {self.name} says "{self.text}">'
+        return f'<User {self.name} says "{self.text}" and leaves {self.stars} stars>'
 
 class Cities(db.Model):
     __tablename__ = 'cities'
@@ -248,11 +250,13 @@ def aboutus():
     if request.method == "POST":
         name = request.form.get("name")
         msg = request.form.get("subject")
-        feed = Feedback(name, msg)
-        
+        rating = request.form.get("rating")
+        print(type(rating))
+        feed = Feedback(name, msg, rating)
+        print('-----------------',rating)
         db.session.add(feed)
-        db.session.commit()
-
+        #db.session.commit()
+        print(feed)
         return render_template('aboutus.html')
     else:
         return render_template('aboutus.html')

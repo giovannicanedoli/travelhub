@@ -1,7 +1,5 @@
 
-SE MI SCADE LA SESSIONE IL FRONTEND MI MOSTRA COME SE SONO LOGGATO!!!
 
-il box giallo di errore è generato male (su firefox) se non hai un utente
 
 animation.js, desc.js (forse), style2.css sono file non usati
 

@@ -15,6 +15,7 @@ const animTiming = {
 $(document).ready(function() {
 
     $('.like.pulsante').click(function() {
+        
         var pkey = $(this).val(); 
         
         var heart = document.getElementById('cuore' + pkey);

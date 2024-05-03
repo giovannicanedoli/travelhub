@@ -75,8 +75,66 @@ small {
 
 .ig-icon{
     width: 50px;
-  }
+}
 
+/*form*/
+
+.form-header{
+    text-align: center;
+}
+
+.form-header header{
+    color: #333;
+    font-size: clamp(2rem, 2.3vw, 3.3rem); ;
+    font-weight: 600;
+}
+
+input[type=text], textarea {
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    resize: vertical;
+}
+  
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-size: clamp(1rem, 1vw, 2rem);
+}
+
+
+.form {
+    margin-left: 20%;
+    width: 60%;
+    border-radius: 30px;
+    background-color: #f2f2f270;
+    padding: 20px;
+}
+  
+.col-25 {
+    float: left;
+    width: 20%;
+    margin-top: 6px;
+}
+  
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+  
+  /* Clear floats after the columns */
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+input[type=submit] {
+    margin-left: 40%;
+    width: 20%;
+}
 
 @media (max-width: 768px) {
     .footer {
@@ -89,5 +147,10 @@ small {
 
     .main {
         width: 90%; 
+    }
+
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
     }
 }

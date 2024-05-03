@@ -14,10 +14,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 </head>
-<body>  
+<body class="light">  
     {% endblock %}
     {% block contentdown %}
-    
+
     {% for city in cities %}
         <div class="images">
             <div class = "topcontainer">
@@ -29,8 +29,20 @@
 
                 <div class="pulsantiera">
                     {% if not session %}
-                        <a href="/login" class="link"><button id = "likebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>❤</button></a>
-                        <a href="/login" class="link"><button id = "savebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>+</button></a>
+                      <!--  <a href="/login" class="link"><button id = "likebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>❤</button></a>
+                        <a href="/login" class="link"><button id = "savebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>+</button></a>-->
+                        <div class="popover__wrapper">
+                            <button class="like pulsante4 ">❤</button>
+                            <div class="popover__content_like">
+                                <p class="popover__message">Sign in first!</p>
+                            </div>
+                        </div>
+                        <div class="popover__wrapper">
+                            <button class="like pulsante4 ">+</button>
+                            <div class="popover__content_save">
+                                <p class="popover__message">Sign in first!</p>
+                            </div>
+                        </div>
                     {% else %}
                         {% if city.photo in liked %}
                             <button id = "likebtn{{ city.id }}" class="like pulsante" value = '{{ city.id }}' style="background-color: red; font-size: clamp(1.2rem ,2.8vw, 3.5rem);" >❤</button>
@@ -48,7 +60,10 @@
         </div>
     {% endfor %}
     <script src = "{{ url_for('static', filename='putlike.js') }}"></script>
-    <button id="top" class="pulsante4" onclick="onTop()">⬆</button>
+    <div class="func">
+        <button id="top" class="pulsante4" onclick="onTop()">⬆</button>
+        <button id="night" class="pulsante4" >🌒</button>
+    </div>
 
    <br>
    <br>
@@ -56,6 +71,14 @@
    <br>
    <br>
 </body>
+
+<script>
+    $(document).ready(function(){
+        $("#night").click(function(){
+            $("body").toggleClass("light dark");
+        });
+    });
+</script>
 
 <!--<script>
         const pulsanti=document.querySelectorAll('like pulsante3');

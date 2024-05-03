@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
-body {
+.light {
       overflow-x: hidden;
       background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); /*cambiare i colori. In like.css lascio quella vecchia per confronto*/
       background-size: contain;
@@ -15,6 +15,17 @@ body {
       0% {background-position: 0% 50%; }
       50% {background-position: 100% 50%; }
       100% {background-position: 0% 50%;}
+}
+
+.dark {
+    overflow-x: hidden;
+    background: linear-gradient(-45deg, #171717, #4b4b4b, #2b2b2b, #0a0a0a); /*cambiare i colori. In like.css lascio quella vecchia per confronto*/
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
 }
 
 img{
@@ -195,3 +206,74 @@ img{
     font-size: 150%;
     font-weight: bolder;
 }
+
+#night {
+    /* display: none; */
+    position: fixed; 
+    bottom: 13%; 
+    right: 5%; 
+    z-index: 99; 
+    cursor: pointer;
+    font-size: 150%;
+    font-weight: bolder;
+}
+
+/*----------------------*/
+
+.popover__wrapper {
+    position: relative;
+    margin-top: 1.5rem;
+    display: inline-block;
+}
+
+.popover__content_like {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: -30%;
+    top: -120%;
+    transform: translate(0, 10px);
+    background-color: #0000005d;
+    padding: 0.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    width: 150%;
+    border-radius: 10%;
+    color:#ffffff
+}
+
+.popover__wrapper:hover .popover__content_like {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, -20%);
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+
+.popover__content_save {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: -30%;
+    top: 120%;
+    transform: translate(0, 10px);
+    background-color: #0000005d;
+    padding: 0.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    width: 150%;
+    border-radius: 10%;
+    color:#ffffff
+}
+
+.popover__wrapper:hover .popover__content_save {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 20%);
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+.popover__message {
+    text-align: center;
+}
+  

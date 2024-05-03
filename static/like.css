@@ -55,10 +55,10 @@ a {
     text-decoration: none;
 }
 
-a:hover .name {
+.hov:hover .name {
     color: #efff1450;
     /* font-size: smaller; */
-    font-size: clamp(0.7rem, 1vw, 1.5rem);;
+    font-size: clamp(0.7rem, 1.3vw, 1.5rem);;
 }
 
 p {
@@ -83,7 +83,8 @@ p {
 }
 
 .name {
-    padding: 5%;
+    margin: 0;
+    padding: 10%;
 }
 
 .foru2 img.tall {

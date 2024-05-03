@@ -114,21 +114,30 @@
                 </div>
             {% endif %} -->
 
-            <p class="h3">For You</p>
-                {% if for_u_list != [] %} 
+                <!-- FOR YOU SECTION -->
 
+                <p class="h3">For You</p>
+                {% if for_u_list != [] %} 
+    
                     <div class="swiper swiperImg">
                         <div class="swiper-wrapper">
                             {% for photo in for_u_list %}
-                                <div class="foru2 swiper-slide">    <!--nuova classe foru presennte in slider.css-->
-                                    <img src="{{ photo[1] }}">
+                                <!--nuova classe foru2 presennte in slider.css-->
+                                <div class="foru2 swiper-slide">    
+                                        <img src="{{ photo[1] }}">
+                                        <div class="overlay-text-stuff">
+    
+                                            <!-- DA CAPÌ CHE FINE FAGLIE FA -->
+                                            <!-- <button id = "forulikebtn{{ photo[2] }}" class = "like pulsante4"  value = '{{ photo[2] }}'>❤</button>
+                                            <button id = "forulikebtn{{ photo[2] }}" class = "like pulsante4" value = '{{ photo[2] }}'>+</button> -->
+                                                {{ photo[0] }}
+                                        </div>
                                 </div>
                             {% endfor %}
-                            
+    
                             
                         </div>
                     </div>
-              
                 {% endif %}
 
         {% elif size == 2 %}    <!-- SE HO DUE ELEMENTI RENDERIZZO SOLO QUELLI, DEVO FARE QUESTE CLASSI! -->
@@ -157,21 +166,30 @@
                 </div>
             {% endif %} -->
 
+                <!-- FOR YOU SECTION -->
+
                 <p class="h3">For You</p>
                 {% if for_u_list != [] %} 
-
+    
                     <div class="swiper swiperImg">
-                    <div class="swiper-wrapper">
-                        {% for photo in for_u_list %}
-                            <div class="foru2 swiper-slide">    <!--nuova classe foru presennte in slider.css-->
-                                <img src="{{ photo[1] }}">
-                            </div>
-                        {% endfor %}
-                        
-                        
+                        <div class="swiper-wrapper">
+                            {% for photo in for_u_list %}
+                                <!--nuova classe foru2 presennte in slider.css-->
+                                <div class="foru2 swiper-slide">    
+                                        <img src="{{ photo[1] }}">
+                                        <div class="overlay-text-stuff">
+    
+                                            <!-- DA CAPÌ CHE FINE FAGLIE FA -->
+                                            <!-- <button id = "forulikebtn{{ photo[2] }}" class = "like pulsante4"  value = '{{ photo[2] }}'>❤</button>
+                                            <button id = "forulikebtn{{ photo[2] }}" class = "like pulsante4" value = '{{ photo[2] }}'>+</button> -->
+                                                {{ photo[0] }}
+                                        </div>
+                                </div>
+                            {% endfor %}
+    
+                            
+                        </div>
                     </div>
-                    </div>
-              
                 {% endif %}
 
 
@@ -191,33 +209,34 @@
                 <img class="minor" src = "{{ city_photo_list[2][1] }}" width="600" height="600">
             </div>
 
-            <!-- For You
-            {% if for_u_list != [] %} 
-                <p class="h3">For You:</p>
-                <div class = "foru">
-                    {% for photo in for_u_list %}
-                        <img src="{{ photo[1] }}" width="600" height="600">
-                    {% endfor %}
-                    
-                </div>
-            {% endif %} -->
+
+            <!-- FOR YOU SECTION -->
 
             <p class="h3">For You</p>
-                {% if for_u_list != [] %} 
+            {% if for_u_list != [] %} 
 
-                    <div class="swiper swiperImg">
+                <div class="swiper swiperImg">
                     <div class="swiper-wrapper">
                         {% for photo in for_u_list %}
-                            <div class="foru2 swiper-slide">    <!--nuova classe foru presennte in slider.css-->
-                                <img src="{{ photo[1] }}">
+                            <!--nuova classe foru2 presennte in slider.css-->
+                            <div class="foru2 swiper-slide">    
+                                    <img src="{{ photo[1] }}">
+                                    <div class="overlay-text-stuff">
+
+                                        <!-- DA CAPÌ CHE FINE FAGLIE FA -->
+                                        <!-- <button id = "forulikebtn{{ photo[2] }}" class = "like pulsante4"  value = '{{ photo[2] }}'>❤</button>
+                                        <button id = "forulikebtn{{ photo[2] }}" class = "like pulsante4" value = '{{ photo[2] }}'>+</button> -->
+                                            {{ photo[0] }}
+                                    </div>
                             </div>
                         {% endfor %}
-                        
+
                         
                     </div>
-                    </div>
-              
-                {% endif %}
+                </div>
+            {% endif %}
+
+            
 
 
         {% endif %}

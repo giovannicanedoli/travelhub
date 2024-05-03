@@ -7,6 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 8px 16px 0 #00000033, 0 6px 20px 0 #00000030;
 }
 
 .foru2 img{
@@ -33,6 +34,7 @@
     border-radius: 20%;
     transform: translateY(50px);
     filter: blur(20px);
+    
 
     box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.5); 
     background-color: rgba(0, 0, 0, 0.5);
@@ -82,9 +84,12 @@
 */
 
 
-
-
 /* accedo alla slide principale */
+
+/* .swiper-slide-active:hover{
+    scale:1.03; non se mette la transition
+} */
+
 .swiper-slide-active:hover .overlay-text-stuff{
     animation: MostraBottoni .3s .2s linear 1 forwards; 
 }

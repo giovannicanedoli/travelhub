@@ -64,13 +64,10 @@ class Cities(db.Model):
     def __repr__(self):
         return f'<City {self.nome} in {self.paese}, likes: {self.like_messi}, saves: {self.save_messi} photo: {self.photo}> iata: {self.iata}'
 
-#devo selezionare qual è la città con più like tra le città a cui ha messo like user.id
 class Like(db.Model):
     __tablename__ = 'likes'
     users_id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key = True)
     cities_id = db.Column(db.Integer, db.ForeignKey('cities.id'), primary_key = True)
-
-    #uselist = False -> un record è associato ad un record delle classi sopra, da mettere???
 
     users_like = db.relationship("Users", backref=db.backref("users_like", uselist=False))
     cities_like = db.relationship("Cities", backref=db.backref("cities_like", uselist=False))
@@ -266,16 +263,18 @@ def like():
 
 
         #questa query mi serve per i per te
-        foru = db.session.query(Cities.nome, Cities.photo, Cities.like_messi).order_by(Cities.like_messi).all()
+        foru = db.session.query(Cities.nome, Cities.photo,Cities.id, Cities.like_messi).order_by(Cities.like_messi).all()
         foru = foru[:5:-1]
         
-        print(liked_cities, end = "\n\n\n")
+        # print(liked_cities, end = "\n\n\n")
+
         for t in liked_cities:
             print(t)
 
     size = len(liked_cities)
     
     #roba per la post
+
     if request.method == "POST":
         departure_city = request.form['departure_city']
         arrival_city = request.form['arrival_city']

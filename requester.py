@@ -15,10 +15,9 @@ class MakeReq:
         }
         headers = {
             "accept": "application/vnd.amadeus+json",
-            "Authorization": "Bearer PELdn9be9CZz2Zr7Fje4YUiVJkLn"
+            "Authorization": "Bearer Mns1g4jAc8vyyD9QjkphxKqUl82f"
         }
         response = requests.get(url, headers=headers, params=params)
-        
         return response.status_code, response.json()
     
     @staticmethod
@@ -31,7 +30,11 @@ class MakeReq:
             print("Exception occurred... " + str(e))
             return -1, -1
         
+
+
 #testing
 if __name__ == '__main__':
-    obj = MakeReq.sup()
-    print(obj[0], obj[1])
+    obj = MakeReq.getResponse("FCO", "MAD")
+    print(obj[0])
+    print("\n\n\n")
+    print(obj[1])

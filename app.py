@@ -42,7 +42,6 @@ class Users(UserMixin, db.Model):
     def __repr__(self):
         return f'<User {self.username}, password {self.password}>'
     
-
 class Feedback(db.Model):
     __tablename__ = 'feedback'
     id = db.Column(db.Integer, primary_key=True)    
@@ -243,7 +242,6 @@ def confirm_forget(token):
         
     else:
         return render_template("confirm_forgot.html")
-    
 
 @app.route('/aboutus', methods = ["GET", "POST"])
 def aboutus():
@@ -251,7 +249,10 @@ def aboutus():
         name = request.form.get("name")
         msg = request.form.get("subject")
         feed = Feedback(name, msg)
-        print(feed)
+        
+        db.session.add(feed)
+        db.session.commit()
+
         return render_template('aboutus.html')
     else:
         return render_template('aboutus.html')
@@ -259,7 +260,6 @@ def aboutus():
 @app.route('/<something>')
 def goto(something):
     return redirect(url_for('main_route'))
-
 
 @app.route("/logout")
 def logout():
@@ -337,7 +337,6 @@ def favorite():
     random.shuffle(saved_ph)
     return render_template("favorite.html", saved_ph=saved_ph, e=e)
 
-
 @app.route('/leavealike', methods = ["POST"])
 def leave_like():
     form_sent = request.form
@@ -383,7 +382,6 @@ def leave_like():
 
     return jsonify(status_code)
 
-
 @app.route('/savephoto', methods = ["POST"])
 def save_photo():
 
@@ -426,7 +424,6 @@ def save_photo():
         status_code = {'code' : '400'}
     
     return jsonify(status_code)
-
 
 if __name__ == '__main__':
     app.run(debug=True)

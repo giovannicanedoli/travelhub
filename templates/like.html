@@ -39,13 +39,15 @@
                 <div class="swiper swiperImg">
                     <div class="swiper-wrapper">
                         {% for photo in for_u_list %}
-                            <div class="foru2 swiper-slide">    <!--nuova classe foru presennte in slider.css-->
+                            <!--nuova classe foru2 presennte in slider.css-->
+                            <div class="foru2 swiper-slide">    
                                     <img src="{{ photo[1] }}">
                                     <div class="overlay-text-stuff">
-                                        <!-- DA AGGIUNGERE UNA CLASSE A STI CAZZO DE BOTTONI -->
-                                        <button id = "forulikebtn{{ photo[2] }}" class = "like pulsante4"  value = '{{ photo[2] }}'>❤</button>
-                                        <button id = "forulikebtn{{ photo[2] }}" class = "like pulsante4" value = '{{ photo[2] }}'>+</button>
-                                        
+
+                                        <!-- DA CAPÌ CHE FINE FAGLIE FA -->
+                                        <!-- <button id = "forulikebtn{{ photo[2] }}" class = "like pulsante4"  value = '{{ photo[2] }}'>❤</button>
+                                        <button id = "forulikebtn{{ photo[2] }}" class = "like pulsante4" value = '{{ photo[2] }}'>+</button> -->
+                                            {{ photo[0] }}
                                     </div>
                             </div>
                         {% endfor %}

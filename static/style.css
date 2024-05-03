@@ -56,39 +56,6 @@ img{
     50% {max-width: 60%; border-radius: 10%;}
 }
 
-
-/* .foto {
-    box-shadow: 0 8px 16px 0 #00000033, 0 6px 20px 0 #00000030;
-    display: block; gli da fastidio
-    max-width: 60%;
-    max-height: 700px;
-
-    border-radius: 10%;
-    /*QUA O MEDIAQUERY PER ADATTARE OPPURE SI LASCIA COSI PERO PROVARE SE VA BENE SUI VARI DISPOSITIVI - per esempio sul fisso mio sarebbe meglio piu grande
-    animation: widener linear both; 
-    
-
-    questi ultimi tag gli danno fastidio
-    animation-timeline: view();
-    background-clip: text;
-    -webkit-background-clip: text;
-    z-index: 3;
-    transition-duration: 0.4s;
-}
-
-.foto:hover {
-    scale: 1.03;
-} 
-
-/* html, body {
-    width: 100%;
-    height:100%;
-  } 
-  si bugga (non so perché)
-  */
-
-
-
 .container:hover{
     /* scale: 1.03; */
     transform: scale(1.03);

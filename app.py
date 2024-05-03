@@ -32,8 +32,8 @@ login_manager.init_app(app)
 class Users(UserMixin, db.Model):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)    
-    username = db.Column(db.String(30),nullable = False, unique = True)    
-    password = db.Column(db.String(250),nullable = False)
+    username = db.Column(db.String(30), nullable = False, unique = True)    
+    password = db.Column(db.String(250), nullable = False)
 
     def __init__(self, username = None,password = None):
         self.username = username
@@ -42,6 +42,20 @@ class Users(UserMixin, db.Model):
     def __repr__(self):
         return f'<User {self.username}, password {self.password}>'
     
+
+class Feedback(db.Model):
+    __tablename__ = 'feedback'
+    id = db.Column(db.Integer, primary_key=True)    
+    name = db.Column(db.String(50), nullable = False)
+    text = db.Column(db.String(1000), nullable = False)
+
+    def __init__(self, name = None,text = None):
+        self.name = name
+        self.text = text
+
+    def __repr__(self):
+        return f'<User {self.name} says "{self.text}">'
+
 class Cities(db.Model):
     __tablename__ = 'cities'
     id = db.Column(db.Integer, primary_key=True)    
@@ -231,9 +245,16 @@ def confirm_forget(token):
         return render_template("confirm_forgot.html")
     
 
-@app.route('/aboutus')
+@app.route('/aboutus', methods = ["GET", "POST"])
 def aboutus():
-    return render_template('aboutus.html')
+    if request.method == "POST":
+        name = request.form.get("name")
+        msg = request.form.get("subject")
+        feed = Feedback(name, msg)
+        print(feed)
+        return render_template('aboutus.html')
+    else:
+        return render_template('aboutus.html')
 
 @app.route('/<something>')
 def goto(something):

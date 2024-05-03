@@ -38,18 +38,10 @@ img {
     
 }
 
-/*
-mg{
-    width: 60%;
-    height: 80%;
-    object-fit: cover;
-    max-height: 80vh;
-}
-*/
-
-img:hover{
+/*questo serve???*/
+/* img:hover{
     scale: 1.07;
-}
+} */
 
 a {
     text-decoration: none;

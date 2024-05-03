@@ -42,7 +42,6 @@ class Users(UserMixin, db.Model):
     def __repr__(self):
         return f'<User {self.username}, password {self.password}>'
     
-
 class Feedback(db.Model):
     __tablename__ = 'feedback'
     id = db.Column(db.Integer, primary_key=True)    
@@ -78,13 +77,10 @@ class Cities(db.Model):
     def __repr__(self):
         return f'<City {self.nome} in {self.paese}, likes: {self.like_messi}, saves: {self.save_messi} photo: {self.photo}> iata: {self.iata}'
 
-#devo selezionare qual è la città con più like tra le città a cui ha messo like user.id
 class Like(db.Model):
     __tablename__ = 'likes'
     users_id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key = True)
     cities_id = db.Column(db.Integer, db.ForeignKey('cities.id'), primary_key = True)
-
-    #uselist = False -> un record è associato ad un record delle classi sopra, da mettere???
 
     users_like = db.relationship("Users", backref=db.backref("users_like", uselist=False))
     cities_like = db.relationship("Cities", backref=db.backref("cities_like", uselist=False))
@@ -246,7 +242,6 @@ def confirm_forget(token):
         
     else:
         return render_template("confirm_forgot.html")
-    
 
 @app.route('/aboutus', methods = ["GET", "POST"])
 def aboutus():
@@ -254,7 +249,10 @@ def aboutus():
         name = request.form.get("name")
         msg = request.form.get("subject")
         feed = Feedback(name, msg)
-        print(feed)
+        
+        db.session.add(feed)
+        db.session.commit()
+
         return render_template('aboutus.html')
     else:
         return render_template('aboutus.html')
@@ -262,7 +260,6 @@ def aboutus():
 @app.route('/<something>')
 def goto(something):
     return redirect(url_for('main_route'))
-
 
 @app.route("/logout")
 def logout():
@@ -287,16 +284,18 @@ def like():
 
 
         #questa query mi serve per i per te
-        foru = db.session.query(Cities.nome, Cities.photo, Cities.like_messi).order_by(Cities.like_messi).all()
+        foru = db.session.query(Cities.nome, Cities.photo,Cities.id, Cities.like_messi).order_by(Cities.like_messi).all()
         foru = foru[:5:-1]
         
-        print(liked_cities, end = "\n\n\n")
+        # print(liked_cities, end = "\n\n\n")
+
         for t in liked_cities:
             print(t)
 
     size = len(liked_cities)
     
     #roba per la post
+
     if request.method == "POST":
         departure_city = request.form['departure_city']
         arrival_city = request.form['arrival_city']
@@ -337,7 +336,6 @@ def favorite():
     e=random.randint(1, 4)
     random.shuffle(saved_ph)
     return render_template("favorite.html", saved_ph=saved_ph, e=e)
-
 
 @app.route('/leavealike', methods = ["POST"])
 def leave_like():
@@ -384,7 +382,6 @@ def leave_like():
 
     return jsonify(status_code)
 
-
 @app.route('/savephoto', methods = ["POST"])
 def save_photo():
 
@@ -427,7 +424,6 @@ def save_photo():
         status_code = {'code' : '400'}
     
     return jsonify(status_code)
-
 
 if __name__ == '__main__':
     app.run(debug=True)

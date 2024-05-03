@@ -17,3 +17,4 @@ var swiper = new Swiper(".swiperImg", {
     //   disableOnInteraction:false,
     // }
   });
+

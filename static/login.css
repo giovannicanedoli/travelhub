@@ -223,6 +223,11 @@ body {
     .submit-btn:hover{
         scale: 1.03;
     }
+
+    .failure{
+        width: 80%;
+        margin-left: 10%;
+    }
     
 
 }

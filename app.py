@@ -1,4 +1,4 @@
-from flask import Flask,render_template, url_for, redirect, request, session, jsonify, flash
+from flask import Flask,render_template, url_for, redirect, request, session, jsonify, flash, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func, desc
 from flask_mail import Mail, Message
@@ -7,6 +7,7 @@ from datetime import timedelta
 from utils import *
 import random
 import sys
+import os
 
 app = Flask(__name__)
 
@@ -251,15 +252,13 @@ def aboutus():
         name = request.form.get("name")
         msg = request.form.get("subject")
         rating = request.form.get("rating")
-        print(type(rating))
         feed = Feedback(name, msg, rating)
-        print('-----------------',rating)
         db.session.add(feed)
-        #db.session.commit()
+        db.session.commit()
         print(feed)
-        return render_template('aboutus.html')
+        return render_template('aboutus.html', feed=True)
     else:
-        return render_template('aboutus.html')
+        return render_template('aboutus.html', feed=False)
 
 @app.route('/<something>')
 def goto(something):
@@ -428,6 +427,11 @@ def save_photo():
         status_code = {'code' : '400'}
     
     return jsonify(status_code)
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+        'favicon.ico',mimetype='image/vnd.microsoft.icon')
 
 if __name__ == '__main__':
     app.run(debug=True)

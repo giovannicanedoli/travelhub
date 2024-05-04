@@ -50,6 +50,11 @@
         </div>
     </div> 
     -->
+    {% if feed %}
+      <div class="form-header">
+        <p>Thank you, we have forwarded your feedback to our team ❤️</p>
+      </div>
+    {% endif %}
     <div class="main">   
         <p>Welcome to TravelHub, your ultimate destination for exploring breathtaking tourist spots around the globe! Founded by a team of passionate travelers and tech enthusiasts, TravelHub aims to revolutionize the way you plan and experience your next adventure.
 
@@ -79,7 +84,7 @@
         </div>
         <div class="row">
           <div class="col-25">
-            <label for="subject">Feedback:</label>
+            <label for="subject">What's your opinion?</label>
           </div>
           <div class="col-75">
             <textarea class="text" id="subject" name="subject" placeholder="Write your feedback.." style="height:200px; width: 80%;" required></textarea>

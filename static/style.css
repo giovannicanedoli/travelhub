@@ -71,9 +71,9 @@ img{
     
 }
 
-.overlay-text:hover{
+/* .overlay-text:hover{
     filter: blur(1.3px);
-}
+} */
 
 @keyframes showContent{
     to{

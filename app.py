@@ -278,7 +278,7 @@ def like():
     liked_cities=[]
     foru=[]
     if 'username' in session and 'password' in session and 'id' in session:
-        liked_cities = db.session.query(Cities.nome, Cities.photo, func.count('*').label('total_likes')) \
+        liked_cities = db.session.query(Cities.nome, Cities.photo, Cities.iata, func.count('*').label('total_likes')) \
                         .join(Like, Cities.id == Like.cities_id) \
                         .filter(Like.users_id == session['id']) \
                         .group_by(Cities.nome) \

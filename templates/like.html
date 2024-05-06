@@ -99,6 +99,7 @@
         {% elif  size == 1 %} <!-- SE HO UN SOLO ELEMENTO RENDERIZZO SOLO QUELLO -->
             <div class = "sup">
                 <p class="h">The city you liked the most is...{{ city_photo_list[0][0] }}!</p>
+                <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
                 <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600">
                 <p class = "h2">put more likes to see a podium of photos here!</p>
             </div>
@@ -145,6 +146,7 @@
                 
                 <div class = "first">
                     <p class="h2">The city you liked the most is...{{ city_photo_list[0][0] }}!</p>
+                    <!--DA PROBLEMI IL CSS <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a> -->
                     <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600">
                     <p class="h2">second image in podium is...{{ city_photo_list[1][0] }}!</p>
                 </div>
@@ -197,7 +199,7 @@
         {% else %}
             <div class = "sup">
                     <p class="h">The city you liked the most is...{{ city_photo_list[0][0] }}!</p>
-                    <a href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/" target="_blank">Book here your plane✈</a>
+                    <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
                     <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600">
                     <p class="h2">Damn! You really appreciated also {{ city_photo_list[1][0] }} and {{ city_photo_list[2][0] }}!</p>
             </div>

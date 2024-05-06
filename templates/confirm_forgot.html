@@ -48,16 +48,15 @@
             </form>
 
             {% if password_match == False %}
-            <br>
+                <br>
                 <div class = "failure" >
-                    <!-- SI BUGGA QUI -->
                     <p>Passwords don't match!</p>
                 </div>
             {% endif %}
 
             {% if password_quality == False %}
+                <br>
                 <div class = "failure">
-                    <!-- SI BUGGA QUI -->
                     <p>Password is too simple!</p>
                 </div>
             {% endif %}

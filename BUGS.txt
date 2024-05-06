@@ -1,4 +1,5 @@
 
+in forgot.html:         {% if user_alive == False %}    <!--che roba è? perche mi capita se faccio il recupero con una mail non registrata? in caso gestire questo caso pure-->
 
 
 animation.js, desc.js (forse), style2.css sono file non usati

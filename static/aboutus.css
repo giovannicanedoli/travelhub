@@ -30,7 +30,7 @@ body {
     max-width: 800px;
     margin: 5% auto;
     padding: 20px;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
 p {
@@ -103,12 +103,19 @@ small {
     font-weight: 600;
 }
 
+.form-header p{
+    color: #333;
+    font-size: clamp(2rem, 1.8vw, 3.3rem); ;
+    font-weight: 400;
+}
+
 input[type=text], textarea {
     width: 80%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 30px;
     resize: vertical;
+    transition-duration: 0.3s;
 }
   
 label {
@@ -147,6 +154,10 @@ label {
 input[type=submit] {
     margin-left: 40%;
     width: 20%;
+}
+
+.input:hover, .text:hover{
+    transform: scale(1.03,1);
 }
 
 /*stars*/

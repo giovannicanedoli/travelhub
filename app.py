@@ -253,9 +253,11 @@ def aboutus():
         rating = request.form.get("rating")
         print(type(rating))
         feed = Feedback(name, msg, rating)
+        
         print('-----------------',rating)
         db.session.add(feed)
-        #db.session.commit()
+        db.session.commit()
+        
         print(feed)
         return render_template('aboutus.html')
     else:
@@ -300,6 +302,7 @@ def like():
     
     #roba per la post
 
+    #questo non serve a una ceppa -> da cancellare!
     if request.method == "POST":
         departure_city = request.form['departure_city']
         arrival_city = request.form['arrival_city']

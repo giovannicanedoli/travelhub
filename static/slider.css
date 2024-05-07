@@ -101,3 +101,17 @@
         opacity: 1;
     }
 }
+
+
+
+.cubic .swiper-slide{
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.cubic .swiper-slide img {
+    display: block;
+    width: 100%;
+}
+

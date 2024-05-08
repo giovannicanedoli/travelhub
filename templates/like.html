@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{url_for('static', filename='like.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='header.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='slider.css')}}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     <title>TravelHub - Like History</title>
 </head>
@@ -57,44 +59,8 @@
                 </div>
         {% endif %}
 
-        
-        <!-- <form action = "#" method = "POST">
-            <div class = "form-secondario">
-                <header>Find your next flight!</header>
-                <div class = "form_cities_stuff">
-                    <label for="departure_city">Departure city</label><br>
-                    <input type="text" id="departure_city" name="departure_city" required><br><br>
-                </div>
-
-                <div class = "form_cities_stuff">
-                    <label for="arrival_city">Arrival city</label><br>
-                    <input type="text" id="arrival_city" name="arrival_city" required><br><br>
-                </div>
-
-                <div class = "form_cities_stuff">
-                    <label for="date_of_leaving">Date of leaving (YYYY-MM-DD)</label><br>
-                     pattern="\d{4}-\d{2}-\d{2}" 
-                    <input type="text" id="date_of_leaving" name="date_of_leaving" required ><br><br>
-                </div>
-
-                <div class="input-submit">
-                    <input type="submit" value="Invia">
-                  <label for="submit" >Sign in</label>
-                </div>
-
-                {% if api_data %}
-                    <textarea area rows="10" cols="50">
-                        {{ debugstuff[0] }}
-                    </textarea>
-                {% endif %}
-
-
-            </div>
-        </form> -->
-
-
-
         <br><br><br><br><br><br>
+        <!-- FOOTER ? -->
 
         {% elif  size == 1 %} <!-- SE HO UN SOLO ELEMENTO RENDERIZZO SOLO QUELLO -->
             <div class = "sup">
@@ -104,10 +70,18 @@
                 <div class = "swiper swiperCubic">
                     <div class="swiper-wrapper">
                         <div class = "cubic swiper-slide">
-                            <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600">
+                            <img id = "top" src = "{{ city_photo_list[0][1] }}">
                         </div>
                         <div class = "cubic swiper-slide">
-                            <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+                            <div class = "blurcube">
+                                <img id = "top" src = "{{ city_photo_list[0][1] }}">
+                                <div class = "textcontainer"> 
+                                    <p>{{ city_photo_list[0][0] }} <br> {{ city_photo_list[0][2] }} <br> {{ city_photo_list[0][3] }} </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "map" class = "mapcontainer swiper-slide">
+                            <!-- I DON'T HAVE TO FILL THIS-->
                         </div>
                     </div>
                 </div>
@@ -141,8 +115,30 @@
                     </div>
                 {% endif %}
 
-        {% elif size == 2 %}    <!-- SE HO DUE ELEMENTI RENDERIZZO SOLO QUELLI, DEVO FARE QUESTE CLASSI! -->
+        {% elif size == 2 %}    
+        
+            <!-- UN'IMMAGINE SOPRA ALL'ALTRA -->
             <div class = "container">
+
+                <!--
+                <div class = "swiper swiperCubic">
+                    <div class="swiper-wrapper">
+                        <div class = "cubic swiper-slide">
+                            <img id = "top" src = "{{ city_photo_list[0][1] }}">
+                        </div>
+                        <div class = "cubic swiper-slide">
+                            <div class = "blurcube">
+                                <img id = "top" src = "{{ city_photo_list[0][1] }}">
+                                <div class = "textcontainer"> 
+                                    <p>{{ city_photo_list[0][0] }} <br> {{ city_photo_list[0][2] }} <br> {{ city_photo_list[0][3] }} </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id = "map" class = "mapcontainer swiper-slide">
+                            
+                        </div>
+                    </div>
+                </div>  -->
                 
                 <div class = "first">
                     <p class="h2">The city you liked the most is...{{ city_photo_list[0][0] }}!</p>
@@ -251,6 +247,8 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type = "text/javascript" src = "{{url_for('static', filename='swiperimg.js')}}"></script>
+    <script type = "text/javascript" src = "{{url_for('static', filename='aquirecity.js')}}"></script>
+
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
           const immagini = document.querySelectorAll('.foru2 img');

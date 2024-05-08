@@ -3,4 +3,7 @@ aggiustare il cuore
 PAGINA CHE MOSTRA LE METE DOVE ANDARE
 immagini della stessa grandezza
 responsive design cuore del like
-IDEA: mostrare un box giallo se provi a mettere like senza loggarti al login
+sistemare i vari sfondi di tutte le pagine
+rifare la descrizione in aboutus
+organizzare i z-index soprattutto in style.css
+ripulire il codice e levare vari commenti, parti inutili e print

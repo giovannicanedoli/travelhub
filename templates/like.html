@@ -138,24 +138,59 @@
                             
                         </div>
                     </div>
-                </div>  -->
+                </div>  
+                -->
+
                 
-                <div class = "first">
                     <p class="h2">The city you liked the most is...{{ city_photo_list[0][0] }}!</p>
                     <!--DA PROBLEMI IL CSS <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a> -->
-                    <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600">
-                    <p class="h2">second image in podium is...{{ city_photo_list[1][0] }}!</p>
-                </div>
+                    
+                    <div class = "swiper swiperCubic">
+                        <div class="swiper-wrapper">
+                            <div class = "cubic swiper-slide">
+                                <img id = "top" src = "{{ city_photo_list[0][1] }}">
+                            </div>
+                            <div class = "cubic swiper-slide">
+                                <div class = "blurcube">
+                                    <img id = "top" src = "{{ city_photo_list[0][1] }}">
+                                    <div class = "textcontainer"> 
+                                        <p>{{ city_photo_list[0][0] }} <br> {{ city_photo_list[0][2] }} <br> {{ city_photo_list[0][3] }} </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id = "map" class = "mapcontainer swiper-slide" name = "{{ city_photo_list[0][0] }}">
+                                <!-- I DON'T HAVE TO FILL THIS-->
+                            </div>
+                        </div>
+                    </div>
 
+                
                 <!-- QUESTA QUI PIÙ PICCOLA?? -->
-                <div class = "second">
-                    <img id = "top" src = "{{ city_photo_list[1][1] }}" width="600" height="600">
+                
+                    <p class="h2">second image in podium is...{{ city_photo_list[1][0] }}!</p>
+                    <div class = "swiper swiperCubic">
+                        <div class="swiper-wrapper">
+                            <div class = "cubic swiper-slide">
+                                <img id = "top" src = "{{ city_photo_list[1][1] }}">
+                            </div>
+                            <div class = "cubic swiper-slide">
+                                <div class = "blurcube">
+                                    <img id = "top" src = "{{ city_photo_list[1][1] }}">
+                                    <div class = "textcontainer"> 
+                                        <p>{{ city_photo_list[1][0] }} <br> {{ city_photo_list[1][2] }} <br> {{ city_photo_list[1][3] }} </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id = "map2" class = "mapcontainer swiper-slide" name = "{{ city_photo_list[1][0] }}">
+                            <!--Leaflet data automaticly filled here-->   
+                            </div>
+                        </div>
+                    </div> 
+
+                    <!-- <img id = "top" src = "{{ city_photo_list[1][1] }}" width="600" height="600"> -->
                     <p class = "h2">put more like to complete the podium!</p>
-                </div>
+                
             </div>
-
-            
-
                 <!-- FOR YOU SECTION -->
 
                 <p class="h3">For You</p>
@@ -182,9 +217,26 @@
                     </div>
                 {% endif %}
 
-
-
         {% else %}
+
+        <!-- <div class = "swiper swiperCubic">
+            <div class="swiper-wrapper">
+                <div class = "cubic swiper-slide">
+                    <img id = "top" src = "{{ city_photo_list[0][1] }}">
+                </div>
+                <div class = "cubic swiper-slide">
+                    <div class = "blurcube">
+                        <img id = "top" src = "{{ city_photo_list[0][1] }}">
+                        <div class = "textcontainer"> 
+                            <p>{{ city_photo_list[0][0] }} <br> {{ city_photo_list[0][2] }} <br> {{ city_photo_list[0][3] }} </p>
+                        </div>
+                    </div>
+                </div>
+                <div id = "map" class = "mapcontainer swiper-slide" name = "{{ city_photo_list[0][0] }}">
+                </div>
+            </div>
+        </div> -->
+        
             <div class = "sup">
                     <p class="h">The city you liked the most is...{{ city_photo_list[0][0] }}!</p>
                     <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
@@ -232,19 +284,8 @@
         {% endif %}
     {% endif %}
     <button id="top2" class="pulsante4" onclick="onTop()">⬆</button>
-    <script>
-        function onTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scorri verso l'inizio della pagina con animazione
-        }
-
-        window.onscroll = function() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("top2").style.display = "block";
-            } else {
-                document.getElementById("top2").style.display = "none";
-            }
-        };
-    </script>
+    
+    <!--ho messo il bottone per l'onScroll in acquireCity-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type = "text/javascript" src = "{{url_for('static', filename='swiperimg.js')}}"></script>
     <script type = "text/javascript" src = "{{url_for('static', filename='aquirecity.js')}}"></script>

@@ -31,6 +31,8 @@ body {
     align-items: center;
 }
 
+
+
 img {
     width: 60%;
     /* height: 80%; */
@@ -48,9 +50,9 @@ img {
 }
 
 /*questo serve???*/
-/* img:hover{
+.f:hover{
     scale: 1.07;
-} */
+}
 
 a {
     text-decoration: none;
@@ -70,9 +72,7 @@ p {
     color: aliceblue;
 }
 
-.ticket{
-    margin-bottom: 2%;
-}
+
 
 .h {
     font-size: clamp(1.8rem, 2.3vw, 3.3rem); 
@@ -101,6 +101,12 @@ p {
     height: auto; 
     max-height: 60vh;
 }
+
+
+.ticket {
+    margin-top: 10px; 
+}
+
 
 .center{
     display: flex;
@@ -211,7 +217,7 @@ p {
         margin-bottom: 2%; 
     }
 
-    .ticket{
+    /* .ticket{
         margin-bottom: 5%;
-    }
+    } */
 }

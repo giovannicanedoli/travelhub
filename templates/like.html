@@ -15,6 +15,12 @@
     <title>TravelHub - Like History</title>
 </head>
 <body class="intero">
+    
+    <video autoplay muted loop id="background-video">
+        <source src="/static/images/sfondo.mp4" type="video/mp4">
+        <!-- Aggiungi altri formati video supportati se necessario -->
+        Your browser does not support the video tag.
+    </video>
 
     {% endblock %}
     {% block contentdown %}
@@ -47,7 +53,7 @@
                                         <!-- DA CAPÌ CHE FINE FAGLIE FA -->
                                         <!-- <button id = "forulikebtn{{ photo[2] }}" class = "like pulsante4"  value = '{{ photo[2] }}'>❤</button>
                                         <button id = "forulikebtn{{ photo[2] }}" class = "like pulsante4" value = '{{ photo[2] }}'>+</button> -->
-                                            {{ photo[0] }}
+                                            {{ photo[0][1] }}
                                     </div>
                             </div>
                         {% endfor %}

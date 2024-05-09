@@ -14,6 +14,15 @@ body {
     100% {background-color: #545454;}
 }
 
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Imposta lo z-index in modo che il video sia dietro agli altri elementi */
+  }
+
 .sup{
     display: flex;
     flex-direction: column;

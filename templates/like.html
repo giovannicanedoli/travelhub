@@ -21,6 +21,12 @@
     <title>TravelHub - Like History</title>
 </head>
 <body class="intero">
+    
+    <video autoplay muted loop id="background-video">
+        <source src="/static/images/sfondo.mp4" type="video/mp4">
+        <!-- Aggiungi altri formati video supportati se necessario -->
+        Your browser does not support the video tag.
+    </video>
 
     {% endblock %}
     {% block contentdown %}
@@ -69,7 +75,6 @@
         {% elif  size == 1 %} <!-- SE HO UN SOLO ELEMENTO RENDERIZZO SOLO QUELLO -->
             <div class = "sup">
                 <p class="h">The city you liked the most is...{{ city_photo_list[0][0] }}!</p>
-                <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
                 
                 <div class = "swiper swiperCubic">
                     <div class="swiper-wrapper">
@@ -80,7 +85,8 @@
                             <div class = "blurcube">
                                 <img id = "top" src = "{{ city_photo_list[0][1] }}">
                                 <div class = "textcontainer"> 
-                                    <p>{{ city_photo_list[0][0] }} <br> {{ city_photo_list[0][2] }} <br> {{ city_photo_list[0][3] }} </p>
+                                    <p>{{ city_photo_list[0][3] }}</p>
+                                    <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
                                 </div>
                             </div>
                         </div>
@@ -158,7 +164,9 @@
                                 <div class = "blurcube">
                                     <img id = "top" src = "{{ city_photo_list[0][1] }}">
                                     <div class = "textcontainer"> 
-                                        <p>{{ city_photo_list[0][0] }} <br> {{ city_photo_list[0][2] }} <br> {{ city_photo_list[0][3] }} </p>
+                                        <p>{{ city_photo_list[0][3] }} </p>
+                                        <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
+
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +189,8 @@
                                 <div class = "blurcube">
                                     <img id = "top" src = "{{ city_photo_list[1][1] }}">
                                     <div class = "textcontainer"> 
-                                        <p>{{ city_photo_list[1][0] }} <br> {{ city_photo_list[1][2] }} <br> {{ city_photo_list[1][3] }} </p>
+                                        <p> {{ city_photo_list[1][3] }} </p>
+                                        <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -225,7 +234,6 @@
 
             <div class = "sup">
                     <p class="h">The city you liked the most is...{{ city_photo_list[0][0] }}!</p>
-                    <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
                     <!-- <img id = "top" src = "{{ city_photo_list[0][1] }}" width="600" height="600"> -->
 
                     <div class = "swiper swiperCubic">
@@ -237,7 +245,8 @@
                                 <div class = "blurcube">
                                     <img id = "top" src = "{{ city_photo_list[0][1] }}">
                                     <div class = "textcontainer"> 
-                                        <p>{{ city_photo_list[0][0] }} <br> {{ city_photo_list[0][2] }} <br> {{ city_photo_list[0][3] }} </p>
+                                        <p>{{ city_photo_list[0][3] }} </p>
+                                        <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -261,7 +270,8 @@
                             <div class = "blurcube">
                                 <img class="minor" src = "{{ city_photo_list[1][1] }}" >
                                 <div class = "textcontainer"> 
-                                    <p>{{ city_photo_list[1][0] }} <br> {{ city_photo_list[1][2] }} <br> {{ city_photo_list[1][3] }} </p>
+                                    <p>{{ city_photo_list[1][3] }} </p>
+                                    <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
                                 </div>
                             </div>
                         </div>
@@ -280,7 +290,8 @@
                                 <img class="minor" src = "{{ city_photo_list[2][1] }}" >
 
                                 <div class = "textcontainer"> 
-                                    <p>{{ city_photo_list[2][0] }} <br> {{ city_photo_list[2][2] }} <br> {{ city_photo_list[2][3] }} </p>
+                                    <p>{{ city_photo_list[2][3] }} </p>
+                                    <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
                                 </div>
 
                             </div>

@@ -48,9 +48,9 @@ img {
 }
 
 /*questo serve???*/
-img:hover{
+/* img:hover{
     scale: 1.07;
-}
+} */
 
 a {
     text-decoration: none;
@@ -112,8 +112,9 @@ p {
 
 .scorrimento{
     display: flex;
-    justify-content: center; 
+    justify-content: space-between; 
     align-items: center;
+    gap:3%;
     scale: 0.8;
 }
 

@@ -23,7 +23,7 @@ app.config['MAIL_USE_SSL'] = False
 
 mail = Mail(app)
 
-app.permanent_session_lifetime = timedelta(minutes=25)   #temporaneoo
+app.permanent_session_lifetime = timedelta(minutes=25)   #temporaneo
 
 db = SQLAlchemy()
 
@@ -296,35 +296,8 @@ def like():
             print(t)
 
     size = len(liked_cities)
-    
-    #roba per la post
-
-    #questo non serve a una ceppa -> da cancellare!
-    if request.method == "POST":
-        departure_city = request.form['departure_city']
-        arrival_city = request.form['arrival_city']
-        date_of_leaving = request.form['date_of_leaving']
-        
-        #for the api
-        departure_city.upper()
-        arrival_city.upper()
-
-        #debug
-        print("Departure city:", departure_city)
-        print("Arrival city:", arrival_city)
-        print("Date of leaving:", date_of_leaving)
-
-        data = MakeReq.sup()
-        if data[0] == 200:
-            #api result
-            print(data[0], data[1])
-            return render_template("like.html", city_photo_list=liked_cities, for_u_list = foru, size=size, api_data = True, debugstuff = data[1])
-        else:
-            return render_template("like.html", city_photo_list=liked_cities, for_u_list = foru, size=size, api_data = False)
-        
-    else:
-
-        return render_template("like.html", city_photo_list=liked_cities, for_u_list = foru, size=size)
+          
+    return render_template("like.html", city_photo_list=liked_cities, for_u_list = foru, size=size)
 
 @app.route("/favorite")
 def favorite():
@@ -398,7 +371,7 @@ def save_photo():
         
         #debug
         if not city:
-            raise Exception('id not found, nso che cazzo è successo')
+            raise Exception('id not found, donno what happened')
             sys.exit(-1)        
 
         user_id = session.get('id')

@@ -101,3 +101,41 @@
         opacity: 1;
     }
 }
+
+.swiperCubic{
+    width: 50%;
+    height: 50%;
+}
+
+.cubic img {
+    /* object-fit: contain; */
+    width: 100%;
+    height: 100%;
+}
+
+.blurcube img{
+    filter: blur(8px);
+}
+
+.blurcube .textcontainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; 
+}
+
+#map{
+    height: auto;
+    /* width: 100%; */
+    /* border-radius: 20%; da vedere, problemi con i bottoni dello zoom (e quindi con tutta
+    la roba del responsive)s */
+}
+
+#map2{
+    height: auto;
+}
+
+#map3{
+    height: auto;
+}

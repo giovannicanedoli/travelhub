@@ -18,3 +18,16 @@ var swiper = new Swiper(".swiperImg", {
     // }
   });
 
+  var swiper = new Swiper(".swiperCubic", {
+    effect: "cube",
+    grabCursor: true,
+    cubeEffect: {
+      shadow: true,
+      slideShadows: true,
+      shadowOffset: 20,
+      shadowScale: 0.94,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+  });

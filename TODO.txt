@@ -1,6 +1,6 @@
-FATTO METTERE UN IMMAGINE TIPO DI UN SEGNALIBRO QUANDO SALVO UN'IMMAGINE
-aggiustare il cuore
-PAGINA CHE MOSTRA LE METE DOVE ANDARE
-immagini della stessa grandezza
-responsive design cuore del like
-IDEA: mostrare un box giallo se provi a mettere like senza loggarti al login
+[ ] IDEA: carosello con le migliori recensioni che scorrono (le selezioniamo noi)
+[ ] togliere il bordo bianco intorno ad un'immagine (mi sa che non si può fixare)
+[ ] mettere il footer in tutte le pagine???
+[ ] aggiungere un logo
+[ ] responsive
+[ ] sistemare gli hover -> 1

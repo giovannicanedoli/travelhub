@@ -251,14 +251,19 @@ def aboutus():
     if request.method == "POST":
         name = request.form.get("name")
         msg = request.form.get("subject")
-        rating = request.form.get("rating")
+        rating = request.form.get("sendmedata")
         feed = Feedback(name, msg, rating)
         db.session.add(feed)
         db.session.commit()
+        
         print(feed)
         return render_template('aboutus.html', feed=True)
     else:
-        return render_template('aboutus.html', feed=False)
+
+        #SELECT * FROM feedback WHERE stars = 5
+        reviews = Feedback.query.filter_by(stars = 5).all()
+        reviews = reviews[:10]
+        return render_template('aboutus.html', feed=False, reviews = reviews)
 
 @app.route('/<something>')
 def goto(something):
@@ -271,7 +276,7 @@ def logout():
 
     return redirect(url_for("main_route"))
 
-@app.route("/like", methods = ["GET", "POST"])
+@app.route("/like", methods = ["GET"])
 def like():
 
     #query per i like
@@ -296,7 +301,7 @@ def like():
             print(t)
 
     size = len(liked_cities)
-          
+
     return render_template("like.html", city_photo_list=liked_cities, for_u_list = foru, size=size)
 
 @app.route("/favorite")

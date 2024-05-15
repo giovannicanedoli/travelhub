@@ -129,29 +129,6 @@
         
             <!-- UN'IMMAGINE SOPRA ALL'ALTRA -->
             <div class = "container">
-
-                <!--
-                <div class = "swiper swiperCubic">
-                    <div class="swiper-wrapper">
-                        <div class = "cubic swiper-slide">
-                            <img id = "top" src = "{{ city_photo_list[0][1] }}">
-                        </div>
-                        <div class = "cubic swiper-slide">
-                            <div class = "blurcube">
-                                <img id = "top" src = "{{ city_photo_list[0][1] }}">
-                                <div class = "textcontainer"> 
-                                    <p>{{ city_photo_list[0][0] }} <br> {{ city_photo_list[0][2] }} <br> {{ city_photo_list[0][3] }} </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div id = "map" class = "mapcontainer swiper-slide">
-                            
-                        </div>
-                    </div>
-                </div>  
-                -->
-
-                
                     <p class="h2">The city you liked the most is...{{ city_photo_list[0][0] }}!</p>
                     <!--DA PROBLEMI IL CSS <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a> -->
                     
@@ -334,7 +311,9 @@
     {% endif %}
     <button id="top2" class="pulsante4" onclick="onTop()">⬆</button>
     
+    
     <script>
+        /* perché non sono dentro ad un file? */
     function onTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' }); // Scorri verso l'inizio della pagina con animazione
     }
@@ -346,13 +325,8 @@
             document.getElementById("top2").style.display = "none";
         }
     };
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script type = "text/javascript" src = "{{url_for('static', filename='swiperimg.js')}}"></script>
-    <script type = "text/javascript" src = "{{url_for('static', filename='aquirecity.js')}}"></script>
 
-    <script>
-        window.addEventListener('DOMContentLoaded', (event) => {
+    window.addEventListener('DOMContentLoaded', (event) => {
           const immagini = document.querySelectorAll('.foru2 img');
           immagini.forEach((img) => {
             if (img.clientHeight > 600) {
@@ -361,6 +335,10 @@
           });
         });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type = "text/javascript" src = "{{url_for('static', filename='swiperimg.js')}}"></script>
+    <script type = "text/javascript" src = "{{url_for('static', filename='aquirecity.js')}}"></script>
 
 </body>
 </html>

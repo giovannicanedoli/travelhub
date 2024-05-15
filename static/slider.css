@@ -84,12 +84,6 @@
 */
 
 
-/* accedo alla slide principale */
-
-/* .swiper-slide-active:hover{
-    scale:1.03; non se mette la transition
-} */
-
 .swiper-slide-active:hover .overlay-text-stuff{
     animation: MostraBottoni .3s .2s linear 1 forwards; 
 }

@@ -16,40 +16,7 @@
 <body>
 {% endblock %}
 {% block contentdown %}
-<!--
-    <div class = "superiore ">
-        <strong><p>About Us</p></strong>
-        
-        <div class = "container">
-            <form>
-                <p>Submit to our newsletter to recieve emails about travels proposal and more stuff!</p>
-                <input type="email" name = "username_input" class="input-field" placeholder="Email" autocomplete="email"  title = "Enter your email." required>
-                <br>
-                <button class="submit-btn" id="submit">Subscribe</button>
 
-            </form>
-        </div>
-
-        <div class = "secondaria">
-            <p>Follow us on</p>
-            <div class = "icon">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-youtube"></a>
-                <a href="#" class="fa fa-instagram"></a>
-            </div>
-        </div>
-
-        
-        <div class  = "inferiore">
-            <p>Pietro Bartolocci 1994302</p>
-            <p>Giovanni Canedoli 1991710</p>
-            <p>Professor Lorenzo Marconi</p>
-            <p>TravelHub</p>
-            <p>Linguaggi e tecnologie web</p>
-            <p>Università di Roma "La Pazienza"</p>
-        </div>
-    </div> 
-    -->
     {% if feed %}
       <div class="form-header">
         <p>Thank you, we have forwarded your feedback to our team ❤️</p>
@@ -68,7 +35,7 @@
         </p>
     </div>
 
-    <div  class="form" >
+    <div class="form" >
 
       <div class="form-header">
         <header>Feedback Form</header>
@@ -91,43 +58,32 @@
           </div>
         </div>
         <br>
+        
+        <div class = "verticalflex">
+          <div class = "horizontalflex">
+            <div id = "uno">
+            </div>
+            <div id = "due">
+            </div>
+            <div id = "tre">
+            </div>
+            <div id = "quattro">
+            </div>
+            <div id = "cinque">
+            </div>
 
-        <input type="hidden" name="rating" id="rating" value=""> <!--per sapere quale stella ho premuto -->
+          </div>
+          
+          <p id = "texthere">Hover on a star to rate our site!</p>
 
-        <div class="star">
-          <div class="star_items">
-            <input type="radio" name="stars" id="st5">
-            <label for="st5">
-              <div class="star-stroke" onclick="countstar('5')"></div>
-              <div class="description" data-content="The GOAT"></div>
-            </label>
-            <input type="radio" name="stars" id="st4">
-            <label for="st4">
-              <div class="star-stroke" onclick="countstar('4')"></div>
-              <div class="description" data-content="WoooW"></div>
-            </label>
-            <input type="radio" name="stars" id="st3">
-            <label for="st3">
-              <div class="star-stroke" onclick="countstar('3')"></div>
-              <div class="description" data-content="All right"></div>
-            </label>
-            <input type="radio" name="stars" id="st2">
-            <label for="st2">
-              <div class="star-stroke" onclick="countstar('2')"></div>
-              <div class="description" data-content="Disappointing"></div>
-            </label>
-            <input type="radio" name="stars" id="st1">
-            <label for="st1">
-              <div class="star-stroke" onclick="countstar('1')"></div>
-              <div class="description" data-content="This sucks"></div>
-            </label>
+          <!-- this is necessary to send data to the server -->
+          <div class = "reqtosend" id ="support">
+            <input type="text" id = "sendmedata" name = "sendmedata">
           </div>
         </div>
 
-
-
         <div class="row">
-          <input class="pulsante4" type="submit" value="Submit">
+          <input class="pulsante4" id="submitbtn" type="submit" value="Submit">
         </div>
       </form>
 
@@ -147,17 +103,14 @@
         <div class="icon">
                 <a href="https://www.instagram.com/pietrob__/" target="_blank"><img class="ig-icon" src="/static/images/insta.png"></a>
                 <a href="https://www.instagram.com/giovanniicanedoli/" target="_blank"><img class="ig-icon" src="/static/images/insta.png"></a>
-            </div>
+        </div>
         
 
         <small>©2024 All rights are reserved.</small>
       </footer>
 </body>
-<script>
-  function countstar(rating) {
-      document.getElementById("rating").value = rating; // Imposta il valore del rating nel campo hidden
-      console.log('fattoo');
-  }
-</script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script type = "text/javascript" src = "{{url_for('static', filename='functions.js')}}"></script>
 </html>
 {% endblock %}

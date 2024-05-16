@@ -61,6 +61,7 @@
         
         <div class = "verticalflex">
           <div class = "horizontalflex">
+            <!--div delle stelle-->
             <div id = "uno">
             </div>
             <div id = "due">
@@ -96,21 +97,33 @@
     <br>
 
     <footer class="footer">
-        <dl>
-            <dt>Made by</dt>
-            <address><a href="mailto:travelhub@outlook.it">TravelHub's Team 📧</a></address>
-        </dl>
-        <div class="icon">
-                <a href="https://www.instagram.com/pietrob__/" target="_blank"><img class="ig-icon" src="/static/images/insta.png"></a>
-                <a href="https://www.instagram.com/giovanniicanedoli/" target="_blank"><img class="ig-icon" src="/static/images/insta.png"></a>
-        </div>
-        
+          {% if not session %}
+          <div class = "redirecturi">
+            <a class = "redirectanchor" href="/home">Home</a>
+            <a class = "redirectanchor" href="/login">Login</a>
+            <a class = "redirectanchor" href="/register">Register</a>
+          </div>
+          {% else %}
+          <div class = "redirecturi">
+            <a class = "redirectanchor" href="/home">Home</a>
+            <a class = "redirectanchor" href="/like">Like</a>
+            <a class = "redirectanchor" href="/save">Save</a>
+          </div>
+          {% endif %}
 
-        <small>©2024 All rights are reserved.</small>
-      </footer>
+          <div class = "secondflexbox">
+            <p style="margin-left: 10px;">Made by <a class = "redirectanchor" href="mailto:travelhub@outlook.it">TravelHub's Team</a></p>
+
+            <div class="icon">
+                    <a href="https://www.instagram.com/pietrob__/" target="_blank"><img class="ig-icon" src="/static/images/insta.png"></a>
+                    <a href="https://www.instagram.com/giovanniicanedoli/" target="_blank"><img class="ig-icon" src="/static/images/insta.png"></a>
+            </div>
+        
+            <small>©2024 All rights are reserved.</small>
+          </div>
+    </footer>
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script type = "text/javascript" src = "{{url_for('static', filename='functions.js')}}"></script>
 </html>
 {% endblock %}

@@ -1,5 +1,0 @@
-in forgot.html:         {% if user_alive == False %}    <!--che roba è? perche mi capita se faccio il recupero con una mail non registrata? in caso gestire questo caso pure-->
-hover su immagine in saved
-bordino intorno ai nomi in tutte le immagini
-in about posso mandare una recensione anche di +1000 caratteri!
-

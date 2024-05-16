@@ -9,7 +9,15 @@
         <title>TravelHub - AboutUs</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='aboutus.css')}}">
         <link rel="stylesheet" href="{{ url_for('static', filename='header.css')}}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='footer.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='swipereview.css')}}">
+
+        <!-- che è sto coso? -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+        
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
         <title>TravelHub - About Us</title>
 
     </head>
@@ -96,34 +104,41 @@
     <br>
     <br>
 
-    <footer class="footer">
-          {% if not session %}
-          <div class = "redirecturi">
-            <a class = "redirectanchor" href="/home">Home</a>
-            <a class = "redirectanchor" href="/login">Login</a>
-            <a class = "redirectanchor" href="/register">Register</a>
-          </div>
-          {% else %}
-          <div class = "redirecturi">
-            <a class = "redirectanchor" href="/home">Home</a>
-            <a class = "redirectanchor" href="/like">Like</a>
-            <a class = "redirectanchor" href="/save">Save</a>
-          </div>
-          {% endif %}
 
-          <div class = "secondflexbox">
-            <p style="margin-left: 10px;">Made by <a class = "redirectanchor" href="mailto:travelhub@outlook.it">TravelHub's Team</a></p>
+    <div style="--swiper-navigation-color: #ffff; --swiper-pagination-color: #fff" class="swiper swiperReview">
+      <!-- data-swiper-parallax serve a vederee di quanto avannza la foto (il - serve per far avanzare la foto verso destra) -->
+      <div style="background-image: url('/static/images/background-login.jpg');" class="parallax-bg" data-swiper-parallax="-20%">
+      </div>
+      <div class="swiper-wrapper">
 
-            <div class="icon">
-                    <a href="https://www.instagram.com/pietrob__/" target="_blank"><img class="ig-icon" src="/static/images/insta.png"></a>
-                    <a href="https://www.instagram.com/giovanniicanedoli/" target="_blank"><img class="ig-icon" src="/static/images/insta.png"></a>
-            </div>
-        
-            <small>©2024 All rights are reserved.</small>
-          </div>
-    </footer>
+        {% for review in reviews %}
+        <div class="swiper-slide">
+          <!-- <div class="title" data-swiper-parallax="-300"></div> -->
+             <!-- questo po esse non serve -->
+          
+          <div class="subtitle" data-swiper-parallax="-200">{{ review.name }}</div>
+          
+          <!-- {% if review.stars != NULL %}
+            mettere un paragrafo opzionale -> nel css di swipereview va messa una div con
+            visibility:hidden che cambia nel momento in cui ho questo paragrafo
+          {% endif %} -->
+
+          <div class="text" data-swiper-parallax="-100"><p>{{ review.text }}</p></div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+      
+    </div>
+
+    <br><br><br><br>
+
+    {% include 'footer.html' %}
+    
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script type = "text/javascript" src = "{{url_for('static', filename='functions.js')}}"></script>
+<script type = "text/javascript" src = "{{url_for('static', filename='swiperimg.js')}}"></script>
 </html>
 {% endblock %}

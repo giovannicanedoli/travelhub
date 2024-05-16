@@ -1,0 +1,51 @@
+p {
+    font-size: clamp(1rem, 1.1vw, 2rem);;
+    text-align: center;
+}
+
+.footer{
+    /* display: flex;
+    justify-content: space-between;
+    */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #efff14b8;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+
+.redirecturi{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.redirectanchor{
+    color: black;
+    text-decoration: underline;
+}
+
+.redirectanchor:hover{
+    text-decoration: none;
+}
+
+.icon {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon a {
+    margin-right: 10px; 
+}
+
+small {
+    text-align: right; 
+    margin-right: 3%;
+}

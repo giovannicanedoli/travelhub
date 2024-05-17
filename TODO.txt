@@ -1,5 +1,4 @@
 [x] IDEA: carosello con le migliori recensioni che scorrono (le selezioniamo noi)
-[ ] mettere un border radious nelle immagini
 [ ] togliere il bordo bianco intorno ad un'immagine (mi sa che non si può fixare)
 [ ] aggiungere un logo
 [ ] nella pagina index, quando scorri da telefono (e tablet) le foto devono essere più grandi

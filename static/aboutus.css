@@ -27,25 +27,53 @@ body {
     padding: 20px;
 }
 
-/***************/
-
-/***************/
-
-
-
-
 address a:hover {
     text-decoration: none;
     color: #010f5384 ;
 }
 
-
-
 .ig-icon{
     width: 50px;
 }
 
-/*form*/
+/* newsletter */
+
+.newsletter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    background-color: white;
+    border-radius: 10%;
+}
+
+.letterimg{
+    background-image: url(/static/images/maillogo.png);
+    background-size: contain; 
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 100%;
+    position: relative;
+    left: 41%;
+}
+
+.insertdata{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newslettertext{
+    text-align: center;
+}
+
+
+
+/* form */
 
 .form-header{
     text-align: center;

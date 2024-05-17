@@ -1,4 +1,7 @@
 [x] IDEA: carosello con le migliori recensioni che scorrono (le selezioniamo noi)
+[x] aggiunto mailbox invece del testo
+[x] rimosso il bottone che cambia il colore della home
+[ ] modificare lo stile all'occorrenza
 [ ] togliere il bordo bianco intorno ad un'immagine (mi sa che non si può fixare)
 [ ] aggiungere un logo
 [ ] nella pagina index, quando scorri da telefono (e tablet) le foto devono essere più grandi
@@ -10,7 +13,6 @@
 [ ] cambiare sfondo e aereo nel login/signup
 [ ] fare in modo di mettere il mare continuo nel like.html
 [ ] fare in modo che un utente non possa mandare una recensione di più di x caratteri
-
 [ ] è possibile un bug con la renderizzazione delle recensioni, se uno scrive una recensione
 di 1000 caratteri allora non si renderizza a pieno soluzione: mettere un limite alla lunghezza
 delle recensioni

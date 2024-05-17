@@ -248,6 +248,9 @@ def confirm_forget(token):
 
 @app.route('/aboutus', methods = ["GET", "POST"])
 def aboutus():
+     #SELECT * FROM feedback WHERE stars = 5
+    reviews = Feedback.query.filter_by(stars = 5).all()
+    reviews = reviews[:10]
     if request.method == "POST":
         name = request.form.get("name")
         msg = request.form.get("subject")
@@ -257,12 +260,10 @@ def aboutus():
         db.session.commit()
         
         print(feed)
-        return render_template('aboutus.html', feed=True)
+        return render_template('aboutus.html', feed=True,reviews = reviews)
     else:
 
-        #SELECT * FROM feedback WHERE stars = 5
-        reviews = Feedback.query.filter_by(stars = 5).all()
-        reviews = reviews[:10]
+       
         return render_template('aboutus.html', feed=False, reviews = reviews)
 
 @app.route('/<something>')

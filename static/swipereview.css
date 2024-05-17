@@ -1,31 +1,59 @@
-.swiper {
-    width: 50%;
-    /* height: 500px; */
-    height: 50%;
-        
-    background: #000;
+html, body{
+    height: 100%;
 }
 
-
+.swiperReview {
+    width: 50%;
+    height: 40%;
+}
 
 .swiper-slide {
-    
-    font-size: 18px;
-    color: #fff;
+font-size: 18px;
+background: white;
 
-    /*tutti valori di documentazione*/
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 40px 60px;
+border-radius: 30px;
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
 }
 
-.parallax-bg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 130%;
-    height: 100%;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center;
+
+
+.virgolette {
+    width: 20%;
+    height: 20%;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    margin-left: 10%;
+    margin-right: 1%;
+    background-image: url("https://images.squarespace-cdn.com/content/v1/519dc376e4b0726806f1fb72/1408410514670-W659DFKRUDB5HSCP97KD/image-asset.png?format=500w");
+    background-size: contain; 
+    background-repeat: no-repeat;
+}
+
+.testorecensione{
+    margin-bottom: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.nomeautore{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 2%;
+    display: flex;
+}
+
+.stelle{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+#s1, #s2, #s3,#s4,#s5{
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);  
+    background: #efff14f1;
+    width: 40px;
+    height: 40px;
+    /*aggiungi un ombra*/
 }

@@ -33,14 +33,15 @@ var swiper2 = new Swiper(".swiperCubic", {
 });
 
 var swiper3 = new Swiper(".swiperReview", {
-  speed: 600,
-  parallax: true,
+  // parallax: true,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
   },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+  loop:true,
+  autoplay:{
+  
+    delay:3000,
+    disableOnInteraction:false,
+  }
 });

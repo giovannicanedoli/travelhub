@@ -10,3 +10,8 @@
 [ ] allineare i bottoni
 [ ] cambiare sfondo e aereo nel login/signup
 [ ] fare in modo di mettere il mare continuo nel like.html
+[ ] fare in modo che un utente non possa mandare una recensione di più di x caratteri
+
+[ ] è possibile un bug con la renderizzazione delle recensioni, se uno scrive una recensione
+di 1000 caratteri allora non si renderizza a pieno soluzione: mettere un limite alla lunghezza
+delle recensioni

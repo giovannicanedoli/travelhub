@@ -30,7 +30,7 @@
         <p>Thank you, we have forwarded your feedback to our team ❤️</p>
       </div>
     {% endif %}
-    <div class="main">   
+    <!-- <div class="main">   
         <p>Welcome to TravelHub, your ultimate destination for exploring breathtaking tourist spots around the globe! Founded by a team of passionate travelers and tech enthusiasts, TravelHub aims to revolutionize the way you plan and experience your next adventure.
 
             Led by Professor Marconi, and developed as part of the LTW course at Sapienza University, TravelHub embodies innovation, creativity, and a deep understanding of the modern traveler's needs.
@@ -41,7 +41,13 @@
             
             Embark on this journey with TravelHub, where every click brings you one step closer to your next unforgettable adventure.
         </p>
-    </div>
+    </div> -->
+
+    <!-- <div class = "newsletter">
+      <div class = "emaillogo">
+
+      </div>
+    </div> -->
 
     <div class="form" >
 
@@ -99,36 +105,60 @@
     </div>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
+    <p>What they say about us</p>
 
-    <div style="--swiper-navigation-color: #ffff; --swiper-pagination-color: #fff" class="swiper swiperReview">
-      <!-- data-swiper-parallax serve a vederee di quanto avannza la foto (il - serve per far avanzare la foto verso destra) -->
-      <div style="background-image: url('/static/images/background-login.jpg');" class="parallax-bg" data-swiper-parallax="-20%">
-      </div>
+    <div class="swiper swiperReview">
       <div class="swiper-wrapper">
-
         {% for review in reviews %}
         <div class="swiper-slide">
-          <!-- <div class="title" data-swiper-parallax="-300"></div> -->
-             <!-- questo po esse non serve -->
-          
-          <div class="subtitle" data-swiper-parallax="-200">{{ review.name }}</div>
-          
-          <!-- {% if review.stars != NULL %}
-            mettere un paragrafo opzionale -> nel css di swipereview va messa una div con
-            visibility:hidden che cambia nel momento in cui ho questo paragrafo
-          {% endif %} -->
+          <div class = "virgolette">
+          </div>
+          <div class = "nomeautore">
+            {{ review.name }}
 
-          <div class="text" data-swiper-parallax="-100"><p>{{ review.text }}</p></div>
+            
+          </div>
+          <div class = "testorecensione">
+            {{ review.text }}
+          </div>
+
+          <div class = "stelle">
+            <div id="s1"></div>
+            <div id="s2"></div>
+            <div id="s3"></div>
+            <div id="s4"></div>
+            <div id="s5"></div>
+          </div>
+
         </div>
         {% endfor %}
+        <!-- <div class="swiper-slide">
+
+        </div>
+        <div class="swiper-slide">
+
+        </div>
+        <div class="swiper-slide">
+
+        </div>
+        <div class="swiper-slide">
+
+        </div>
+        <div class="swiper-slide">
+
+        </div>
+        <div class="swiper-slide">
+
+        </div>
+        <div class="swiper-slide">
+
+        </div>
+        <div class="swiper-slide">
+
+        </div> -->
       </div>
       <div class="swiper-pagination"></div>
-      
     </div>
 
     <br><br><br><br>

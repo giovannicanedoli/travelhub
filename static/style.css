@@ -85,7 +85,7 @@ img{
 
 .overlay-text {
     font-family: 'Poppins',sans-serif;
-    font-size: clamp(0.5rem, 5vw, 4rem);
+    font-size: clamp(4rem, 5vw, 4rem);
     font-weight: 500;
     opacity: 0;
     transition: opacity .5s ease;   /* cambia gradualmente quanto appare l'immagine sullo schermo */
@@ -251,6 +251,12 @@ img{
 }
 
 @media (max-width: 960px) {
+
+    .overlay-text {
+        font-size: clamp(3.3rem, 5vw, 4rem);
+    }
+    
+
     .foto{
         height: 800px;
         width: 500px;
@@ -286,6 +292,11 @@ img{
 }
 
 @media (max-width: 750px) {
+
+    .overlay-text {
+        font-size: clamp(1.8rem, 5vw, 4rem);
+    }
+
     .popover__content_like {
         top: -150%;
     }

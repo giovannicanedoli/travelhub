@@ -243,8 +243,83 @@ img{
 }
   
 /*per renderlo equidistate con schermi piu piccoli*/
+@media (max-width: 1200px) {
+    .foto{
+        height: 800px;
+        width: 500px;
+    }
+}
+
+@media (max-width: 960px) {
+    .foto{
+        height: 800px;
+        width: 500px;
+    }
+
+    .topcontainer{
+        flex-direction: column;
+    }
+
+    .pulsantiera{
+        margin-top: 3%;
+        margin-bottom: 5%;
+        flex-direction: row;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .like {
+        margin: 2%;
+        height: 50px;       
+    }
+
+    .left{
+        margin-right: 10%;
+    }
+
+    .popover__content_save{
+        /* mettere qua il codice se voglio che il popover si vede sopra al pulsante */
+        top: -200%;
+
+    }
+
+}
+
 @media (max-width: 750px) {
     .popover__content_like {
         top: -150%;
     }
+
+    .foto{
+        height: 500px;
+        width: 350px;
+    }
+
+    .topcontainer{
+        flex-direction: column;
+    }
+
+    .pulsantiera{
+        margin-top: 3%;
+        margin-bottom: 5%;
+        flex-direction: row;
+        justify-content: center;
+        width: 80%;
+    }
+
+    .like {
+        margin: 2%;
+        height: 50px;       
+    }
+
+    .left{
+        margin-right: 10%;
+    }
+
+    .popover__content_save{
+        /* mettere qua il codice se voglio che il popover si vede sopra al pulsante */
+        top: -200%;
+
+    }
+
 }

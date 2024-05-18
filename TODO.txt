@@ -16,3 +16,8 @@
 [ ] è possibile un bug con la renderizzazione delle recensioni, se uno scrive una recensione
 di 1000 caratteri allora non si renderizza a pieno soluzione: mettere un limite alla lunghezza
 delle recensioni
+[ ] cubo che ruota in like history per vista da smartphone è tutto sfanculato
+[x] anche la grid in saved fa cagare sia tablet che smartphone: va levato il margin dai bordi
+
+
+QUANDO RICONTROLLIAMO FACCIAMO LA PROVA SIA DA LOGGATI CHE NON 

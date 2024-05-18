@@ -5,23 +5,18 @@
 
 <header>
 
-    <div class="menu"><a href="/" class="link"><button class="pulsante" type="button">HOME</button></a></div>
+    <div class="menu"><a href="/" class="link"><button class="pulsante hh" type="button">HOME</button></a></div>
 
 {% if session %}
-    <div class="menu"><a href="/like" class="link"><button class="pulsante" type="button">LIKE HISTORY</button></a></div>
-    <div class="menu"><a href="/favorite" class="link"><button class="pulsante" type="button">SAVED</button></a></div>
-    <div class="menu"><a href="/logout" class="link"><button id = "logout" class="pulsante" type="button">LOG OUT</button></a></div>
+    <div class="menu"><a href="/like" class="link"><button class="pulsante hh" type="button">LIKE HISTORY</button></a></div>
+    <div class="menu"><a href="/favorite" class="link"><button class="pulsante hh" type="button">SAVED</button></a></div>
+    <div class="menu"><a href="/logout" class="link"><button id = "logout" class="pulsante hh" type="button">LOG OUT</button></a></div>
 
 {% else %}
-    <div class="menu"><a href="/login" class="link"><button class="pulsante" type="button">SIGN IN</button></a></div>
-    <div class="menu"><a href="/register" class="link"><button class="pulsante" type="button">SIGN UP</button></a></div>
+    <div class="menu"><a href="/login" class="link"><button class="pulsante hh" type="button">SIGN IN</button></a></div>
+    <div class="menu"><a href="/register" class="link"><button class="pulsante hh" type="button">SIGN UP</button></a></div>
 {% endif %}
-    <div class="menu"><a href="/aboutus" class="link"><button class="pulsante" type="button">ABOUT US</button></a></div>
-
-    
- 
-
-
+    <div class="menu"><a href="/aboutus" class="link"><button class="pulsante hh" type="button">ABOUT US</button></a></div>
 </header>
 
 {% block contentdown%}

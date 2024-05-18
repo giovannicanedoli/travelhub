@@ -29,30 +29,30 @@
 
                 <div class="pulsantiera">
                     {% if not session %}
-                      <!--  <a href="/login" class="link"><button id = "likebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>❤</button></a>
-                        <a href="/login" class="link"><button id = "savebtn{{ city.id }}" class="like pulsante4" value = '{{ city.id }}'>+</button></a>-->
-                        <div class="popover__wrapper">
-                            <button class="like pulsante4 ">❤</button>
+                      <!--  <a href="/login" class="link"><button id = "likebtn{{ city.id }}" class="like grande pulsante4" value = '{{ city.id }}'>❤</button></a>
+                        <a href="/login" class="link"><button id = "savebtn{{ city.id }}" class="like grande pulsante4" value = '{{ city.id }}'>+</button></a>-->
+                        <div class="popover__wrapper left">
+                            <button class="like grande pulsante4 ">❤</button>
                             <div class="popover__content_like">
                                 <p class="popover__message">Sign in first!</p>
                             </div>
                         </div>
-                        <div class="popover__wrapper">
-                            <button class="like pulsante4 ">+</button>
+                        <div class="popover__wrapper right">
+                            <button class="like grande pulsante4 ">+</button>
                             <div class="popover__content_save">
                                 <p class="popover__message">Sign in first!</p>
                             </div>
                         </div>
                     {% else %}
                         {% if city.photo in liked %}
-                            <button id = "likebtn{{ city.id }}" class="like pulsante" value = '{{ city.id }}' style="background-color: red; font-size: clamp(1.2rem ,2.8vw, 3.5rem);" >❤</button>
+                            <button id = "likebtn{{ city.id }}" class="like grande pulsante" value = '{{ city.id }}' style="background-color: red; font-size: clamp(1.2rem ,2.8vw, 3.5rem);" >❤</button>
                         {% else %}
-                            <button id = "likebtn{{ city.id }}" class="like pulsante" value = '{{ city.id }}'>❤</button>
+                            <button id = "likebtn{{ city.id }}" class="like grande pulsante" value = '{{ city.id }}'>❤</button>
                         {% endif %}
                         {% if city.photo in saved %}
-                            <button id = "savebtn{{ city.id }}" class="like pulsante2" value = '{{ city.id }}' style="background-color: black; color: white; font-size: clamp(1.2rem ,2.8vw, 3.5rem);" >+</button>
+                            <button id = "savebtn{{ city.id }}" class="like grande pulsante2" value = '{{ city.id }}' style="background-color: black; color: white; font-size: clamp(1.2rem ,2.8vw, 3.5rem);" >+</button>
                         {% else %}
-                            <button id = "savebtn{{ city.id }}" class="like pulsante2" value = '{{ city.id }}'>+</button>
+                            <button id = "savebtn{{ city.id }}" class="like grande pulsante2" value = '{{ city.id }}'>+</button>
                         {% endif %}
                     {% endif %}
                 </div>

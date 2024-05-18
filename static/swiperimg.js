@@ -18,16 +18,30 @@ var swiper = new Swiper(".swiperImg", {
     // }
   });
 
-  var swiper = new Swiper(".swiperCubic", {
-    effect: "cube",
-    grabCursor: true,
-    cubeEffect: {
-      shadow: true,
-      slideShadows: true,
-      shadowOffset: 20,
-      shadowScale: 0.94,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-    },
-  });
+var swiper2 = new Swiper(".swiperCubic", {
+  effect: "cube",
+  grabCursor: true,
+  cubeEffect: {
+    shadow: true,
+    slideShadows: true,
+    shadowOffset: 20,
+    shadowScale: 0.94,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
+
+var swiper3 = new Swiper(".swiperReview", {
+  // parallax: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  loop:true,
+  autoplay:{
+  
+    delay:3000,
+    disableOnInteraction:false,
+  }
+});

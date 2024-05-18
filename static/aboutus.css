@@ -11,6 +11,7 @@ body {
     background-size: cover;
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
+    margin: 0px;    /* si creano 8 px a cazzo di cane */
 }
 
 @keyframes gradient {
@@ -19,58 +20,11 @@ body {
     100% {background-position: 0% 50%;}
 }
 
-body {
-    overflow-x: hidden;
-    background-color: white;
-    font-family: 'Poppins',sans-serif;
-}
-
 .main {
     width: 80%;
     max-width: 800px;
     margin: 5% auto;
     padding: 20px;
-    /* box-sizing: border-box; */
-}
-
-p {
-    font-size: clamp(1rem, 1.1vw, 2rem);;
-    text-align: center;
-}
-
-img {
-    transition-duration: 0.4s;
-}
-
-img:hover {
-    opacity: 0.6;
-    scale: 1.1;
-}
-
-.footer{
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    left: 0;
-    bottom: 0; 
-    width: 100%;
-    height: 80px;
-    background-color: #efff14b8;
-    color: rgb(0, 0, 0);
-}
-
-dl {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 3%;
-}
-
-.icon {
-    display: flex;
-    text-align: center;
-    align-items: center;
 }
 
 address a:hover {
@@ -78,20 +32,56 @@ address a:hover {
     color: #010f5384 ;
 }
 
-.icon a {
-    margin-right: 10px; 
-}
-
-small {
-    text-align: right; 
-    margin-right: 3%;
-}
-
 .ig-icon{
     width: 50px;
 }
 
-/*form*/
+/* newsletter */
+
+.newsletter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    background-color: white;
+    border-radius: 10%;
+}
+
+.letterimg{
+    background-image: url(/static/images/maillogo.png);
+    background-size: contain; 
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 100%;
+    position: relative;
+    left: 41%;
+}
+
+.insertdata{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#testo{
+    width: 60%;
+} 
+
+.newslettertext{
+    text-align: center;
+}
+
+.newsletter input[type=submit]{
+    margin-left: 0%;
+}
+
+
+
+/* form */
 
 .form-header{
     text-align: center;
@@ -116,6 +106,11 @@ input[type=text], textarea {
     border-radius: 30px;
     resize: vertical;
     transition-duration: 0.3s;
+}
+
+input[type=submit] {
+    margin-left: 40%;
+    width: 20%;
 }
   
 label {
@@ -151,79 +146,28 @@ label {
     clear: both;
 }
 
-input[type=submit] {
-    margin-left: 40%;
-    width: 20%;
+#uno,#due,#tre,#quattro,#cinque{
+    background: #7a7a7a;
+    width: 40px;
+    height: 40px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);  
 }
 
-.input:hover, .text:hover{
-    transform: scale(1.03,1);
+.horizontalflex{
+    display: flex;
+    justify-content: center;
+    gap:5%;
+    margin-bottom: 2%;
+
 }
 
-/*stars*/
-
-.star{
-  position: relative;
-  top: 50%;
-  left: 50%;
-  width: 30%;
-  height: 50%;
-  
-  transform: translate(-50%, -50%) rotateY(180deg);
+.verticalflex{
+    display: flex;
+    flex-direction: column;
 }
 
-.star .star_items{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  gap: 0 .5em;
-  margin-top: 5%;
-  margin-bottom: 10%;
-  width: 100%;
-  height: 100%;
-}
-
-.star .star_items input{
-  display: none;
-}
-
-.star .star_items label{
-  width: 20%;
-  aspect-ratio: 1;
-  cursor: pointer;
-}
-
-.star .star_items label .star-stroke{
-  display: grid;
-  place-items: center;
-  width: 100%;
-  height: 100%;
-  background: #7a7a7a;
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-}
-
-.star .star_items input:hover ~ label .star-stroke,.star .star_items input:checked ~ label .star-stroke{
-  background: #efff14;
-}
-
-.star .star_items label:hover .description::after{
-  content: attr(data-content);
-  position: fixed;
-  left: 0;
-  right: 0;
-  
-  margin-top: 1em;
-  
-  width: 100%;
-  height: 2em;
-  
-  color: #000000;
-  
-  text-align: center;
-  font-size: clamp(1rem, 1vw, 2rem);
-  
-  transform: rotateY(180deg);
+#support{
+    display: none;
 }
 
 @media (max-width: 768px) {

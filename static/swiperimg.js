@@ -11,12 +11,21 @@ var swiper = new Swiper(".swiperImg", {
       modifier: 2.5,
       slideShadows: true,
     },
-    // autoplay:{
-  
-    //   delay:3000,
-    //   disableOnInteraction:false,
-    // }
+    breakpoints: {
+      // when window width is >= 760px
+      760: {
+        // slidesPerView: 2,
+        // spaceBetween: 20
+      },
+      // when window width is >= 1050px
+      1050: {
+        // slidesPerView: 3,
+        // spaceBetween: 30
+      }
+    }
+    
   });
+
 
 var swiper2 = new Swiper(".swiperCubic", {
   effect: "cube",
@@ -30,6 +39,18 @@ var swiper2 = new Swiper(".swiperCubic", {
   pagination: {
     el: ".swiper-pagination",
   },
+  breakpoints: {
+    // when window width is >= 760px
+    760: {
+      // slidesPerView: 2,
+      // spaceBetween: 20
+    },
+    // when window width is >= 1050px
+    1050: {
+      // slidesPerView: 3,
+      // spaceBetween: 30
+    }
+  }
 });
 
 var swiper3 = new Swiper(".swiperReview", {

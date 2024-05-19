@@ -50,12 +50,6 @@ img{
     transition-duration: 0.4s;
 }
 
-
-@keyframes widener {
-    0% {max-width: 20%; border-radius: 5%;}
-    50% {max-width: 60%; border-radius: 10%;}
-}
-
 .container:hover{
     /* scale: 1.03; */
     transform: scale(1.03);
@@ -70,10 +64,6 @@ img{
     animation: showContent .3s .2s linear 1 forwards; 
     
 }
-
-/* .overlay-text:hover{
-    filter: blur(1.3px);
-} */
 
 @keyframes showContent{
     to{

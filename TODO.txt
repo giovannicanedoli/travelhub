@@ -1,6 +1,11 @@
 [x] IDEA: carosello con le migliori recensioni che scorrono (le selezioniamo noi)
 [x] aggiunto mailbox invece del testo
 [x] rimosso il bottone che cambia il colore della home
+[x] anche la grid in saved fa cagare sia tablet che smartphone: va levato il margin dai bordi
+
+
+[ ] IMPORTANTE: VEDERE QUALI FOTO METTERE NEI PER TE! (ci sta parigi che è gigante)
+[ ] sistemare le dimennsioni del testo delle descrizioni nella visualizzazione da telefono e tablet in like.html
 [ ] modificare lo stile all'occorrenza
 [ ] togliere il bordo bianco intorno ad un'immagine (mi sa che non si può fixare)
 [ ] aggiungere un logo
@@ -17,7 +22,6 @@
 di 1000 caratteri allora non si renderizza a pieno soluzione: mettere un limite alla lunghezza
 delle recensioni
 [ ] cubo che ruota in like history per vista da smartphone è tutto sfanculato
-[x] anche la grid in saved fa cagare sia tablet che smartphone: va levato il margin dai bordi
 
 
 QUANDO RICONTROLLIAMO FACCIAMO LA PROVA SIA DA LOGGATI CHE NON 

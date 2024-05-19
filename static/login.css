@@ -36,14 +36,6 @@ body {
   100% {left: 150%; top: 80%; width: 600px; height: 400px; transform: rotate(40deg); filter: blur(0px);}
 }
 
-/* .password_block{
-    background: #efff14;
-    border-radius: 20px;
-    text-align: center;
-    font-size: 10px;
-    border: none;
-    outline: none;
-} */
 
 .failure{
     background: #efff14;
@@ -154,19 +146,6 @@ body {
     font-size: clamp(1em, 0.9vw, 2rem); ;
 
 }
-
-/* .input-submit label{
-    font-weight: 600;
-    position: absolute;
-    top: 120%;
-    left: 50%;
-    color: #000;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-} */
-
 
 .sign-up-link{
     text-align: center;

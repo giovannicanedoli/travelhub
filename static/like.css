@@ -4,6 +4,8 @@ body {
     background-color: #929292;
     overflow-x: hidden;
     animation: colori ease-in-out 8s infinite;
+    margin: 0;
+
 }
 
 @keyframes colori {
@@ -205,13 +207,18 @@ p {
 }
 
 
-
+@media (max-width: 1050px) {
+    .foru {
+        grid-template-columns: repeat(3, 1fr);
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
 
 @media (max-width: 760px) {
-    
-}
-
-@media (max-width: 1050px) {
-
-    
-}
+    .foru {
+      grid-template-columns: repeat(2, 1fr);
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  }

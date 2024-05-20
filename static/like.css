@@ -3,6 +3,7 @@
 body {
     background-color: #929292;
     overflow-x: hidden;
+    margin: 0px;
     animation: colori ease-in-out 8s infinite;
 }
 
@@ -21,7 +22,7 @@ body {
     min-width: 100%;
     min-height: 100%;
     z-index: -1; /* Imposta lo z-index in modo che il video sia dietro agli altri elementi */
-  }
+}
 
 .sup{
     display: flex;
@@ -132,7 +133,7 @@ p {
 .minor {
     max-height: 500px;
     height: auto; 
-    margin: 0 2%; 
+    /* margin: 0 2%;  */
 }
 
 .foru {
@@ -208,7 +209,17 @@ p {
 
 
 @media (max-width: 760px) {
-    
+    .scorrimento{
+        position: relative;
+        display: flex;
+        height: 80%;
+        width: 100%;
+        /* justify-content: space-between;  */
+        /* align-items: center; */
+        gap:10%;
+        scale: 0.8;
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 1050px) {

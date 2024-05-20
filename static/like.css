@@ -149,7 +149,7 @@ p {
     width: 100%;
     height: auto; 
     max-width: 100%;
- }
+}
 
 #top2 {
     display: none;
@@ -206,18 +206,12 @@ p {
 
 
 
-@media (max-width: 1000px) {
-    .foru {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1% 10%; 
-        justify-content: center;
-        margin-left: 15%;
-        margin-right: 15%;
-        margin-bottom: 2%; 
-    }
 
-    /* .ticket{
-        margin-bottom: 5%;
-    } */
+@media (max-width: 760px) {
+    
+}
+
+@media (max-width: 1050px) {
+
+    
 }

@@ -1,6 +1,27 @@
-FATTO METTERE UN IMMAGINE TIPO DI UN SEGNALIBRO QUANDO SALVO UN'IMMAGINE
-aggiustare il cuore
-PAGINA CHE MOSTRA LE METE DOVE ANDARE
-immagini della stessa grandezza
-responsive design cuore del like
-IDEA: mostrare un box giallo se provi a mettere like senza loggarti al login
+[x] IDEA: carosello con le migliori recensioni che scorrono (le selezioniamo noi)
+[x] aggiunto mailbox invece del testo
+[x] rimosso il bottone che cambia il colore della home
+[x] anche la grid in saved fa cagare sia tablet che smartphone: va levato il margin dai bordi
+
+
+[ ] IMPORTANTE: VEDERE QUALI FOTO METTERE NEI PER TE! (ci sta parigi che è gigante)
+[ ] sistemare le dimennsioni del testo delle descrizioni nella visualizzazione da telefono e tablet in like.html
+[ ] modificare lo stile all'occorrenza
+[ ] togliere il bordo bianco intorno ad un'immagine (mi sa che non si può fixare)
+[ ] aggiungere un logo
+[ ] nella pagina index, quando scorri da telefono (e tablet) le foto devono essere più grandi
+[ ] eliminare bottone quando scorri nella pagina home
+[ ] eliminare bottone che cambia colore del background
+[ ] ingrandire le varie foto delle altre pagine con visualizzazione responsive dei vari devices
+[ ] diminuire la size del testo nella visualizzazione con i vari devices
+[ ] allineare i bottoni
+[ ] cambiare sfondo e aereo nel login/signup
+[ ] fare in modo di mettere il mare continuo nel like.html
+[ ] fare in modo che un utente non possa mandare una recensione di più di x caratteri
+[ ] è possibile un bug con la renderizzazione delle recensioni, se uno scrive una recensione
+di 1000 caratteri allora non si renderizza a pieno soluzione: mettere un limite alla lunghezza
+delle recensioni
+[ ] cubo che ruota in like history per vista da smartphone è tutto sfanculato
+
+
+QUANDO RICONTROLLIAMO FACCIAMO LA PROVA SIA DA LOGGATI CHE NON 

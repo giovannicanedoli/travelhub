@@ -9,66 +9,46 @@
         <title>TravelHub - AboutUs</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='aboutus.css')}}">
         <link rel="stylesheet" href="{{ url_for('static', filename='header.css')}}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='footer.css')}}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='swipereview.css')}}">
+
+        <!-- che è sto coso? -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+        
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
         <title>TravelHub - About Us</title>
 
     </head>
 <body>
 {% endblock %}
 {% block contentdown %}
-<!--
-    <div class = "superiore ">
-        <strong><p>About Us</p></strong>
-        
-        <div class = "container">
-            <form>
-                <p>Submit to our newsletter to recieve emails about travels proposal and more stuff!</p>
-                <input type="email" name = "username_input" class="input-field" placeholder="Email" autocomplete="email"  title = "Enter your email." required>
-                <br>
-                <button class="submit-btn" id="submit">Subscribe</button>
 
-            </form>
-        </div>
-
-        <div class = "secondaria">
-            <p>Follow us on</p>
-            <div class = "icon">
-                <a href="#" class="fa fa-facebook"></a>
-                <a href="#" class="fa fa-youtube"></a>
-                <a href="#" class="fa fa-instagram"></a>
-            </div>
-        </div>
-
-        
-        <div class  = "inferiore">
-            <p>Pietro Bartolocci 1994302</p>
-            <p>Giovanni Canedoli 1991710</p>
-            <p>Professor Lorenzo Marconi</p>
-            <p>TravelHub</p>
-            <p>Linguaggi e tecnologie web</p>
-            <p>Università di Roma "La Pazienza"</p>
-        </div>
-    </div> 
-    -->
     {% if feed %}
       <div class="form-header">
         <p>Thank you, we have forwarded your feedback to our team ❤️</p>
       </div>
     {% endif %}
-    <div class="main">   
-        <p>Welcome to TravelHub, your ultimate destination for exploring breathtaking tourist spots around the globe! Founded by a team of passionate travelers and tech enthusiasts, TravelHub aims to revolutionize the way you plan and experience your next adventure.
 
-            Led by Professor Marconi, and developed as part of the LTW course at Sapienza University, TravelHub embodies innovation, creativity, and a deep understanding of the modern traveler's needs.
-            
-            Whether you're seeking inspiration for your next getaway or looking to curate a personalized gallery of your favorite travel memories, our platform offers a seamless and intuitive experience.
-            
-            Join our vibrant community of fellow explorers, discover hidden gems, and contribute to our ever-growing collection of stunning photographs from every corner of the globe.
-            
-            Embark on this journey with TravelHub, where every click brings you one step closer to your next unforgettable adventure.
-        </p>
+
+    <div class = "newsletter">
+      <div class = "letterimg">
+        
+      </div>
+      <div class = "newslettertext">
+        Submit to our newsletter to recv information about fantastic travels and more!
+      </div>
+
+      <div class = "insertdata">
+        <input id = "testo" type="text" placeholder="Email">
+        
+        <input class = "pulsante4" type="submit" value="Submit">
+      </div>
     </div>
-
-    <div  class="form" >
+    
+    <p>We would like a review!</p>
+    <div class="form" >
 
       <div class="form-header">
         <header>Feedback Form</header>
@@ -90,74 +70,80 @@
             <textarea class="text" id="subject" name="subject" placeholder="Write your feedback.." style="height:200px; width: 80%;" required></textarea>
           </div>
         </div>
+
         <br>
+        
+        <div class = "verticalflex">
+          <div class = "horizontalflex">
+            <!--div delle stelle-->
+            <div id = "uno">
+            </div>
+            <div id = "due">
+            </div>
+            <div id = "tre">
+            </div>
+            <div id = "quattro">
+            </div>
+            <div id = "cinque">
+            </div>
 
-        <input type="hidden" name="rating" id="rating" value=""> <!--per sapere quale stella ho premuto -->
+          </div>
+          
+          <p id = "texthere">Hover on a star to rate our site!</p>
 
-        <div class="star">
-          <div class="star_items">
-            <input type="radio" name="stars" id="st5">
-            <label for="st5">
-              <div class="star-stroke" onclick="countstar('5')"></div>
-              <div class="description" data-content="The GOAT"></div>
-            </label>
-            <input type="radio" name="stars" id="st4">
-            <label for="st4">
-              <div class="star-stroke" onclick="countstar('4')"></div>
-              <div class="description" data-content="WoooW"></div>
-            </label>
-            <input type="radio" name="stars" id="st3">
-            <label for="st3">
-              <div class="star-stroke" onclick="countstar('3')"></div>
-              <div class="description" data-content="All right"></div>
-            </label>
-            <input type="radio" name="stars" id="st2">
-            <label for="st2">
-              <div class="star-stroke" onclick="countstar('2')"></div>
-              <div class="description" data-content="Disappointing"></div>
-            </label>
-            <input type="radio" name="stars" id="st1">
-            <label for="st1">
-              <div class="star-stroke" onclick="countstar('1')"></div>
-              <div class="description" data-content="This sucks"></div>
-            </label>
+          <!-- this is necessary to send data to the server -->
+          <div class = "reqtosend" id ="support">
+            <input type="text" id = "sendmedata" name = "sendmedata">
           </div>
         </div>
 
-
-
         <div class="row">
-          <input class="pulsante4" type="submit" value="Submit">
+          <input class="pulsante4" id="submitbtn" type="submit" value="Submit">
         </div>
       </form>
 
     </div>
     <br>
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
-    <footer class="footer">
-        <dl>
-            <dt>Made by</dt>
-            <address><a href="mailto:travelhub@outlook.it">TravelHub's Team 📧</a></address>
-        </dl>
-        <div class="icon">
-                <a href="https://www.instagram.com/pietrob__/" target="_blank"><img class="ig-icon" src="/static/images/insta.png"></a>
-                <a href="https://www.instagram.com/giovanniicanedoli/" target="_blank"><img class="ig-icon" src="/static/images/insta.png"></a>
-            </div>
-        
+    <p>What they say about us</p>
 
-        <small>©2024 All rights are reserved.</small>
-      </footer>
+    <div class="swiper swiperReview">
+      <div class="swiper-wrapper">
+        {% for review in reviews %}
+        <div class="swiper-slide">
+          <div class = "virgolette">
+          </div>
+          <div class = "nomeautore">
+            {{ review.name }}
+
+            
+          </div>
+          <div class = "testorecensione">
+            {{ review.text }}
+          </div>
+          <div class = "stelle">
+            <div id="s1"></div>
+            <div id="s2"></div>
+            <div id="s3"></div>
+            <div id="s4"></div>
+            <div id="s5"></div>
+          </div>
+
+        </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <br><br><br><br>
+
+    {% include 'footer.html' %}
+    
 </body>
-<script>
-  function countstar(rating) {
-      document.getElementById("rating").value = rating; // Imposta il valore del rating nel campo hidden
-      console.log('fattoo');
-  }
-</script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script type = "text/javascript" src = "{{url_for('static', filename='functions.js')}}"></script>
+<script type = "text/javascript" src = "{{url_for('static', filename='swiperimg.js')}}"></script>
 </html>
 {% endblock %}

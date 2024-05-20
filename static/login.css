@@ -36,14 +36,6 @@ body {
   100% {left: 150%; top: 80%; width: 600px; height: 400px; transform: rotate(40deg); filter: blur(0px);}
 }
 
-/* .password_block{
-    background: #efff14;
-    border-radius: 20px;
-    text-align: center;
-    font-size: 10px;
-    border: none;
-    outline: none;
-} */
 
 .failure{
     background: #efff14;
@@ -155,19 +147,6 @@ body {
 
 }
 
-/* .input-submit label{
-    font-weight: 600;
-    position: absolute;
-    top: 120%;
-    left: 50%;
-    color: #000;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-} */
-
-
 .sign-up-link{
     text-align: center;
     font-size: clamp(1rem, 1vw, 2rem);
@@ -199,6 +178,7 @@ body {
 
 
 @media (max-width: 1050px) {
+
     .login-box {
         width: 80%; /* Riduci la larghezza al 80% su schermi più piccoli */
         height: auto; /* Imposta l'altezza automaticamente per adattarsi al contenuto */
@@ -228,6 +208,28 @@ body {
         width: 80%;
         margin-left: 10%;
     }
-    
 
+}
+
+@media (max-width: 760px) {
+    html, body {
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        position: fixed; 
+    }
+
+    .background {
+        position: fixed; 
+    }
+
+    #plane {
+        position: fixed;
+    }
+
+    @keyframes planeAnim {
+        0% { left: -30%; top: 10%; width: 100px; height: 60px; transform: rotate(-5deg); filter: blur(1px); }
+        25% { transform: rotate(20deg); }
+        100% { left: 150%; top: 40%; width: 600px; height: 400px; transform: rotate(40deg); filter: blur(0px); }
+    }
 }

@@ -13,6 +13,12 @@
 </head>
 <body class="intero">
 
+    <video autoplay muted loop id="background-video">
+        <source src="/static/images/sfondo_saved.mp4" type="video/mp4">
+        <!-- Aggiungi altri formati video supportati se necessario -->
+        Your browser does not support the video tag.
+    </video>
+
     {% endblock %}
     {% block contentdown %}
     {% if not session %}

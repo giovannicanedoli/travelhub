@@ -222,7 +222,7 @@ p {
       margin-left: 5%;
       margin-right: 5%;
     }
-  }
+
     .scorrimento{
         position: relative;
         display: flex;
@@ -234,9 +234,23 @@ p {
         scale: 0.8;
         flex-direction: column;
     }
+
 }
 
-@media (max-width: 1050px) {
 
+@media (max-width: 1050px) {
+    .scorrimento{
+        position: relative;
+        display: flex;
+        height: 80%;
+        width: 100%;
+        /* justify-content: space-between;  */
+        /* align-items: center; */
+        gap:6%;
+        scale: 0.8;
+        margin-top:-10%;
+        margin-bottom: 3%;
+        flex-direction: column;
+    }
     
 }

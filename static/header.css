@@ -23,6 +23,9 @@ header {
     color: #000;
 }
 
+.ns {
+    scale: 1.15;
+}
 
 .pulsante, .pulsante2, .pulsante3, .pulsante4{
     background-color: #efff14f1;
@@ -67,11 +70,26 @@ button:hover{
 
 @media (max-width: 750px) {
     header {
-        margin: 30px 1% 30px; /*con il secondo numero decido quanto avvicinare o allontanare i vari bottoni*/
+        margin: 30px -2% 30px; /*con il secondo numero decido quanto avvicinare o allontanare i vari bottoni*/
     }
 
     .ns {
         scale: 1.2;
+    }
+
+    .hh  {
+        scale: 1.2;
+    }
+    
+}
+
+@media (max-width: 500px) {
+    .hh  {
+        scale: 1;
+    }
+
+    .ns {
+        scale: 1.25;
     }
     
 }

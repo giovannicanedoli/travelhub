@@ -240,6 +240,12 @@ img{
     }
 }
 
+@media (min-width: 961px) and (max-width: 1400px) {
+    .popover__content_like {
+        top: -140%;
+    }
+}
+
 @media (max-width: 960px) {
 
     .overlay-text {
@@ -276,8 +282,12 @@ img{
     .popover__content_save{
         /* mettere qua il codice se voglio che il popover si vede sopra al pulsante */
         top: -200%;
-
     }
+
+    .popover__content_like {
+        top: -150%;
+    }
+
 
 }
 
@@ -286,10 +296,10 @@ img{
     .overlay-text {
         font-size: clamp(1.8rem, 5vw, 4rem);
     }
-
+/* 
     .popover__content_like {
         top: -150%;
-    }
+    } */
 
     .foto{
         height: 500px;

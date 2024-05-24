@@ -3,9 +3,8 @@
 body {
     background-color: #929292;
     overflow-x: hidden;
-    margin: 0px;
-    animation: colori ease-in-out 8s infinite;
     margin: 0;
+    animation: colori ease-in-out 8s infinite;
 
 }
 
@@ -23,7 +22,7 @@ body {
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-    z-index: -1; /* Imposta lo z-index in modo che il video sia dietro agli altri elementi */
+    z-index: -10; /* Imposta lo z-index in modo che il video sia dietro agli altri elementi */
 }
 
 .sup{
@@ -40,8 +39,8 @@ img {
     width: 60%;
     /* height: 80%; */
     object-fit: cover;
-    /* border-radius: 10%;
-    this causes a bug in img rendering
+     border-radius: 10%;
+  /*  this causes a bug in img rendering
     */
     object-fit: cover; /*per le proporzioni delle foto*/
     transition-duration: 0.3s;
@@ -54,11 +53,14 @@ img {
     
 }
 
-.f{
-    border-radius: 10%;
-}
 
 /*questo serve???*/
+.f {
+    border-radius: 10%;
+    max-height: 350px;
+}
+
+/*questo serve??? Si serve per ingrandire le immagini su saved quando ci passo sopra*/
 .f:hover{
     scale: 1.07;
 }
@@ -85,7 +87,7 @@ p {
 
 .h {
     font-size: clamp(1.8rem, 2.3vw, 3.3rem); 
-    margin-bottom: 1%;
+    margin-bottom: 3%;
 }
 
 .h2 {
@@ -93,7 +95,7 @@ p {
 }
 
 .h3 {
-    font-size: clamp(1rem, 1.8vw, 3rem); 
+    font-size: clamp(1.3rem, 1.8vw, 3rem); 
 }
 
 .name {
@@ -101,7 +103,7 @@ p {
     padding: 10%;
 }
 
-.foru2 img.tall {
+.foru2img {
     max-height: 550px; 
 }
 
@@ -114,6 +116,7 @@ p {
 
 .ticket {
     margin-top: 10px; 
+    z-index: 100;
 }
 
 
@@ -220,6 +223,11 @@ p {
         margin-left: 5%;
         margin-right: 5%;
     }
+
+    .f {
+        max-height: 300px;
+    }
+
 }
 
 @media (max-width: 760px) {
@@ -228,6 +236,20 @@ p {
       margin-left: 5%;
       margin-right: 5%;
     }
+    
+    .f {
+        max-height: 200px;
+    }
+
+    .h{ /*non so perche sembra centrato con 15 e 10*/
+        margin-left: 15%;
+        margin-right: 10%;
+    }
+
+    .foru2img {
+        max-height: 300px;
+    }
+    
 
     .scorrimento{
         position: relative;
@@ -243,20 +265,3 @@ p {
 
 }
 
-
-@media (max-width: 1050px) {
-    .scorrimento{
-        position: relative;
-        display: flex;
-        height: 80%;
-        width: 100%;
-        /* justify-content: space-between;  */
-        /* align-items: center; */
-        gap:6%;
-        scale: 0.8;
-        margin-top:-10%;
-        margin-bottom: 3%;
-        flex-direction: column;
-    }
-    
-}

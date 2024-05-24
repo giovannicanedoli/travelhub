@@ -1,6 +1,6 @@
 from flask import Flask,render_template, url_for, redirect, request, session, jsonify, flash, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import func, desc
+from sqlalchemy import func, desc, or_
 from flask_mail import Mail, Message
 from flask_login import LoginManager, UserMixin, login_user, logout_user
 from datetime import timedelta
@@ -249,8 +249,9 @@ def confirm_forget(token):
 @app.route('/aboutus', methods = ["GET", "POST"])
 def aboutus():
      #SELECT * FROM feedback WHERE stars = 5
-    reviews = Feedback.query.filter_by(stars = 5).all()
+    reviews = Feedback.query.filter(or_(Feedback.stars == 5, Feedback.stars == 4)).all() #per essere piu umili prendiamo anche le 4 stelle
     reviews = reviews[:10]
+    random.shuffle(reviews)
     if request.method == "POST":
         name = request.form.get("name")
         msg = request.form.get("subject")
@@ -262,8 +263,6 @@ def aboutus():
         print(feed)
         return render_template('aboutus.html', feed=True,reviews = reviews)
     else:
-
-       
         return render_template('aboutus.html', feed=False, reviews = reviews)
 
 @app.route('/<something>')

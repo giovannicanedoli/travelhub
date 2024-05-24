@@ -33,6 +33,7 @@
     {% block contentdown %}
     {% if not session %}
      <script>
+        //FARGLI VEDERE QUESTO QUANDO PRESENTIAMO CHE è FIGO
         window.location.replace("/login"); //se non sei loggato e in qualche modo arrivi qua ti reindirizzo al login
       </script>
     {% else %}
@@ -168,7 +169,7 @@
                                     <img id = "top" src = "{{ city_photo_list[1][1] }}">
                                     <div class = "textcontainer"> 
                                         <p> {{ city_photo_list[1][3] }} </p>
-                                        <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
+                                        <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[1][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -249,7 +250,7 @@
                                 <img class="minor" src = "{{ city_photo_list[1][1] }}" >
                                 <div class = "textcontainer"> 
                                     <p>{{ city_photo_list[1][3] }} </p>
-                                    <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
+                                    <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[1][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
                                 </div>
                             </div>
                         </div>
@@ -269,7 +270,7 @@
 
                                 <div class = "textcontainer"> 
                                     <p>{{ city_photo_list[2][3] }} </p>
-                                    <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
+                                    <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[2][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
                                 </div>
 
                             </div>
@@ -291,7 +292,7 @@
                         {% for photo in for_u_list %}
                             <!--nuova classe foru2 presennte in slider.css-->
                             <div class="foru2 swiper-slide">    
-                                    <img src="{{ photo[1] }}">
+                                    <img src="{{ photo[1] }}" style="max-height: 400px;">
                                     <div class="overlay-text-stuff">
 
                                         <!-- DA CAPÌ CHE FINE FAGLIE FA -->
@@ -310,6 +311,7 @@
 
         {% endif %}
     {% endif %}
+    <br><br><br><br><br><br>
     <button id="top2" class="pulsante4" onclick="onTop()">⬆</button>
     
     
@@ -327,14 +329,14 @@
         }
     };
 
-    window.addEventListener('DOMContentLoaded', (event) => {
+   /* window.addEventListener('DOMContentLoaded', (event) => {
           const immagini = document.querySelectorAll('.foru2 img');
           immagini.forEach((img) => {
             if (img.clientHeight > 600) {
               img.classList.add('tall');
             }
           });
-        });
+        });*/
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

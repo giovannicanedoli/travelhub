@@ -4,15 +4,15 @@
 [x] anche la grid in saved fa cagare sia tablet che smartphone: va levato il margin dai bordi
 
 
-[ ] viee preso l'aereoporto di copenaghen al posto di quello di barcellona
-[ ] IMPORTANTE: VEDERE QUALI FOTO METTERE NEI PER TE! (ci sta parigi che è gigante)
+[x] viene preso l'aereoporto di copenaghen al posto di quello di barcellona
+[x] IMPORTANTE: VEDERE QUALI FOTO METTERE NEI PER TE! (ci sta parigi che è gigante)
 [ ] sistemare le dimennsioni del testo delle descrizioni nella visualizzazione da telefono e tablet in like.html
 [ ] modificare lo stile all'occorrenza
 [ ] togliere il bordo bianco intorno ad un'immagine (mi sa che non si può fixare)
 [ ] aggiungere un logo
-[ ] nella pagina index, quando scorri da telefono (e tablet) le foto devono essere più grandi
-[ ] eliminare bottone quando scorri nella pagina home
-[ ] eliminare bottone che cambia colore del background
+[x] nella pagina index, quando scorri da telefono (e tablet) le foto devono essere più grandi
+[ ] eliminare bottone quando scorri nella pagina home ??????
+[x] eliminare bottone che cambia colore del background
 [ ] ingrandire le varie foto delle altre pagine con visualizzazione responsive dei vari devices
 [ ] diminuire la size del testo nella visualizzazione con i vari devices
 [ ] allineare i bottoni
@@ -23,6 +23,8 @@
 di 1000 caratteri allora non si renderizza a pieno soluzione: mettere un limite alla lunghezza
 delle recensioni
 [ ] cubo che ruota in like history per vista da smartphone è tutto sfanculato
+
+[ ] questo video (se ci piace) come sfondo di login: https://youtu.be/iDSB1mPwCNY?si=elI8M3MNd8IHagFG
 
 
 QUANDO RICONTROLLIAMO FACCIAMO LA PROVA SIA DA LOGGATI CHE NON 

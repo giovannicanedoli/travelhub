@@ -30,8 +30,24 @@
         <p>Thank you, we have forwarded your feedback to our team ❤️</p>
       </div>
     {% endif %}
+
+
+    <!-- <div class = "newsletter">
+      <div class = "letterimg">
+        
+      </div>
+      <div class = "newslettertext">
+        Submit to our newsletter to recv information about fantastic travels and more!
+      </div>
+
+      <div class = "insertdata">
+        <input id = "testo" type="text" placeholder="Email">
+        
+        <input class = "pulsante4" type="submit" value="Submit">
+      </div>
+    </div>
     
-    <p>We would like a review!</p>
+    <p>We would like a review!</p> -->
     <div class="form" >
 
       <div class="form-header">
@@ -51,7 +67,7 @@
             <label for="subject">What's your opinion?</label>
           </div>
           <div class="col-75">
-            <textarea class="text" id="subject" name="subject" placeholder="Write your feedback.." style="height:200px; width: 80%;" required></textarea>
+            <textarea class="text" id="subject" name="subject" placeholder="Write your feedback.." style="height:200px; " required></textarea>
           </div>
         </div>
 
@@ -73,7 +89,7 @@
 
           </div>
           
-          <p id = "texthere">Hover on a star to rate our site!</p>
+          <!-- <p id = "texthere">Hover on a star to rate our site!</p> -->
 
           <!-- this is necessary to send data to the server -->
           <div class = "reqtosend" id ="support">
@@ -81,7 +97,7 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row submit-row">
           <input class="pulsante4" id="submitbtn" type="submit" value="Submit">
         </div>
       </form>
@@ -90,7 +106,7 @@
     <br>
     <br>
 
-    <p>What they say about us</p>
+    <p class="h2">What they say about us:</p>
 
     <div class="swiper swiperReview">
       <div class="swiper-wrapper">
@@ -100,8 +116,6 @@
           </div>
           <div class = "nomeautore">
             {{ review.name }}
-
-            
           </div>
           <div class = "testorecensione">
             {{ review.text }}
@@ -120,6 +134,22 @@
       <div class="swiper-pagination"></div>
     </div>
 
+    <button id="top" class="pulsante4" onclick="onTop()">⬆</button>
+
+    <script>
+      /* perché non sono dentro ad un file? */
+      function onTop() {
+          window.scrollTo({ top: 0, behavior: 'smooth' }); // Scorri verso l'inizio della pagina con animazione
+      }
+      
+      window.onscroll = function() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              document.getElementById("top").style.display = "block";
+          } else {
+              document.getElementById("top").style.display = "none";
+          }
+      };
+    </script>
     <br><br><br><br>
 
     {% include 'footer.html' %}

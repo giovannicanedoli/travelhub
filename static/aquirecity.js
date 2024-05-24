@@ -1,5 +1,6 @@
 var map = L.map('map');
 
+var cityName = document.getElementById("map").getAttribute("name");
 // Aggiungi un layer con piastrelle da OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -28,6 +29,7 @@ fetch('https://nominatim.openstreetmap.org/search?q=' + cityName + '&format=json
 
 
 var map2 = L.map("map2");
+var cityName2 = document.getElementById("map2").getAttribute("name");
 
   //da fare i controlli
 
@@ -60,7 +62,7 @@ fetch('https://nominatim.openstreetmap.org/search?q=' + cityName2 + '&format=jso
   });
 
 var map3 = L.map("map3");
-  
+var cityName3 = document.getElementById("map3").getAttribute("name");
 //da fare i controlli
 
   // Aggiungi un layer con piastrelle da OpenStreetMap

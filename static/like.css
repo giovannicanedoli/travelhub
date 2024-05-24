@@ -39,7 +39,7 @@ img {
     width: 60%;
     /* height: 80%; */
     object-fit: cover;
-     border-radius: 10%;
+     /* border-radius: 10%; */
   /*  this causes a bug in img rendering
     */
     object-fit: cover; /*per le proporzioni delle foto*/

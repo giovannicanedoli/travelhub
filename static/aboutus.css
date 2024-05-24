@@ -32,6 +32,18 @@ address a:hover {
     color: #010f5384 ;
 }
 
+#top {
+    display: none;
+    position: fixed; 
+    bottom: 5%; 
+    right: 5%; 
+    z-index: 99; 
+    cursor: pointer;
+    font-size: 150%;
+    font-weight: bolder;
+}
+
+
 .ig-icon{
     width: 50px;
 }

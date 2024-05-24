@@ -5,7 +5,7 @@
 
 
 [x] viene preso l'aereoporto di copenaghen al posto di quello di barcellona
-[ ] IMPORTANTE: VEDERE QUALI FOTO METTERE NEI PER TE! (ci sta parigi che è gigante)
+[x] IMPORTANTE: VEDERE QUALI FOTO METTERE NEI PER TE! (ci sta parigi che è gigante)
 [ ] sistemare le dimennsioni del testo delle descrizioni nella visualizzazione da telefono e tablet in like.html
 [ ] modificare lo stile all'occorrenza
 [ ] togliere il bordo bianco intorno ad un'immagine (mi sa che non si può fixare)

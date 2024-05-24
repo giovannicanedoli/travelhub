@@ -116,8 +116,6 @@
           </div>
           <div class = "nomeautore">
             {{ review.name }}
-
-            
           </div>
           <div class = "testorecensione">
             {{ review.text }}
@@ -136,6 +134,22 @@
       <div class="swiper-pagination"></div>
     </div>
 
+    <button id="top" class="pulsante4" onclick="onTop()">⬆</button>
+
+    <script>
+      /* perché non sono dentro ad un file? */
+      function onTop() {
+          window.scrollTo({ top: 0, behavior: 'smooth' }); // Scorri verso l'inizio della pagina con animazione
+      }
+      
+      window.onscroll = function() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+              document.getElementById("top").style.display = "block";
+          } else {
+              document.getElementById("top").style.display = "none";
+          }
+      };
+    </script>
     <br><br><br><br>
 
     {% include 'footer.html' %}

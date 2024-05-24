@@ -39,8 +39,8 @@ img {
     width: 60%;
     /* height: 80%; */
     object-fit: cover;
-    /* border-radius: 10%;
-    this causes a bug in img rendering
+     border-radius: 10%;
+  /*  this causes a bug in img rendering
     */
     object-fit: cover; /*per le proporzioni delle foto*/
     transition-duration: 0.3s;
@@ -100,7 +100,7 @@ p {
     padding: 10%;
 }
 
-.foru2 img.tall {
+.foru2img {
     max-height: 550px; 
 }
 
@@ -241,6 +241,10 @@ p {
     .h{ /*non so perche sembra centrato con 15 e 10*/
         margin-left: 15%;
         margin-right: 10%;
+    }
+
+    .foru2img {
+        max-height: 300px;
     }
     
 

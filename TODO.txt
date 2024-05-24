@@ -4,6 +4,7 @@
 [x] anche la grid in saved fa cagare sia tablet che smartphone: va levato il margin dai bordi
 
 
+[ ] viee preso l'aereoporto di copenaghen al posto di quello di barcellona
 [ ] IMPORTANTE: VEDERE QUALI FOTO METTERE NEI PER TE! (ci sta parigi che è gigante)
 [ ] sistemare le dimennsioni del testo delle descrizioni nella visualizzazione da telefono e tablet in like.html
 [ ] modificare lo stile all'occorrenza

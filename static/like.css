@@ -39,7 +39,9 @@ img {
     width: 60%;
     /* height: 80%; */
     object-fit: cover;
-    border-radius: 10%;
+    /* border-radius: 10%;
+    this causes a bug in img rendering
+    */
     object-fit: cover; /*per le proporzioni delle foto*/
     transition-duration: 0.3s;
     box-shadow: 0 8px 16px 0 #00000033, 0 6px 20px 0 #00000030;
@@ -253,5 +255,6 @@ p {
         scale: 0.8;
         flex-direction: column;
     }
+
 }
 

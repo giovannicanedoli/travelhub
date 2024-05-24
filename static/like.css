@@ -3,9 +3,8 @@
 body {
     background-color: #929292;
     overflow-x: hidden;
-    margin: 0px;
-    animation: colori ease-in-out 8s infinite;
     margin: 0;
+    animation: colori ease-in-out 8s infinite;
 
 }
 
@@ -23,7 +22,7 @@ body {
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-    z-index: -1; /* Imposta lo z-index in modo che il video sia dietro agli altri elementi */
+    z-index: -10; /* Imposta lo z-index in modo che il video sia dietro agli altri elementi */
 }
 
 .sup{
@@ -52,7 +51,11 @@ img {
     
 }
 
-/*questo serve???*/
+.f {
+    max-height: 350px;
+}
+
+/*questo serve??? Si serve per ingrandire le immagini su saved quando ci passo sopra*/
 .f:hover{
     scale: 1.07;
 }
@@ -79,7 +82,7 @@ p {
 
 .h {
     font-size: clamp(1.8rem, 2.3vw, 3.3rem); 
-    margin-bottom: 1%;
+    margin-bottom: 3%;
 }
 
 .h2 {
@@ -87,7 +90,7 @@ p {
 }
 
 .h3 {
-    font-size: clamp(1rem, 1.8vw, 3rem); 
+    font-size: clamp(1.3rem, 1.8vw, 3rem); 
 }
 
 .name {
@@ -108,6 +111,7 @@ p {
 
 .ticket {
     margin-top: 10px; 
+    z-index: 100;
 }
 
 
@@ -214,6 +218,11 @@ p {
         margin-left: 5%;
         margin-right: 5%;
     }
+
+    .f {
+        max-height: 300px;
+    }
+
 }
 
 @media (max-width: 760px) {
@@ -222,7 +231,17 @@ p {
       margin-left: 5%;
       margin-right: 5%;
     }
-  }
+    
+    .f {
+        max-height: 200px;
+    }
+
+    .h{ /*non so perche sembra centrato con 15 e 10*/
+        margin-left: 15%;
+        margin-right: 10%;
+    }
+    
+
     .scorrimento{
         position: relative;
         display: flex;
@@ -236,7 +255,3 @@ p {
     }
 }
 
-@media (max-width: 1050px) {
-
-    
-}

@@ -35,8 +35,9 @@ address a:hover {
 .ig-icon{
     width: 50px;
 }
-
-
+.h2 {
+    font-size: clamp(1.2rem, 2vw, 3.3rem);  /*copiato da h2*/
+}
 
 /* form */
 
@@ -66,8 +67,9 @@ input[type=text], textarea {
 }
 
 input[type=submit] {
-    margin-left: 40%;
-    width: 20%;
+    /* margin-left: 20%; */
+    
+    width: 40%;
 }
   
 label {
@@ -79,10 +81,12 @@ label {
 
 .form {
     margin-left: 20%;
-    width: 60%;
+    margin-right: 20%;
+    /* width: 60%; */
     border-radius: 30px;
     background-color: #f2f2f270;
     padding: 20px;
+    box-sizing: border-box;
 }
   
 .col-25 {
@@ -95,6 +99,13 @@ label {
     float: left;
     width: 75%;
     margin-top: 6px;
+}
+
+.submit-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
   
 .row::after {
@@ -127,10 +138,16 @@ label {
     display: none;
 }
 
-@media (max-width: 768px) {
-    .footer {
-        height: 50px;
+@media (max-width: 1000px) {
+    .form {
+        margin-left: 10%;
+        margin-right: 10%;
     }
+}
+@media (max-width: 768px) {
+
+
+
 
     .ig-icon{
         width: 30px;
@@ -143,5 +160,13 @@ label {
     .col-25, .col-75 {
         width: 100%;
         margin-top: 0;
+    }
+
+    input[type=text] {
+        width: 90%;
+    }
+
+    textarea{
+        width: 90%;
     }
 }

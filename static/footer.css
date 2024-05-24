@@ -26,6 +26,7 @@ p {
 }
 
 .redirectanchor{
+    margin-top: 5%;
     color: black;
     text-decoration: underline;
 }

@@ -8,14 +8,12 @@ html, body{
 }
 
 .swiper-slide {
-font-size: 18px;
-background: white;
-
-border-radius: 30px;
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-}
+    background-color: #f2f2f270; /*volevo cambiare solo lo slider delle recensioni, non so se cambia altro*/
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    }
 
 
 
@@ -32,12 +30,14 @@ align-items: flex-start;
 }
 
 .testorecensione{
+    font-size: clamp(1.4rem, 2vw, 3.3rem);  /*copiato da h2*/
     margin-bottom: 5%;
     margin-left: 10%;
     margin-right: 10%;
 }
 
 .nomeautore{
+    font-size: clamp(1.1rem, 1.5vw, 3rem);  /*copiato da h3*/
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 2%;
@@ -47,7 +47,7 @@ align-items: flex-start;
 .stelle{
     display: flex;
     justify-content: center;
-    margin-bottom: 2%;
+    /* margin-bottom: 2%; */
 }
 
 #s1, #s2, #s3,#s4,#s5{
@@ -56,4 +56,22 @@ align-items: flex-start;
     width: 40px;
     height: 40px;
     /*aggiungi un ombra*/
+}
+
+
+
+@media (max-width: 1050px) {
+    .swiperReview {
+        width: 60%;
+        height: 30%;
+    }
+
+}
+
+@media (max-width: 760px) {
+    .swiperReview {
+        width: 70%;
+        height: 30%;
+    }
+
 }

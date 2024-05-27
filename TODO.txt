@@ -23,6 +23,7 @@
 di 1000 caratteri allora non si renderizza a pieno soluzione: mettere un limite alla lunghezza
 delle recensioni
 [ ] cubo che ruota in like history per vista da smartphone è tutto sfanculato
+[ ] mettere un bottone che azzera i like e i save
 
 [ ] questo video (se ci piace) come sfondo di login: https://youtu.be/iDSB1mPwCNY?si=elI8M3MNd8IHagFG
 

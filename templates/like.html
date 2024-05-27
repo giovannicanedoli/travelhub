@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="{{url_for('static', filename='like.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='header.css')}}">
     <link rel="stylesheet" href="{{ url_for('static', filename='slider.css')}}">
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='footer.css')}}"> -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
     crossorigin=""/>
@@ -25,8 +24,6 @@
     
     <video autoplay muted loop id="background-video">
         <source src="/static/images/sfondo.mp4" type="video/mp4">
-        <!-- Aggiungi altri formati video supportati se necessario -->
-        Your browser does not support the video tag.
     </video>
 
     {% endblock %}
@@ -239,27 +236,25 @@
 
             <!-- QUESTA DIV PUÒ DARE PROBLEMI -->
             <div class = "scorrimento">
-                <div class = "swiper swiperCubic">
+                <div class = "swiper swiperCubic2">
                     <div class="swiper-wrapper">
                         <div class = "cubic swiper-slide">
                             <img class="minor" src = "{{ city_photo_list[1][1] }}" >
 
                         </div>
-                        <div class = "cubic swiper-slide">
-                            <div class = "blurcube">
-                                <img class="minor" src = "{{ city_photo_list[1][1] }}" >
-                                <div class = "textcontainer"> 
+                        <div class = "blurring swiper-slide">
+                                <img src = "{{ city_photo_list[1][1] }}" >
+                                <!-- <div class = "textcontainer"> 
                                     <p>{{ city_photo_list[1][3] }} </p>
                                     <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[1][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
-                                </div>
-                            </div>
+                                </div> -->
                         </div>
                         <div id = "map2" class = "mapcontainer swiper-slide" name = "{{ city_photo_list[1][0] }}">
                         </div>
                     </div>
                 </div>
 
-                <div class = "swiper swiperCubic">
+                <div class = "swiper swiperCubic2">
                     <div class="swiper-wrapper">
                         <div class = "cubic swiper-slide">
                             <img class="minor" src = "{{ city_photo_list[2][1] }}" >

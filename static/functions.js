@@ -109,3 +109,43 @@ document.getElementById('uno').addEventListener('mouseover', function() {
 
 });
 
+var form = document.getElementById('subject');
+  
+  form.addEventListener('input', () => {
+    var colore;
+    var testo = document.getElementById('texthere');
+    var bottone = document.getElementById('submitbtn');
+    if(form.value.length > 100){
+      console.log("SFORATO!"); 
+      testo.innerText = 'You have to reduce the review size!';
+      colore = 'red';
+      document.getElementById('cinque').style.backgroundColor = colore;
+      document.getElementById('quattro').style.backgroundColor = colore;
+      document.getElementById('tre').style.backgroundColor = colore;
+      document.getElementById('due').style.backgroundColor = colore;
+      document.getElementById('uno').style.backgroundColor = colore;
+      document.getElementById('cinque').classList.add('no-hover');
+      document.getElementById('quattro').classList.add('no-hover');
+      document.getElementById('tre').classList.add('no-hover');
+      document.getElementById('due').classList.add('no-hover');
+      document.getElementById('uno').classList.add('no-hover');
+      bottone.disabled = true;
+
+    }else{
+      colore = '#7a7a7a';
+      document.getElementById('cinque').style.backgroundColor = colore;
+      document.getElementById('quattro').style.backgroundColor = colore;
+      document.getElementById('tre').style.backgroundColor = colore;
+      document.getElementById('due').style.backgroundColor = colore;
+      document.getElementById('uno').style.backgroundColor = colore;
+      document.getElementById('cinque').classList.remove('no-hover');
+      document.getElementById('quattro').classList.remove('no-hover');
+      document.getElementById('tre').classList.remove('no-hover');
+      document.getElementById('due').classList.remove('no-hover');
+      document.getElementById('uno').classList.remove('no-hover');
+      document.getElementById('sendmedata').value = '';
+      testo.innerHTML = '<br>';
+      bottone.disabled = false;
+
+    }
+  })

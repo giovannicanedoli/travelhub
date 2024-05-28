@@ -155,6 +155,10 @@ label {
     cursor: not-allowed;
 }
 
+.no-hover{
+    pointer-events: none;
+}
+
 @media (max-width: 1000px) {
     .form {
         margin-left: 10%;

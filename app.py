@@ -96,6 +96,14 @@ class Saves(db.Model):
     users_save = db.relationship("Users", backref=db.backref("users_save", uselist=False))
     cities_save = db.relationship("Cities", backref=db.backref("cities_save", uselist=False))
 
+class Comments(db.Model):
+    __tablename__ = 'comments'
+    users_id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key = True)
+    cities_id = db.Column(db.Integer, db.ForeignKey('cities.id'), primary_key = True)
+
+    users_comments = db.relationship("Users", backref=db.backref("users_comments", uselist=False))
+    cities_has_comments = db.relationship("Cities", backref=db.backref("cities_has_comments", uselist=False))
+
 db.init_app(app)
 
 with app.app_context():

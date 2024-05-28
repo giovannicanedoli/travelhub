@@ -6,10 +6,10 @@
 [x] viene preso l'aereoporto di copenaghen al posto di quello di barcellona
 [x] nella pagina index, quando scorri da telefono (e tablet) le foto devono essere più grandi
 [x] eliminare bottone che cambia colore del background
-[x] è possibile un bug con la renderizzazione delle recensioni, se uno scrive una recensione
-di 1000 caratteri allora non si renderizza a pieno soluzione: mettere un limite alla lunghezza
-delle recensioni
+[x] fare in modo che un utente non possa mandare una recensione di più di x caratteri
 
+
+[ ] IDEA aggiungere, quando finisci di scrollare la pagina index.html, qualcosa tipo "hai finito la pagina" di instagram
 [ ] levare password della email prima della consegna del codice
 [ ] sistemare le dimensioni del testo delle descrizioni nella visualizzazione da telefono e tablet in like.html
 [ ] togliere il bordo bianco intorno ad un'immagine (mi sa che non si può fixare)
@@ -18,8 +18,9 @@ delle recensioni
 [ ] diminuire la size del testo nella visualizzazione con i vari devices
 [ ] cambiare sfondo e aereo nel login/signup
 [ ] fare in modo di mettere il mare continuo nel like.html
-[ ] fare in modo che un utente non possa mandare una recensione di più di x caratteri
 [ ] cubo che ruota in like history per vista da smartphone è tutto sfanculato
-
+[ ] è possibile un bug con la renderizzazione delle recensioni, se uno scrive una recensione
+di 1000 caratteri allora non si renderizza a pieno soluzione: mettere un limite alla lunghezza
+delle recensioni
 
 QUANDO RICONTROLLIAMO FACCIAMO LA PROVA SIA DA LOGGATI CHE NON 

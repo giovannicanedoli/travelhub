@@ -98,8 +98,10 @@ class Saves(db.Model):
 
 class Comments(db.Model):
     __tablename__ = 'comments'
-    users_id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key = True)
-    cities_id = db.Column(db.Integer, db.ForeignKey('cities.id'), primary_key = True)
+    id = db.Column(db.Integer, primary_key=True)
+    users_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    cities_id = db.Column(db.Integer, db.ForeignKey('cities.id'))
+    comment = db.Column(db.String(1000), nullable=True)
 
     users_comments = db.relationship("Users", backref=db.backref("users_comments", uselist=False))
     cities_has_comments = db.relationship("Cities", backref=db.backref("cities_has_comments", uselist=False))
@@ -116,6 +118,16 @@ def loader_user(user_id):
 @app.route("/")
 def main_route():
     cities=Cities.query.all()
+
+    '''
+    SELECT users.nome, comments.cities_id, comments.comment FROM comments JOIN users on users_id = id
+    '''
+    db_comments = db.session.query(
+        Users.username,  # Cambiato 'nome' in 'username' perché 'nome' non esiste nella classe Users
+        Comments.cities_id,
+        Comments.comment
+    ).join(Comments, Users.id == Comments.users_id).all()
+
     liked=[]
     if 'username' in session and 'password' in session and 'id' in session:
         user_id = session['id']
@@ -129,13 +141,9 @@ def main_route():
         saved_photos = []
     random.shuffle(cities)  #to randomize img shown in index.html
 
-    return render_template("index.html", cities=cities, liked=liked_photos, saved=saved_photos)
+    return render_template("index.html", cities=cities, liked=liked_photos, saved=saved_photos, db_comments = db_comments)
 
 
-# @app.route("/") vecchia senza like grafici che si  mantengono nell'utente
-# def main_route():
-#     cities=Cities.query.all()
-#     return render_template("index.html", cities=cities)
 @app.route('/register', methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -413,6 +421,30 @@ def save_photo():
         print('utente non loggato!')
         status_code = {'code' : '400'}
     
+    return jsonify(status_code)
+
+
+@app.route('/postcomments', methods = ["POST"])
+def post_comments():
+    msg_sent = request.form.get('comments')
+    city_id = request.form.get('city_key')
+    user_id = session.get('id')
+
+    '''
+    INSERT INTO comments (users_id, cities_id, comment) VALUES (user_id, city_id, msg_sent);
+    '''
+    
+    
+
+    new_comment = Comments(users_id=user_id, cities_id=city_id, comment=msg_sent)
+    db.session.add(new_comment)
+    db.session.commit()
+    user_name = Users.query.filter_by(id = user_id).first()
+    name = user_name.username
+    print(user_id)
+    print(user_name)
+    status_code = {'name':name}
+    print("tutto ok zi")
     return jsonify(status_code)
 
 @app.route('/favicon.ico')

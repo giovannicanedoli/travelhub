@@ -50,17 +50,17 @@ img{
     transition-duration: 0.4s;
 }
 
-.container:hover{
+.mycontainer:hover{
     /* scale: 1.03; */
     transform: scale(1.03);
 }
 
-.container:hover .foto {
+.mycontainer:hover .foto {
     box-shadow: 0 8px 16px 0 #00000065, 0 6px 20px 0 #0000007c;
 }
 
 
-.container:hover .overlay-text {
+.mycontainer:hover .overlay-text {
     animation: showContent .3s .2s linear 1 forwards; 
     
 }
@@ -91,7 +91,7 @@ img{
 }
  
 
-.container{
+.mycontainer{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -231,6 +231,43 @@ img{
 .popover__message {
     text-align: center;
 }
+
+
+/*modal stuff*/
+
+.comments {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mycomment {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .comment {
+    margin-bottom: 10px;
+  }
+
+  .comment .author {
+    font-weight: bold;
+  }
+
+  .comment .text {
+    margin-left: 15px;
+  }
+
+  /* Important part */
+  .modal-dialog {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .modal-body {
+    height: 80vh;
+    overflow-y: auto;
+  }
+
   
 /*per renderlo equidistate con schermi piu piccoli*/
 @media (max-width: 1200px) {

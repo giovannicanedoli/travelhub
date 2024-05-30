@@ -78,10 +78,10 @@ header {
 }
 
 .pulsanteClose:hover {
-    background: #a8a8a86f;
+    background: #9494946f;
     border-radius: 12px;
     text-decoration: none;
-    color:#908f8f;
+    color:#313131;
 }
 
 button:hover{

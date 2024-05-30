@@ -6,6 +6,10 @@ body {
         margin-left: 0;
 }
 
+a {
+    transition-duration: 0.3s;
+}
+
 .background {
     position: absolute;
     top: 0;
@@ -181,7 +185,7 @@ body {
 /*-------------------------------MEDIA QUERIES----------------------------------------------*/
 
 
-@media (max-width: 1050px) {
+@media (max-width: 1150px) {
 
     .login-header{
         margin: 0;

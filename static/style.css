@@ -266,9 +266,13 @@ img{
   .modal-body {
     height: 80vh;
     overflow-y: auto;
+    background-color: #55555537;
   }
 
-  
+
+.modal-content {
+    border-radius: 20px; 
+}
 /*per renderlo equidistate con schermi piu piccoli*/
 @media (max-width: 1200px) {
     .foto{

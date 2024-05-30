@@ -11,7 +11,10 @@ body {
     background-size: cover;
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
-    margin: 0px;    /* si creano 8 px a cazzo di cane */
+    /*margin: 0px;    /* si creano 8 px a cazzo di cane */
+    margin-right: -1px; /*sta cosa dei margini è decisamente random*/
+    margin-left: 0;
+
 }
 
 @keyframes gradient {
@@ -25,6 +28,61 @@ body {
     max-width: 800px;
     margin: 5% auto;
     padding: 20px;
+}
+
+.presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;  
+    background-color: #74b785a4;
+    padding: 3%;
+    
+}
+
+.ourpic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20%; /*gap tra le due foto*/
+}
+
+.pietro img, .gio img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ourpic p {
+    font-size: clamp(1.2rem, 1.6vw, 3.3rem); 
+    font-weight: 600;
+}
+
+.pietro, .gio {
+    background-color: #7a7a7a81;
+    border-radius: 10%;
+    padding: 2%;
+    transition-duration: 0.4s;
+}
+
+.ourpic img {
+    width: 400px;
+    border-radius: 10%;
+}
+
+.pietro:hover, .gio:hover  {
+    scale: 1.1;
+}
+
+.h3 a {
+    color: #000;
+}
+
+a:hover {
+    color: #5a5a5a;
+}
+
+.h3 {
+    font-size: clamp(1.2rem, 1.5vw, 3.3rem);  
 }
 
 address a:hover {
@@ -50,6 +108,9 @@ address a:hover {
 .h2 {
     font-size: clamp(1.2rem, 2vw, 3.3rem);  /*copiato da h2*/
 }
+
+
+
 
 /* form */
 
@@ -163,7 +224,16 @@ label {
 }
 @media (max-width: 768px) {
 
+    .ourpic {
+        gap: 10%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 
+    .ourpic img{
+        width: 200px;
+
+    }
 
 
     .ig-icon{

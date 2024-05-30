@@ -61,17 +61,25 @@ header {
     font-size: clamp(0.9rem, 0.95vw, 2rem);
 }
 
+
 .grande, .pulsante4 {
     font-size: clamp(1rem, 1.3vw, 2rem);
 }
 
 
 
-.pulsante:hover, .pulsante2:hover, .pulsante3:hover, .pulsante4:hover{
+.pulsante:hover, .pulsante2:hover, .pulsante3:hover, .pulsante4:hover, .pulsante5:hover{
     background: #efff146f;
     border-radius: 15px;
     text-decoration: none;
-    color:#444;
+    color:#6b6b6b;
+}
+
+.pulsanteClose:hover {
+    background: #a8a8a86f;
+    border-radius: 12px;
+    text-decoration: none;
+    color:#908f8f;
 }
 
 button:hover{

@@ -127,7 +127,13 @@ def main_route():
         Comments.cities_id,
         Comments.comment
     ).join(Comments, Users.id == Comments.users_id).all()
-
+    truncated_comments= []
+    for com in db_comments:
+        ind = com[0].index('@')
+        truncated_username = com[0][:ind]  
+        truncated_comment = (truncated_username,) + com[1:]  
+        truncated_comments.append(truncated_comment)
+    print(truncated_comments)
     liked=[]
     if 'username' in session and 'password' in session and 'id' in session:
         user_id = session['id']
@@ -141,7 +147,7 @@ def main_route():
         saved_photos = []
     random.shuffle(cities)  #to randomize img shown in index.html
 
-    return render_template("index.html", cities=cities, liked=liked_photos, saved=saved_photos, db_comments = db_comments)
+    return render_template("index.html", cities=cities, liked=liked_photos, saved=saved_photos, db_comments = truncated_comments)
 
 
 @app.route('/register', methods=["GET", "POST"])
@@ -440,9 +446,11 @@ def post_comments():
     db.session.add(new_comment)
     db.session.commit()
     user_name = Users.query.filter_by(id = user_id).first()
-    name = user_name.username
-    print(user_id)
-    print(user_name)
+    name = user_name.username[:user_name.username.index('@')] #per trasformare abc@ex.com in abc
+    # print(user_id)
+    # print(user_name)
+    # print("------------", name)
+
     status_code = {'name':name}
     print("tutto ok zi")
     return jsonify(status_code)

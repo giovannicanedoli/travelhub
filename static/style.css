@@ -121,8 +121,8 @@ img{
 }
 
 @keyframes scroll {
-    0% {opacity: 0; width: 0%;}
-    50% {opacity: 1; width: 100%;}
+    0% {opacity: 0; width: 0%; pointer-events: none;}
+    38% {opacity: 1; width: 100%; pointer-events: all;}
 }
 
 .pulsantiera {
@@ -133,7 +133,16 @@ img{
     flex-wrap: wrap;
     align-items: center;
     transition-duration: 0.3s; /*inutile*/
+    animation: pulsanti linear both;
+    animation-timeline: view();
+    background-clip: text;
+    -webkit-background-clip: text;
 } 
+
+@keyframes pulsanti {
+    0% {scale: 0.5;}
+    20% {scale: 1;}
+}
 
 .like {
     width: 30%;
@@ -185,8 +194,8 @@ img{
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    left: -30%;
-    top: -120%;
+    left: -20%;
+    top: -140%;
     transform: translate(0, 10px);
     background-color: #0000005d;
     padding: 0.5rem;
@@ -204,12 +213,17 @@ img{
     transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
 }
 
+.popover__content_like p, .popover__content_save p{
+    margin-top: 10%;
+    margin-bottom: 10%;
+
+}
 
 .popover__content_save {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    left: -30%;
+    left: -20%;
     top: 100%;
     transform: translate(0, 10px);
     background-color: #0000005d;
@@ -221,7 +235,7 @@ img{
 }
 
 .popover__wrapper:hover .popover__content_save {
-    z-index: 10;
+    z-index: 1000;
     opacity: 1;
     visibility: visible;
     transform: translate(0, 20%);
@@ -264,7 +278,7 @@ img{
   }
 
   .modal-body {
-    height: 80vh;
+    height: 60vh;
     overflow-y: auto;
     background-color: #55555537;
   }
@@ -283,7 +297,7 @@ img{
 
 @media (min-width: 961px) and (max-width: 1400px) {
     .popover__content_like {
-        top: -140%;
+        top: -150%;
     }
 }
 
@@ -308,7 +322,8 @@ img{
         margin-bottom: 5%;
         flex-direction: row;
         justify-content: center;
-        width: 50%;
+        width: 40%;
+        flex-wrap: nowrap;
     }
 
     .like {
@@ -322,11 +337,13 @@ img{
 
     .popover__content_save{
         /* mettere qua il codice se voglio che il popover si vede sopra al pulsante */
-        top: -200%;
+        top: -50%;
+        left: 130%;
     }
 
     .popover__content_like {
-        top: -150%;
+        top: -0%;
+        left: -180%;
     }
 
 
@@ -345,6 +362,11 @@ img{
     .foto{
         height: 500px;
         width: 350px;
+    }
+
+    .modal-content {
+        margin-left: 5%; 
+        margin-right: 5%; 
     }
 
     .topcontainer{
@@ -370,8 +392,15 @@ img{
 
     .popover__content_save{
         /* mettere qua il codice se voglio che il popover si vede sopra al pulsante */
-        top: -200%;
+        top: -50%;
+        left: 120%;
+        scale: 0.9;
+    }
 
+    .popover__content_like {
+        top: -0%;
+        left: -170%;
+        scale: 0.9;
     }
 
 }

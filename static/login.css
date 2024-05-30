@@ -180,8 +180,8 @@ body {
 @media (max-width: 1050px) {
 
     .login-box {
-        width: 80%; /* Riduci la larghezza al 80% su schermi più piccoli */
-        height: auto; /* Imposta l'altezza automaticamente per adattarsi al contenuto */
+        width: 60%; /* Riduci la larghezza al 80% su schermi più piccoli */
+        height: 68%; /* Imposta l'altezza automaticamente per adattarsi al contenuto */
     }
 
     @keyframes planeAnim {

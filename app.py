@@ -314,8 +314,14 @@ def like():
 
 
         #questa query mi serve per i per te
-        foru = db.session.query(Cities.nome, Cities.photo,Cities.id, Cities.like_messi).order_by(Cities.like_messi).all()
-        foru = foru[:5:-1]
+        # foru = db.session.query(Cities.nome, Cities.photo,Cities.id, Cities.like_messi).order_by(Cities.like_messi).all()
+        # print(foru)
+        # foru = foru[:5:-1]
+
+        liked_city_ids = [like.cities_id for like in Like.query.filter_by(users_id=session['id']).all()]
+        foru = db.session.query(Cities.nome, Cities.photo, Cities.id, Cities.like_messi).filter(Cities.id.notin_(liked_city_ids)).all()
+        
+        random.shuffle(foru)
         
         # print(liked_cities, end = "\n\n\n")
 

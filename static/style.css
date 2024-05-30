@@ -122,7 +122,15 @@ img{
 
 @keyframes scroll {
     0% {opacity: 0; width: 0%; pointer-events: none;}
-    38% {opacity: 1; width: 100%; pointer-events: all;}
+    38% {opacity: 1; width: 100%; }
+    45% {pointer-events: all;}
+}
+
+.h2 {
+    margin-top: 10%;
+    margin-bottom: 0%;
+    font-size: clamp(1.4rem, 2vw, 3.3rem); 
+    text-align: center;
 }
 
 .pulsantiera {
@@ -140,7 +148,7 @@ img{
 } 
 
 @keyframes pulsanti {
-    0% {scale: 0.5;}
+    0% {scale: 0.3;}
     20% {scale: 1;}
 }
 

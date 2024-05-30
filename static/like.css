@@ -86,14 +86,19 @@ p {
 .h {
     font-size: clamp(1.8rem, 2.3vw, 3.3rem); 
     margin-bottom: 3%;
+    text-align: center;
 }
 
 .h2 {
+    margin-top: 10%;
+    margin-bottom: 0%;
     font-size: clamp(1.4rem, 2vw, 3.3rem); 
+    text-align: center;
 }
 
 .h3 {
     font-size: clamp(1.3rem, 1.8vw, 3rem); 
+    text-align: center;
 }
 
 .name {
@@ -240,7 +245,7 @@ p {
         max-height: 200px;
     }
 
-    .h{ /*non so perche sembra centrato con 15 e 10*/
+    .h, .h2{ /*non so perche sembra centrato con 15 e 10*/
         margin-left: 15%;
         margin-right: 10%;
     }

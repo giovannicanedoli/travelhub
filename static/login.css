@@ -1,6 +1,9 @@
 body {
     overflow-x: hidden;
     overflow-y: hidden;
+        margin: 0px;    /* si creano 8 px a cazzo di cane*/
+         margin-right: -1px; /*sta cosa dei margini è decisamente random */
+        margin-left: 0;
 }
 
 .background {
@@ -59,12 +62,13 @@ body {
 }
 
 .login-box{
+    margin-top: 2%;
     z-index: 1;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 25%;
-    height: 55%;
+    width: 30%;
+    height: 65%;
     padding: 2.5%;
     position: absolute;
     top: 50%;
@@ -179,9 +183,13 @@ body {
 
 @media (max-width: 1050px) {
 
+    .login-header{
+        margin: 0;
+    }
+
     .login-box {
-        width: 60%; /* Riduci la larghezza al 80% su schermi più piccoli */
-        height: 68%; /* Imposta l'altezza automaticamente per adattarsi al contenuto */
+        width: 60%; 
+        height: 68%; 
     }
 
     @keyframes planeAnim {
@@ -217,6 +225,11 @@ body {
         height: 100%;
         width: 100%;
         position: fixed; 
+    }
+
+    .login-box {
+        width: 80%; 
+        height: 68%; 
     }
 
     .background {

@@ -225,6 +225,9 @@ p {
     margin-bottom: 10%;
 }
 
+.spazio {
+    display: none;
+}
 
 @media (max-width: 1050px) {
     .foru {
@@ -255,11 +258,11 @@ p {
         margin-right: 10%;
     }
 
-    .foru2img {
-        max-height: 300px;
+    .spazio {
+        display: block;
     }
     
-
+    
     .scorrimento{
         position: relative;
         display: flex;
@@ -267,7 +270,7 @@ p {
         width: 100%;
         /* justify-content: space-between;  */
         /* align-items: center; */
-        gap:10%;
+        gap: 10%;
         scale: 0.8;
         flex-direction: column;
     }

@@ -217,7 +217,7 @@ function toggleSubmitButtonColor(pkey) {
     var commentInput = $("#mycomment" + pkey);
     var submitButton = commentInput.closest('form').find('.pulsante5');
     if (commentInput.val().trim() === "") {
-        submitButton.css("background-color", "#FF5C0B");
+        submitButton.css("background-color", "red");
         submitButton.css("pointer-events", "none");
     } else {
         submitButton.css("background-color", "#efff14f1");

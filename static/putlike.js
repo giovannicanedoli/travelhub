@@ -160,8 +160,9 @@ $(document).ready(function() {
         // alert("pressed!" + pkey);
         var modalname = '#exampleModalCenter' + pkey;
         $(modalname).modal('show');
-        
+        toggleSubmitButtonColor(pkey); 
     })
+
 
     $('.commentForm').submit(function(event) {
         event.preventDefault();
@@ -185,10 +186,10 @@ $(document).ready(function() {
                     var div = '<div class="comment"><div class="author"><p>'+mia_email+'</p></div><div class="text"><p>' + text + '</p></div></div>';
                     var lcomments = '#listacommenti'+pkey;
                     var mycomment = "#mycomment"+pkey;
-                    
+                    toggleSubmitButtonColor(pkey);
                     $(lcomments).prepend(div);
                     $(mycomment).val("");
-                    
+                    toggleSubmitButtonColor(pkey);
                 },
 
                 error: function(jqXHR, textStatus, errorThrown) { 
@@ -200,9 +201,31 @@ $(document).ready(function() {
 
         }
         
+        
+    });
+
+
+
+    $('.commentForm input').on('input', function() {
+        var pkey = $(this).closest('form').data('value');
+        toggleSubmitButtonColor(pkey);
     });
 
 });
+//per colorare il submit button a seconda se ho scritto o no il commento
+function toggleSubmitButtonColor(pkey) {
+    var commentInput = $("#mycomment" + pkey);
+    var submitButton = commentInput.closest('form').find('.pulsante5');
+    if (commentInput.val().trim() === "") {
+        submitButton.css("background-color", "#FF5C0B");
+        submitButton.css("pointer-events", "none");
+    } else {
+        submitButton.css("background-color", "#efff14f1");
+        submitButton.css("pointer-events", "all");
+    }
+}
+
+
 
 //pulsante on top
 function onTop() {

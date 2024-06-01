@@ -50,7 +50,7 @@ header {
     height: 40px;
     border-radius: 10px;
     padding: 0%;
-    font-size: clamp(0.9rem, 1vw, 2rem);
+    font-size: clamp(0.9rem, 0.9vw, 2rem);
     background-color: #5e5e5e;
     font-weight: 500;
 }

@@ -149,7 +149,7 @@ img{
 
 @keyframes pulsanti {
     0% {scale: 0.3;}
-    20% {scale: 1;}
+    27% {scale: 1;}
 }
 
 .like {
@@ -317,7 +317,7 @@ img{
     
 
     .foto{
-        height: 800px;
+        height: 700px;
         width: 500px;
     }
 
@@ -332,6 +332,11 @@ img{
         justify-content: center;
         width: 40%;
         flex-wrap: nowrap;
+    }
+
+    @keyframes pulsanti {
+        0% {scale: 0.3;}
+        2% {scale: 1;}
     }
 
     .like {
@@ -367,9 +372,14 @@ img{
         top: -150%;
     } */
 
+    @keyframes pulsanti {
+        0% {scale: 0.3;}
+        5% {scale: 1;}
+    }
+
     .foto{
-        height: 500px;
-        width: 350px;
+        height: 400px;
+        width: 450px;
     }
 
     .modal-content {
@@ -411,4 +421,10 @@ img{
         scale: 0.9;
     }
 
+}
+
+@media (max-width: 500px) {
+    .foto{
+        width: 350px;
+    }
 }

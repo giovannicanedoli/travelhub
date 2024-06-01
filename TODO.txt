@@ -22,5 +22,6 @@
 [ ] è possibile un bug con la renderizzazione delle recensioni, se uno scrive una recensione
 di 1000 caratteri allora non si renderizza a pieno soluzione: mettere un limite alla lunghezza
 delle recensioni
+[ ] in putlike.js levare la parte relativa all'animazione del cuore vecchia e non usata
 
 QUANDO RICONTROLLIAMO FACCIAMO LA PROVA SIA DA LOGGATI CHE NON 

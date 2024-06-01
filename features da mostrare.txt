@@ -1,0 +1,76 @@
+HOME:
+da NON loggati:
+-le foto sono in ordine random
+-pulsante per tornare in alto
+-popover su like e +
+-animazione scroll
+-hover animazione nome città con l'ombra
+da loggati:
+-sono cambiati i pulsanti nell'header
+-3 pulsati per ogni foto
+-se ho gia messo like a una foto allora il pulsante like sarà gia rosso, lo stesso per il +
+-non c'è piu il popover
+-si puo mettere e togliere like con doppio clic oppure cliccando sul cuore
+-si puo salvare premendo su + e rimuovere dai salvati
+-cuore e + si ingrandiscono e si colorano
+-premendo sulla matita si apre il modale
+-i commenti sono in ordine cronologico
+-il nome dell'autore è la mail tagliata prima di @
+-il tasto canel e x chiudono il modal
+-submit è rosso e non cliccabile quando non c'è niente scritto nell'input del commento appena inizio a scirvere diventa giallo come gli altri bottoni
+-ogni foto ha il suo modal dedicato per i commenti
+-far vedere che il tutto è responsive con le media query anche per dimensioni intermedie
+
+LOGIN:
+-animazioni dei campi di input
+-animazione aereo bellissima
+-messaggi di errore per psw sbagliata e account non registrato
+-procedura di recuper psw, ovvero che ci manda la mail col link per impostare la psw nuova
+-far vedere che il tutto è responsive con le media query anche per dimensioni intermedie
+-link per signup
+
+SIGNUP
+-animazioni dei campi di input
+-animazione aereo bellissima
+-messaggi di errore per psw debole o email gia registrata
+-hover sopra al campo psw che spiega come deve essere per non essere debole
+-far vedere che il tutto è responsive con le media query anche per dimensioni intermedie
+-link per signin
+
+ABOUTUS:
+-hover sulle foto nostre
+-link sui nomi che rimandano al github personali
+-pulsante per tornare in alto
+-feedback form con name che è required e stelle che si colorano
+-se si scrivono piu di 100 caratteri diventa rosso e non si puo inviare
+-a seconda di quale stella è scelta cambia il giudizio
+-quando si fa submit compare la scritta "Thank you, we have forwarded your feedback to our team ❤️" in alto
+-sotto ci sono le recensioni con 4 e 5 stelle ordinate random tra cui si puo scollare lateramlmente
+-il footer ha rimanda ai nostri profili instagram
+-premendo sul team si apre la casella per scrivere alla mail nostra
+-far vedere che il tutto è responsive con le media query anche per dimensioni intermedie
+
+LIKE HISTORY:
+-se si prova a accedere a questa pagina scrivendo /like nell'indirizzo si viene rimandati al login
+-se non ci sono foto con like è disponibile solo la sezione perte con le foto a cui non è stato messo like in ordine random
+-spiegare come viene calcolata la classifica (in base alla città con piu liked foto ecc)
+-far vedere imppaginazione con 1, 2 e 3 foto nel podio
+-il primo cubo ha tre faccie con foto, descrizione e pulsante per prenotare i biglietti, mappa
+-secondo e terzo cubo solo due faccie foto e mappa
+-pulsante per tornare in alto
+-far vedere che il tutto è responsive con le media query anche per dimensioni intermedie
+
+SAVED:
+-se si prova a accedere a questa pagina scrivendo /favorite nell'indirizzo si viene rimandati al login
+-se non ci sono foto salvate far vedere i ben 4 gattini meme
+-griglia adattabile con 4, 3 o 2 colonne in base al responsive
+-hover sulle foto e sui nomi
+-pulsante per tornare in alto
+-nomi -far vedere che il tutto è responsive con le media query anche per dimensioni intermedie
+
+LOGOUT:
+-effettivamente fa il logout
+-cambia l'header delle pagine
+
+GENERALE:
+font, colori, forme, animazioni sono uguali per le varie pagine 30L

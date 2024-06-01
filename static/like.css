@@ -79,9 +79,14 @@ p {
     display: flex;
     justify-content: center;
     color: aliceblue;
+    color: #000000;
+    font-weight: 500;
 }
 
-
+.textcontainer p{
+    color: aliceblue;
+    font-weight: 400;
+}
 
 .h {
     font-size: clamp(1.8rem, 2.3vw, 3.3rem); 

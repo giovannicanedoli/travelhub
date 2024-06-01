@@ -160,12 +160,11 @@ $(document).ready(function() {
         var pkey = $(this).val();
         var modalname = '#exampleModalCenter' + pkey;
         $(modalname).modal('show');
-        $('.commentForm').submit(function(event) {
+        $(".commentForm").submit(function(event) {
             event.preventDefault();
-    
-            var text = $("#mycomment"+pkey).val();
+        
+            var text = $("#mycomment" + pkey).val();
             if (text.trim() !== "") {
-                
                 $.ajax({
                     url: "/postcomments",
                     type: "POST",
@@ -173,30 +172,65 @@ $(document).ready(function() {
                         "comments": text,
                         "city_key": pkey
                     },
-
                     dataType: 'json',
                     success: function(data) {
-                        var mia_email = data.name;
-                        
-                        var div = '<div class="comment"><div class="author"><p>'+mia_email+'</p></div><div class="text"><p>' + text + '</p></div></div>';
-                        var lcomments = '#listacommenti'+pkey;
-                        var mycomment = "#mycomment"+pkey;
-                        
-                        $(lcomments).prepend(div);
-                        $(mycomment).val("");
-                        
+                        if (data.code === '401') {
+                            alert('You need to log in to post comments.');
+                        } else if (data.code === '409') {
+                            console.log('You have already posted this comment on this photo.');
+                        } else {
+                            var mia_email = data.name;
+                            var div = '<div class="comment"><div class="author"><p>' + mia_email + '</p></div><div class="text"><p>' + text + '</p></div></div>';
+                            var lcomments = '#listacommenti' + pkey;
+                            var mycomment = "#mycomment" + pkey;
+        
+                            $(lcomments).prepend(div);
+                            $(mycomment).val("");
+                        }
                     },
-
-                    error: function(jqXHR, textStatus, errorThrown) { 
-
-                        alert('Error: ' + textStatus, errorThrown);
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        alert('Error: ' + textStatus + ', ' + errorThrown);
                     }
-
-                });                
-
+                });
             }
-            
         });
+        // $('.commentForm').submit(function(event) {
+        //     event.preventDefault();
+    
+        //     var text = $("#mycomment"+pkey).val();
+        //     if (text.trim() !== "") {
+                
+        //         $.ajax({
+        //             url: "/postcomments",
+        //             type: "POST",
+        //             data: {
+        //                 "comments": text,
+        //                 "city_key": pkey
+        //             },
+
+        //             dataType: 'json',
+        //             success: function(data) {
+        //                 var mia_email = data.name;
+                        
+        //                 var div = '<div class="comment"><div class="author"><p>'+mia_email+'</p></div><div class="text"><p>' + text + '</p></div></div>';
+        //                 var lcomments = '#listacommenti'+pkey;
+        //                 var mycomment = "#mycomment"+pkey;
+                        
+        //                 $(lcomments).prepend(div);
+        //                 $(mycomment).val("");
+                        
+        //             },
+
+        //             error: function(jqXHR, textStatus, errorThrown) { 
+
+        //                 alert('Error: ' + textStatus, errorThrown);
+        //             }
+
+        //         });                
+
+        //     }
+            
+        // });
     })
 
 });

@@ -317,7 +317,7 @@ img{
     
 
     .foto{
-        height: 800px;
+        height: 700px;
         width: 500px;
     }
 
@@ -332,6 +332,11 @@ img{
         justify-content: center;
         width: 40%;
         flex-wrap: nowrap;
+    }
+
+    @keyframes pulsanti {
+        0% {scale: 0.3;}
+        2% {scale: 1;}
     }
 
     .like {

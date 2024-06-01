@@ -133,7 +133,10 @@ def main_route():
         truncated_username = com[0][:ind]  
         truncated_comment = (truncated_username,) + com[1:]  
         truncated_comments.append(truncated_comment)
-    print(truncated_comments)
+    # print(truncated_comments)
+    # truncated_comments = truncated_comments.reverse()
+    # print(truncated_comments)
+
     liked=[]
     if 'username' in session and 'password' in session and 'id' in session:
         user_id = session['id']
@@ -147,7 +150,7 @@ def main_route():
         saved_photos = []
     random.shuffle(cities)  #to randomize img shown in index.html
 
-    return render_template("index.html", cities=cities, liked=liked_photos, saved=saved_photos, db_comments = truncated_comments)
+    return render_template("index.html", cities=cities, liked=liked_photos, saved=saved_photos, db_comments = list(reversed(truncated_comments)))
 
 
 @app.route('/register', methods=["GET", "POST"])
@@ -436,30 +439,54 @@ def save_photo():
     return jsonify(status_code)
 
 
+# @app.route('/postcomments', methods = ["POST"])
+# def post_comments():
+#     msg_sent = request.form.get('comments')
+#     city_id = request.form.get('city_key')
+#     user_id = session.get('id')
+
+#     '''
+#     INSERT INTO comments (users_id, cities_id, comment) VALUES (user_id, city_id, msg_sent);
+#     '''
+
+#     new_comment = Comments(users_id=user_id, cities_id=city_id, comment=msg_sent)
+#     db.session.add(new_comment)
+#     db.session.commit()
+#     user_name = Users.query.filter_by(id = user_id).first()
+#     name = user_name.username[:user_name.username.index('@')] #per trasformare abc@ex.com in abc
+#     # print(user_id)
+#     # print(user_name)
+#     # print("------------", name)
+
+#     status_code = {'name':name}
+#     print("tutto ok zi")
+#     return jsonify(status_code)
+    
 @app.route('/postcomments', methods = ["POST"])
 def post_comments():
+
     msg_sent = request.form.get('comments')
     city_id = request.form.get('city_key')
     user_id = session.get('id')
 
-    '''
-    INSERT INTO comments (users_id, cities_id, comment) VALUES (user_id, city_id, msg_sent);
-    '''
-    
-    
+    # Check if the user has already posted the same comment on the same city
+    existing_comment = Comments.query.filter_by(users_id=user_id, cities_id=city_id, comment=msg_sent).first()
+    if existing_comment:
+        # Comment already exists, do not add it again
+        status_code = {'code': '409', 'message': 'Duplicate comment'}
+        return jsonify(status_code)
 
+    # Insert the new comment
     new_comment = Comments(users_id=user_id, cities_id=city_id, comment=msg_sent)
     db.session.add(new_comment)
     db.session.commit()
-    user_name = Users.query.filter_by(id = user_id).first()
-    name = user_name.username[:user_name.username.index('@')] #per trasformare abc@ex.com in abc
-    # print(user_id)
-    # print(user_name)
-    # print("------------", name)
 
-    status_code = {'name':name}
-    print("tutto ok zi")
+    user_name = Users.query.filter_by(id=user_id).first()
+    name = user_name.username[:user_name.username.index('@')]  # Transform abc@ex.com into abc
+
+    status_code = {'name': name}
     return jsonify(status_code)
+
 
 @app.route('/favicon.ico')
 def favicon():

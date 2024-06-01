@@ -379,7 +379,7 @@ img{
 
     .foto{
         height: 400px;
-        width: 350px;
+        width: 450px;
     }
 
     .modal-content {
@@ -421,4 +421,10 @@ img{
         scale: 0.9;
     }
 
+}
+
+@media (max-width: 500px) {
+    .foto{
+        width: 350px;
+    }
 }

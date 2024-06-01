@@ -174,18 +174,23 @@ $(document).ready(function() {
                     },
                     dataType: 'json',
                     success: function(data) {
-                        if (data.code === '401') {
-                            alert('You need to log in to post comments.');
-                        } else if (data.code === '409') {
+
+                        if (data.code === '409') {
                             console.log('You have already posted this comment on this photo.');
                         } else {
-                            var mia_email = data.name;
-                            var div = '<div class="comment"><div class="author"><p>' + mia_email + '</p></div><div class="text"><p>' + text + '</p></div></div>';
-                            var lcomments = '#listacommenti' + pkey;
-                            var mycomment = "#mycomment" + pkey;
-        
-                            $(lcomments).prepend(div);
-                            $(mycomment).val("");
+                            var i = 0;
+                            console.log(i)
+                            if (i === 0) {
+                                i = 1;
+                                console.log(i)
+
+                                var mia_email = data.name;
+                                var div = '<div class="comment"><div class="author"><p>' + mia_email + '</p></div><div class="text"><p>' + text + '</p></div></div>';
+                                var lcomments = '#listacommenti' + pkey;
+                                var mycomment = "#mycomment" + pkey;
+            
+                                $(lcomments).prepend(div);
+                                $(mycomment).val("");}
                         }
                     },
                     error: function(jqXHR, textStatus, errorThrown) {

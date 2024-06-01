@@ -156,48 +156,51 @@ $(document).ready(function() {
     });
 
     $(".like.pulsante3").click(function(){
-
         var pkey = $(this).val();
+        // alert("pressed!" + pkey);
         var modalname = '#exampleModalCenter' + pkey;
         $(modalname).modal('show');
-        $('.commentForm').submit(function(event) {
-            event.preventDefault();
-    
-            var text = $("#mycomment"+pkey).val();
-            if (text.trim() !== "") {
-                
-                $.ajax({
-                    url: "/postcomments",
-                    type: "POST",
-                    data: {
-                        "comments": text,
-                        "city_key": pkey
-                    },
-
-                    dataType: 'json',
-                    success: function(data) {
-                        var mia_email = data.name;
-                        
-                        var div = '<div class="comment"><div class="author"><p>'+mia_email+'</p></div><div class="text"><p>' + text + '</p></div></div>';
-                        var lcomments = '#listacommenti'+pkey;
-                        var mycomment = "#mycomment"+pkey;
-                        
-                        $(lcomments).prepend(div);
-                        $(mycomment).val("");
-                        
-                    },
-
-                    error: function(jqXHR, textStatus, errorThrown) { 
-
-                        alert('Error: ' + textStatus, errorThrown);
-                    }
-
-                });                
-
-            }
-            
-        });
+        
     })
+
+    $('.commentForm').submit(function(event) {
+        event.preventDefault();
+        // alert("submit" + pkey);
+        var pkey = $(this).data('value');
+        var text = $("#mycomment"+pkey).val();
+        if (text.trim() !== "") {
+            
+            $.ajax({
+                url: "/postcomments",
+                type: "POST",
+                data: {
+                    "comments": text,
+                    "city_key": pkey
+                },
+
+                dataType: 'json',
+                success: function(data) {
+                    var mia_email = data.name;
+                    // alert(pkey);
+                    var div = '<div class="comment"><div class="author"><p>'+mia_email+'</p></div><div class="text"><p>' + text + '</p></div></div>';
+                    var lcomments = '#listacommenti'+pkey;
+                    var mycomment = "#mycomment"+pkey;
+                    
+                    $(lcomments).prepend(div);
+                    $(mycomment).val("");
+                    
+                },
+
+                error: function(jqXHR, textStatus, errorThrown) { 
+
+                    alert('Error: ' + textStatus, errorThrown);
+                }
+
+            });                
+
+        }
+        
+    });
 
 });
 

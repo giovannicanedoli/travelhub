@@ -72,47 +72,53 @@
             </div>
         </div>    
 
-        <div class="modal fade" id="exampleModalCenter{{ city.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header header-coustom">
-                <h5 class="modal-title" id="exampleModalLongTitle">Comments</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <!-- invertire il for e la div sotto -->
-                <div class="comments" id="listacommenti{{ city.id }}">
-                  {% for db_comment in db_comments %}
-                    {% if db_comment[1] == city.id %}
-                      <div class="comment">
-                        <div class="author">
-                          <p>{{ db_comment[0] }}</p>
-                        </div>
-                        <div class="text">
-                          <p>{{ db_comment[2] }}</p>
-                        </div>
-                      </div>
-                    {% else %}
-                    {% endif %}
-                  {% endfor %}
-              </div>
+        
+          
+    {% endfor %}
 
-              </div>
-              <div class="modal-footer">
-                <form class="commentForm">
-                  <div class="mycomment">
-                    <input id="mycomment{{ city.id }}" placeholder="Enter your comment here" type="text" class="form-control">
-                    <button type="submit" class=" pulsante5 ml-2">Submit</button>
+    {% for city in cities %}
+
+    <div class="modal fade" id="exampleModalCenter{{ city.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header header-coustom">
+            <h5 class="modal-title" id="exampleModalLongTitle">Comments</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- invertire il for e la div sotto -->
+            <div class="comments" id="listacommenti{{ city.id }}">
+              {% for db_comment in db_comments %}
+                {% if db_comment[1] == city.id %}
+                  <div class="comment">
+                    <div class="author">
+                      <p>{{ db_comment[0] }}</p>
+                    </div>
+                    <div class="text">
+                      <p>{{ db_comment[2] }}</p>
+                    </div>
                   </div>
-                </form>
-                <button type="button" class="pulsanteClose" data-dismiss="modal">Cancel</button>
+                {% else %}
+                {% endif %}
+              {% endfor %}
+          </div>
+
+          </div>
+          <div class="modal-footer">
+            <form class="commentForm" data-value="{{city.id}}">
+              <div class="mycomment">
+                <input id="mycomment{{ city.id }}" placeholder="Enter your comment here" type="text" class="form-control">
+                <button type="submit" class=" pulsante5 ml-2">Submit</button>
               </div>
-            </div>
+            </form>
+            <button type="button" class="pulsanteClose" data-dismiss="modal">Cancel</button>
           </div>
         </div>
-          
+      </div>
+    </div>
+
     {% endfor %}
 
     

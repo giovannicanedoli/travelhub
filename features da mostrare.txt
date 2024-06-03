@@ -18,6 +18,7 @@ da loggati:
 -il nome dell'autore è la mail tagliata prima di @
 -il tasto canel e x chiudono il modal
 -submit è rosso e non cliccabile quando non c'è niente scritto nell'input del commento appena inizio a scirvere diventa giallo come gli altri bottoni
+-fare test con due profili e far vedere che si vedono anche i commenti di altri utenti
 -ogni foto ha il suo modal dedicato per i commenti
 -far vedere che il tutto è responsive con le media query anche per dimensioni intermedie
 

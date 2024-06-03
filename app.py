@@ -231,7 +231,7 @@ def forgotpasswd():
         msg = Message('Reset Password', sender = USERNAME, recipients=[user.username])
 
         #se nella pagina di confirm_forget metti il token giusto allora vai avanti altrimenti ba
-        msg.body = f'Click on this link to reset the password: {url_for("confirm_forget", token = token, _external = True)}'
+        msg.body = f'We recived a new password reset request.\nClick on this link to reset the password: {url_for("confirm_forget", token = token, _external = True)}.\nTravelHub\'s Team.'
         mail.send(msg)        
 
         return render_template("forgot.html", user_alive = True, email_sent = True)

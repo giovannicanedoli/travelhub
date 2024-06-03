@@ -1,6 +1,5 @@
 import re
 import secrets
-import requests
 
 
 def verify_password(password):

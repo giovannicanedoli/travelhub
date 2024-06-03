@@ -17,7 +17,7 @@ da loggati:
 -i commenti sono in ordine cronologico
 -il nome dell'autore è la mail tagliata prima di @
 -il tasto canel e x chiudono il modal
--submit è rosso e non cliccabile quando non c'è niente scritto nell'input del commento appena inizio a scirvere diventa giallo come gli altri bottoni
+-submit è rosso e non cliccabile quando non c'è niente scritto (anche premendo spazio rimane rosso) nell'input del commento appena inizio a scirvere diventa giallo come gli altri bottoni
 -ogni foto ha il suo modal dedicato per i commenti
 -far vedere che il tutto è responsive con le media query anche per dimensioni intermedie
 

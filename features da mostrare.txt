@@ -17,7 +17,7 @@ da loggati:
 -i commenti sono in ordine cronologico
 -il nome dell'autore è la mail tagliata prima di @
 -il tasto canel e x chiudono il modal
--submit è rosso e non cliccabile quando non c'è niente scritto nell'input del commento appena inizio a scirvere diventa giallo come gli altri bottoni
+-submit è rosso e non cliccabile quando non c'è niente scritto (anche premendo spazio rimane rosso) nell'input del commento appena inizio a scirvere diventa giallo come gli altri bottoni
 -fare test con due profili e far vedere che si vedono anche i commenti di altri utenti
 -ogni foto ha il suo modal dedicato per i commenti
 -far vedere che il tutto è responsive con le media query anche per dimensioni intermedie
@@ -27,6 +27,7 @@ LOGIN:
 -animazione aereo bellissima
 -messaggi di errore per psw sbagliata e account non registrato
 -procedura di recuper psw, ovvero che ci manda la mail col link per impostare la psw nuova
+-controlli nel recupero psw (controlla se la mail è nel database degli utenti prima di mandare la mail)
 -far vedere che il tutto è responsive con le media query anche per dimensioni intermedie
 -link per signup
 
@@ -48,6 +49,7 @@ ABOUTUS:
 -quando si fa submit compare la scritta "Thank you, we have forwarded your feedback to our team ❤️" in alto
 -sotto ci sono le recensioni con 4 e 5 stelle ordinate random tra cui si puo scollare lateramlmente
 -il footer ha rimanda ai nostri profili instagram
+-i link sopra nel footer si aggiornano in base a se siamo loggati o meno
 -premendo sul team si apre la casella per scrivere alla mail nostra
 -far vedere che il tutto è responsive con le media query anche per dimensioni intermedie
 
@@ -56,7 +58,7 @@ LIKE HISTORY:
 -se non ci sono foto con like è disponibile solo la sezione perte con le foto a cui non è stato messo like in ordine random
 -spiegare come viene calcolata la classifica (in base alla città con piu liked foto ecc)
 -far vedere imppaginazione con 1, 2 e 3 foto nel podio
--il primo cubo ha tre faccie con foto, descrizione e pulsante per prenotare i biglietti, mappa
+-il primo cubo ha tre faccie con foto, descrizione e pulsante per prenotare i biglietti, mappa e cliccare sul pointer blu della mappa
 -secondo e terzo cubo solo due faccie foto e mappa
 -pulsante per tornare in alto
 -far vedere che il tutto è responsive con le media query anche per dimensioni intermedie

@@ -273,22 +273,31 @@ def confirm_forget(token):
 
 @app.route('/aboutus', methods = ["GET", "POST"])
 def aboutus():
-     #SELECT * FROM feedback WHERE stars = 5
-    reviews = Feedback.query.filter(or_(Feedback.stars == 5, Feedback.stars == 4)).all() #per essere piu umili prendiamo anche le 4 stelle
-    reviews = reviews[:10]
+    # SELECT * FROM feedback WHERE stars = 5
+    reviews = Feedback.query.filter(Feedback.stars == 5).all()  # posso mettere anche .distinct
+    reviews = reviews[:7]
     random.shuffle(reviews)
+    
     if request.method == "POST":
         name = request.form.get("name")
         msg = request.form.get("subject")
         rating = request.form.get("sendmedata")
+
+        existing_feedback = Feedback.query.filter_by(text=msg).first()
+        
+        if existing_feedback:
+            print("feedback gia in database")
+            return render_template('aboutus.html', feed=False, reviews=reviews)
+
         feed = Feedback(name, msg, rating)
         db.session.add(feed)
         db.session.commit()
         
-        print(feed)
-        return render_template('aboutus.html', feed=True,reviews = reviews)
+        flash("Thank you for your feedback!", "success")
+        return render_template('aboutus.html', feed=True, reviews=reviews)
+    
     else:
-        return render_template('aboutus.html', feed=False, reviews = reviews)
+        return render_template('aboutus.html', feed=False, reviews=reviews)
 
 @app.route('/<something>')
 def goto(something):

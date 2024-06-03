@@ -89,6 +89,11 @@ button:hover{
     scale: 1.1;
 }
 
+
+*:focus, *:active {
+    outline: none;
+}
+
 @media (max-width: 1050px) {
     .ns {
         scale: 1.3;

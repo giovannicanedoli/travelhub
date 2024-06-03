@@ -47,8 +47,8 @@ ABOUTUS:
 -se si scrivono piu di 100 caratteri diventa rosso e non si puo inviare
 -a seconda di quale stella è scelta cambia il giudizio
 -quando si fa submit compare la scritta "Thank you, we have forwarded your feedback to our team ❤️" in alto
--sotto ci sono le recensioni con 4 e 5 stelle ordinate random tra cui si puo scollare lateramlmente
--il footer ha rimanda ai nostri profili instagram
+-sotto ci sono le recensioni con 5 stelle ordinate random tra cui si puo scollare lateramlmente
+-il footer rimanda ai nostri profili instagram
 -i link sopra nel footer si aggiornano in base a se siamo loggati o meno
 -premendo sul team si apre la casella per scrivere alla mail nostra
 -far vedere che il tutto è responsive con le media query anche per dimensioni intermedie

@@ -11,11 +11,6 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='header.css')}}">
         <link rel="stylesheet" href="{{ url_for('static', filename='footer.css')}}">
         <link rel="stylesheet" href="{{ url_for('static', filename='swipereview.css')}}">
-
-        <!-- che è sto coso? -->
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-        
-
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
         <title>TravelHub - About Us</title>
@@ -45,23 +40,6 @@
       <p class="h3">This website is the result of the work of <a href="https://github.com/Pietrob5" target="_blank">Pietro</a> and <a href="https://github.com/giovannicanedoli" target="_blank">Giovanni</a>, students at Sapienza University of Rome. This project aims to introduce users to new destinations and travel opportunities for their upcoming trips.</p>
     </div>
     <br><br><br>
-    <!-- <div class = "newsletter">
-      <div class = "letterimg">
-        
-      </div>
-      <div class = "newslettertext">
-        Submit to our newsletter to recv information about fantastic travels and more!
-      </div>
-
-      <div class = "insertdata">
-        <input id = "testo" type="text" placeholder="Email">
-        
-        <input class = "pulsante4" type="submit" value="Submit">
-      </div>
-    </div>
-    
-    <p>We would like a review!</p> -->
-
     <div class="form">
 
       <div class="form-header">
@@ -89,7 +67,6 @@
         
         <div class = "verticalflex">
           <div class = "horizontalflex">
-            <!--div delle stelle-->
             <div id = "uno">
             </div>
             <div id = "due">
@@ -105,7 +82,7 @@
           
           <p id = "texthere"><br></p>
 
-          <!-- this is necessary to send data to the server -->
+          
           <div class = "reqtosend" id ="support">
             <input type="text" id = "sendmedata" name = "sendmedata">
           </div>
@@ -153,20 +130,6 @@
 
     <button id="top" class="pulsante4" onclick="onTop()">⬆</button>
 
-    <script>
-      /* perché non sono dentro ad un file? */
-      function onTop() {
-          window.scrollTo({ top: 0, behavior: 'smooth' }); // Scorri verso l'inizio della pagina con animazione
-      }
-      
-      window.onscroll = function() {
-          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-              document.getElementById("top").style.display = "block";
-          } else {
-              document.getElementById("top").style.display = "none";
-          }
-      };
-    </script>
     <br><br><br><br>
 
     {% include 'footer.html' %}

@@ -6,14 +6,11 @@ from flask_login import LoginManager, UserMixin, login_user, logout_user
 from datetime import timedelta
 from utils import *
 import random
-import sys
-import os
 
 app = Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite"
 app.config["SECRET_KEY"] = "HOMEWORK LTW"
-#altra roba
 app.config['MAIL_SERVER'] = 'smtp.office365.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USERNAME'] = USERNAME
@@ -23,7 +20,7 @@ app.config['MAIL_USE_SSL'] = False
 
 mail = Mail(app)
 
-app.permanent_session_lifetime = timedelta(minutes=25)   #temporaneo
+app.permanent_session_lifetime = timedelta(minutes=40)
 
 db = SQLAlchemy()
 
@@ -119,25 +116,19 @@ def loader_user(user_id):
 def main_route():
     cities=Cities.query.all()
 
-    '''
-    SELECT users.nome, comments.cities_id, comments.comment FROM comments JOIN users on users_id = id
-    '''
     db_comments = db.session.query(
-        Users.username,  # Cambiato 'nome' in 'username' perché 'nome' non esiste nella classe Users
+        Users.username,
         Comments.cities_id,
         Comments.comment
     ).join(Comments, Users.id == Comments.users_id).all()
+
     truncated_comments= []
     for com in db_comments:
         ind = com[0].index('@')
         truncated_username = com[0][:ind]  
         truncated_comment = (truncated_username,) + com[1:]  
         truncated_comments.append(truncated_comment)
-    # print(truncated_comments)
-    # truncated_comments = truncated_comments.reverse()
-    # print(truncated_comments)
 
-    liked=[]
     if 'username' in session and 'password' in session and 'id' in session:
         user_id = session['id']
         liked_cities = db.session.query(Cities.photo).join(Like, Cities.id == Like.cities_id).filter(Like.users_id == user_id).all()
@@ -148,7 +139,7 @@ def main_route():
     else:
         liked_photos = []
         saved_photos = []
-    random.shuffle(cities)  #to randomize img shown in index.html
+    random.shuffle(cities)
 
     return render_template("index.html", cities=cities, liked=liked_photos, saved=saved_photos, db_comments = list(reversed(truncated_comments)))
 
@@ -230,7 +221,6 @@ def forgotpasswd():
         
         msg = Message('Reset Password', sender = USERNAME, recipients=[user.username])
 
-        #se nella pagina di confirm_forget metti il token giusto allora vai avanti altrimenti ba
         msg.body = f'We recived a new password reset request.\nClick on this link to reset the password: {url_for("confirm_forget", token = token, _external = True)}.\nTravelHub\'s Team.'
         mail.send(msg)        
 
@@ -258,7 +248,6 @@ def confirm_forget(token):
             user.password = password_verify
             db.session.commit()
 
-            #qui mi rimanda alla pagina principale, una pagina intermedia che mi mostra che è andato tutto bene?
             return redirect(url_for("login"))
         
         elif not password_ok:
@@ -266,16 +255,14 @@ def confirm_forget(token):
             
         elif password != password_verify:
             return render_template("confirm_forgot.html", password_match = False)
-
         
     else:
         return render_template("confirm_forgot.html")
 
 @app.route('/aboutus', methods = ["GET", "POST"])
 def aboutus():
-    # SELECT * FROM feedback WHERE stars = 5
-    reviews = Feedback.query.filter(Feedback.stars == 5).all()  # posso mettere anche .distinct
-    reviews = reviews[:7]
+    reviews = Feedback.query.filter(Feedback.stars == 5).all()
+    reviews = reviews[:10]
     random.shuffle(reviews)
     
     if request.method == "POST":
@@ -313,7 +300,6 @@ def logout():
 @app.route("/like", methods = ["GET"])
 def like():
 
-    #query per i like
     liked_cities=[]
     foru=[]
     if 'username' in session and 'password' in session and 'id' in session:
@@ -335,8 +321,6 @@ def like():
         
         random.shuffle(foru)
         
-        # print(liked_cities, end = "\n\n\n")
-
         for t in liked_cities:
             print(t)
 
@@ -362,62 +346,47 @@ def favorite():
 @app.route('/leavealike', methods = ["POST"])
 def leave_like():
     form_sent = request.form
-    #print(form_sent)
-
+    #if user is logged in
     if 'username' in session and 'password' in session and 'id' in session:
-
         city_id = form_sent.getlist('primarykey')[0]
         city = Cities.query.filter_by(id = city_id).first()
-        
         #debug
         if not city:
-            raise Exception('id not found, nso che cazzo è successo')
+            raise Exception('id not found, donno what happened')
         
         user_id = session.get('id')
-        
         like = Like.query.filter_by(users_id = user_id, cities_id = city_id).first()
         if like:
             city.like_messi -= 1
             db.session.delete(like)
             db.session.commit()
-            print("ao rimuovo il like")
+            print("removing like")
             status_code = {"code" : "201"}
-        
         else:
-
             city.like_messi += 1
-
             like = Like()
             like.users_id = user_id
             like.cities_id = city_id
             db.session.add(like)
             db.session.commit()
-
-
-            print("ao metto il like")
+            print("like inserted correctely in database")
             status_code = {'code' : '200'}
-
     else:
-        print('utente non loggato!')
+        print('user not logged in!')
         status_code = {'code' : '400'}
-    
-
     return jsonify(status_code)
+
 
 @app.route('/savephoto', methods = ["POST"])
 def save_photo():
-
     form_sent = request.form
-    
     if 'username' in session and 'password' in session and 'id' in session:
-
         city_id = form_sent.getlist('primarykey')[0]
         city = Cities.query.filter_by(id = city_id).first()
         
         #debug
         if not city:
             raise Exception('id not found, donno what happened')
-            sys.exit(-1)        
 
         user_id = session.get('id')
 
@@ -426,50 +395,23 @@ def save_photo():
             city.save_messi -= 1
             db.session.delete(save)
             db.session.commit()
-            print("ao rimuovo il save")
+            print("removing save from database")
             status_code = {"code" : "202"}
         else:
             city.save_messi += 1
-
             save = Saves()
             save.users_id = user_id
             save.cities_id = city_id
             db.session.add(save)
             db.session.commit()
-
-
-            print("ao metto il save")
+            print("save inserted correctely in database")
             status_code = {'code' : '200'}
 
     else:
-        print('utente non loggato!')
+        print('user not logged in!')
         status_code = {'code' : '400'}
     
     return jsonify(status_code)
-
-
-# @app.route('/postcomments', methods = ["POST"])
-# def post_comments():
-#     msg_sent = request.form.get('comments')
-#     city_id = request.form.get('city_key')
-#     user_id = session.get('id')
-
-#     '''
-#     INSERT INTO comments (users_id, cities_id, comment) VALUES (user_id, city_id, msg_sent);
-#     '''
-
-#     new_comment = Comments(users_id=user_id, cities_id=city_id, comment=msg_sent)
-#     db.session.add(new_comment)
-#     db.session.commit()
-#     user_name = Users.query.filter_by(id = user_id).first()
-#     name = user_name.username[:user_name.username.index('@')] #per trasformare abc@ex.com in abc
-#     # print(user_id)
-#     # print(user_name)
-#     # print("------------", name)
-
-#     status_code = {'name':name}
-#     print("tutto ok zi")
-#     return jsonify(status_code)
     
 @app.route('/postcomments', methods = ["POST"])
 def post_comments():
@@ -478,20 +420,13 @@ def post_comments():
     city_id = request.form.get('city_key')
     user_id = session.get('id')
 
-    # Check if the user has already posted the same comment on the same city
-    existing_comment = Comments.query.filter_by(users_id=user_id, cities_id=city_id, comment=msg_sent).first()
-    if existing_comment:
-        # Comment already exists, do not add it again
-        status_code = {'code': '409', 'message': 'Duplicate comment'}
-        return jsonify(status_code)
-
     # Insert the new comment
     new_comment = Comments(users_id=user_id, cities_id=city_id, comment=msg_sent)
     db.session.add(new_comment)
     db.session.commit()
 
     user_name = Users.query.filter_by(id=user_id).first()
-    name = user_name.username[:user_name.username.index('@')]  # Transform abc@ex.com into abc
+    name = user_name.username[:user_name.username.index('@')]
 
     status_code = {'name': name}
     return jsonify(status_code)

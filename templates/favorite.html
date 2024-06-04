@@ -23,7 +23,7 @@
     {% block contentdown %}
     {% if not session %}
      <script>
-        window.location.replace("/login"); //se non sei loggato e in qualche modo arrivi qua ti reindirizzo al login
+        window.location.replace("/login");
       </script>
     {% else %}
         {% if saved_ph==[] %}
@@ -64,7 +64,7 @@
     <button id="top2" class="pulsante4" onclick="onTop()">⬆</button>
     <script>
         function onTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scorri verso l'inizio della pagina con animazione
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         window.onscroll = function() {

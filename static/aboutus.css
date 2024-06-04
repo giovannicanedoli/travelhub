@@ -4,15 +4,14 @@
 body {
     font-family: 'Poppins',sans-serif;
     overflow-x: hidden;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); /*cambiare i colori. In like.css lascio quella vecchia per confronto*/
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: contain;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
-    /*margin: 0px;    /* si creano 8 px a cazzo di cane */
-    margin-right: -1px; /*sta cosa dei margini è decisamente random*/
+    margin-right: -1px; 
     margin-left: 0;
 
 }
@@ -37,14 +36,13 @@ body {
     text-align: center;  
     background-color: #74b785a4;
     padding: 3%;
-    
 }
 
 .ourpic {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20%; /*gap tra le due foto*/
+    gap: 20%;
 }
 
 .pietro img, .gio img {
@@ -106,13 +104,8 @@ address a:hover {
     width: 50px;
 }
 .h2 {
-    font-size: clamp(1.2rem, 2vw, 3.3rem);  /*copiato da h2*/
+    font-size: clamp(1.2rem, 2vw, 3.3rem); 
 }
-
-
-
-
-/* form */
 
 .form-header{
     text-align: center;
@@ -140,8 +133,6 @@ input[type=text], textarea {
 }
 
 input[type=submit] {
-    /* margin-left: 20%; */
-    
     width: 40%;
 }
   
@@ -155,7 +146,6 @@ label {
 .form {
     margin-left: 20%;
     margin-right: 20%;
-    /* width: 60%; */
     border-radius: 30px;
     background-color: #f2f2f270;
     padding: 20px;
@@ -200,7 +190,6 @@ label {
     justify-content: center;
     gap:5%;
     margin-bottom: 2%;
-
 }
 
 .verticalflex{

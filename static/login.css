@@ -1,9 +1,9 @@
 body {
     overflow-x: hidden;
     overflow-y: hidden;
-        margin: 0px;    /* si creano 8 px a cazzo di cane*/
-         margin-right: -1px; /*sta cosa dei margini è decisamente random */
-        margin-left: 0;
+    margin: 0px;    
+    margin-right: -1px; 
+    margin-left: 0;
 }
 
 a {
@@ -22,7 +22,6 @@ a {
     z-index: -1;
 }
 
-/*plane animation*/
 #plane {
     z-index: 0;
     position: absolute;
@@ -38,11 +37,10 @@ a {
 }
 
 @keyframes planeAnim {
-  0%   {left:-18%; top: -100%; width: 100px; height: 60px; transform: rotate(-5deg);filter: blur(1px);}   /*per il motion blur - madeiaquery per farlo partire non troppo lontano*/
+  0%   {left:-18%; top: -100%; width: 100px; height: 60px; transform: rotate(-5deg);filter: blur(1px);}
   25% {transform: rotate(20deg);}
   100% {left: 150%; top: 80%; width: 600px; height: 400px; transform: rotate(40deg); filter: blur(0px);}
 }
-
 
 .failure{
     background: #efff14;
@@ -97,7 +95,7 @@ a {
 .input-box .input-field{
     align-items: center;
     width: 90%;
-    height: 60px; /*CAMBIAREEEE-------------------------------------*/
+    height: 60px;
     font-size: 17px;
     padding: 0 5%;
     margin-bottom: 5%;
@@ -144,7 +142,7 @@ a {
 
 .submit-btn{
     width: 100%;
-    height: 250%;/*CAMBIAREEEE-------------------------------------*/
+    height: 250%;
     background: #efff14;
     border: none;
     border-radius: 30px;
@@ -152,7 +150,6 @@ a {
     transition: .3s;
     font-weight: 600;
     font-size: clamp(1em, 0.9vw, 2rem); ;
-
 }
 
 .sign-up-link{
@@ -174,16 +171,11 @@ a {
 
 .submit-btn:hover{
     background: #efff146f;
-    /* transform: scale(1.05,1); */
 }
-
 
 .input-field:hover{
     transform: scale(1.05,1);
 }
-
-/*-------------------------------MEDIA QUERIES----------------------------------------------*/
-
 
 @media (max-width: 1150px) {
 
@@ -197,14 +189,14 @@ a {
     }
 
     @keyframes planeAnim {
-        0%   {left:-30%; top: -100%; width: 100px; height: 60px; transform: rotate(-5deg);filter: blur(1px);}   /*per il motion blur - madeiaquery per farlo partire non troppo lontano*/
+        0%   {left:-30%; top: -100%; width: 100px; height: 60px; transform: rotate(-5deg);filter: blur(1px);} 
         25% {transform: rotate(20deg);}
         100% {left: 150%; top: 80%; width: 600px; height: 400px; transform: rotate(40deg); filter: blur(0px);}
     }
 
     .submit-btn{
         width: 100%;
-        height: 60px;/*CAMBIAREEEE-------------------------------------*/
+        height: 60px;
         background: #efff14;
         border: none;
         border-radius: 30px;

@@ -24,16 +24,13 @@ $(document).ready(function() {
             url: "/leavealike",
             type: 'POST',
             data: {
-                'primarykey': pkey, //mando la primary al server
+                'primarykey': pkey,
             }, 
 
             dataType: 'json',
             success: function(data) {
                 var code = data.code;
                 if(code === '200'){
-                    
-                    // heart.style.visibility = "visible";
-                    // heart.animate(animKeyframe, animTiming);
                     
                     but.style.backgroundColor = "red";
                     but.style.fontSize = "clamp(1.2rem ,2.8vw, 3.5rem)";
@@ -49,36 +46,33 @@ $(document).ready(function() {
 
                 }
                 else{
-                    console.log("ENSOMMA..."); //mostrare qui a schermo qualcosa che indica che deve loggarsi
+                    console.log("Something failed..."); //mostrare qui a schermo qualcosa che indica che deve loggarsi
                 }
 
             },
 
-            error: function(jqXHR, textStatus, errorThrown) { 
+            error: function(text, error) { 
 
-                console.error('Error: ' + textStatus, errorThrown);
+                console.error('Error: ' + text, error);
             }
         });
     });
 
     $('.like.pulsante2').click(function() {
         var pkey = $(this).val(); 
-        
-        // var bookmark = document.getElementById('segnalibro' + pkey);
         var sav = document.getElementById('savebtn' + pkey);
         
         $.ajax({
             url: "/savephoto",
             type: 'POST',
             data: {
-                'primarykey': pkey, //mando la primary al server
+                'primarykey': pkey,
             }, 
 
             dataType: 'json',
             success: function(data) {
                 var code = data.code;
                 if(code === '200'){
-                    // bookmark.style.visibility = "visible";
                     sav.style.backgroundColor = "black";
                     sav.style.color = "white";
                     sav.style.fontSize = "clamp(1.2rem ,2.8vw, 3.5rem)";
@@ -95,14 +89,13 @@ $(document).ready(function() {
 
                 }
                 else{
-                    console.log("ENSOMMA..."); //mostrare qui a schermo qualcosa che indica che deve loggarsi
-                }
-                
+                    console.log("Something failed...");
+                }  
             },
 
-            error: function(jqXHR, textStatus, errorThrown) { 
+            error: function(text, error) { 
 
-                console.error('Error: ' + textStatus, errorThrown);
+                console.error('Error: ' + text, error);
             }
         });
     });
@@ -117,16 +110,13 @@ $(document).ready(function() {
             url: "/leavealike",
             type: 'POST',
             data: {
-                'primarykey': pkey, //mando la primary al server
+                'primarykey': pkey,
             }, 
 
             dataType: 'json',
             success: function(data) {
                 var code = data.code;
                 if(code === '200'){
-                    // heart.style.visibility = "visible";
-                    // heart.animate(animKeyframe, animTiming);
- 
                     but.style.backgroundColor = "red";
                     but.style.fontSize = "clamp(1.2rem ,2.8vw, 3.5rem)";
 
@@ -141,16 +131,15 @@ $(document).ready(function() {
                     but.style.fontSize = "clamp(1rem, 1.3vw, 2rem)";
 
                 }
-                else
-                {
-                    console.log("ENSOMMA..."); //mostrare qui a schermo qualcosa che indica che deve loggarsi
-                }
+                else{
+                    console.log("Something failed...");
+                }  
 
             },
 
-            error: function(jqXHR, textStatus, errorThrown) { 
+            error: function(text, error) { 
 
-                console.error('Error: ' + textStatus, errorThrown);
+                console.error('Error: ' + text, error);
             }
         });
     });
@@ -166,7 +155,6 @@ $(document).ready(function() {
 
     $('.commentForm').submit(function(event) {
         event.preventDefault();
-        // alert("submit" + pkey);
         var pkey = $(this).data('value');
         var text = $("#mycomment"+pkey).val();
         if (text.trim() !== "") {
@@ -182,7 +170,6 @@ $(document).ready(function() {
                 dataType: 'json',
                 success: function(data) {
                     var mia_email = data.name;
-                    // alert(pkey);
                     var div = '<div class="comment"><div class="author"><p>'+mia_email+'</p></div><div class="text"><p>' + text + '</p></div></div>';
                     var lcomments = '#listacommenti'+pkey;
                     var mycomment = "#mycomment"+pkey;
@@ -192,15 +179,15 @@ $(document).ready(function() {
                     toggleSubmitButtonColor(pkey);
                 },
 
-                error: function(jqXHR, textStatus, errorThrown) { 
+                error: function(text, error) { 
 
-                    alert('Error: ' + textStatus, errorThrown);
+                    console.error('Error: ' + text, error);
                 }
 
             });                
 
         }
-        
+
         
     });
 
@@ -212,7 +199,7 @@ $(document).ready(function() {
     });
 
 });
-//per colorare il submit button a seconda se ho scritto o no il commento
+
 function toggleSubmitButtonColor(pkey) {
     var commentInput = $("#mycomment" + pkey);
     var submitButton = commentInput.closest('form').find('.pulsante5');
@@ -225,11 +212,8 @@ function toggleSubmitButtonColor(pkey) {
     }
 }
 
-
-
-//pulsante on top
 function onTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scorri verso l'inizio della pagina con animazione
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 window.onscroll = function() {

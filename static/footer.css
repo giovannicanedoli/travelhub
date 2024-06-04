@@ -29,6 +29,7 @@ p {
     margin-top: 5%;
     color: black;
     text-decoration: underline;
+    width: 80px;
 }
 
 .redirectanchor:hover{

@@ -30,7 +30,7 @@ document.getElementById('quattro').addEventListener('mouseover', function() {
         document.getElementById('uno').style.backgroundColor = 'yellow';
 
     }
-    document.getElementById('texthere').innerText = "Really good";
+    document.getElementById('texthere').innerText = "Really good!";
 
     document.getElementById('sendmedata').value = '4';
 });
@@ -72,7 +72,7 @@ document.getElementById('due').addEventListener('mouseover', function() {
         document.getElementById('due').style.backgroundColor = 'yellow';
         document.getElementById('uno').style.backgroundColor = 'yellow';
     }
-    document.getElementById('texthere').innerText = "Coul'd be better";
+    document.getElementById('texthere').innerText = "Coul'd be better.";
     document.getElementById('sendmedata').value = '2';
 });
 
@@ -82,7 +82,7 @@ document.getElementById('uno').addEventListener('mouseover', function() {
     document.getElementById('tre').style.backgroundColor = colore;
     document.getElementById('due').style.backgroundColor = colore;
     document.getElementById('uno').style.backgroundColor = 'yellow';
-    document.getElementById('texthere').innerText = "Meh";
+    document.getElementById('texthere').innerText = "Meh.";
     document.getElementById('sendmedata').value = '1';
 });
 

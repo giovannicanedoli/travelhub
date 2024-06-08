@@ -22,13 +22,12 @@ body {
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-    z-index: -10; /* Imposta lo z-index in modo che il video sia dietro agli altri elementi */
+    z-index: -10;
 }
 
 .sup{
     display: flex;
     flex-direction: column;
-    /* text-align: center; */
     justify-content: center;
     align-items: center;
 }
@@ -37,20 +36,10 @@ body {
 
 img {
     width: 60%;
-    /* height: 80%; */
     object-fit: cover;
-     /* border-radius: 10%; */
-  /*  this causes a bug in img rendering
-    */
     object-fit: cover; /*per le proporzioni delle foto*/
     transition-duration: 0.3s;
     box-shadow: 0 8px 16px 0 #00000033, 0 6px 20px 0 #00000030;
-    
-    /* width: 60%;
-    height: 80%;
-    object-fit: cover;
-    max-height: 80vh; */
-    
 }
 
 .f {
@@ -58,7 +47,7 @@ img {
     max-height: 350px;
 }
 
-/*questo serve??? Si serve per ingrandire le immagini su saved quando ci passo sopra*/
+/*ingrandire le immagini su saved quando ci passo sopra*/
 .f:hover{
     scale: 1.07;
 }
@@ -69,7 +58,6 @@ a {
 
 .hov:hover .name {
     color: #efff1450;
-    /* font-size: smaller; */
     font-size: clamp(0.7rem, 1.3vw, 1.5rem);;
 }
 
@@ -90,13 +78,17 @@ p {
 
 .h {
     font-size: clamp(1.8rem, 2.3vw, 3.3rem); 
-    margin-bottom: 3%;
+    text-align: center;
+}
+
+.h1 {
+    font-size: clamp(2rem, 3.5vw, 3.3rem); 
     text-align: center;
 }
 
 .h2 {
     margin-top: 5%;
-    margin-bottom: 3%;
+    margin-bottom: 0px;
     font-size: clamp(1.4rem, 2vw, 3.3rem); 
     text-align: center;
 }
@@ -234,7 +226,6 @@ p {
     .f {
         max-height: 300px;
     }
-
 }
 
 @media (max-width: 760px) {

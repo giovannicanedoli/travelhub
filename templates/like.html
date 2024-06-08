@@ -30,7 +30,6 @@
     {% block contentdown %}
     {% if not session %}
      <script>
-        //FARGLI VEDERE QUESTO QUANDO PRESENTIAMO CHE è FIGO
         window.location.replace("/login"); //se non sei loggato e in qualche modo arrivi qua ti reindirizzo al login
       </script>
     {% else %}
@@ -38,15 +37,17 @@
         {% if size == 0 %}
 
             
-            <p class="h">You don't have any liked photo yet☹️!</p>
+            <p class="h">You don't have any liked photo yet😪!</p>
 
         <br><br><br><br><br><br>
 
         {% elif  size == 1 %}
             <div class = "sup">
-                <p class="h">CIty you liked the most<br>{{ city_photo_list[0][0] }}</p>
+                <p class="h">The city you liked the most is...</p>
                 
                 <div class = "swiper swiperCubic">
+                    <p class="h"><strong>{{ city_photo_list[0][0] }}!</strong></p>
+
                     <div class="swiper-wrapper">
                         <div class = "cubic swiper-slide">
                             <img id = "top" src = "{{ city_photo_list[0][1] }}">
@@ -77,10 +78,10 @@
         
             
             <div class = "container">
-                    <p class="h">The city you liked the most is...{{ city_photo_list[0][0] }}!</p>
-                    <!--DA PROBLEMI IL CSS <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[0][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a> -->
+                    <p class="h">The city you liked the most is...</p>
                     
                     <div class = "swiper swiperCubic">
+                        <p class="h"><strong>{{ city_photo_list[0][0] }}!</strong></p>
                         <div class="swiper-wrapper">
                             <div class = "cubic swiper-slide">
                                 <img id = "top" src = "{{ city_photo_list[0][1] }}">
@@ -101,10 +102,10 @@
                     </div>
 
                 
-                <!-- QUESTA QUI PIÙ PICCOLA?? -->
                 
-                    <p class="h2">second image in podium is...{{ city_photo_list[1][0] }}!</p>
+                    <p class="h2">second image in podium is...</p>
                     <div class = "swiper swiperCubic">
+                        <p class="h"><strong>{{ city_photo_list[1][0] }}!</strong></p>
                         <div class="swiper-wrapper">
                             <div class = "cubic swiper-slide">
                                 <img id = "top" src = "{{ city_photo_list[1][1] }}">
@@ -123,9 +124,11 @@
         {% else %}
 
             <div class = "sup">
-                    <p class="h">The city you liked the most is...{{ city_photo_list[0][0] }}!</p>
+                    <p class="h">The city you liked the most is...</p>
 
                     <div class = "swiper swiperCubic">
+                        <p class="h"><strong>{{ city_photo_list[0][0] }}!</strong></p>
+
                         <div class="swiper-wrapper">
                             <div class = "cubic swiper-slide">
                                 <img id = "top" src = "{{ city_photo_list[0][1] }}">
@@ -144,11 +147,12 @@
                         </div>
                     </div>
 
-                    <p class="h2">Damn! You really appreciated also {{ city_photo_list[1][0] }} and {{ city_photo_list[2][0] }}!</p>
+                    <p class="h2">You really appreciated also... </p>
             </div>
 
             <div class = "scorrimento">
                 <div class = "swiper swiperCubic2">
+                    <p class="h"><strong>{{ city_photo_list[1][0] }}</strong></p>
                     <div class="swiper-wrapper">
                         <div class = "cubic swiper-slide">
                             <img class="minor" src = "{{ city_photo_list[1][1] }}" >
@@ -163,21 +167,11 @@
                 </div>
 
                 <div class = "swiper swiperCubic2">
+                    <p class="h"><strong>{{ city_photo_list[2][0] }}</strong></p>
                     <div class="swiper-wrapper">
                         <div class = "cubic swiper-slide">
                             <img class="minor" src = "{{ city_photo_list[2][1] }}" >
                         </div>
-                        <!-- <div class = "cubic swiper-slide">
-                            <div class = "blurcube">
-                                <img class="minor" src = "{{ city_photo_list[2][1] }}" >
-
-                                <div class = "textcontainer"> 
-                                    <p>{{ city_photo_list[2][3] }} </p>
-                                    <a class="ticket" href="https://www.skyscanner.it/trasporti/voli/rome/{{city_photo_list[2][2]}}/?adultsv2=1&cabinclass=economy&childrenv2=&ref=home&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&oym=2406&selectedoday=01" target="_blank"><button class="pulsante" type="button">Book your ticket✈</button></a>
-                                </div>
-
-                            </div>
-                        </div> -->
                         <div id = "map3" class = "mapcontainer swiper-slide" name = "{{ city_photo_list[2][0] }}">
                         </div>
                     </div>
@@ -185,16 +179,8 @@
             </div>
 
 
-            <!-- FOR YOU SECTION -->
-
-
-
-
         {% endif %}
 
-        <!-- <div class="spazio">
-            <br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </div> -->
         <p class="h3">Just For You:</p>
         {% if for_u_list != [] %} 
 
@@ -205,11 +191,7 @@
                         <div class="foru2 swiper-slide">    
                                 <img src="{{ photo[1] }}" style="max-height: 400px;">
                                 <div class="overlay-text-stuff">
-
-                                    <!-- DA CAPÌ CHE FINE FAGLIE FA -->
-                                    <!-- <button id = "forulikebtn{{ photo[2] }}" class = "like pulsante4"  value = '{{ photo[2] }}'>❤</button>
-                                    <button id = "forulikebtn{{ photo[2] }}" class = "like pulsante4" value = '{{ photo[2] }}'>+</button> -->
-                                        {{ photo[0] }}
+                                    {{ photo[0] }}
                                 </div>
                         </div>
                     {% endfor %}
@@ -223,9 +205,8 @@
     <button id="top2" class="pulsante4" onclick="onTop()">⬆</button>
 
     <script>
-        /* perché non sono dentro ad un file? */
     function onTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scorri verso l'inizio della pagina con animazione
+        window.scrollTo({ top: 0, behavior: 'smooth' }); 
     }
     
     window.onscroll = function() {

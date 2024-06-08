@@ -152,13 +152,13 @@ label {
     box-sizing: border-box;
 }
   
-.col-25 {
+.l {
     float: left;
     width: 20%;
     margin-top: 6px;
 }
   
-.col-75 {
+.t {
     float: left;
     width: 75%;
     margin-top: 6px;
@@ -238,7 +238,7 @@ label {
         width: 90%; 
     }
 
-    .col-25, .col-75 {
+    .l, .t {
         width: 100%;
         margin-top: 0;
     }

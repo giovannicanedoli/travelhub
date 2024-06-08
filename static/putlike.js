@@ -1,24 +1,9 @@
-const animKeyframe = [
-    { transform: "rotate(0) scale(1) opacity(0)"  },
-    { transform: "rotate(360deg) scale(1)" },
-    { transform: "rotate(360deg) opacity(1)" },
-    { transform: 'translateY(0px)' },
-    { transform: 'translateY(-300px)' },
-  ];
-const animTiming = {
-    duration: 2000,
-    iterations: 1,
-  };
-
-
-
 $(document).ready(function() {
 
     $('.like.pulsante').click(function() {
         
         var pkey = $(this).val(); 
         
-        var heart = document.getElementById('cuore' + pkey);
         var but = document.getElementById('likebtn' + pkey);
         $.ajax({
             url: "/leavealike",
@@ -34,9 +19,7 @@ $(document).ready(function() {
                     
                     but.style.backgroundColor = "red";
                     but.style.fontSize = "clamp(1.2rem ,2.8vw, 3.5rem)";
-                    setTimeout(function(){
-                        heart.style.visibility = "hidden";
-                    },2000);
+
 
                 }
                 else if (code === '201') {
@@ -46,7 +29,7 @@ $(document).ready(function() {
 
                 }
                 else{
-                    console.log("Something failed..."); //mostrare qui a schermo qualcosa che indica che deve loggarsi
+                    console.log("Something failed..."); 
                 }
 
             },
@@ -77,10 +60,6 @@ $(document).ready(function() {
                     sav.style.color = "white";
                     sav.style.fontSize = "clamp(1.2rem ,2.8vw, 3.5rem)";
 
-                    //ANIMAZIONE
-                    setTimeout(function(){
-                        bookmark.style.visibility = "hidden";
-                    },300);
                 }
                 else if (code === '202') {
                     sav.style.backgroundColor = "#efff14";
@@ -120,11 +99,6 @@ $(document).ready(function() {
                     but.style.backgroundColor = "red";
                     but.style.fontSize = "clamp(1.2rem ,2.8vw, 3.5rem)";
 
-
-                    setTimeout(function(){
-                        heart.style.visibility = "hidden";
-                    },2000);
-
                 }
                 else if (code === '201') {
                     but.style.backgroundColor = "#efff14";
@@ -146,7 +120,6 @@ $(document).ready(function() {
 
     $(".like.pulsante3").click(function(){
         var pkey = $(this).val();
-        // alert("pressed!" + pkey);
         var modalname = '#exampleModalCenter' + pkey;
         $(modalname).modal('show');
         toggleSubmitButtonColor(pkey); 
@@ -185,9 +158,7 @@ $(document).ready(function() {
                 }
 
             });                
-
-        }
-
+        } 
         
     });
 

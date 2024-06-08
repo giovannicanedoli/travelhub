@@ -6,6 +6,7 @@ from flask_login import LoginManager, UserMixin, login_user, logout_user
 from datetime import timedelta
 from utils import *
 import random
+import os
 
 app = Flask(__name__)
 
@@ -229,7 +230,6 @@ def forgotpasswd():
     else:
         return render_template("forgot.html")
     
-#questa funzione deve essere riscritta
 @app.route('/forget/<token>/confirm', methods = ["GET", "POST"])
 def confirm_forget(token):
     if request.method == "POST":
@@ -312,13 +312,10 @@ def like():
 
 
         #questa query mi serve per i per te
-        # foru = db.session.query(Cities.nome, Cities.photo,Cities.id, Cities.like_messi).order_by(Cities.like_messi).all()
-        # print(foru)
-        # foru = foru[:5:-1]
-
         liked_city_ids = [like.cities_id for like in Like.query.filter_by(users_id=session['id']).all()]
-        foru = db.session.query(Cities.nome, Cities.photo, Cities.id, Cities.like_messi).filter(Cities.id.notin_(liked_city_ids)).all()
-        
+
+        foru = db.session.query(Cities.nome, Cities.photo,Cities.id, Cities.like_messi).filter(Cities.id.notin_(liked_city_ids)).order_by(Cities.like_messi).all()
+  
         random.shuffle(foru)
         
         for t in liked_cities:
@@ -420,7 +417,6 @@ def post_comments():
     city_id = request.form.get('city_key')
     user_id = session.get('id')
 
-    # Insert the new comment
     new_comment = Comments(users_id=user_id, cities_id=city_id, comment=msg_sent)
     db.session.add(new_comment)
     db.session.commit()

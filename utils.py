@@ -12,4 +12,4 @@ def generate_reset_token():
     return secrets.token_urlsafe(32)
 
 USERNAME = 'travelhub@outlook.it'
-PASSWORD = "pPT9}Qsx*Ae%C)<j7]Y'yH"
+PASSWORD = "" #deleted for privacy

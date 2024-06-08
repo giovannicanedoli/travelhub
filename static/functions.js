@@ -93,7 +93,6 @@ var form = document.getElementById('subject');
     var testo = document.getElementById('texthere');
     var bottone = document.getElementById('submitbtn');
     if(form.value.length > 100){
-      console.log("SFORATO!"); 
       testo.innerText = 'You have to reduce the review size!';
       colore = 'red';
       document.getElementById('cinque').style.backgroundColor = colore;

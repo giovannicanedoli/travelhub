@@ -273,7 +273,7 @@ def aboutus():
         existing_feedback = Feedback.query.filter_by(text=msg).first()
         
         if existing_feedback:
-            print("feedback gia in database")
+            print("feedback already in database")
             return render_template('aboutus.html', feed=False, reviews=reviews)
 
         feed = Feedback(name, msg, rating)
@@ -311,7 +311,6 @@ def like():
                         .all()
 
 
-        #questa query mi serve per i per te
         liked_city_ids = [like.cities_id for like in Like.query.filter_by(users_id=session['id']).all()]
 
         foru = db.session.query(Cities.nome, Cities.photo,Cities.id, Cities.like_messi).filter(Cities.id.notin_(liked_city_ids)).order_by(Cities.like_messi).all()
